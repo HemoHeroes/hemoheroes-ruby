@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20161005160437) do
+
+ActiveRecord::Schema.define(version: 20161005135130) do
+
 
   create_table "hospitals", force: :cascade do |t|
     t.string   "name"
@@ -23,8 +27,51 @@ ActiveRecord::Schema.define(version: 20161005160437) do
     t.string   "number"
     t.string   "city"
     t.string   "state"
+
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "hospital_id"
+  end
+
+  create_table "hospital_necessities", force: :cascade do |t|
+    t.integer  "a_positive"
+    t.integer  "a_negative"
+    t.integer  "b_positive"
+    t.integer  "b_negative"
+    t.integer  "ab_positive"
+    t.integer  "ab_negative"
+    t.integer  "o_positive"
+    t.integer  "o_negative"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "cnpj"
+    t.string   "password"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

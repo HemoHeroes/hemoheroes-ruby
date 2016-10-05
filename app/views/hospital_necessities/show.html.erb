@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>A positive:</strong>
+  <%= @hospital_necessity.a_positive %>
+</p>
+
+<p>
+  <strong>A negative:</strong>
+  <%= @hospital_necessity.a_negative %>
+</p>
+
+<p>
+  <strong>B positive:</strong>
+  <%= @hospital_necessity.b_positive %>
+</p>
+
+<p>
+  <strong>B negative:</strong>
+  <%= @hospital_necessity.b_negative %>
+</p>
+
+<p>
+  <strong>Ab positive:</strong>
+  <%= @hospital_necessity.ab_positive %>
+</p>
+
+<p>
+  <strong>Ab negative:</strong>
+  <%= @hospital_necessity.ab_negative %>
+</p>
+
+<p>
+  <strong>O positive:</strong>
+  <%= @hospital_necessity.o_positive %>
+</p>
+
+<p>
+  <strong>O negative:</strong>
+  <%= @hospital_necessity.o_negative %>
+</p>
+
+<%= link_to 'Edit', edit_hospital_necessity_path(@hospital_necessity) %> |
+<%= link_to 'Back', hospital_necessities_path %>

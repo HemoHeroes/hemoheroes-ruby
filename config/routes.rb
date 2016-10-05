@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
+
+  root 'welcome#index'
+
+  devise_for :users
+
   resources :addresses
+  resources :hospital_necessities
   resources :hospitals
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/necessidadehospital', to: 'hospital_necessities#index'
 
 
   # root 'welcome#index'
 
-  get '/necessidadehospital', to: 'hospital_necessity#index'
 
+  # Routes for components in construction
+  get '/modal', to: 'components#modal'
 
 end
