@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hospitals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Cnpj</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospitals.each do |hospital| %>
+      <tr>
+        <td><%= hospital.name %></td>
+        <td><%= hospital.phone %></td>
+        <td><%= hospital.email %></td>
+        <td><%= hospital.cnpj %></td>
+        <td><%= hospital.password %></td>
+        <td><%= link_to 'Show', hospital %></td>
+        <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
+        <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospital', new_hospital_path %>
