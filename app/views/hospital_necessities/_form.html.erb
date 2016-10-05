@@ -1,0 +1,57 @@
+<%= form_for(hospital_necessity) do |f| %>
+  <% if hospital_necessity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hospital_necessity.errors.count, "error") %> prohibited this hospital_necessity from being saved:</h2>
+
+      <ul>
+      <% hospital_necessity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :a_positive %>
+    <%= f.number_field :a_positive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_negative %>
+    <%= f.number_field :a_negative %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_positive %>
+    <%= f.number_field :b_positive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_negative %>
+    <%= f.number_field :b_negative %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ab_positive %>
+    <%= f.number_field :ab_positive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ab_negative %>
+    <%= f.number_field :ab_negative %>
+  </div>
+
+  <div class="field">
+    <%= f.label :o_positive %>
+    <%= f.number_field :o_positive %>
+  </div>
+
+  <div class="field">
+    <%= f.label :o_negative %>
+    <%= f.number_field :o_negative %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

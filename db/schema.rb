@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161005131444) do
 
   create_table "users", force: :cascade do |t|
@@ -27,6 +28,43 @@ ActiveRecord::Schema.define(version: 20161005131444) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+ActiveRecord::Schema.define(version: 20161005135130) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "cep"
+    t.string   "street"
+    t.string   "district"
+    t.string   "number"
+    t.string   "city"
+    t.string   "state"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "hospital_id"
+  end
+
+  create_table "hospital_necessities", force: :cascade do |t|
+    t.integer  "a_positive"
+    t.integer  "a_negative"
+    t.integer  "b_positive"
+    t.integer  "b_negative"
+    t.integer  "ab_positive"
+    t.integer  "ab_negative"
+    t.integer  "o_positive"
+    t.integer  "o_negative"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "cnpj"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 4248323af1b77f31fa2ef733ae90139e76cf8cb7
   end
 
 end

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hospital Necessities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>A positive</th>
+      <th>A negative</th>
+      <th>B positive</th>
+      <th>B negative</th>
+      <th>Ab positive</th>
+      <th>Ab negative</th>
+      <th>O positive</th>
+      <th>O negative</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospital_necessities.each do |hospital_necessity| %>
+      <tr>
+        <td><%= hospital_necessity.a_positive %></td>
+        <td><%= hospital_necessity.a_negative %></td>
+        <td><%= hospital_necessity.b_positive %></td>
+        <td><%= hospital_necessity.b_negative %></td>
+        <td><%= hospital_necessity.ab_positive %></td>
+        <td><%= hospital_necessity.ab_negative %></td>
+        <td><%= hospital_necessity.o_positive %></td>
+        <td><%= hospital_necessity.o_negative %></td>
+        <td><%= link_to 'Show', hospital_necessity %></td>
+        <td><%= link_to 'Edit', edit_hospital_necessity_path(hospital_necessity) %></td>
+        <td><%= link_to 'Destroy', hospital_necessity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospital Necessity', new_hospital_necessity_path %>

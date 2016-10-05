@@ -1,0 +1,2 @@
+json.extract! hospital_necessity, :id, :a_positive, :a_negative, :b_positive, :b_negative, :ab_positive, :ab_negative, :o_positive, :o_negative, :created_at, :updated_at
+json.url hospital_necessity_url(hospital_necessity, format: :json)
