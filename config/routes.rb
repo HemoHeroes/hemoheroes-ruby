@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   get '/necessidadehospital', to: 'hospital_necessities#index'
 
 
+
+
+  # Routes for components in construction
+  get '/modal', to: 'components#modal'
+
 end
