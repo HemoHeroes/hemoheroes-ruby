@@ -17,7 +17,7 @@ class HospitalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create hospital" do
     assert_difference('Hospital.count') do
-      post hospitals_url, params: { hospital: { cnpj: @hospital.cnpj, email: @hospital.email, name: @hospital.name, password: @hospital.password, phone: @hospital.phone } }
+      post hospitals_url, params: { hospital: { cep: @hospital.cep, city: @hospital.city, cnpj: @hospital.cnpj, district: @hospital.district, email: @hospital.email, name: @hospital.name, number: @hospital.number, password: @hospital.password, state: @hospital.state, street: @hospital.street } }
     end
 
     assert_redirected_to hospital_url(Hospital.last)
@@ -34,7 +34,7 @@ class HospitalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update hospital" do
-    patch hospital_url(@hospital), params: { hospital: { cnpj: @hospital.cnpj, email: @hospital.email, name: @hospital.name, password: @hospital.password, phone: @hospital.phone } }
+    patch hospital_url(@hospital), params: { hospital: { cep: @hospital.cep, city: @hospital.city, cnpj: @hospital.cnpj, district: @hospital.district, email: @hospital.email, name: @hospital.name, number: @hospital.number, password: @hospital.password, state: @hospital.state, street: @hospital.street } }
     assert_redirected_to hospital_url(@hospital)
   end
 
