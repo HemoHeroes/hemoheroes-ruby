@@ -1,0 +1,2 @@
+class HospitalNecessity < ApplicationRecord
+end
