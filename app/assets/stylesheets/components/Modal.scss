@@ -1,38 +1,56 @@
 @import "variables";
 
 .Modal{
+  max-width: 550px;
 
-  &.header{
-
+  &-header{
+    background-color: #6495ED;
+    overflow: auto;
+    padding: 15px;
   }
 
-  &.step{
+  &-step{
+    background: #ffffff;
+    border-radius: 100%;
+    float: left;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 12px 0 0 15px;
+  }
 
+  &-stepText{
+    text-align: center;
+    padding: 6px 0 0 0;
+    font-weight: 800;
   }
 
   &-title{
     color: $brand-color;
   }
 
-
-  &-step{
-
-  }
-
   &-body{
-
+    overflow: auto;
+    background-color:#E0FFFF;
+    padding:15px;
   }
 
   &-subTitle{
-
+    margin: 6px 0 10px 0;
   }
 
   &-typesRequest{
+    float: left;
+    margin: 2%;
+    background-color: #ffffff;
 
   }
 
   &-confirmation{
-
+    margin-top: 15px;
+    float: right;
+    background-color: #ffffff;
   }
 
 }

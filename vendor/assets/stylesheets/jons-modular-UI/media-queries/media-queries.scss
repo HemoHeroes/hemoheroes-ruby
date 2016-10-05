@@ -1,0 +1,38 @@
+/* MEDIA QUERIES -------------------- */
+
+$desktop: "(min-width: 1200px)";
+$tablet: "(min-width: 900px) and (max-width: 1199)";
+$mobile: "(min-width: 1px) and (max-width: 899px)";
+$lg-mobile: "(min-width: 425px) and (max-width: 899px)";
+$sm-mobile: "(min-width: 1px) and (max-width: 424px)";
+
+@mixin desktop {
+  @media #{$desktop} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+@mixin lg-mobile {
+  @media #{$lg-mobile} {
+    @content;
+  }
+}
+
+@mixin sm-mobile {
+  @media #{$sm-mobile} {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media #{$mobile} {
+    @content;
+  }
+}
+
