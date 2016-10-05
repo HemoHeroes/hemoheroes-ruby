@@ -1,13 +1,9 @@
 .Input{
   margin: 25px 0 0 0;
 
-
   &-label{
     float: left;
     font-size: 12px;
-
-
-
   }
 
   &-value{
@@ -24,10 +20,11 @@
     & .Input-label{
       font-size: 40px;
       line-height: 67px;
-      width: 100px;
+      // width: 100px;
 
       &-description{
-          float:none;
+          float:right;
+          // width:200px
       }
 
     }
@@ -35,7 +32,7 @@
     & .Input-value{
       padding: 10px;
       font-size: 40px;
-      width: 50px;
+      // max-width: 120px;
     }
 
   }
