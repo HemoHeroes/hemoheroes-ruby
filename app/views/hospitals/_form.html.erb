@@ -10,58 +10,68 @@
       </ul>
     </div>
   <% end %>
+<div class="formRegisterHospital">
 
   <div class="field">
-    <%= f.label :name %>
+
+    <span>Nome: </span>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <span>E-mail: </span>
     <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :cnpj %>
-    <%= f.text_field :cnpj %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cep %>
+    <span>CEP: </span>
     <%= f.text_field :cep %>
   </div>
 
   <div class="field">
-    <%= f.label :street %>
+    <span>Rua: </span>
     <%= f.text_field :street %>
   </div>
 
   <div class="field">
-    <%= f.label :district %>
-    <%= f.text_field :district %>
-  </div>
-
-  <div class="field">
-    <%= f.label :number %>
+    <span>N°: </span>
     <%= f.text_field :number %>
   </div>
 
   <div class="field">
-    <%= f.label :city %>
+    <span>Bairro: </span>
+    <%= f.text_field :district %>
+  </div>
+
+  <div class="field">
+    <span>Cidade: </span>
     <%= f.text_field :city %>
   </div>
 
   <div class="field">
-    <%= f.label :state %>
+    <span>Estado: </span>
     <%= f.text_field :state %>
   </div>
+
+  <div class="field">
+    <span>CNPJ: </span>
+    <%= f.text_field :cnpj %>
+  </div>
+
+  <div class="field">
+    <span>Senha: </span>
+    <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <span>Confirmar Senha: </span>
+    <input />
+  </div>
+
 
   <div class="actions">
     <%= f.submit class: "Button Button--small is-actived" %>
   </div>
+
+</div>
 <% end %>
