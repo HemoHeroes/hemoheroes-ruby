@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+<div class="input-style">
   <div class="field">
-    <%= f.label :a_positive %>
-    <%= f.number_field :a_positive %>
+    A+
+    <%= f.number_field :a_positive, :class => "blood-necessity-input"%>
   </div>
 
   <div class="field">
-    <%= f.label :a_negative %>
+    A-
     <%= f.number_field :a_negative %>
   </div>
 
@@ -50,6 +50,7 @@
     <%= f.label :o_negative %>
     <%= f.number_field :o_negative %>
   </div>
+</div>
 
   <div class="actions">
     <%= f.submit %>

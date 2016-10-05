@@ -10,28 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20161005160437) do
-
-ActiveRecord::Schema.define(version: 20161005135130) do
-
-
-  create_table "hospitals", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "cnpj"
-    t.string   "password"
-    t.string   "cep"
-    t.string   "street"
-    t.string   "district"
-    t.string   "number"
-    t.string   "city"
-    t.string   "state"
-
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "hospital_id"
-  end
 
   create_table "hospital_necessities", force: :cascade do |t|
     t.integer  "a_positive"
@@ -48,11 +27,15 @@ ActiveRecord::Schema.define(version: 20161005135130) do
 
   create_table "hospitals", force: :cascade do |t|
     t.string   "name"
-    t.string   "phone"
     t.string   "email"
     t.string   "cnpj"
     t.string   "password"
-
+    t.string   "cep"
+    t.string   "street"
+    t.string   "district"
+    t.string   "number"
+    t.string   "city"
+    t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
