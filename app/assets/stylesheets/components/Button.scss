@@ -1,0 +1,39 @@
+@import "variables";
+
+.Button{
+  background: $brand-color;
+  padding: 12px;
+  font-family: "Sans-serif";
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(0,0,0,.6);
+  border:none;
+  border-radius: .28571429rem;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.6);
+  &:hover{
+    background-color: scale-color($brand-color, $lightness: -10%);
+    cursor: pointer;
+  }
+  &--large{
+    padding: 20px;
+    width: 200px;
+    font-size: 16px;
+  }
+  &--medium{
+    padding: 15px;
+    font-size: 14px;
+  }
+  &--small{
+    padding: 10px;
+    font-size: 10px;
+  }
+  &--positive{
+
+    background: #38C272;
+    color: #fff;
+    box-shadow: 1px 1px 3px #27ae60;
+    &:hover{
+      background-color: scale-color(#38C272, $lightness: -10%);
+    }
+  }
+}
