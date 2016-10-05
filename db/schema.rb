@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005160437) do
+ActiveRecord::Schema.define(version: 20161005173525) do
 
   create_table "hospital_necessities", force: :cascade do |t|
     t.integer  "a_positive"
