@@ -1,58 +1,60 @@
 <%= form_for(hospital_necessity) do |f| %>
-  <% if hospital_necessity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hospital_necessity.errors.count, "error") %> prohibited this hospital_necessity from being saved:</h2>
 
-      <ul>
-      <% hospital_necessity.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="input-style">
-  <div class="field">
-    A+
-    <%= f.number_field :a_positive, :class => "blood-necessity-input"%>
+<% if hospital_necessity.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(hospital_necessity.errors.count, "error") %> prohibited this hospital_necessity from being saved:</h2>
+
+  <ul>
+    <% hospital_necessity.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="Input Input--large">
+  <label class="Input-label">A+</label>
+    <%= f.number_field :a_positive, class: "Input-value" %>
   </div>
 
-  <div class="field">
-    A-
-    <%= f.number_field :a_negative %>
+  <div class="Input Input--large">
+    <label class="Input-label">A-</label>
+    <%= f.number_field :a_negative , class: "Input-value" %>
+    <label class="Input-label Input-label-description">doadores</label>
   </div>
 
-  <div class="field">
-    <%= f.label :b_positive %>
-    <%= f.number_field :b_positive %>
+  <div class="Input Input--large">
+    <label class="Input-label">B+</label>
+    <%= f.number_field :b_positive, class: "Input-value" %>
   </div>
 
-  <div class="field">
-    <%= f.label :b_negative %>
-    <%= f.number_field :b_negative %>
+  <div class="Input Input--large">
+   <label class="Input-label">B-</label>
+    <%= f.number_field :b_negative, class: "Input-value"%>
   </div>
 
-  <div class="field">
-    <%= f.label :ab_positive %>
-    <%= f.number_field :ab_positive %>
+  <div class="Input Input--large">
+    <label class="Input-label">AB+</label>
+    <%= f.number_field :ab_positive, class: "Input-value"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :ab_negative %>
-    <%= f.number_field :ab_negative %>
+  <div class="Input Input--large">
+    <label class="Input-label">AB-</label>
+    <%= f.number_field :ab_negative, class: "Input-value" %>
   </div>
 
-  <div class="field">
-    <%= f.label :o_positive %>
-    <%= f.number_field :o_positive %>
+  <div class="Input Input--large">
+    <label class="Input-label">O+</label>
+    <%= f.number_field :o_negative, class: "Input-value" %>
   </div>
 
-  <div class="field">
-    <%= f.label :o_negative %>
-    <%= f.number_field :o_negative %>
+  <div class="Input Input--large">
+    <label class="Input-label">O-</label>
+    <%= f.number_field :o_negative, class: "Input-value" %>
   </div>
 </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

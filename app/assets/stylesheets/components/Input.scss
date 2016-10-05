@@ -1,0 +1,42 @@
+.Input{
+  margin: 25px 0 0 0;
+
+
+  &-label{
+    float: left;
+    font-size: 12px;
+
+
+
+  }
+
+  &-value{
+    border-radius: 3px;
+    border: 1px solid #c1c1c1;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+
+  &--large{
+
+    & .Input-label{
+      font-size: 40px;
+      line-height: 67px;
+      width: 100px;
+
+      &-description{
+          float:none;
+      }
+
+    }
+
+    & .Input-value{
+      padding: 10px;
+      font-size: 40px;
+      width: 50px;
+    }
+
+  }
+}
