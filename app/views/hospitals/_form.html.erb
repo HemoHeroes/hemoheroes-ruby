@@ -1,70 +1,99 @@
 <%= form_for(hospital) do |f| %>
-  <% if hospital.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hospital.errors.count, "error") %> prohibited this hospital from being saved:</h2>
+<% if hospital.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(hospital.errors.count, "error") %> prohibited this hospital from being saved:</h2>
 
-      <ul>
-      <% hospital.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="formRegisterHospital">
-  <div class="field">
-    <span class="Input Input-label">Nome: </span>
-    <%= f.text_field :name, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">E-mail: </span>
-    <%= f.text_field :email, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">CEP: </span>
-    <%= f.text_field :cep, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">Rua: </span>
-    <%= f.text_field :street, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">N°: </span>
-    <%= f.text_field :number, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">Bairro: </span>
-    <%= f.text_field :district, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">Cidade: </span>
-    <%= f.text_field :city, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">Estado: </span>
-    <%= f.text_field :state, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <span class="Input Input-label">CNPJ: </span>
-    <!-- <%= f.label :cnpj, class: "Input Input-label" %> -->
-    <%= f.text_field :cnpj, class: "Input Input-value" %>
-  </div>
-
-  <div class="field">
-    <%= hidden_field :password, :value => @password %>
-    <!-- <%= f.text_field :password %> -->
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Cadastrar", class: "Button Button--large is-actived" %>
-  </div>
-
+  <ul>
+    <% hospital.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
 </div>
+<% end %>
+  <div class="Grid">
+    <div class="formRegisterHospital">
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">Nome: </span>
+        </div>
+        <div class="Grid-cell u-size4of12">
+          <%= f.text_field :name, class: "Input Input-value" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">E-mail: </span>
+        </div>
+        <div class="Grid-cell u-size3of12">
+          <%= f.text_field :email, class: "Input Input-value" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">CEP: </span>
+        </div>
+        <%= f.text_field :cep, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">Rua: </span>
+        </div>
+        <%= f.text_field :street, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">N°: </span>
+        </div>
+        <%= f.text_field :number, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">Bairro: </span>
+        </div>
+        <%= f.text_field :district, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">Cidade: </span>
+        </div>
+        <%= f.text_field :city, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">Estado: </span>
+        </div>
+        <%= f.text_field :state, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <div class="Grid-cell u-size1of12">
+          <span class="Input Input-label">CNPJ: </span>
+        </div>
+        <%= f.text_field :cnpj, class: "Input Input-value" %>
+      </div>
+
+      <div class="field">
+        <%= hidden_field :password, :value => @password %>
+      </div>
+
+      <div class="actions">
+        <div class="Grid-cell u-size2of12">
+          <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+        </div>
+        <div class="Grid-cell u-size2of12">
+            <%= f.submit "Limpar", class: "Button Button--medium " %>
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+
 <% end %>
