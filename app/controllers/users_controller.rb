@@ -8,11 +8,12 @@ class UsersController < ApplicationController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
 
     devise_parameter_sanitizer.permit(:sign_in) do |user_params|
-    user_params.permit(:username, :email)
+      user_params.permit(:username, :email)
+    end
 
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-    user_params.permit({ roles: [] }, :email, :password, :password_confirmation)
-
-      end
+      user_params.permit({ roles: [] }, :email, :password, :password_confirmation)
+    end
+  end
 
 end

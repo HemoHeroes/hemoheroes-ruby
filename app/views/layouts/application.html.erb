@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div class="OuterWrapper">
     <% if user_signed_in? %>
     Logado como <strong><%= current_user.email %></strong>.
     <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -17,7 +18,7 @@
     <%= link_to "Registrar", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
-
     <%= yield %>
+  </div>
 </body>
 </html>
