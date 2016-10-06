@@ -5,7 +5,6 @@
   &-label{
     font-size: 12px;
     display: inline-block;
-    padding:5px;
   }
 
   &-value{
@@ -20,21 +19,20 @@
   }
 
   &-description{
-    font-size: 25px;
+    font-size: 18px;
     display: inline-block;
-    margin: 0 0 0 12px;
   }
 
   &--large{
 
     & .Input-label{
-      font-size: 35px;
+      font-size: 25px;
       line-height: 67px;
     }
 
     & .Input-value{
       padding: 10px;
-      font-size: 40px;
+      font-size: 25px;
     }
   }
 
