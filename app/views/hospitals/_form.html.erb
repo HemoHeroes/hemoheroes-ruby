@@ -11,66 +11,59 @@
     </div>
   <% end %>
 <div class="formRegisterHospital">
-
   <div class="field">
-
-    <span>Nome: </span>
-    <%= f.text_field :name %>
+    <span class="Input Input-label">Nome: </span>
+    <%= f.text_field :name, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>E-mail: </span>
-    <%= f.text_field :email %>
+    <span class="Input Input-label">E-mail: </span>
+    <%= f.text_field :email, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>CEP: </span>
-    <%= f.text_field :cep %>
+    <span class="Input Input-label">CEP: </span>
+    <%= f.text_field :cep, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>Rua: </span>
-    <%= f.text_field :street %>
+    <span class="Input Input-label">Rua: </span>
+    <%= f.text_field :street, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>N°: </span>
-    <%= f.text_field :number %>
+    <span class="Input Input-label">N°: </span>
+    <%= f.text_field :number, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>Bairro: </span>
-    <%= f.text_field :district %>
+    <span class="Input Input-label">Bairro: </span>
+    <%= f.text_field :district, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>Cidade: </span>
-    <%= f.text_field :city %>
+    <span class="Input Input-label">Cidade: </span>
+    <%= f.text_field :city, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>Estado: </span>
-    <%= f.text_field :state %>
+    <span class="Input Input-label">Estado: </span>
+    <%= f.text_field :state, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>CNPJ: </span>
-    <%= f.text_field :cnpj %>
+    <span class="Input Input-label">CNPJ: </span>
+    <!-- <%= f.label :cnpj, class: "Input Input-label" %> -->
+    <%= f.text_field :cnpj, class: "Input Input-value" %>
   </div>
 
   <div class="field">
-    <span>Senha: </span>
-    <%= f.text_field :password %>
+    <%= hidden_field :password, :value => @password %>
+    <!-- <%= f.text_field :password %> -->
   </div>
-
-  <div class="field">
-    <span>Confirmar Senha: </span>
-    <input />
-  </div>
-
 
   <div class="actions">
-    <%= f.submit class: "Button Button--small is-actived" %>
+    <%= f.submit "Cadastrar", class: "Button Button--large is-actived" %>
   </div>
 
 </div>
