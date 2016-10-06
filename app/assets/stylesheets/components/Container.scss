@@ -1,16 +1,22 @@
 .Container{
 
-  height: 80%;
-  width: 80%;
+
   float:left;
 
   &-header{
     width: 100%;
     padding: 15px;
     background-color: #6495ED;
-    color: #fff;
+    &-text{
+      color: #fff;
+    }
   }
-  
+
+  &-section{
+    padding: 0 35px;
+    box-sizing: border-box;
+  }
+
   &-step{
     background: #ffffff;
     border-radius: 100%;

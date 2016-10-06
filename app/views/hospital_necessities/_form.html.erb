@@ -3,13 +3,13 @@
 <div class="Container">
   <div class="Container-header">
     <div class="Grid">
-      <div class="Grid-cell u-size3of12">
+      <div class="Grid-cell u-size2of12">
         <div class="Container-step">
           <div class="Container-step-text">1</div>
         </div>
       </div>
-      <div class="Grid-cell u-size9of12">
-        <p> Insira a quantidade necessária de doadores de sangue para cada tipo sanguíneo </p>
+      <div class="Grid-cell u-size10of12">
+        <h3 class="Container-header-text"> Insira a quantidade necessária de doadores de sangue para cada tipo sanguíneo </h3>
       </div>
     </div>
   </div>
@@ -29,61 +29,68 @@
 
   <div class="Grid">
     <div class="Grid-cell u-size6of12">
-
-      <div class="Input Input--large">
-        <label class="Input-label">A+</label>
-        <%= f.number_field :a_positive, class: "Input-value" %>
-      </div>
-
-      <div class="Input Input--large">
-        <label class="Input-label">B+</label>
-        <%= f.number_field :b_positive, class: "Input-value" %>
-      </div>
-
-      <div class="Input Input--large">
-        <label class="Input-label">AB+</label>
-        <%= f.number_field :ab_positive, class: "Input-value"  %>
-      </div>
-
-      <div class="Input Input--large">
-        <label class="Input-label">O+</label>
-        <%= f.number_field :o_negative, class: "Input-value" %>
-      </div>
-
-    </div>
-
-
-    <div class="Grid-cell u-size6of12">
-      <div class="Container Container-division">
-
+      <div class="Container-section">
         <div class="Input Input--large">
-          <label class="Input-label u-size3of12">A-</label>
-          <%= f.number_field :a_negative , class: "Input-value u-size3of12" %>
-          <label class="Input-label Input-label-description u-size6of12">doadores</label>
+          <label class="Input-label">A+</label>
+          <%= f.number_field :a_positive, class: "Input-value" %>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">B-</label>
-          <%= f.number_field :b_negative, class: "Input-value"%>
+          <label class="Input-label">B+</label>
+          <%= f.number_field :b_positive, class: "Input-value" %>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">AB-</label>
-          <%= f.number_field :ab_negative, class: "Input-value" %>
+          <label class="Input-label">AB+</label>
+          <%= f.number_field :ab_positive, class: "Input-value"  %>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">O-</label>
+          <label class="Input-label">O+</label>
           <%= f.number_field :o_negative, class: "Input-value" %>
         </div>
       </div>
-
     </div>
+
+
+
+    <div class="Grid-cell u-size6of12">
+      <div class="Container-section">
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12 u-sizeFit">A-</label>
+          <%= f.number_field :a_negative , class: "Input-value u-size2of12 u-sizeFit" %>
+          <div class="u-size7of12 u-sizeFit">
+            <span class="Input-description">doadores</span>
+          </div>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">B-</label>
+          <%= f.number_field :b_negative, class: "Input-value u-size3of12"%>
+          <label class="Input-description u-size5of12">doadores</label>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">AB-</label>
+          <%= f.number_field :ab_negative, class: "Input-value u-size3of12" %>
+          <label class="Input-description u-size5of12">doadores</label>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">O-</label>
+          <%= f.number_field :o_negative, class: "Input-value u-size3of12" %>
+          <label class="Input-description u-size5of12">doadores</label>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 </div>
+
 <% end %>
