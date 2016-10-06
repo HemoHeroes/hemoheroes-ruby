@@ -11,125 +11,161 @@
 </div>
 <% end %>
 
-<div class="Grid">
-  <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
 
-  <div class="Grid Grid-cell u-size6of12">
+
+
+
+
+
+<div class="Container">
+  <div class="Container-header">
     <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Nome: </span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :name, class: "Input Input-value" %>
+      <div class="Grid-cell u-sizeFull">
+        <h3 class="Container-header-text"> Cadastro de Hospital </h3>
       </div>
     </div>
   </div>
 
-  <div class="Grid Grid-cell u-size6of12">
+  <div class="Container-section">
+
     <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">CPNJ: </span>
+      <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
+
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+          <div>
+            <div class="Grid-cell u-size2of12">
+              <span class="Input Input-label">Nome: </span>
+            </div>
+            <div class="Grid-cell u-size10of12">
+              <%= f.text_field :name, class: "Input Input-value" %>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :cnpj, class: "Input Input-value" %>
+
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">CPNJ: </span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :cnpj, class: "Input Input-value" %>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Email:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :email, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="Grid Grid-cell u-size6of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">CEP:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :cep, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="Grid Grid-cell u-size4of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size3of12">
+            <span class="Input Input-label">Bairro:</span>
+          </div>
+          <div class="Grid-cell u-size9of12">
+            <%= f.text_field :district, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="Grid Grid-cell u-size6of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Rua:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :street, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="Grid Grid-cell u-size2of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size5of12">
+            <span class="Input Input-label">Nº:</span>
+          </div>
+          <div class="Grid-cell u-size7of12">
+            <%= f.text_field :number, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="Grid Grid-cell u-size6of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Cidade:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :city, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="Grid Grid-cell u-size6of12">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Estado:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :state, class: "Input Input-value" %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <%= hidden_field :password, :value => @password %>
       </div>
     </div>
-  </div>
 
-
-  <div class="Grid Grid-cell u-size6of12">
     <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Email:</span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :email, class: "Input Input-value" %>
+      <div class="actions">
+        <div class="Grid-cell u-size1of2">
+          <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+        </div>
+        <div class="Grid-cell u-size1of2">
+          <%= f.submit "Limpar", class: "Button Button--medium" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="Grid Grid-cell u-size6of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">CEP:</span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :cep, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="Grid Grid-cell u-size4of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size3of12">
-        <span class="Input Input-label">Bairro:</span>
-      </div>
-      <div class="Grid-cell u-size9of12">
-        <%= f.text_field :district, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="Grid Grid-cell u-size6of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Rua:</span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :street, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="Grid Grid-cell u-size2of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size5of12">
-        <span class="Input Input-label">Nº:</span>
-      </div>
-      <div class="Grid-cell u-size7of12">
-        <%= f.text_field :number, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="Grid Grid-cell u-size6of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Cidade:</span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :city, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="Grid Grid-cell u-size6of12">
-    <div class="Grid">
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Estado:</span>
-      </div>
-      <div class="Grid-cell u-size10of12">
-        <%= f.text_field :state, class: "Input Input-value" %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="field">
-    <%= hidden_field :password, :value => @password %>
   </div>
 </div>
 
-<div class="Grid">
-  <div class="actions">
-    <div class="Grid-cell u-size1of2">
-      <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
-    </div>
-    <div class="Grid-cell u-size1of2">
-      <%= f.submit "Limpar", class: "Button Button--medium" %>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
 <% end %>
