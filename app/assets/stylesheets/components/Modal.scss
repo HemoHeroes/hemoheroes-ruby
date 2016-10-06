@@ -39,10 +39,17 @@
     text-align: center;
     padding: 6px 0 0 0;
     font-weight: 800;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
   }
 
   &-title{
+    margin-top: 19px;
+    padding-right: 50px;
     color: $brand-color;
+    font-size: 24px;
+    height: 0px;
   }
 
   &-body{
@@ -53,6 +60,7 @@
 
   &-subTitle{
     margin: 6px 0 10px 0;
+    font-size: 18px;
   }
 
   &-typesRequest{
@@ -73,9 +81,16 @@
     float: right;
     padding: 0 15px;
     border-left: 1px solid #c1c1c1;
+  }
 
-    & span{
+  &-buttons {
+    margin: 12px 0 0 10px;
+
+
+    & .Button{
+      margin: 0 10px;
     }
+
   }
 
 }
