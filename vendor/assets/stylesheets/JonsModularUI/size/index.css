@@ -1,5 +1,6 @@
-@import "size-desktop.css";
-@import "size-large-phone.css";
-@import "size-small-phone.css";
-@import "size-tablet.css";
 @import "size.css";
+@import "size-small-phone.css";
+@import "size-large-phone.css";
+@import "size-mobile.css";
+@import "size-tablet.css";
+@import "size-desktop.css";
