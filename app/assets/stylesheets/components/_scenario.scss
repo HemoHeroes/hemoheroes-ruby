@@ -2,5 +2,11 @@
   width: auto;
   height: 800px;
   overflow: hidden;
-  text-align: center;
+  padding: 50px 0;
+  border-bottom: 1px solid #c1c1c1;
+
+  &-component{
+    padding: 25px 0;
+    display: block;
+  }
 }
