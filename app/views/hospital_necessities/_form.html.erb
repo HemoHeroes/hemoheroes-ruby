@@ -31,23 +31,27 @@
     <div class="Grid-cell u-size6of12">
       <div class="Container-section">
         <div class="Input Input--large">
-          <label class="Input-label">A+</label>
-          <%= f.number_field :a_positive, class: "Input-value" %>
+          <label class="Input-label u-size3of12">A+</label>
+          <%= f.number_field :a_positive, class: "Input-value u-size3of12" %>
+          <span class="Input-description u-size5of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">B+</label>
-          <%= f.number_field :b_positive, class: "Input-value" %>
+          <label class="Input-label u-size3of12">B+</label>
+          <%= f.number_field :b_positive, class: "Input-value u-size3of12" %>
+          <span class="Input-description u-size5of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">AB+</label>
-          <%= f.number_field :ab_positive, class: "Input-value"  %>
+          <label class="Input-label u-size3of12" >AB+</label>
+          <%= f.number_field :ab_positive, class: "Input-value u-size3of12"  %>
+          <span class="Input-description u-size5of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
-          <label class="Input-label">O+</label>
-          <%= f.number_field :o_negative, class: "Input-value" %>
+          <label class="Input-label u-size3of12">O+</label>
+          <%= f.number_field :o_negative, class: "Input-value u-size3of12" %>
+          <span class="Input-description u-size5of12">doadores</span>
         </div>
       </div>
     </div>
@@ -57,11 +61,9 @@
     <div class="Grid-cell u-size6of12">
       <div class="Container-section">
         <div class="Input Input--large">
-          <label class="Input-label u-size3of12 u-sizeFit">A-</label>
-          <%= f.number_field :a_negative , class: "Input-value u-size2of12 u-sizeFit" %>
-          <div class="u-size7of12 u-sizeFit">
-            <span class="Input-description">doadores</span>
-          </div>
+          <label class="Input-label u-size3of12">A-</label>
+          <%= f.number_field :a_negative , class: "Input-value u-size3of12" %>
+          <span class="Input-description u-size5of12">doadores</span>
         </div>
 
         <div class="Input Input--large">

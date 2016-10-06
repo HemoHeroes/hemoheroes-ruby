@@ -1,8 +1,10 @@
 .Container{
   float: left;
+  border: 3px solid #cecccc;
+  border-radius: 3px;
 
   &-header{
-    width: 100%;
+
     padding: 15px;
     background-color: #6495ED;
     &-text{
@@ -23,13 +25,13 @@
     width: 60px;
     height: 60px;
     vertical-align: middle;
-    margin: 12px 0 0 15px;
+    margin: 8px 0 0 15px;
 
     & span{
       text-align: center;
       padding: 10px 10px 10px 10px;
       font-weight: 800;
-      line-height: 40px;
+      line-height: 60px;
       font-size: 30px;
       color: black;
     }
