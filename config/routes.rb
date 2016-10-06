@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
 
   # Routes for components in construction
-  get '/modal', to: 'components#modal'
+  get '/components', to: 'components#index'
 
 end

@@ -1,10 +1,12 @@
-/* MEDIA QUERIES -------------------- */
+/*
+* Media Queries. 
+*/
 
 $desktop: "(min-width: 1200px)";
 $tablet: "(min-width: 900px) and (max-width: 1199)";
+$large-phone: "(min-width: 425px) and (max-width: 899px)";
+$small-phone: "(min-width: 1px) and (max-width: 424px)";
 $mobile: "(min-width: 1px) and (max-width: 899px)";
-$lg-mobile: "(min-width: 425px) and (max-width: 899px)";
-$sm-mobile: "(min-width: 1px) and (max-width: 424px)";
 
 @mixin desktop {
   @media #{$desktop} {
@@ -18,14 +20,14 @@ $sm-mobile: "(min-width: 1px) and (max-width: 424px)";
   }
 }
 
-@mixin lg-mobile {
-  @media #{$lg-mobile} {
+@mixin large-phone {
+  @media #{$large-mobile} {
     @content;
   }
 }
 
-@mixin sm-mobile {
-  @media #{$sm-mobile} {
+@mixin small-phone {
+  @media #{$small-mobile} {
     @content;
   }
 }
@@ -35,4 +37,3 @@ $sm-mobile: "(min-width: 1px) and (max-width: 424px)";
     @content;
   }
 }
-

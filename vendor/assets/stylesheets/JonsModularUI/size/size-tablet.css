@@ -1,14 +1,14 @@
 /**
- * Size: breakpoint 1 (small)
+ * Size: breakpoint 2 (medium)
  */
 
-@media (min-width: 0) and (max-width: 424px) {
+@media (min-width:900px) and (max-width:1199px) {
 
   /**
    * Make an element hide.
    */
 
-   .u-xs-hide{
+   .u-tablet-hide{
      display: none !important;
    }
 
@@ -17,14 +17,14 @@
    * Make an element shrink wrap its content.
    */
 
-  .u-xs-sizeFit,
-  .u-xs-sizeFitAlt {
+  .u-tablet-sizeFit,
+  .u-tablet-sizeFitAlt {
     display: block !important;
     float: left !important;
     width: auto !important;
   }
 
-  .u-xs-sizeFitAlt {
+  .u-tablet-sizeFitAlt {
     float: right !important;
   }
 
@@ -33,7 +33,7 @@
    * N.B. This will hide overflow.
    */
 
-  .u-xs-sizeFill {
+  .u-tablet-sizeFill {
     display: block !important;
     overflow: hidden !important;
     width: auto !important;
@@ -45,7 +45,7 @@
    * In Chrome, Safari, and Firefox it results in undesired layout.
    */
 
-  .u-xs-sizeFillAlt {
+  .u-tablet-sizeFillAlt {
     display: table-cell !important;
     max-width: 100% !important;
     width: 10000px !important;
@@ -55,13 +55,13 @@
    * Make an element the width of its parent.
    */
 
-  .u-xs-sizeFull {
+  .u-tablet-sizeFull {
     box-sizing: border-box !important;
     display: block !important;
     width: 100% !important;
   }
 
-  /* Proportional widths: breakpoint 1 (small)
+  /* Proportional widths: breakpoint 2 (medium)
      ========================================================================== */
 
   /**
@@ -70,114 +70,114 @@
    * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
    */
 
-  .u-xs-size1of12 {
+  .u-tablet-size1of12 {
     width: calc(100% * 1 / 12) !important;
   }
 
-  .u-xs-size1of10 {
+  .u-tablet-size1of10 {
     width: 10% !important;
   }
 
-  .u-xs-size1of8 {
+  .u-tablet-size1of8 {
     width: 12.5% !important;
   }
 
-  .u-xs-size1of6,
-  .u-xs-size2of12 {
+  .u-tablet-size1of6,
+  .u-tablet-size2of12 {
     width: calc(100% * 1 / 6) !important;
   }
 
-  .u-xs-size1of5,
-  .u-xs-size2of10 {
+  .u-tablet-size1of5,
+  .u-tablet-size2of10 {
     width: 20% !important;
   }
 
-  .u-xs-size1of4,
-  .u-xs-size2of8,
-  .u-xs-size3of12 {
+  .u-tablet-size1of4,
+  .u-tablet-size2of8,
+  .u-tablet-size3of12 {
     width: 25% !important;
   }
 
-  .u-xs-size3of10 {
+  .u-tablet-size3of10 {
     width: 30% !important;
   }
 
-  .u-xs-size1of3,
-  .u-xs-size2of6,
-  .u-xs-size4of12 {
+  .u-tablet-size1of3,
+  .u-tablet-size2of6,
+  .u-tablet-size4of12 {
     width: calc(100% * 1 / 3) !important;
   }
 
-  .u-xs-size3of8 {
+  .u-tablet-size3of8 {
     width: 37.5% !important;
   }
 
-  .u-xs-size2of5,
-  .u-xs-size4of10 {
+  .u-tablet-size2of5,
+  .u-tablet-size4of10 {
     width: 40% !important;
   }
 
-  .u-xs-size5of12 {
+  .u-tablet-size5of12 {
     width: calc(100% * 5 / 12) !important;
   }
 
-  .u-xs-size1of2,
-  .u-xs-size2of4,
-  .u-xs-size3of6,
-  .u-xs-size4of8,
-  .u-xs-size5of10,
-  .u-xs-size6of12 {
+  .u-tablet-size1of2,
+  .u-tablet-size2of4,
+  .u-tablet-size3of6,
+  .u-tablet-size4of8,
+  .u-tablet-size5of10,
+  .u-tablet-size6of12 {
     width: 50% !important;
   }
 
-  .u-xs-size7of12 {
+  .u-tablet-size7of12 {
     width: calc(100% * 7 / 12) !important;
   }
 
-  .u-xs-size3of5,
-  .u-xs-size6of10 {
+  .u-tablet-size3of5,
+  .u-tablet-size6of10 {
     width: 60% !important;
   }
 
-  .u-xs-size5of8 {
+  .u-tablet-size5of8 {
     width: 62.5% !important;
   }
 
-  .u-xs-size2of3,
-  .u-xs-size4of6,
-  .u-xs-size8of12 {
+  .u-tablet-size2of3,
+  .u-tablet-size4of6,
+  .u-tablet-size8of12 {
     width: calc(100% * 2 / 3) !important;
   }
 
-  .u-xs-size7of10 {
+  .u-tablet-size7of10 {
     width: 70% !important;
   }
 
-  .u-xs-size3of4,
-  .u-xs-size6of8,
-  .u-xs-size9of12 {
+  .u-tablet-size3of4,
+  .u-tablet-size6of8,
+  .u-tablet-size9of12 {
     width: 75% !important;
   }
 
-  .u-xs-size4of5,
-  .u-xs-size8of10 {
+  .u-tablet-size4of5,
+  .u-tablet-size8of10 {
     width: 80% !important;
   }
 
-  .u-xs-size5of6,
-  .u-xs-size10of12 {
+  .u-tablet-size5of6,
+  .u-tablet-size10of12 {
     width: calc(100% * 5 / 6) !important;
   }
 
-  .u-xs-size7of8 {
+  .u-tablet-size7of8 {
     width: 87.5% !important;
   }
 
-  .u-xs-size9of10 {
+  .u-tablet-size9of10 {
     width: 90% !important;
   }
 
-  .u-xs-size11of12 {
+  .u-tablet-size11of12 {
     width: calc(100% * 11 / 12) !important;
   }
 

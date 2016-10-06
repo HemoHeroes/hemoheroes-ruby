@@ -1,7 +1,7 @@
 class ComponentsController < ApplicationController
 
-  def modal
-    render 'modal'
+  def index
+    render 'index'
   end
 
 end

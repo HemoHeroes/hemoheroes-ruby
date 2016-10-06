@@ -10,6 +10,7 @@
   border:none;
   border-radius: .28571429rem;
   box-shadow: 1px 1px 5px rgba(0,0,0,.6);
+  display: inline-block;
 
   &:hover{
     background-color: scale-color($brand-color, $lightness: -10%);
