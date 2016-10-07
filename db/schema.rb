@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005173525) do
+ActiveRecord::Schema.define(version: 20161007182605) do
+
+  create_table "donators", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date_birth"
+    t.string   "cpf"
+    t.string   "street"
+    t.string   "district"
+    t.string   "number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "cep"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "password"
+    t.string   "blood_type"
+    t.boolean  "admin"
+    t.boolean  "receive_notification"
+    t.date     "last_donation"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "hospital_necessities", force: :cascade do |t|
     t.integer  "a_positive"

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :donators
   devise_for :users
   root 'welcome#index'
 
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
   resources :hospitals
 
   get '/necessidadehospital', to: 'hospital_necessities#index'
+
+
+  get '/doador', to: 'donators#index'
 
 
   # root 'welcome#index'
