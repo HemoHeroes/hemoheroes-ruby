@@ -1,12 +1,25 @@
 .Scenario{
   width: auto;
   height: 800px;
-  overflow: hidden;
   padding: 50px 0;
   border-bottom: 1px solid #c1c1c1;
 
   &-component{
     padding: 25px 0;
     display: block;
+    box-sizing: border-box;
   }
+
+  &-block{
+    background: #c1c1c1;
+    border: 5px solid #b1b1b1;
+    margin: 6px 0;
+    font-size: 10px;
+    padding: 6px;
+
+    &.is-blue{
+      border-color: blue;
+    }
+  }
+
 }
