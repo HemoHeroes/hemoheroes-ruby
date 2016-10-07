@@ -1,87 +1,93 @@
-@import "variables";
+@import 'variables';
 
-.Modal{
-  max-width: 550px;
-  margin: 30vh auto 0;
-  border: 1px solid #c1c1c1;
-  overflow: hidden;
+.Modal {
+  $border-color: #c1c1c1;
+
+  border: 1px solid $border-color;
   border-radius: 5px;
   display: none;
+  margin: 30vh auto 0;
+  max-width: 550px;
+  overflow: hidden;
 
-  &:after{
-    content: " ";
-    width: 100%;
-    height: 100%;
+  &::after {
     background: rgba(0, 0, 0, 0.66);
+    content: ' ';
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
+    width: 100%;
     z-index: -1;
-    left: 0;
   }
 
-  &-header{
+  &-header {
     background-color: #6495ED;
-    overflow: auto;
     padding: 15px;
+    overflow: auto;
   }
 
-  &-step{
+  &-step {
     background: #ffffff;
+    margin: 12px 0 0 15px;
     border-radius: 100%;
     float: left;
     text-align: center;
     width: 30px;
     height: 30px;
     vertical-align: middle;
-    margin: 12px 0 0 15px;
   }
 
-  &-stepText{
-    text-align: center;
-    padding: 6px 0 0 0;
+  &-stepText {
+    font-size: 18px;
     font-weight: 800;
+    padding: 6px 0 0 0;
+    text-align: center;
     width: 30px;
     height: 30px;
-    font-size: 18px;
   }
 
-  &-title{
-    margin-top: 19px;
-    padding-right: 50px;
-    color: $brand-color;
+  &-title {
     font-size: 24px;
+    color: $brand-color;
+    padding-right: 50px;
+    margin-top: 19px;
     height: 0px;
   }
 
-  &-body{
-    overflow: auto;
+  &-body {
     background-color: $body-color;
-    padding:15px;
+    padding: 15px;
+    overflow: auto;
   }
 
-  &-subTitle{
-    margin: 6px 0 10px 0;
+  &-subTitle {
     font-size: 18px;
+    margin: 6px 0 10px;
   }
 
-  &-typesRequest{
-    float: left;
+  &-typesRequest {
     margin: 1%;
+    float: left;
 
-    & li{
-      margin: 5px;
-      padding-top: 2px;
+    & li {
       font-size: 14px;
       font-weight: bolder;
+      padding-top: 2px;
+      margin: 5px;
     }
 
   }
 
   &-confirmation{
-    margin-top: 15px;
-    float: right;
     padding: 0 15px;
-    border-left: 1px solid #c1c1c1;
+    margin-top: 15px;
+    border-left: 1px solid $border-color;
+    float: right;
+    @include mobile {
+      border-top: 1px solid $border-color;
+      border-left: none;
+    }
   }
 
   &-buttons {
