@@ -5,7 +5,7 @@ var validateFormService = (function(){
     validateName: function(selector){
       var valueName = document.getElementsByClassName(selector)[0].value;
       console.log(valueName);
-      
+
       if (valueName == "") {
         console.log("chegou aqui")
         alert('Preencha o campo com seu nome');
@@ -108,12 +108,13 @@ var validateFormService = (function(){
     }
 
 
+    validatePositiveNumber: function(selector){
+      var necessityInput = document.getElementByClassName(selector);
+
+      if(necessityInput.value < 0){
+        alert("Por favor, utilize apenas números maiores que 0!");
+        necessityInput.value = null;
+      }
+    }
   }
 })()
-
-
-
-function validate(){
-  //$('#ButtonFormHospital').click(function(){
-  //});
-}

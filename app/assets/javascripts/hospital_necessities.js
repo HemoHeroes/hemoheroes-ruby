@@ -1,15 +1,26 @@
+//= require services/validate_form_service
 
+ready(function(){
+  var hospitalNecessityPage = (function(){
 
-function myFunction(){
+    var initialize = function(){
+      validateForm();
+    };
 
-  var aPositiveInput = document.getElementById("a_positive_input");
-  if(aPositiveInput.value == "-" || aPositiveInput.value == "+"){
-    alert("Por favor, utilize apenas números maiores que 0!");
-    aPositiveInput.value = null;
-  }
+    var validateForm = function(){
+      var inputNumber = document.getElementsByClassName('js-necessity_input')[0];
 
-  // document.onkeypress = function(evt) {
-  //   if ()
-  // }
+      inputNumber.addEventListener('onchange', function(){
+        validateFormService.validatePositiveNumber(inputNumber);
+      })
 
-}
+    };
+
+    var animateModal = function(){
+
+    }
+
+    initialize();
+
+  })()
+})
