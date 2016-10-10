@@ -11,12 +11,6 @@
 </div>
 <% end %>
 
-
-
-
-
-
-
 <div class="Container">
   <div class="Container-header">
     <div class="Grid">
@@ -100,8 +94,9 @@
             <span class="Input Input-label">Tipo sanguíneo:</span>
           </div>
           <div class="Grid-cell u-size10of12">
-            <!-- <%= f.select :blood_type, ['option1', 'option2']%> GERAR DROPDOWNLIST -->
-            <%= f.text_field :blood_type, class: "Input Input-value" %>
+            <%= f.select :blood_type,
+            ['Não sei', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']%>
+            <!-- <%= f.text_field :blood_type, class: "Input Input-value" %> -->
           </div>
         </div>
       </div>
@@ -212,18 +207,21 @@
     <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
       <div class="Grid">
         <div class="Grid-cell u-size10of12">
-          <%= check_box_tag(:receive_notification) %>
-          <%= label_tag(:receive_notification, "Desejo receber notificações") %>
-        </div>
-      </div>
-
-      <div class="Grid">
-        <div class="actions">
-          <div class="Grid-cell u-size1of2">
-            <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+          <div class="Checkbox">
+            <div class="Checkbox-input">
+              <%= check_box_tag(:receive_notification) %>
+            </div>
+            <div class="Checkbox-label">
+              <%= label_tag(:receive_notification, "Desejo receber notificações") %>
+            </div>
           </div>
-          <div class="Grid-cell u-size1of2">
-            <%= f.submit "Limpar", class: "Button Button--medium" %>
+          <div class="Checkbox">
+            <div class="Checkbox-input">
+              <%= check_box_tag(:receive_notification) %>
+            </div>
+            <div class="Checkbox-label">
+              <%= label_tag(:receive_notification, "Aceito os termos de uso") %>
+            </div>
           </div>
         </div>
       </div>
@@ -231,4 +229,19 @@
   </div>
 
 
-  <% end %>
+
+  <div class="Grid">
+    <div class="actions">
+      <div class="Grid-cell u-size1of2">
+        <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+      </div>
+      <div class="Grid-cell u-size1of2">
+        <%= f.submit "Limpar", class: "Button Button--medium" %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<% end %>
