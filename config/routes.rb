@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :donators
   devise_for :users
   root 'welcome#index'
-
+  
   resources :addresses
   resources :hospital_necessities
   resources :hospitals
