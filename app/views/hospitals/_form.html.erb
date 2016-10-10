@@ -31,6 +31,7 @@
             </div>
             <div class="Grid-cell u-size10of12">
               <%= f.text_field :name, class: "Input Input-value js-validateName" %>
+              <span id="errorName" style="display:none;">Nome inválido!</span>
             </div>
           </div>
         </div>
@@ -41,9 +42,11 @@
 
           <div class="Grid-cell u-size2of12">
             <span class="Input Input-label">CPNJ: </span>
+
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :cnpj, class: "Input Input-value js-validateCNPJ" %>
+            <span id="errorCNPJ" style="display:none;"></span>
           </div>
 
         </div>
@@ -57,6 +60,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :email, class: "Input Input-value js-validateEmail" %>
+            <span id="errorEmail" style="display:none;"></span>
           </div>
         </div>
       </div>
@@ -68,6 +72,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :cep, class: "Input Input-value js-validateCEP" %>
+            <span id="errorCEP" style="display:none;"></span>
           </div>
         </div>
       </div>
@@ -80,6 +85,7 @@
           </div>
           <div class="Grid-cell u-size9of12">
             <%= f.text_field :district, class: "Input Input-value js-validateDistrict" %>
+            <span id="errorDistrict" style="display:none;">O campo é obrigatório!</span>
           </div>
         </div>
       </div>
@@ -91,6 +97,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :street, class: "Input Input-value js-validateStreet " %>
+            <span id="errorStreet" style="display:none;">O campo é obrigatório!</span>
           </div>
         </div>
       </div>
@@ -102,6 +109,7 @@
           </div>
           <div class="Grid-cell u-size7of12">
             <%= f.text_field :number, class: "Input Input-value js-validateNumber" %>
+            <span id="errorNumber" style="display:none;">O campo é obrigatório!</span>
           </div>
         </div>
       </div>
@@ -114,6 +122,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :city, class: "Input Input-value js-validateCity" %>
+            <span id="errorCity" style="display:none;">O campo é obrigatório!</span>
           </div>
         </div>
       </div>
@@ -125,6 +134,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :state, class: "Input Input-value js-validateState" %>
+            <span id="errorState" style="display:none;">O campo é obrigatório!</span>
           </div>
         </div>
       </div>

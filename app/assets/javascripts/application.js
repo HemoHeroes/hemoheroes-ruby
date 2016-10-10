@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require utilities/ready
+//= require vanilla-masker
 //= require_tree .

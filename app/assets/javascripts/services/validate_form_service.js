@@ -7,57 +7,69 @@ var validateFormService = (function(){
       console.log(valueName);
 
       if (valueName == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorName').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorName').style.display = "none";
       }
     },
 
 
     validateEmail: function(selector){
       var valueEmail = document.getElementsByClassName(selector)[0].value;
-      console.log(valueEmail);
+      var regexEmailValidate = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var emailValidate = regexEmailValidate.test(valueEmail.trim());
 
-      if (valueEmail == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+      document.getElementById('errorEmail').style.display = "";
+
+      if (!emailValidate && valueEmail != "") {
+        document.getElementById('errorEmail').innerHTML = "Email inválido!";
         return false;
       }
+      if(valueEmail == ""){
+        document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+      }else{
+        document.getElementById('errorEmail').style.display = "none";
+      }
+
     },
 
 
 
     validateCNPJ: function(selector){
-      var valueCNPJ = document.getElementsByClassName(selector)[0].value;
-      console.log(valueCNPJ);
+      var valueCNPJ = document.getElementsByClassName(selector)[0];
+      VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
+      document.getElementById('errorCNPJ').style.display = "";
 
-      if (valueCNPJ == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+      if (valueCNPJ.value.length<18) {
+        document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
+        console.log("cnpj invalido");
         return false;
+      }else{
+        document.getElementById('errorCNPJ').style.display = "none";
       }
     },
 
 
     validateCEP: function(selector){
-      var valueCEP = document.getElementsByClassName(selector)[0].value;
-      console.log(valueCEP);
+      var valueCEP = document.getElementsByClassName(selector)[0];
+      VMasker(valueCEP).maskPattern("99999-999");
+      document.getElementById('errorCEP').style.display = "";
 
-      if (valueCEP == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
-        return false;
+      if (valueCEP.value.length<9) {
+        document.getElementById('errorCEP').innerHTML = "CEP inválido!";
+      }else{
+          document.getElementById('errorCEP').style.display = "none";
       }
     },
 
     validateDistrict: function(selector){
       var valueDistrict = document.getElementsByClassName(selector)[0].value;
-      console.log(valueDistrict);
-
       if (valueDistrict == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorDistrict').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorDistrict').style.display = "none";
       }
     },
 
@@ -67,9 +79,10 @@ var validateFormService = (function(){
       console.log(valueStreet);
 
       if (valueStreet == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorStreet').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorStreet').style.display = "none";
       }
     },
 
@@ -79,9 +92,10 @@ var validateFormService = (function(){
       console.log(valueNumber);
 
       if (valueNumber == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorNumber').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorNumber').style.display = "none";
       }
     },
 
@@ -90,9 +104,10 @@ var validateFormService = (function(){
       console.log(valueCity);
 
       if (valueCity == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorCity').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorCity').style.display = "none";
       }
     },
 
@@ -101,9 +116,10 @@ var validateFormService = (function(){
       console.log(valueState);
 
       if (valueState == "") {
-        console.log("chegou aqui")
-        alert('Preencha o campo com seu nome');
+        document.getElementById('errorState').style.display = "";
         return false;
+      }else{
+        document.getElementById('errorState').style.display = "none";
       }
     },
 
