@@ -2,63 +2,76 @@
 
 .Modal {
   $border-color: #c1c1c1;
+  $overlay-background-color: rgba(0, 0, 0, 0.66);
 
-  border: 1px solid $border-color;
-  border-radius: 5px;
   display: none;
-  margin: 30vh auto 0;
-  max-width: 550px;
-  overflow: hidden;
 
   &::after {
-    background: rgba(0, 0, 0, 0.66);
+    background: $overlay-background-color;
     content: ' ';
     height: 100%;
     left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    z-index: -1;
+    z-index: 1;
+  }
+
+  &-content {
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    max-width: 550px;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &-header {
     background-color: #6495ED;
-    padding: 15px;
     overflow: auto;
+    padding: 15px;
   }
 
-  &-step {
+  &-stepBox {
     background: #ffffff;
-    margin: 12px 0 0 15px;
     border-radius: 100%;
     float: left;
     text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    display: table;
+  }
+
+  &-step {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    display: table-cell;
     vertical-align: middle;
   }
 
-  &-stepText {
-    font-size: 18px;
-    font-weight: 800;
-    padding: 6px 0 0 0;
+  &-titleBox {
+    margin: 10px;
+    float: left;
     text-align: center;
-    width: 30px;
-    height: 30px;
+    display: table;
+
   }
 
-  &-title {
-    font-size: 24px;
+  &-title{
     color: $brand-color;
-    padding-right: 50px;
-    margin-top: 19px;
-    height: 0px;
+    font-size: 24px;
+    vertical-align: middle;
+    display: table-cell;
   }
 
   &-body {
     background-color: $body-color;
-    padding: 15px;
     overflow: auto;
+    padding: 15px;
   }
 
   &-subTitle {
@@ -67,26 +80,26 @@
   }
 
   &-typesRequest {
-    margin: 1%;
     float: left;
+    margin: 1%;
 
     & li {
       font-size: 14px;
       font-weight: bolder;
-      padding-top: 2px;
       margin: 5px;
+      padding-top: 2px;
     }
 
   }
 
-  &-confirmation{
-    padding: 0 15px;
-    margin-top: 15px;
+  &-confirmation {
     border-left: 1px solid $border-color;
     float: right;
+    margin-top: 15px;
+    padding: 0 15px;
     @include mobile {
       border-top: 1px solid $border-color;
-      border-left: none;
+      border-left: 0;
     }
   }
 
@@ -94,7 +107,7 @@
     margin: 12px 0 0 10px;
 
 
-    & .Button{
+    & .Button {
       margin: 0 10px;
     }
 

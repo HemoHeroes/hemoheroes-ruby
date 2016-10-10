@@ -12,64 +12,68 @@
     Abrir modal
   </div>
 
-  <div class="Modal" id="modal">
+  <div class="Modal js-modal">
 
-    <div class="Modal-header">
-      <div class="Modal-step">
-        <div class="Modal-stepText">
-          3
+    <div class="Modal-content">
+      <div class="Modal-header">
+        <div class="Modal-stepBox">
+          <div class="Modal-step">
+            3
+          </div>
+        </div>
+        <div class="Modal-titleBox">
+          <h3 class="Modal-title">
+            Confirmar solicitação
+          </h3>
         </div>
       </div>
 
-      <h3 class="Modal-title">
-        Confirmar solicitação
-      </h3>
-    </div>
+      <div class="Modal-body">
+        <div class="Grid">
+          <div class="Grid-cell u-sizeFull">
+            <h2 class="Modal-subTitle">Doadores Solicitados:</h2>
 
-    <div class="Modal-body">
-      <div class="Grid">
-        <div class="Grid-cell u-sizeFull">
-          <h2 class="Modal-subTitle">Doadores Solicitados:</h2>
-
-        </div>
-
-        <div class="Grid-cell u-size6of12">
-          <div class="Modal-typesRequest">
-            <div>
-              <li>17 do tipo A+</li>
-              <li>10 do tipo AB-</li>
-              <li>15 do tipo AB-</li>
-              <li>5 do tipo O+</li>
-            </div>
           </div>
-        </div>
 
-        <div class="Grid-cell u-size6of12">
-          <div class="Modal-confirmation">
-            <span>Enviar solicitação aos doadores dos tipos sanguíneos necessários?</span>
-            <!-- BOTAO CANCELAR BOTAO ENVIAR -->
-            <div class="Modal-buttons">
-              <div class="Grid">
-
-                <div class="Grid-cell u-size5of10">
-                  <div class="Button is-actived">
-                    Confirmar
-                  </div>
-                </div>
-
-                <div class="Grid-cell u-size5of10">
-                  <div class="Button" id="cancelmodal" onclick="Modal.close()">
-                    Cancelar
-                  </div>
-                </div>
-
+          <div class="Grid-cell u-size6of12">
+            <div class="Modal-typesRequest">
+              <div>
+                <li>17 do tipo A+</li>
+                <li>10 do tipo AB-</li>
+                <li>15 do tipo AB-</li>
+                <li>5 do tipo O+</li>
               </div>
             </div>
-
           </div>
-        </div>
 
+          <div class="Grid-cell u-size6of12">
+            <div class="Modal-confirmation">
+              <span>Enviar solicitação aos doadores dos tipos sanguíneos necessários?</span>
+              <!-- BOTAO CANCELAR BOTAO ENVIAR -->
+              <div class="Modal-buttons">
+                <div class="Grid">
+
+                  <div class="Grid-cell u-size5of10">
+                    <div class="Button is-actived">
+                      Confirmar
+                    </div>
+                  </div>
+
+                  <div class="Grid-cell u-size5of10">
+                    <div class="Button" id="cancelmodal" onclick="Modal.close()">
+                      Cancelar
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
 
   </div>
