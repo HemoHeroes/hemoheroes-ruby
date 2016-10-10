@@ -130,7 +130,6 @@
       </div>
 
 
-      <div class="field">
         <%= hidden_field :password, :value => @password %>
       </div>
     </div>
@@ -139,9 +138,11 @@
       <div class="actions">
         <div class="Grid-cell u-size1of2">
           <!-- <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %> -->
+              <div class="Button Button--medium is-actived" id="ButtonFormHospital" onclick="validateFormService.validateName('js-validateName')"></div>
         </div>
         <div class="Grid-cell u-size1of2">
           <%= f.submit "Limpar", class: "Button Button--medium" %>
+
         </div>
       </div>
     </div>
