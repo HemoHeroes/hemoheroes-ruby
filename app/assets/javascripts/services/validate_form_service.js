@@ -105,16 +105,15 @@ var validateFormService = (function(){
         alert('Preencha o campo com seu nome');
         return false;
       }
-    }
+    },
 
 
-    validatePositiveNumber: function(selector){
-      var necessityInput = document.getElementByClassName(selector);
-
-      if(necessityInput.value < 0){
-        alert("Por favor, utilize apenas números maiores que 0!");
-        necessityInput.value = null;
-      }
+    validatePositiveNumber: function(inputNumber){
+        // var inputNumber = document.getElementsByClassName('js-necessityInput');
+        if(inputNumber.value < 0){
+          alert("Por favor, utilize apenas números maiores que 0!");
+          inputNumber.value = null;
+        }
     }
   }
 })()

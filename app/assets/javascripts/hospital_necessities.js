@@ -8,10 +8,14 @@ ready(function(){
     };
 
     var validateForm = function(){
-      var inputNumber = document.getElementsByClassName('js-necessity_input')[0];
 
-      inputNumber.addEventListener('onchange', function(){
-        validateFormService.validatePositiveNumber(inputNumber);
+      debugger
+      var inputNumber = document.getElementsByClassName('js-necessityInput')[0];
+
+      inputNumber.addEventListener("focusout", function(){
+        for(var i = 0; i < 8; i++){
+          validateFormService.validatePositiveNumber(document.getElementsByClassName('js-necessityInput')[i]);
+        }
       })
 
     };
