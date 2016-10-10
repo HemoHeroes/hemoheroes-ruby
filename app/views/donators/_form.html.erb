@@ -23,31 +23,27 @@
   <div class="Container-section">
 
     <div class="Grid">
-      <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
+      <!--  1 Enter = divisão de coluna | 2 Enters = divisão de linha -->
 
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
-          <div>
-            <div class="Grid-cell u-size2of12">
-              <span class="Input Input-label">Nome: </span>
-            </div>
-            <div class="Grid-cell u-size10of12">
-              <%= f.text_field :name, class: "Input Input-value" %>
-            </div>
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Nome: </span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :name, class: "Input Input-value" %>
           </div>
         </div>
       </div>
 
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
-
           <div class="Grid-cell u-size2of12">
             <span class="Input Input-label">CPF: </span>
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :cpf, class: "Input Input-value" %>
           </div>
-
         </div>
       </div>
 
@@ -65,14 +61,12 @@
 
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
-
           <div class="Grid-cell u-size2of12">
             <span class="Input Input-label">Telefone: </span>
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :phone, class: "Input Input-value" %>
           </div>
-
         </div>
       </div>
 
@@ -101,6 +95,7 @@
         </div>
       </div>
 
+
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
           <div class="Grid-cell u-size2of12">
@@ -123,6 +118,7 @@
           </div>
         </div>
       </div>
+
 
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
@@ -169,6 +165,7 @@
         </div>
       </div>
 
+
       <div class="Grid Grid-cell u-desktop-size9of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
           <div class="Grid-cell u-size2of12">
@@ -204,6 +201,7 @@
       </div>
     </div>
 
+
     <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
       <div class="Grid">
         <div class="Grid-cell u-size10of12">
@@ -215,6 +213,8 @@
               <%= label_tag(:receive_notification, "Desejo receber notificações") %>
             </div>
           </div>
+          
+
           <div class="Checkbox">
             <div class="Checkbox-input">
               <%= check_box_tag(:receive_notification) %>
@@ -229,7 +229,6 @@
   </div>
 
 
-
   <div class="Grid">
     <div class="actions">
       <div class="Grid-cell u-size1of2">
@@ -242,6 +241,5 @@
   </div>
 </div>
 </div>
-
 
 <% end %>
