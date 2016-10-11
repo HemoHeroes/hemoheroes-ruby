@@ -1,11 +1,18 @@
+// var desativaBotao = (function(btn){
+//   var botao = document.getElementById(btn);
+//   botao.style.background = "#E0E1E2";
+//   botao.style.color = "rgba(0,0,0,.6)";
+//   botao.disabled = "disabled";
+//   botao.style.cursor = "auto";
+// });
 var validateFormService = (function(){
 
 
   return {
+
     validateName: function(selector){
       var valueName = document.getElementsByClassName(selector)[0].value;
       console.log(valueName);
-
       if (valueName == "") {
         document.getElementById('errorName').style.display = "";
         return false;
@@ -28,6 +35,7 @@ var validateFormService = (function(){
       }
       if(valueEmail == ""){
         document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+
       }else{
         document.getElementById('errorEmail').style.display = "none";
       }
