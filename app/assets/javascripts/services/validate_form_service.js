@@ -126,11 +126,13 @@ var validateFormService = (function(){
     },
 
 
-    validatePositiveNumber: function(inputNumber){
-      // var inputNumber = document.getElementsByClassName('js-necessityInput');
-      if(inputNumber.value < 0){
-        alert("Por favor, utilize apenas números maiores que 0!");
-        inputNumber.value = null;
+    validatePositiveNumber: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value < 0){
+          alert("Por favor, utilize apenas números maiores que 0!");
+          inputNumber[i].value = null;
+        }
       }
     }
   }
