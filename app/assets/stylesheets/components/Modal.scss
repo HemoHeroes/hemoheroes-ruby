@@ -4,7 +4,9 @@
   $border-color: #c1c1c1;
   $overlay-background-color: rgba(0, 0, 0, 0.66);
 
-  display: none;
+  opacity: 0;
+  transition: 0.4s all ease;
+  visibility: hidden;
 
   &::after {
     background: $overlay-background-color;
@@ -18,18 +20,23 @@
   }
 
   &-content {
-    border: 1px solid $border-color;
     border-radius: 5px;
+    overflow: hidden;
     max-width: 550px;
     z-index: 2;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: 0.5s all ease;
+    @include mobile {
+      width: calc(100vw - 10px);
+    };
   }
 
   &-header {
-    background-color: #6495ED;
+    background-color: $brand-color;
     overflow: auto;
     padding: 15px;
   }
@@ -38,40 +45,38 @@
     background: #ffffff;
     border-radius: 100%;
     float: left;
-    text-align: center;
     width: 40px;
     height: 40px;
-    vertical-align: middle;
-    display: table;
+    display: flex;
+    align-items: center;
   }
 
   &-step {
     font-size: 18px;
     font-weight: 800;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+    margin: auto;
   }
 
   &-titleBox {
-    margin: 10px;
-    float: left;
-    text-align: center;
-    display: table;
-
+    display: flex;
+    align-items: center;
+    height: 40px;
   }
 
   &-title{
-    color: $brand-color;
-    font-size: 24px;
-    vertical-align: middle;
-    display: table-cell;
+    color: $light-font-color;
+    font-size: 1.6rem;
+    padding: 0 12px;
+    margin: 0;
+    @include mobile {
+      font-size: 1.4rem;
+    };
   }
-
   &-body {
     background-color: $body-color;
     overflow: auto;
     padding: 15px;
+    height: 100%;
   }
 
   &-subTitle {
@@ -80,28 +85,20 @@
   }
 
   &-typesRequest {
-    float: left;
-    margin: 1%;
 
-    & li {
-      font-size: 14px;
-      font-weight: bolder;
-      margin: 5px;
-      padding-top: 2px;
-    }
   }
 
   &-confirmation {
     border-left: 1px solid $border-color;
     float: right;
-    margin-top: 15px;
     padding: 0 15px;
 
     @include mobile {
       border-top: 1px solid $border-color;
       border-left: 0;
       text-align: center;
-
+      padding: 25px 0 0;
+      width: 100%;
     }
   }
 
@@ -110,7 +107,7 @@
 
 
     & .Button {
-      margin: 0 10px 10px 10px;
+      margin: 0 10px;
     }
 
   }
