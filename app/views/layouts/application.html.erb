@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
+<body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
   <div class="OuterWrapper">
     <% if user_signed_in? %>
     Logado como <strong><%= current_user.email %></strong>.

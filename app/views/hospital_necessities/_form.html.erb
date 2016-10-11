@@ -35,7 +35,7 @@
           <div class="Container-section">
             <div class="Input Input--large">
               <label class="Input-label u-size3of12">A+</label>
-              <%= f.number_field :a_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+              <%= f.number_field :a_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput", click: "myFunction()"%>
               <span class="Input-description u-size4of12">doadores</span>
             </div>
 
@@ -110,7 +110,9 @@
         <p class="">Após informar a quantidade de doadores para cada tipo sanguíneo, clique aqui para continuar o pedido de solicitação.</p>
 
         <div class="u-align-center u-margin-bottom-medium">
-          <%= f.submit "AVANÇAR", class: "Button Button--medium is-actived"%>
+          <!-- <%= f.submit "AVANÇAR", class: "Button Button--medium is-actived"%> -->
+          <div onclick="Modal.open()" class= "Button Button--medium is-disabled js-nextButton">Avançar</div>
+          <!-- onclick="return validateFormService.validateEmptyInput()"  -->
         </div>
       </div>
 
@@ -122,10 +124,74 @@
   <span>Última atualização 27/09/2016 às 08:20.</span>
 </div>
 
-
-
-
-
-
-
 <% end %>
+
+
+<!-- MODAL ------------------------------------------>
+<div class="Modal js-modal">
+
+  <div class="Modal-content">
+    <div class="Modal-header">
+      <div class="Modal-stepBox">
+        <div class="Modal-step">
+          3
+        </div>
+      </div>
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title">
+          Confirmar solicitação
+        </h3>
+      </div>
+    </div>
+
+    <div class="Modal-body">
+      <div class="Grid">
+        <div class="Grid-cell u-sizeFull">
+          <h2 class="Modal-subTitle">Doadores Solicitados:</h2>
+
+        </div>
+<!-- 2 -->
+        <div class="Grid-cell u-desktop-size4of12 u-tablet-size6of12 u-mobile-sizefull">
+          <div class="Modal-typesRequest">
+            <div>
+              <li>17 do tipo A+</li>
+              <li>10 do tipo AB-</li>
+              <li>15 do tipo AB-</li>
+              <li>5 do tipo O+</li>
+            </div>
+          </div>
+        </div>
+        <!--3 -->
+
+        <div class="Grid-cell u-desktop-size4of12 u-tablet-size6of12 u-mobile-sizefull">
+          <div class="Modal-confirmation">
+            <span>Enviar solicitação aos doadores dos tipos sanguíneos necessários?</span>
+            <!-- BOTAO CANCELAR BOTAO ENVIAR -->
+            <div class="Modal-buttons">
+              <div class="Grid">
+
+                <div class="Grid-cell u-desktop-size4of10 u-tablet-size5of10 u-mobile-sizefull">
+                  <div class="Button is-actived">
+                    Confirmar
+                  </div>
+                </div>
+
+
+                <div class="Grid-cell u-desktop-size4of10 u-tablet-size6of10 u-mobile-sizefull">
+                  <div class="Button" id="cancelmodal" onclick="Modal.close()">
+                    Cancelar
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+<!-- -->
+      </div>
+    </div>
+
+  </div>
+
+</div>

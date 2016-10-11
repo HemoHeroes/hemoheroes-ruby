@@ -1,11 +1,18 @@
+// var desativaBotao = (function(btn){
+//   var botao = document.getElementById(btn);
+//   botao.style.background = "#E0E1E2";
+//   botao.style.color = "rgba(0,0,0,.6)";
+//   botao.disabled = "disabled";
+//   botao.style.cursor = "auto";
+// });
 var validateFormService = (function(){
 
 
   return {
+
     validateName: function(selector){
       var valueName = document.getElementsByClassName(selector)[0].value;
       console.log(valueName);
-
       if (valueName == "") {
         document.getElementById('errorName').style.display = "";
         return false;
@@ -28,6 +35,7 @@ var validateFormService = (function(){
       }
       if(valueEmail == ""){
         document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+
       }else{
         document.getElementById('errorEmail').style.display = "none";
       }
@@ -126,12 +134,29 @@ var validateFormService = (function(){
     },
 
 
-    validatePositiveNumber: function(inputNumber){
-      // var inputNumber = document.getElementsByClassName('js-necessityInput');
-      if(inputNumber.value < 0){
-        alert("Por favor, utilize apenas números maiores que 0!");
-        inputNumber.value = null;
+    validatePositiveNumber: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value < 0){
+          alert("Por favor, utilize apenas números maiores que 0!");
+          inputNumber[i].value = null;
+        }
       }
+    },
+
+    validateEmptyInput: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      var button = document.getElementsByClassName("js-nextButton")[0];
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value != 0){
+          button.classList.add('is-actived');
+          button.classList.remove('is-disabled');
+          return true;
+        }
+      }
+      button.classList.add('is-disabled');
+      button.classList.remove('is-actived');
+      return false;
     }
   }
 })()
