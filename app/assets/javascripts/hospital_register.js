@@ -21,17 +21,25 @@ ready(function(){
       var inputState     = document.getElementsByClassName('js-validateState')[0];
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
 
+      var vetor;
+
       buttonRegister.addEventListener('click', function(event){
-        validateFormService.validateName('js-validateName');
-        validateFormService.validateEmail('js-validateEmail');
-        validateFormService.validateCNPJ('js-validateCNPJ');
-        validateFormService.validateCEP('js-validateCEP');
-        validateFormService.validateDistrict('js-validateDistrict');
-        validateFormService.validateStreet('js-validateStreet');
-        validateFormService.validateNumber('js-validateNumber');
-        validateFormService.validateCity('js-validateCity');
-        validateFormService.validateState('js-validateState');
-        event.preventDefault();
+        vetor[0] =  validateFormService.validateName('js-validateName');
+        vetor[1] =  validateFormService.validateEmail('js-validateEmail');
+        vetor[2] = validateFormService.validateCNPJ('js-validateCNPJ');
+        vetor[3] = validateFormService.validateCEP('js-validateCEP');
+        vetor[4] = validateFormService.validateDistrict('js-validateDistrict');
+        vetor[5] =  validateFormService.validateStreet('js-validateStreet');
+        vetor[6] =validateFormService.validateNumber('js-validateNumber');
+        vetor[7] =  validateFormService.validateCity('js-validateCity');
+        vetor[8] =validateFormService.validateState('js-validateState');
+
+        for(var i=0; i<vetor.lenght;i++ ){
+          if(vetor[i]==false){
+            event.preventDefault();
+          }
+        }
+
       })
 
       inputName.addEventListener('keyup', function(){
