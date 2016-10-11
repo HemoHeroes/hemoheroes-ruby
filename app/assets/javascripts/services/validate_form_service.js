@@ -146,12 +146,16 @@ var validateFormService = (function(){
 
     validateEmptyInput: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
+      var button = document.getElementsByClassName("js-nextButton")[0];
       for(var i = 0; i < 8; i++){
-        if(inputNumber[i].value != 0){          
+        if(inputNumber[i].value != 0){
+          button.classList.add('is-actived');
+          button.classList.remove('is-disabled');
           return true;
         }
       }
-      alert("Mensagem deeee erro");
+      button.classList.add('is-disabled');
+      button.classList.remove('is-actived');
       return false;
     }
   }
