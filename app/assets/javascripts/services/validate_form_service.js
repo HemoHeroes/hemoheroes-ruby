@@ -134,6 +134,17 @@ var validateFormService = (function(){
           inputNumber[i].value = null;
         }
       }
+    },
+
+    validateEmptyInput: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value != 0){          
+          return true;
+        }
+      }
+      alert("Mensagem deeee erro");
+      return false;
     }
   }
 })()
