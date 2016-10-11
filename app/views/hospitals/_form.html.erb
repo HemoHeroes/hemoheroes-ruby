@@ -25,7 +25,6 @@
       <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
-          <div>
             <div class="Grid-cell u-size2of12">
               <span class="Input Input-label">Nome: </span>
             </div>
@@ -33,7 +32,6 @@
               <%= f.text_field :name, class: "Input Input-value js-validateName" %>
               <span id="errorName" style="display:none;">Nome inválido!</span>
             </div>
-          </div>
         </div>
       </div>
 
@@ -46,7 +44,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :cnpj, class: "Input Input-value js-validateCNPJ" %>
-            <span id="errorCNPJ" style="display:none;"></span>
+            <span id="errorCNPJ" style="display:none;" class="errorMessage"></span>
           </div>
 
         </div>
@@ -72,7 +70,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :cep, class: "Input Input-value js-validateCEP" %>
-            <span id="errorCEP" style="display:none;"></span>
+            <span id="errorCEP" style="display: none;"></span>
           </div>
         </div>
       </div>

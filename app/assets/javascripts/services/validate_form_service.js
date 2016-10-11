@@ -40,8 +40,9 @@ var validateFormService = (function(){
       var valueCNPJ = document.getElementsByClassName(selector)[0];
       VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
       document.getElementById('errorCNPJ').style.display = "";
-
-      if (valueCNPJ.value.length<18) {
+      if(valueCNPJ.value == ""){
+        document.getElementById('errorCNPJ').innerHTML = "O campo é obrigatório!";
+      }else if (valueCNPJ.value.length<18) {
         document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
         console.log("cnpj invalido");
         return false;
@@ -55,11 +56,12 @@ var validateFormService = (function(){
       var valueCEP = document.getElementsByClassName(selector)[0];
       VMasker(valueCEP).maskPattern("99999-999");
       document.getElementById('errorCEP').style.display = "";
-
-      if (valueCEP.value.length<9) {
+      if(valueCEP.value == ""){
+        document.getElementById('errorCEP').innerHTML = "O campo é obrigatório!";
+      }else if(valueCEP.value.length<9){
         document.getElementById('errorCEP').innerHTML = "CEP inválido!";
       }else{
-          document.getElementById('errorCEP').style.display = "none";
+        document.getElementById('errorCEP').style.display = "none";
       }
     },
 
@@ -125,11 +127,11 @@ var validateFormService = (function(){
 
 
     validatePositiveNumber: function(inputNumber){
-        // var inputNumber = document.getElementsByClassName('js-necessityInput');
-        if(inputNumber.value < 0){
-          alert("Por favor, utilize apenas números maiores que 0!");
-          inputNumber.value = null;
-        }
+      // var inputNumber = document.getElementsByClassName('js-necessityInput');
+      if(inputNumber.value < 0){
+        alert("Por favor, utilize apenas números maiores que 0!");
+        inputNumber.value = null;
+      }
     }
   }
 })()
