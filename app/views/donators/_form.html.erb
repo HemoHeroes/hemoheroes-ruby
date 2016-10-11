@@ -22,224 +22,136 @@
 
   <div class="Container-section">
 
-    <div class="Grid">
-      <!--  1 Enter = divisão de coluna | 2 Enters = divisão de linha -->
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Nome: </span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :name, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">CPF: </span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :cpf, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Email:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :email, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Telefone: </span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :phone, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Data de nascimento:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :date_birth, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-size6of12">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Tipo sanguíneo:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.select :blood_type,
-            ['Não sei', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']%>
-            <!-- <%= f.text_field :blood_type, class: "Input Input-value" %> -->
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Senha:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :password, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-size6of12">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Confirmar senha:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <!-- Criar confirmação de senha -->
-            <%= f.text_field :password, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">CEP:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :cep, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-size6of12">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Estado:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :state, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Cidade:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :city, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-size6of12">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Bairro:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :district, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size9of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Rua:</span>
-          </div>
-          <div class="Grid-cell u-size9of12">
-            <%= f.text_field :street, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="Grid Grid-cell u-size3of12">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Nº:</span>
-          </div>
-          <div class="Grid-cell u-size3of12">
-            <%= f.text_field :number, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Ultima doação:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :last_donation, class: "Input Input-value" %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+    <div class="Form Form--fluid">
       <div class="Grid">
-        <div class="Grid-cell u-size10of12">
-          <div class="Checkbox">
-            <div class="Checkbox-input">
-              <%= check_box_tag(:receive_notification) %>
-            </div>
-            <div class="Checkbox-label">
-              <%= label_tag(:receive_notification, "Desejo receber notificações") %>
+
+
+        <!-- NAME -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Nome: </span>
+            <%= f.text_field :name, class: "Form-inputValue u-size10of12" %>
+          </div>
+        </div>
+
+
+        <!-- CPF -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">CPF: </span>
+            <%= f.text_field :cpf, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Email: </span>
+            <%= f.text_field :email, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- PHONE -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Telefone: </span>
+            <%= f.text_field :phone, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- DATA OF BIRTH-->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
+            <%= f.text_field :date_birth, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- BLOOD TYPE -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Tipo sanguíneo: </span>
+            <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },  { class: "Form-inputValue u-size10of12" } %>
+          </div>
+        </div>
+
+
+        <!-- PASSWORD -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Senha: </span>
+            <%= f.text_field :password, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- PASSWORD CONFIRMATION -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Confirmação de senha: </span>
+            <%= f.text_field :password, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- LAST DONATION -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Ultima doação: </span>
+            <%= f.text_field :last_donation, class: "Form-inputValue" %>
+          </div>
+        </div>
+
+
+        <!-- GENDER -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Sexo: </span>
+            <div class="Radio">
+              <%= label_tag(:genero, "Masculino") %>
+              <%= radio_button_tag :sexo, "masculino", false, class: "Radio-label" %>
+              <%= label_tag(:genero, "Feminino") %>
+              <%= radio_button_tag :sexo, "feminino", false, class: "Radio-label" %>
             </div>
           </div>
-          
+        </div>
 
+        <div class="Form-group">
+          <div class="Checkbox">
+            <%= check_box_tag(:receive_notification, 'accepted', false, disable:false) %>
+          </div>
+          <div class="Checkbox">
+            <%= label_tag(:receive_notification, "Desejo receber notificações") %>
+          </div>
+        </div>
+
+        <div class="Form-group">
           <div class="Checkbox">
             <div class="Checkbox-input">
-              <%= check_box_tag(:receive_notification) %>
+              <%= check_box_tag(:accept_terms) %>
             </div>
             <div class="Checkbox-label">
-              <%= label_tag(:receive_notification, "Aceito os termos de uso") %>
+              <%= label_tag(:accept_terms, "Aceito os termos de uso") %>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+    <%= f.submit "Limpar", class: "Button Button--medium" %>
+
   </div>
 
 
-  <div class="Grid">
-    <div class="actions">
-      <div class="Grid-cell u-size1of2">
-        <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
-      </div>
-      <div class="Grid-cell u-size1of2">
-        <%= f.submit "Limpar", class: "Button Button--medium" %>
-      </div>
-    </div>
-  </div>
+
+
+
 </div>
-</div>
+
 
 <% end %>

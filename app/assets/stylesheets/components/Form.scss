@@ -1,0 +1,55 @@
+.Form {
+
+  &-group {
+    margin: 25px 0 0 0;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &-inputLabel {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &-inputValue {
+    border-radius: 3px;
+    border: 1px solid #c1c1c1;
+    padding: 12px 6px;
+    font-size: 15px;
+    font-weight: 400;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 0 20px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &-description {
+    font-size: 18px;
+    display: inline-block;
+  }
+
+  &--fluid {
+    & .Form-inputLabel{
+      min-width: 85px;
+      text-align: right;
+      padding-left: 12px;
+    }
+  }
+
+  &--large {
+    & .Form-inputLabel{
+      font-size: 25px;
+      line-height: 67px;
+    }
+
+    & .Form-inputValue{
+      padding: 10px;
+      font-size: 25px;
+    }
+  }
+
+}
