@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user_blood_donator.name %>
+</p>
+
+<p>
+  <strong>Date birth:</strong>
+  <%= @user_blood_donator.date_birth %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @user_blood_donator.cpf %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user_blood_donator.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user_blood_donator.phone %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user_blood_donator.password %>
+</p>
+
+<p>
+  <strong>Blood type:</strong>
+  <%= @user_blood_donator.blood_type %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @user_blood_donator.admin %>
+</p>
+
+<p>
+  <strong>Receive notification:</strong>
+  <%= @user_blood_donator.notification %>
+</p>
+
+<p>
+  <strong>Last donation:</strong>
+  <%= @user_blood_donator.last_donation %>
+</p>
+
+<%= link_to 'Edit', edit_user_blood_donator_path(@user_blood_donator) %> |
+<%= link_to 'Back', user_blood_donators_path %>

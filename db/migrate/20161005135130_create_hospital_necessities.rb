@@ -1,6 +1,6 @@
 class CreateHospitalNecessities < ActiveRecord::Migration[5.0]
   def change
-    create_table :hospital_necessities do |t|
+    create_table :demand_blood_banks do |t|
       t.integer :a_positive
       t.integer :a_negative
       t.integer :b_positive

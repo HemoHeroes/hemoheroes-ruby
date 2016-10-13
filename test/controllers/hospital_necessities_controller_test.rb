@@ -2,47 +2,47 @@ require 'test_helper'
 
 class HospitalNecessitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @hospital_necessity = hospital_necessities(:one)
+    @demand_blood_bank = demand_blood_banks(:one)
   end
 
   test "should get index" do
-    get hospital_necessities_url
+    get demand_blood_banks_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_hospital_necessity_url
+    get new_demand_blood_bank_url
     assert_response :success
   end
 
-  test "should create hospital_necessity" do
+  test "should create demand_blood_bank" do
     assert_difference('HospitalNecessity.count') do
-      post hospital_necessities_url, params: { hospital_necessity: { a_negative: @hospital_necessity.a_negative, a_positive: @hospital_necessity.a_positive, ab_negative: @hospital_necessity.ab_negative, ab_positive: @hospital_necessity.ab_positive, b_negative: @hospital_necessity.b_negative, b_positive: @hospital_necessity.b_positive, o_negative: @hospital_necessity.o_negative, o_positive: @hospital_necessity.o_positive } }
+      post demand_blood_banks_url, params: { demand_blood_bank: { a_negative: @demand_blood_bank.a_negative, a_positive: @demand_blood_bank.a_positive, ab_negative: @demand_blood_bank.ab_negative, ab_positive: @demand_blood_bank.ab_positive, b_negative: @demand_blood_bank.b_negative, b_positive: @demand_blood_bank.b_positive, o_negative: @demand_blood_bank.o_negative, o_positive: @demand_blood_bank.o_positive } }
     end
 
-    assert_redirected_to hospital_necessity_url(HospitalNecessity.last)
+    assert_redirected_to demand_blood_bank_url(HospitalNecessity.last)
   end
 
-  test "should show hospital_necessity" do
-    get hospital_necessity_url(@hospital_necessity)
+  test "should show demand_blood_bank" do
+    get demand_blood_bank_url(@demand_blood_bank)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_hospital_necessity_url(@hospital_necessity)
+    get edit_demand_blood_bank_url(@demand_blood_bank)
     assert_response :success
   end
 
-  test "should update hospital_necessity" do
-    patch hospital_necessity_url(@hospital_necessity), params: { hospital_necessity: { a_negative: @hospital_necessity.a_negative, a_positive: @hospital_necessity.a_positive, ab_negative: @hospital_necessity.ab_negative, ab_positive: @hospital_necessity.ab_positive, b_negative: @hospital_necessity.b_negative, b_positive: @hospital_necessity.b_positive, o_negative: @hospital_necessity.o_negative, o_positive: @hospital_necessity.o_positive } }
-    assert_redirected_to hospital_necessity_url(@hospital_necessity)
+  test "should update demand_blood_bank" do
+    patch demand_blood_bank_url(@demand_blood_bank), params: { demand_blood_bank: { a_negative: @demand_blood_bank.a_negative, a_positive: @demand_blood_bank.a_positive, ab_negative: @demand_blood_bank.ab_negative, ab_positive: @demand_blood_bank.ab_positive, b_negative: @demand_blood_bank.b_negative, b_positive: @demand_blood_bank.b_positive, o_negative: @demand_blood_bank.o_negative, o_positive: @demand_blood_bank.o_positive } }
+    assert_redirected_to demand_blood_bank_url(@demand_blood_bank)
   end
 
-  test "should destroy hospital_necessity" do
+  test "should destroy demand_blood_bank" do
     assert_difference('HospitalNecessity.count', -1) do
-      delete hospital_necessity_url(@hospital_necessity)
+      delete demand_blood_bank_url(@demand_blood_bank)
     end
 
-    assert_redirected_to hospital_necessities_url
+    assert_redirected_to demand_blood_banks_url
   end
 end

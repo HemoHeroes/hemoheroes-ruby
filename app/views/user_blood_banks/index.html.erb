@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>user_blood_banks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Cnpj</th>
+      <th>Password</th>
+      <th>Cep</th>
+      <th>Street</th>
+      <th>District</th>
+      <th>Number</th>
+      <th>City</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_blood_banks.each do |user_blood_bank| %>
+      <tr>
+        <td><%= user_blood_bank.name %></td>
+        <td><%= user_blood_bank.email %></td>
+        <td><%= user_blood_bank.cnpj %></td>
+        <td><%= user_blood_bank.password %></td>
+        <td><%= user_blood_bank.cep %></td>
+        <td><%= user_blood_bank.street %></td>
+        <td><%= user_blood_bank.district %></td>
+        <td><%= user_blood_bank.number %></td>
+        <td><%= user_blood_bank.city %></td>
+        <td><%= user_blood_bank.state %></td>
+        <td><%= link_to 'Show', user_blood_bank %></td>
+        <td><%= link_to 'Edit', edit_user_blood_bank_path(user_blood_bank) %></td>
+        <td><%= link_to 'Destroy', user_blood_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New user_blood_bank', new_user_blood_bank_path %>

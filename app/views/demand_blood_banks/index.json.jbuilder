@@ -1,0 +1,1 @@
+json.array! @demand_blood_banks, partial: 'demand_blood_banks/demand_blood_bank', as: :demand_blood_bank
