@@ -10,6 +10,7 @@
   &-inputLabel {
     font-size: 12px;
     font-weight: 600;
+    display: inline-flex;
   }
 
   &-inputValue {
@@ -20,7 +21,7 @@
     font-weight: 400;
     box-sizing: border-box;
     width: 100%;
-    margin: 0 0 0 20px;
+    // margin: 0 0 0 20px;
 
     &:focus {
       outline: 0;
