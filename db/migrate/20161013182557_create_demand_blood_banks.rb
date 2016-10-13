@@ -1,4 +1,4 @@
-class CreateHospitalNecessities < ActiveRecord::Migration[5.0]
+class CreateDemandBloodBanks < ActiveRecord::Migration[5.0]
   def change
     create_table :demand_blood_banks do |t|
       t.integer :a_positive
@@ -9,8 +9,6 @@ class CreateHospitalNecessities < ActiveRecord::Migration[5.0]
       t.integer :ab_negative
       t.integer :o_positive
       t.integer :o_negative
-
-      t.timestamps
     end
   end
 end

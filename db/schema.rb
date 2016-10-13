@@ -10,52 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013144102) do
+ActiveRecord::Schema.define(version: 20161013182634) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
-    t.integer  "a_positive"
-    t.integer  "a_negative"
-    t.integer  "b_positive"
-    t.integer  "b_negative"
-    t.integer  "ab_positive"
-    t.integer  "ab_negative"
-    t.integer  "o_positive"
-    t.integer  "o_negative"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "a_positive"
+    t.integer "a_negative"
+    t.integer "b_positive"
+    t.integer "b_negative"
+    t.integer "ab_positive"
+    t.integer "ab_negative"
+    t.integer "o_positive"
+    t.integer "o_negative"
   end
 
   create_table "user_blood_banks", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "cnpj"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "phone"
-    t.string   "lat"
-    t.string   "long"
-    t.string   "address"
-    t.string   "extension"
+    t.string "name"
+    t.string "email"
+    t.string "cnpj"
+    t.string "password"
+    t.string "phone"
+    t.string "lat"
+    t.string "long"
+    t.string "address"
+    t.string "extension"
   end
 
   create_table "user_blood_donators", force: :cascade do |t|
-    t.string   "name"
-    t.date     "date_birth"
-    t.string   "cpf"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "password"
-    t.string   "blood_type"
-    t.boolean  "admin"
-    t.date     "last_donation"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "genre"
-    t.boolean  "notification"
-    t.string   "lat"
-    t.string   "long"
-    t.string   "cep"
+    t.string  "name"
+    t.date    "date_birth"
+    t.string  "cpf"
+    t.string  "email"
+    t.string  "phone"
+    t.string  "password"
+    t.string  "blood_type"
+    t.boolean "admin"
+    t.date    "last_donation"
+    t.string  "genre"
+    t.boolean "notification"
+    t.string  "lat"
+    t.string  "long"
+    t.string  "cep"
   end
 
   create_table "users", force: :cascade do |t|
