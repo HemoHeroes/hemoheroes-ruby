@@ -29,25 +29,33 @@
       <div class="Container-body">
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">A+</label>
-          <%= f.number_field :a_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput", click: "myFunction()"%>
+          <%= f.number_field :a_positive, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+           data: { type: 'A+' }  %>
           <span class="Input-description u-size4of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">B+</label>
-          <%= f.number_field :b_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <%= f.number_field :b_positive, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+           data: { type: 'B+'} %>
           <span class="Input-description u-size4of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
           <label class="Input-label u-size3of12" >AB+</label>
-          <%= f.number_field :ab_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"  %>
+          <%= f.number_field :ab_positive, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+           data: { type: 'AB+'} %>
           <span class="Input-description u-size4of12">doadores</span>
         </div>
 
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">O+</label>
-          <%= f.number_field :o_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <%= f.number_field :o_negative, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+           data: { type: 'O+' } %>
           <span class="Input-description u-size4of12">doadores</span>
         </div>
       </div>
@@ -59,26 +67,36 @@
       <div class="Container-body">
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">A-</label>
-          <%= f.number_field :a_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"%>
+          <%= f.number_field :a_negative, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+          data: { type: 'A-'}%>
           <span class="Input-description u-size4of12">doadores</span>
         </div>
+
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">B-</label>
-          <%= f.number_field :b_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"%>
+          <%= f.number_field :b_negative, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+          data: { type: 'B-'}%>
           <label class="Input-description u-size4of12">doadores</label>
         </div>
 
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">AB-</label>
-          <%= f.number_field :ab_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <%= f.number_field :ab_negative, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+            data: { type: 'AB-' } %>
           <label class="Input-description u-size4of12">doadores</label>
         </div>
 
         <div class="Input Input--large">
           <label class="Input-label u-size3of12">O-</label>
-          <%= f.number_field :o_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <%= f.number_field :o_negative, min: "0", max: "100",
+          class: "Input-value u-size4of12 js-necessityInput js-confirmRequest",
+            data: { type: 'O-'} %>
           <label class="Input-description u-size4of12">doadores</label>
         </div>
+
       </div>
     </div>
   </div>
