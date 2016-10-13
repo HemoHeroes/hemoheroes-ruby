@@ -1,0 +1,86 @@
+<%= form_for(hospital_necessity) do |f| %>
+<div class="Container">
+  <div class="Container-header">
+    <div class="Grid">
+      <div class="Grid-cell u-size2of12">
+        <div class="Container-step">
+          <span>1</span>
+        </div>
+      </div>
+      <div class="Grid-cell u-size10of12">
+        <h3 class="Container-header-text"> Insira a quantidade necessária de doadores de sangue para cada tipo sanguíneo </h3>
+      </div>
+    </div>
+  </div>
+  <% if hospital_necessity.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(hospital_necessity.errors.count, "error") %> prohibited this hospital_necessity from being saved:</h2>
+
+    <ul>
+      <% hospital_necessity.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="Grid Container-body">
+    <div class="Grid-cell u-size6of12">
+      <div class="Container-body">
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">A+</label>
+          <%= f.number_field :a_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput", click: "myFunction()"%>
+          <span class="Input-description u-size4of12">doadores</span>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">B+</label>
+          <%= f.number_field :b_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <span class="Input-description u-size4of12">doadores</span>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12" >AB+</label>
+          <%= f.number_field :ab_positive, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"  %>
+          <span class="Input-description u-size4of12">doadores</span>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">O+</label>
+          <%= f.number_field :o_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <span class="Input-description u-size4of12">doadores</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="Grid-cell u-size6of12">
+      <div class="Container-body">
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">A-</label>
+          <%= f.number_field :a_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"%>
+          <span class="Input-description u-size4of12">doadores</span>
+        </div>
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">B-</label>
+          <%= f.number_field :b_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput"%>
+          <label class="Input-description u-size4of12">doadores</label>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">AB-</label>
+          <%= f.number_field :ab_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <label class="Input-description u-size4of12">doadores</label>
+        </div>
+
+        <div class="Input Input--large">
+          <label class="Input-label u-size3of12">O-</label>
+          <%= f.number_field :o_negative, min: "0", max: "100", class: "Input-value u-size4of12 js-necessityInput" %>
+          <label class="Input-description u-size4of12">doadores</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

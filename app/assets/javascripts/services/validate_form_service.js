@@ -57,6 +57,24 @@ var validateFormService = (function(){
     },
 
 
+    validateCPF: function(selector){
+      var valueCPF = document.getElementsByClassName(selector)[0];
+      VMasker(valueCPF).maskPattern("999.999.999-99");
+      document.getElementById('errorCPF').style.display = "";
+      if(valueCPF.value == ""){
+        document.getElementById('errorCPF').innerHTML = "O campo é obrigatório!";
+      }else if (valueCPF.value.length<14) {
+        document.getElementById('errorCPF').innerHTML = "CPF inválido!";
+        console.log("CPF invalido");
+        return false;
+      }else{
+        document.getElementById('errorCPF').style.display = "none";
+      }
+    },
+
+
+
+
     validateCEP: function(selector){
       var valueCEP = document.getElementsByClassName(selector)[0];
       VMasker(valueCEP).maskPattern("99999-999");
@@ -152,6 +170,54 @@ var validateFormService = (function(){
       button.classList.add('is-disabled');
       button.classList.remove('is-actived');
       return false;
+    },
+
+
+    validatePhone: function(selector){
+      var valuePhone = document.getElementsByClassName(selector)[0];
+      VMasker(valuePhone).maskPattern("(99)99999-9999");
+      document.getElementById('errorPhone').style.display = "";
+      if(valuePhone.value == ""){
+        document.getElementById('errorPhone').innerHTML = "O campo é obrigatório!";
+      }else if (valuePhone.value.length<14) {
+        document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
+        console.log("Telefone inválido");
+        return false;
+      }else{
+        document.getElementById('errorPhone').style.display = "none";
+      }
+    },
+
+    validateDate: function(selector){
+      var valueDate = document.getElementsByClassName(selector)[0];
+      VMasker(valueDate).maskPattern("99/99/9999");
+      document.getElementById('errorDate').style.display = "";
+      if(valueDate.value == ""){
+        document.getElementById('errorDate').innerHTML = "O campo é obrigatório!";
+      }else if (valueDate.value.length<10) {
+        document.getElementById('errorDate').innerHTML = "Data inválida!";
+        console.log("Data inválida");
+        return false;
+      }else {
+        document.getElementById('errorDate').style.display = "none";
+      }
+    },
+
+    validateDateLastDonation: function(selector){
+      var valueDateLastDonation = document.getElementsByClassName(selector)[0];
+      VMasker(valueDateLastDonation).maskPattern("99/99/9999");
+      document.getElementById('errorDateLastDonation').style.display = "";
+      if(valueDateLastDonation.value == ""){
+        document.getElementById('errorDateLastDonation').innerHTML = "O campo é obrigatório!";
+      }else if (valueDateLastDonation.value.length<10) {
+        document.getElementById('errorDateLastDonation').innerHTML = "Data inválida!";
+        console.log("Data inválida");
+        return false;
+      }else {
+        document.getElementById('errorDateLastDonation').style.display = "none";
+      }
     }
+
+
   }
 })()

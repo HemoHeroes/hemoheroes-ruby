@@ -1,8 +1,7 @@
 // = require services/validate_form_service
 
 ready(function(){
-  var hospitalNecessityPage = (function(){
-
+  onlyInView("hospital_necessities", ["new", "edit"], function(){
 
     var initialize = function(){
       validateForm();
@@ -23,17 +22,8 @@ ready(function(){
       }
     };
 
-    
-    function myFunction(i){
-      alert(i);
-      validateFormService.validatePositiveNumber(i);
-    }
-
-    var animateModal = function(){
-
-    }
 
     initialize();
 
-  })()
+  })
 })

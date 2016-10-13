@@ -9,7 +9,7 @@ ready(function(){
   };
 
   var validateForm = function(){
-    onlyInActions(["new", "edit"], function(){
+    onlyInView("hospitals", ["new", "edit"], function(){
       var inputName      = document.getElementsByClassName('js-validateName')[0];
       var inputEmail     = document.getElementsByClassName('js-validateEmail')[0];
       var inputCNPJ      = document.getElementsByClassName('js-validateCNPJ')[0];

@@ -14,12 +14,13 @@
   display: inline-block;
   text-align: center;
   box-sizing: border-box;
+  border: 0;
 
   &:hover {
     background-color: scale-color($default-background-color, $lightness: -10%);
     cursor: pointer;
   }
-  
+
   &-group {
     margin: 12px -6px;
     display: flex;

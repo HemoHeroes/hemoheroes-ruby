@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="Container-section">
+  <div class="Container-body">
 
     <div class="Form Form--fluid">
       <div class="Grid">
@@ -30,7 +30,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">Nome: </span>
-            <%= f.text_field :name, class: "Form-inputValue u-size10of12" %>
+            <%= f.text_field :name, class: "Form-inputValue  js-validateName  u-size10of12" %>
+            <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
           </div>
         </div>
 
@@ -39,7 +40,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">CPF: </span>
-            <%= f.text_field :cpf, class: "Form-inputValue" %>
+            <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
+            <span id="errorCPF" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
 
@@ -48,7 +50,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">Email: </span>
-            <%= f.text_field :email, class: "Form-inputValue" %>
+            <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
+            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
 
@@ -57,7 +60,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">Telefone: </span>
-            <%= f.text_field :phone, class: "Form-inputValue" %>
+            <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
+            <span id="errorPhone" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
 
@@ -65,7 +69,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
-            <%= f.text_field :date_birth, class: "Form-inputValue" %>
+            <%= f.text_field :date_birth, class: "Form-inputValue js-validateDate" %>
+            <span id="errorDate" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
 
@@ -101,7 +106,8 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <span class="Form-inputLabel u-size2of12">Ultima doação: </span>
-            <%= f.text_field :last_donation, class: "Form-inputValue" %>
+            <%= f.text_field :last_donation, class: "Form-inputValue js-validateDateLastDonation" %>
+            <span id="errorDateLastDonation" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
 
@@ -115,6 +121,7 @@
               <%= radio_button_tag :genre, "masculino", false, class: "Radio-label" %>
               <%= label_tag(:genre, "Feminino") %>
               <%= radio_button_tag :genre, "feminino", false, class: "Radio-label" %>
+
             </div>
           </div>
         </div>
@@ -141,7 +148,7 @@
       </div>
     </div>
 
-    <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %>
+    <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm" %>
     <%= f.submit "Limpar", class: "Button Button--medium" %>
 
   </div>
