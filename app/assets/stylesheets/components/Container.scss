@@ -5,6 +5,9 @@
   border: 3px solid #cecccc;
   border-radius: 15px;
   overflow: hidden;
+  @include mobile{;
+    margin-top: 20px;
+  }
 
 
 
@@ -13,9 +16,18 @@
     box-sizing: border-box;
     padding: 12px 25px;
     background-color: #6495ED;
+    @include mobile {;
+      padding: 10px;
+    }
 
     &-text{
       color: #fff;
+      @include mobile{;
+        float:right;
+        font-size: 14pt;
+        text-align: justify;
+        width:calc(100vw - 110px);
+      }
     }
   }
 
@@ -28,6 +40,10 @@
   &-body{
     background-color: $body-color;
     overflow: auto;
+    @include mobile {;
+      padding: 30px;
+    }
+
   }
 
   &-step{
@@ -39,7 +55,9 @@
     height: 50px;
     vertical-align: middle;
     margin: 8px 0 0 15px;
-
+    @include mobile{
+      // margin-top:20px;
+    }
     & span{
       text-align: center;
       padding: 10px 10px 10px 10px;

@@ -1,3 +1,4 @@
+@import 'variables';
 .Form {
 
   &-group {
@@ -5,6 +6,7 @@
     overflow: auto;
     display: flex;
     align-items: center;
+
   }
 
   &-inputLabel {
@@ -34,10 +36,12 @@
   }
 
   &--fluid {
+
     & .Form-inputLabel{
       min-width: 85px;
       text-align: right;
       padding-left: 12px;
+
     }
   }
 
@@ -45,6 +49,9 @@
     & .Form-inputLabel{
       font-size: 25px;
       line-height: 67px;
+      @include mobile {
+        font-size:12pt;
+      };
     }
 
     & .Form-inputValue{

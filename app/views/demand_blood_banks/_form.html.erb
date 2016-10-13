@@ -25,9 +25,8 @@
   </div>
   <% end %>
   <div class="Form Form--large">
-    <div class="Grid Container-body">
-      <div class="Grid-cell u-size6of12">
-        <div class="Container-section">
+    <div class="Container-body">
+      <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
         <div>
           <label class="Form-inputLabel u-size3of12 ">A+</label>
           <%= f.number_field :a_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput", click: "myFunction()"%>
@@ -48,10 +47,9 @@
           <%= f.number_field :o_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
           <span class="Form-inputLabel u-size4of12  u-padding-0-0-0-10">doadores</span>
         </div>
-        </div>
+
       </div>
-      <div class="Grid-cell u-size6of12">
-        <div class="Container-section">
+      <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
           <div>
             <label class="Form-inputLabel u-size3of12">A-</label>
             <%= f.number_field :a_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"%>
@@ -73,7 +71,6 @@
             <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>

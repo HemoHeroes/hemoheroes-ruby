@@ -1,14 +1,14 @@
 <h1>New Hospital Necessity</h1>
 
 <div class="Grid Grid--withGutter">
-
   <div class="Grid-cell u-size8of12">
 
     <%= render 'form', demand_blood_bank: @demand_blood_bank %>
-
+  <div class="Grid-cell u-desktop-size8of12 u-tablet-sizefull u-mobile-sizefull">
+    <%= render 'form', hospital_necessity: @hospital_necessity %>
   </div>
 
-  <div class="Grid-cell u-size4of12">
+  <div class="Grid-cell u-desktop-size4of12  u-tablet-sizefull u-mobile-sizefull">
     <div class="Container">
       <div class="Container-header">
         <div class="Grid">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="Container-body">
-        <p class="">após informar a quantidade de doadores para cada tipo sanguíneo, clique aqui para continuar o pedido de solicitação.</p>
+        <p class="">Após informar a quantidade de doadores para cada tipo sanguíneo, clique aqui para continuar o pedido de solicitação.</p>
 
         <div class="u-float-center u-margin-bottom-medium">
           <div onclick="Modal.open()" class= "Button Button--medium is-disabled js-nextButton">Avançar</div>
