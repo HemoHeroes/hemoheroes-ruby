@@ -6,7 +6,8 @@
   border-radius: 15px;
   overflow: hidden;
   @include mobile{;
-    margin-top: 20px;
+    margin: 30px;
+    align-content: center;
   }
 
   &-header {
@@ -55,7 +56,7 @@
     overflow: auto;
     padding: 15px;
     @include mobile {;
-      padding: 30px;
+      padding: 10px;
     }
 
   }
