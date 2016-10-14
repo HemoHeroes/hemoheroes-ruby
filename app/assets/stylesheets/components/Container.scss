@@ -9,8 +9,6 @@
     margin-top: 20px;
   }
 
-
-
   &-header{
     width:100%;
     box-sizing: border-box;
@@ -36,6 +34,7 @@
   }
 
   &-body{
+    text-align: justify;
     padding: 12px 25px 25px;
     box-sizing: border-box;
     min-height: 100px;
@@ -63,7 +62,7 @@
     margin: auto;
   }
   & span{
-    text-align: center;
+    text-align: justify;
     padding: 10px 10px 10px 10px;
     font-weight: 800;
     line-height: 50px;
