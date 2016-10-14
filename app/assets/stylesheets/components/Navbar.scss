@@ -1,0 +1,39 @@
+@import "variables";
+
+.Navbar {
+  $header-background-color: #FFFAF5;
+  $border-color: #FFFFE0;
+
+  color: $light-font-color;
+  background-color: $brand-color;
+  width: 100%;
+  margin: 0 0 35px 0;
+
+  &-content{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+  }
+
+  &-logo {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  &-links {
+    text-align: right;
+    width: 100%;
+
+    & ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    & li {
+      display: inline;
+      padding: 0 15px;
+    }
+  }
+
+}

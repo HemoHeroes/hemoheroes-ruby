@@ -8,8 +8,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
 <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
+  <%= render 'layouts/header'%>
   <div class="OuterWrapper">
     <% if user_blood_donator_signed_in? %>
       <li>
@@ -26,7 +26,6 @@
       </li>
     <% end %>
 
-    
     <%= yield %>
   </div>
 </body>
