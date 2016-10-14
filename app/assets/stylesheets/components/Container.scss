@@ -16,7 +16,7 @@
     box-sizing: border-box;
     padding: 12px 25px;
     background-color: #6495ED;
-  
+
     @include mobile {;
       padding: 10px;
     }
@@ -39,9 +39,6 @@
     padding: 12px 25px 25px;
     box-sizing: border-box;
     min-height: 100px;
-  }
-
-  &-body{
     background-color: $body-color;
     overflow: auto;
     padding: 15px;
