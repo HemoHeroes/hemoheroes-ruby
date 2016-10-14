@@ -1,8 +1,5 @@
 function ready(fn) {
 
-  document.addEventListener("turbolinks:load", function() {
-    fn();
-  })
 
   if (document.readyState != 'loading'){
     fn();
