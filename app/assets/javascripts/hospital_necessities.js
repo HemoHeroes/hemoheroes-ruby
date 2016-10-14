@@ -28,6 +28,7 @@ ready(function(){
 
     var confirmRequest = function(){
       var confirmRequestButton = document.getElementsByClassName('js-nextButton')[0];
+
       confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};
@@ -36,7 +37,7 @@ ready(function(){
           var dataTypeAttribute = inputsToConfirm[counter].getAttribute('data-type');
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
-        
+
 
         var confirmRequestList = document.getElementsByClassName('js-confirmRequestList')[0];
 
@@ -49,6 +50,7 @@ ready(function(){
 
             confirmRequestList.appendChild(liTag);
             liTag.appendChild(requestText);
+
           }
         });
       });
