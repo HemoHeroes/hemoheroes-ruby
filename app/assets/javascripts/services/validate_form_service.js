@@ -59,7 +59,7 @@ var validateFormService = (function(){
       document.getElementById('errorCPF').style.display = "";
       if(valueCPF.value == ""){
         document.getElementById('errorCPF').innerHTML = "O campo é obrigatório!";
-      }else if (valueCPF.value.length<14) {
+      }else if (valueCPF.value.length<=14) {
         document.getElementById('errorCPF').innerHTML = "CPF inválido!";
         console.log("CPF invalido");
         return false;
@@ -67,8 +67,6 @@ var validateFormService = (function(){
         document.getElementById('errorCPF').style.display = "none";
       }
     },
-
-
 
 
     validateCEP: function(selector){
@@ -186,15 +184,20 @@ var validateFormService = (function(){
 
     validateDate: function(selector){
       var valueDate = document.getElementsByClassName(selector)[0];
+
       VMasker(valueDate).maskPattern("99/99/9999");
       document.getElementById('errorDate').style.display = "";
       if(valueDate.value == ""){
         document.getElementById('errorDate').innerHTML = "O campo é obrigatório!";
-      }else if (valueDate.value.length<10) {
+      }
+
+      else if (valueDate.value.length<10) {
         document.getElementById('errorDate').innerHTML = "Data inválida!";
         console.log("Data inválida");
         return false;
-      }else {
+      }
+
+      else {
         document.getElementById('errorDate').style.display = "none";
       }
     },
