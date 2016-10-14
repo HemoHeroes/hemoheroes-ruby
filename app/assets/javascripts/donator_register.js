@@ -60,7 +60,7 @@ ready(function(){
         validateFormService.validateGenre('js-validateGenre');
       })
 
-      checkTerms.addEventListener('onclick', function(){
+      checkTerms.addEventListener('checked', function(){
         validateFormService.validateTerms('js-validateTerms');
       })
 

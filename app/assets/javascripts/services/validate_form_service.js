@@ -5,16 +5,19 @@ var validateFormService = (function(){
 
     validateName: function(selector){
       var valueName = document.getElementsByClassName(selector)[0].value;
-      document.getElementById('errorName').style.display = "none";
+
       if (valueName == "") {
         document.getElementById('errorName').style.display = "";
         return false;
+
+      } else {
+        document.getElementById('errorName').style.display = "none";
       }
     },
 
 
     validateCNPJ: function(selector){
-      var valueCNPJ = document.getElementsByClassName(selector)[0];
+      var valueCNPJ = document.getElementsByClassName(selector)[0]
       VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
 
       document.getElementById('errorCNPJ').style.display = "";
