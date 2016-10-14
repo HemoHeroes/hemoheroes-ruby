@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/necessidadehospital', to: 'demand_blood_banks#index'
 
 
-  get '/doador', to: 'donators#index'
+  get '/doador', to: 'user_blood_donators#index'
 
 
   # root 'welcome#index'

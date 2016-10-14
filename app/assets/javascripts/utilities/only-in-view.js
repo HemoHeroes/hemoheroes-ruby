@@ -7,7 +7,7 @@ function onlyInView(controller, actions, callback){
   }
 
   if(Array.isArray(actions)) {
-    for(let i = 0, counter = actions.length; i < counter; i++){
+    for(var i = 0, counter = actions.length; i < counter; i++){
       if (currentAction == actions[i]){
         callback();
       }
