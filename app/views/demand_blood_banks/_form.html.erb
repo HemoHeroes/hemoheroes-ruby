@@ -3,13 +3,15 @@
   <div class="Container-header">
     <div class="Grid">
       <div class="Grid-cell u-size2of12">
-        <div class="Container-step">
-          <span>1</span>
+        <div class="Container-stepBox">
+          <span class="Container-step">1</span>
         </div>
       </div>
       <div class="Grid-cell u-size10of12">
-        <h3 class="Container-header-text"> Insira a quantidade necessária de
-          doadores de sangue para cada tipo sanguíneo </h3>
+        <div class="Container-titleBox">
+          <h3 class="Container-title"> Insira a quantidade necessária de
+            doadores de sangue para cada tipo sanguíneo </h3>
+          </div>
         </div>
       </div>
     </div>
@@ -26,34 +28,34 @@
         </ul>
       </div>
       <% end %>
-      <div class="Form Form--large">
+      <div class="Form Form--large ">
         <div class="Container-body">
-          <div class="Grid">
+          <div class="Grid Grid--withGutter">
 
             <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
               <div class="Grid">
                 <div>
-                  <label class="Form-inputLabel u-size3of12">A+</label>
+                  <label class="Form-inputLabel u-size3of12 ">A+</label>
                   <%= f.number_field :a_positive, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput", click: "myFunction()"%>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest", click: "myFunction()"%>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
                   <label class="Form-inputLabel u-size3of12">B+</label>
                   <%= f.number_field :b_positive, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput" %>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
                   <label class="Form-inputLabel u-size3of12" >AB+</label>
                   <%= f.number_field :ab_positive, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput"  %>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"  %>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
                   <label class="Form-inputLabel u-size3of12">O+</label>
                   <%= f.number_field :o_negative, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput" %>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
                   <span class="Form-inputLabel u-size4of12  u-padding-0-0-0-10">doadores</span>
                 </div>
               </div>
@@ -62,27 +64,27 @@
             <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
               <div class="Grid">
                 <div>
-                  <label class="Form-inputLabel u-size3of12">A-</label>
+                  <label class="Form-inputLabel u-size3of12 u-padding-0-0-0-10">A-</label>
                   <%= f.number_field :a_negative, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput"%>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"%>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
-                  <label class="Form-inputLabel u-size3of12">B-</label>
+                  <label class="Form-inputLabel u-size3of12 u-padding-0-0-0-10">B-</label>
                   <%= f.number_field :b_negative, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput"%>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"%>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
-                  <label class="Form-inputLabel u-size3of12">AB-</label>
+                  <label class="Form-inputLabel u-size3of12 u-padding-0-0-0-10">AB-</label>
                   <%= f.number_field :ab_negative, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput" %>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
                 <div>
-                  <label class="Form-inputLabel u-size3of12">O-</label>
+                  <label class="Form-inputLabel u-size3of12 u-padding-0-0-0-10">O-</label>
                   <%= f.number_field :o_negative, min: "0", max: "100",
-                  class: "Form-inputValue u-size4of12 js-necessityInput" %>
+                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
                   <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
                 </div>
               </div>

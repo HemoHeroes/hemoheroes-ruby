@@ -6,10 +6,11 @@
   border-radius: 15px;
   overflow: hidden;
   @include mobile{;
-    margin-top: 20px;
+    margin: 30px;
+    align-content: center;
   }
 
-  &-header{
+  &-header {
     width:100%;
     box-sizing: border-box;
     padding: 12px 25px;
@@ -18,22 +19,35 @@
     @include mobile {;
       padding: 10px;
     }
+  }
 
-    &-text{
-      color: #fff;
-      display: inline;
-      float: inherit;
-      align-items: center;
-      @include mobile{;
-        float:right;
-        font-size: 14pt;
-        text-align: justify;
-        width:calc(100vw - 110px);
-      }
+  &-titleBox {
+    display: flex;
+    align-items: center;
+  }
+
+  &-title {
+    color: $light-font-color;
+    font-size: 1.2rem;
+    @include mobile {
+      font-size: 1.4rem;
     }
   }
 
-  &-body{
+  &-text {
+    color: #fff;
+    display: inline;
+    float: inherit;
+    align-items: center;
+    @include mobile{;
+      float:right;
+      font-size: 14pt;
+      text-align: justify;
+      width:calc(100vw - 110px);
+    }
+  }
+
+  &-body {
     text-align: justify;
     padding: 12px 25px 25px;
     box-sizing: border-box;
@@ -42,36 +56,40 @@
     overflow: auto;
     padding: 15px;
     @include mobile {;
-      padding: 30px;
+      padding: 10px;
     }
 
   }
 
-  &-step{
+
+  &-stepBox {
     background: #ffffff;
     border-radius: 100%;
     float: left;
     text-align: center;
     width: 50px;
     height: 50px;
-    vertical-align: middle;
-    margin: 8px 0 0 15px;
+    display: flex;
+    margin: 8px 0 0 0;
     align-items: center;
+
+    & span {
+      text-align: justify;
+      font-weight: 800;
+      line-height: 50px;
+      font-size: 25px;
+      color: black;
+    }
+  }
+
+  &-step {
     font-size: 18px;
     font-weight: 800;
     margin: auto;
   }
-  & span{
-    text-align: justify;
-    padding: 10px 10px 10px 10px;
-    font-weight: 800;
-    line-height: 50px;
-    font-size: 25px;
-    color: black;
-  }
 
 
-  .isCenter{
+  .isCenter {
     padding: 0px 30px 0px 30px;
     margin-left: 100px;
   }
