@@ -3,7 +3,7 @@
   <div class="Container-header">
     <div class="Grid">
       <div class="Grid-cell u-size2of12">
-        <div class="Container-stepBox">
+        <div class="Container-step">
           <span>1</span>
         </div>
       </div>
@@ -26,51 +26,59 @@
   <% end %>
   <div class="Form Form--large">
     <div class="Container-body">
-      <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
-        <div>
-          <label class="Form-inputLabel u-size3of12 ">A+</label>
-          <%= f.number_field :a_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput", click: "myFunction()"%>
-          <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
-        </div>
-        <div>
-          <label class="Form-inputLabel u-size3of12">B+</label>
-          <%= f.number_field :b_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
-          <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
-        </div>
-        <div>
-          <label class="Form-inputLabel u-size3of12" >AB+</label>
-          <%= f.number_field :ab_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"  %>
-          <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
-        </div>
-        <div>
-          <label class="Form-inputLabel u-size3of12">O+</label>
-          <%= f.number_field :o_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
-          <span class="Form-inputLabel u-size4of12  u-padding-0-0-0-10">doadores</span>
-        </div>
+      <div class="Grid">
 
-      </div>
-      <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
-          <div>
-            <label class="Form-inputLabel u-size3of12">A-</label>
-            <%= f.number_field :a_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"%>
-            <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
+          <div class="Grid">
+            <div>
+              <label class="Form-inputLabel u-size3of12 ">A+</label>
+              <%= f.number_field :a_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput", click: "myFunction()"%>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12">B+</label>
+              <%= f.number_field :b_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12" >AB+</label>
+              <%= f.number_field :ab_positive, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"  %>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12">O+</label>
+              <%= f.number_field :o_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
+              <span class="Form-inputLabel u-size4of12  u-padding-0-0-0-10">doadores</span>
+            </div>
           </div>
-          <div>
-            <label class="Form-inputLabel u-size3of12">B-</label>
-            <%= f.number_field :b_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"%>
-            <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
-          </div>
-          <div>
-            <label class="Form-inputLabel u-size3of12">AB-</label>
-            <%= f.number_field :ab_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
-            <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
-          </div>
-          <div>
-            <label class="Form-inputLabel u-size3of12">O-</label>
-            <%= f.number_field :o_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
-            <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+
+        </div>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
+          <div class="Grid">
+            <div>
+              <label class="Form-inputLabel u-size3of12">A-</label>
+              <%= f.number_field :a_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"%>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12">B-</label>
+              <%= f.number_field :b_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput"%>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12">AB-</label>
+              <%= f.number_field :ab_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
+            <div>
+              <label class="Form-inputLabel u-size3of12">O-</label>
+              <%= f.number_field :o_negative, min: "0", max: "100", class: "Form-inputValue u-size4of12 js-necessityInput" %>
+              <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+            </div>
           </div>
         </div>
+      </div>
+
     </div>
   </div>
 </div>

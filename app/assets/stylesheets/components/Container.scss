@@ -16,12 +16,16 @@
     box-sizing: border-box;
     padding: 12px 25px;
     background-color: #6495ED;
+  
     @include mobile {;
       padding: 10px;
     }
 
     &-text{
       color: #fff;
+      display: inline;
+      float: inherit;
+      align-items: center;
       @include mobile{;
         float:right;
         font-size: 14pt;
@@ -40,43 +44,40 @@
   &-body{
     background-color: $body-color;
     overflow: auto;
+    padding: 15px;
     @include mobile {;
       padding: 30px;
     }
 
   }
 
-  &-stepBox{
+  &-step{
     background: #ffffff;
     border-radius: 100%;
     float: left;
     text-align: center;
-    display: flex;
     width: 50px;
     height: 50px;
     vertical-align: middle;
     margin: 8px 0 0 15px;
     align-items: center;
-    }
-
-
-    &-step{
-      font-size: 18px;
-      font-weight: 800;
-      margin: auto;
-    }
-    & span{
-      text-align: center;
-      padding: 10px 10px 10px 10px;
-      font-weight: 800;
-      line-height: 50px;
-      font-size: 25px;
-      color: black;
-    }
+    font-size: 18px;
+    font-weight: 800;
+    margin: auto;
+  }
+  & span{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-weight: 800;
+    line-height: 50px;
+    font-size: 25px;
+    color: black;
   }
 
-}
-.isCenter{
-  padding: 0px 30px 0px 30px;
-  margin-left: 100px;
+
+  .isCenter{
+    padding: 0px 30px 0px 30px;
+    margin-left: 100px;
+  }
+
 }
