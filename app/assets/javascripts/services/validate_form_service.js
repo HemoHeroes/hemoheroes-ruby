@@ -1,57 +1,97 @@
+
 var validateFormService = (function(){
 
+  var validForm = [];
+  validForm[0] = false;
+  validForm[1] = false;
+  validForm[2] = false;
+  validForm[3] = false;
+  validForm[4] = false;
+  validForm[5] = false;
+  validForm[6] = false;
+  validForm[7] = false;
+  validForm[8] = false;
+
+  var invalidInput = false;
+
+  var buttonValidForm = function(){
+    console.log(validForm)
+    invalidInput = false;
+    for(var i = 0; i < validForm.length; i++){
+      console.log(validForm[i])
+      if(validForm[i]==false){
+        invalidInput = true;
+      }
+    }
+
+    if(!invalidInput){
+      var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
+      buttonRegister.classList.remove('is-disabled');
+    }
+  }
 
   return {
 
-    validateName: function(selector){
-      var valueName = document.getElementsByClassName(selector)[0].value;
-
-      if (valueName == "") {
-        document.getElementById('errorName').style.display = "";
-        return false;
-
-      } else {
+    validateName: function(selector,action){
+      console.log("chegou");
+      var valueName = document.getElementsByClassName(selector)[0];
+      valueName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "none";
-      }
+        if (valueName.value == "") {
+          document.getElementById('errorName').style.display = "";
+          validForm[8] = false;
+          buttonValidForm();
+        }else{
+          validForm[8] = true;
+          buttonValidForm();
+        }
+      });
     },
 
+    validateCNPJ: function(selector, action){
+      var valueCNPJ = document.getElementsByClassName(selector)[0];
+      valueCNPJ.addEventListener(action, function(){
+        VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
 
-    validateCNPJ: function(selector){
-      var valueCNPJ = document.getElementsByClassName(selector)[0]
-      VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
-
-      document.getElementById('errorCNPJ').style.display = "";
-      if(valueCNPJ.value == ""){
-        document.getElementById('errorCNPJ').innerHTML = "O campo é obrigatório!";
-        return false;
-      }else if (valueCNPJ.value.length<18) {
-        document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
-        console.log("cnpj invalido");
-        return false;
-      }else{
-        document.getElementById('errorCNPJ').style.display = "none";
-      }
+        document.getElementById('errorCNPJ').style.display = "";
+        if(valueCNPJ.value == ""){
+          document.getElementById('errorCNPJ').innerHTML = "O campo é obrigatório!";
+          validForm[0] = false;
+          buttonValidForm();
+        }else if (valueCNPJ.value.length<18) {
+          document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
+          console.log("cnpj invalido");
+          validForm[0] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorCNPJ').style.display = "none";
+          validForm[0] = true;
+          buttonValidForm();
+        }
+      });
     },
 
-
-    validateEmail: function(selector){
-      var valueEmail = document.getElementsByClassName(selector)[0].value;
-      var regexEmailValidate = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      var emailValidate = regexEmailValidate.test(valueEmail.trim());
-
-      document.getElementById('errorEmail').style.display = "";
-      if (!emailValidate && valueEmail != "") {
-        document.getElementById('errorEmail').innerHTML = "Email inválido!";
-        return false;
-      }
-      if(valueEmail == ""){
-        document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
-        return false;
-      }else{
-        document.getElementById('errorEmail').style.display = "none";
-      }
+    validateEmail: function(selector, action){
+      var valueEmail = document.getElementsByClassName(selector)[0];
+      valueEmail.addEventListener(action, function(){
+        var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        var emailValidate = regexEmailValidate.test(valueEmail.value.trim());
+        if (emailValidate && valueEmail.value != "") {
+          document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+          validForm[1] = false;
+          buttonValidForm();
+        }
+        if(valueEmail.value == ""){
+          document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+          validForm[1] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorEmail').style.display = "none";
+          validForm[1] = true;
+          buttonValidForm();
+        }
+      });
     },
-
 
     validateCPF: function(selector){
       var valueCPF = document.getElementsByClassName(selector)[0];
@@ -67,77 +107,106 @@ var validateFormService = (function(){
         document.getElementById('errorCPF').style.display = "none";
       }
     },
+    
 
-
-    validateCEP: function(selector){
+    validateCEP: function(selector, action){
       var valueCEP = document.getElementsByClassName(selector)[0];
-      VMasker(valueCEP).maskPattern("99999-999");
+      valueCEP.addEventListener(action, function(){
+        VMasker(valueCEP).maskPattern("99999-999");
+        document.getElementById('errorCEP').style.display = "";
+        if(valueCEP.value == ""){
+          document.getElementById('errorCEP').innerHTML = "O campo é obrigatório!";
+          validForm[2] = false;
+          buttonValidForm();
+        }else if(valueCEP.value.length<9){
+          document.getElementById('errorCEP').innerHTML = "CEP inválido!";
+          validForm[2] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorCEP').style.display = "none";
+          validForm[2] = true;
+          buttonValidForm();
+        }
+      });
+    },
 
-      document.getElementById('errorCEP').style.display = "";
-      if(valueCEP.value == ""){
-        document.getElementById('errorCEP').innerHTML = "O campo é obrigatório!";
-        return false;
-      }else if(valueCEP.value.length<9){
-        document.getElementById('errorCEP').innerHTML = "CEP inválido!";
-        return false;
-      }else{
-        document.getElementById('errorCEP').style.display = "none";
-      }
+    validateDistrict: function(selector, action){
+      var valueDistrict = document.getElementsByClassName(selector)[0];
+      valueDistrict.addEventListener(action, function(){
+        if (valueDistrict.value == "") {
+          document.getElementById('errorDistrict').style.display = "";
+          validForm[3] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorDistrict').style.display = "none";
+          validForm[3] = true;
+          buttonValidForm();
+        }
+      });
     },
 
 
-    validateDistrict: function(selector){
-      var valueDistrict = document.getElementsByClassName(selector)[0].value;
-      if (valueDistrict == "") {
-        document.getElementById('errorDistrict').style.display = "";
-        return false;
-      }else{
-        document.getElementById('errorDistrict').style.display = "none";
-      }
+    validateStreet: function(selector, action){
+      var valueStreet = document.getElementsByClassName(selector)[0];
+      valueStreet.addEventListener(action, function(){
+        if (valueStreet.value == "") {
+          document.getElementById('errorStreet').style.display = "";
+          validForm[4] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorStreet').style.display = "none";
+          validForm[4] = true;
+          buttonValidForm();
+        }
+      });
     },
 
 
-    validateStreet: function(selector){
-      var valueStreet = document.getElementsByClassName(selector)[0].value;
-      if (valueStreet == "") {
-        document.getElementById('errorStreet').style.display = "";
-        return false;
-      }else{
-        document.getElementById('errorStreet').style.display = "none";
-      }
+    validateNumber: function(selector, action){
+      var valueNumber = document.getElementsByClassName(selector)[0];
+      valueNumber.addEventListener(action, function(){
+        if (valueNumber.value == "") {
+          document.getElementById('errorNumber').style.display = "";
+          validForm[5] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorNumber').style.display = "none";
+          validForm[5] = true;
+          buttonValidForm();
+        }
+      });
     },
 
 
-    validateNumber: function(selector){
-      var valueNumber = document.getElementsByClassName(selector)[0].value;
-      if (valueNumber == "") {
-        document.getElementById('errorNumber').style.display = "";
-        return false;
-      }else{
-        document.getElementById('errorNumber').style.display = "none";
-      }
+    validateCity: function(selector,action){
+      var valueCity = document.getElementsByClassName(selector)[0];
+      valueCity.addEventListener(action, function(){
+        if (valueCity.value == "") {
+          document.getElementById('errorCity').style.display = "";
+          validForm[6] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorCity').style.display = "none";
+          validForm[6] = true;
+          buttonValidForm();
+        }
+      });
     },
 
 
-    validateCity: function(selector){
-      var valueCity = document.getElementsByClassName(selector)[0].value;
-      if (valueCity == "") {
-        document.getElementById('errorCity').style.display = "";
-        return false;
-      }else{
-        document.getElementById('errorCity').style.display = "none";
-      }
-    },
-
-
-    validateState: function(selector){
-      var valueState = document.getElementsByClassName(selector)[0].value;
-      if (valueState == "") {
-        document.getElementById('errorState').style.display = "";
-        return false;
-      }else{
-        document.getElementById('errorState').style.display = "none";
-      }
+    validateState: function(selector, action){
+      var valueState = document.getElementsByClassName(selector)[0];
+      valueState.addEventListener(action, function(){
+        if (valueState.value == "") {
+          document.getElementById('errorState').style.display = "";
+          validForm[7] = false;
+          buttonValidForm();
+        }else{
+          document.getElementById('errorState').style.display = "none";
+          validForm[7] = true;
+          buttonValidForm();
+        }
+      });
     },
 
 
@@ -165,7 +234,6 @@ var validateFormService = (function(){
       button.classList.remove('is-actived');
       return false;
     },
-
 
     validatePhone: function(selector){
       var valuePhone = document.getElementsByClassName(selector)[0];
@@ -240,7 +308,5 @@ var validateFormService = (function(){
         document.getElementById('errorTerms').innerHTML = "O campo é obrigatório!";
       }
     }
-
-
   }
 })()
