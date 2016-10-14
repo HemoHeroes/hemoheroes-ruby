@@ -1,5 +1,5 @@
 function onlyInView(controller, actions, callback){
-  var currentController = document.body.getAttribute("data-controller")
+  var currentController = document.body.getAttribute("data-controller");
   var currentAction = document.body.getAttribute("data-action");
 
   if(currentController != controller){

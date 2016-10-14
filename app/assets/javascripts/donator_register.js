@@ -66,7 +66,6 @@ ready(function(){
 
     };
 
-
     initialize();
 
   })

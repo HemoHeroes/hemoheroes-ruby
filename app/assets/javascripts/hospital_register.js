@@ -2,8 +2,6 @@
 
 ready(function(){
 
-
-
   var initialize = function(){
     validateForm();
   };
@@ -77,11 +75,9 @@ ready(function(){
       inputState.addEventListener('keyup', function(){
         validateFormService.validateState('js-validateState');
       })
-    })
+    });
   };
 
-
   initialize();
-
 
 })
