@@ -1,7 +1,7 @@
 //= require services/validate_form_service
 
 ready(function(){
-  onlyInView("donators", ["new", "edit"], function(){
+  onlyInView("user_blood_donators", ["new", "edit"], function(){
 
 
 
