@@ -12,7 +12,7 @@ ready(function(){
     var validateForm = function(){
       var allInputNumbers = document.getElementsByClassName('js-necessityInput');
 
-      for(var i = 0; i < 8; i++){
+      for(var i = 0; i < allInputNumbers.length; i++){
         var inputNumber = allInputNumbers[i];
         inputNumber.addEventListener("keyup", function(){
           validateFormService.validatePositiveNumber();
@@ -27,8 +27,8 @@ ready(function(){
 
 
     var confirmRequest = function(){
-      var confirmRequestButton = document.getElementsByClassName('js-confirmRequestButton')[0];
-      confirmRequestButton.addEventListener('click', function(){
+      var confirmRequestButton = document.getElementsByClassName('js-nextButton')[0];
+      confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};
 
@@ -36,6 +36,7 @@ ready(function(){
           var dataTypeAttribute = inputsToConfirm[counter].getAttribute('data-type');
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
+        
 
         var confirmRequestList = document.getElementsByClassName('js-confirmRequestList')[0];
 

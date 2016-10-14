@@ -6,6 +6,12 @@ ready(function(){
     validateForm();
   };
 
+
+
+
+
+
+
   var validateForm = function(){
     onlyInView("user_blood_banks", ["new", "edit"], function(){
       var inputName      = document.getElementsByClassName('js-validateName')[0];
