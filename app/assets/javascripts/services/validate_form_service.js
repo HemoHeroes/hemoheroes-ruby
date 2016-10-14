@@ -216,6 +216,30 @@ var validateFormService = (function(){
       }else {
         document.getElementById('errorDateLastDonation').style.display = "none";
       }
+    },
+
+    validateGenre: function(selector){
+      var valueGenre = document.getElementsByClassName(selector)[0];
+      document.getElementById('errorGenre').style.display = "";
+
+      if(valueGenre.checked) {
+        document.getElementById('errorGenre').style.display = "none";
+      }
+      else {
+        document.getElementById('errorGenre').innerHTML = "O campo é obrigatório!";
+      }
+    },
+
+    validateTerms: function(selector){
+      var valueTerms = document.getElementsByClassName(selector)[0];
+      document.getElementById('errorTerms').style.display = "";
+
+      if(valueTerms.checked) {
+        document.getElementById('errorTerms').style.display = "none";
+      }
+      else {
+        document.getElementById('errorTerms').innerHTML = "O campo é obrigatório!";
+      }
     }
 
 
