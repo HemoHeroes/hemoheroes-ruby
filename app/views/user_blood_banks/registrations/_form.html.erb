@@ -1,0 +1,98 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<% if resource.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+  <ul>
+    <% resource.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="Container">
+  <div class="Container-header">
+    <div class="Grid">
+      <div class="Grid-cell u-sizeFull">
+        <h3 class="Container-header-text"> Cadastro de Hospital </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="Container-section">
+    <div class="Grid">
+      <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+            <div class="Grid-cell u-size2of12">
+              <span class="Input Input-label">Nome: </span>
+            </div>
+            <div class="Grid-cell u-size10of12">
+              <%= f.text_field :name, class: "Input Input-value js-validateName" %>
+              <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">CPNJ: </span>
+
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :cnpj, class: "Input Input-value js-validateCNPJ" %>
+            <span id="errorCNPJ" style="display:none;" class="errorMessage"></span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
+        <div class="Grid">
+          <div class="Grid-cell u-size2of12">
+            <span class="Input Input-label">Email:</span>
+          </div>
+          <div class="Grid-cell u-size10of12">
+            <%= f.text_field :email, class: "Input Input-value js-validateEmail" %>
+            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
+          </div>
+        </div>
+      </div>
+      <div class="Grid-cell u-size2of12">
+        <span class="Input Input-label">Senha: </span>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="Grid">
+      <div class="actions">
+        <div class="Grid-cell u-size1of2">
+          <!-- <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %> -->
+
+                  <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm"  %>
+              <!-- <button type="submit" class="Button Button--medium is-actived js-validateForm" >Cadastrar</button> -->
+
+        </div>
+        <div class="Grid-cell u-size1of2">
+          <!-- <%= f.submit "Limpar", class: "Button Button--medium" %> -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% end %>

@@ -1,23 +1,27 @@
 Rails.application.routes.draw do
 
-  resources :user_blood_donators
-  devise_for :users
-  root 'welcome#index'
+  devise_for :user_blood_donators, controllers: {
+    sessions: 'sessions',
+    registrations: 'user_blood_donators/registrations'
+  }
 
-  resources :addresses
-  resources :demand_blood_banks
-  resources :user_blood_banks
+  devise_for :user_blood_banks, controllers: {
+    sessions: 'sessions',
+    registrations: 'user_blood_banks/registrations'
+  }
+
+  root 'welcome#index'
 
   get '/necessidadehospital', to: 'demand_blood_banks#index'
 
+  get '/doador', to: 'user_blood_donators#index'
 
-  get '/doador', to: 'donators#index'
-
-
-  # root 'welcome#index'
-
+  # get '/unify_login', to: 'session#'
 
   # Routes for components in construction
   get '/components', to: 'components#index'
+
+
+
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013182634) do
+ActiveRecord::Schema.define(version: 20161014133936) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
     t.integer "a_positive"
@@ -24,35 +24,6 @@ ActiveRecord::Schema.define(version: 20161013182634) do
   end
 
   create_table "user_blood_banks", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "cnpj"
-    t.string "password"
-    t.string "phone"
-    t.string "lat"
-    t.string "long"
-    t.string "address"
-    t.string "extension"
-  end
-
-  create_table "user_blood_donators", force: :cascade do |t|
-    t.string  "name"
-    t.date    "date_birth"
-    t.string  "cpf"
-    t.string  "email"
-    t.string  "phone"
-    t.string  "password"
-    t.string  "blood_type"
-    t.boolean "admin"
-    t.date    "last_donation"
-    t.string  "genre"
-    t.boolean "notification"
-    t.string  "lat"
-    t.string  "long"
-    t.string  "cep"
-  end
-
-  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -65,8 +36,46 @@ ActiveRecord::Schema.define(version: 20161013182634) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string   "name"
+    t.string   "phone"
+    t.string   "extension"
+    t.string   "cnpj"
+    t.string   "lat"
+    t.string   "long"
+    t.string   "adress"
+    t.index ["cnpj"], name: "index_user_blood_banks_on_cnpj", unique: true
+    t.index ["email"], name: "index_user_blood_banks_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_user_blood_banks_on_reset_password_token", unique: true
+  end
+
+  create_table "user_blood_donators", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.date     "date_birth"
+    t.string   "phone"
+    t.string   "cpf"
+    t.boolean  "notification"
+    t.string   "genre"
+    t.string   "blood_type"
+    t.boolean  "admin"
+    t.date     "last_donation"
+    t.string   "cep"
+    t.string   "long"
+    t.string   "lat"
+    t.index ["cpf"], name: "index_user_blood_donators_on_cpf", unique: true
+    t.index ["email"], name: "index_user_blood_donators_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_user_blood_donators_on_reset_password_token", unique: true
   end
 
 end
