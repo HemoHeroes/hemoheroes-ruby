@@ -1,4 +1,4 @@
-<%= form_for(demand_blood_bank) do |f| %>
+<%= form_for(@demand_blood_bank) do |f| %>
 <div class="Container">
   <div class="Container-header">
     <div class="Grid">
@@ -12,13 +12,13 @@
       </div>
     </div>
   </div>
-  <% if demand_blood_bank.errors.any? %>
+  <% if @demand_blood_bank.errors.any? %>
   <div id="error_explanation">
 
-    <h2><%= pluralize(demand_blood_bank.errors.count, "error") %> prohibited this demand_blood_bank from being saved:</h2>
+    <h2><%= pluralize(@demand_blood_bank.errors.count, "error") %> prohibited this demand_blood_bank from being saved:</h2>
 
     <ul>
-      <% demand_blood_bank.errors.full_messages.each do |message| %>
+      <% @demand_blood_bank.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
