@@ -1,7 +1,7 @@
 //= require services/validate_form_service
 
 ready(function(){
-  onlyInView("donators", ["new", "edit"], function(){
+  onlyInView("user_blood_donators", ["new", "edit"], function(){
 
 
 
@@ -15,6 +15,8 @@ ready(function(){
       var inputCPF       = document.getElementsByClassName('js-validateCPF')[0];
       var inputPhone     = document.getElementsByClassName('js-validatePhone')[0];
       var inputDate      = document.getElementsByClassName('js-validateDate')[0];
+      var radioGenre     = document.getElementsByClassName('js-validateGenre')[0];
+      var checkTerms     = document.getElementsByClassName('js-validateTerms')[0];
       var inputDateLastDonation = document.getElementsByClassName('js-validateDateLastDonation')[0];
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
 
@@ -25,6 +27,8 @@ ready(function(){
         validateFormService.validateCPF('js-validateCPF');
         validateFormService.validateDate('js-validateDate');
         validateFormService.validateDateLastDonation('js-validateDateLastDonation');
+        validateFormService.validateTerms('js-validateTerms');
+        validateFormService.validateGenre('js-validateGenre');
         event.preventDefault();
       })
 
@@ -52,9 +56,15 @@ ready(function(){
         validateFormService.validateDateLastDonation('js-validateDateLastDonation');
       })
 
+      radioGenre.addEventListener('onclick', function(){
+        validateFormService.validateGenre('js-validateGenre');
+      })
+
+      checkTerms.addEventListener('onclick', function(){
+        validateFormService.validateTerms('js-validateTerms');
+      })
 
     };
-
 
     initialize();
 

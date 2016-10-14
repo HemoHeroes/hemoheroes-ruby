@@ -38,9 +38,10 @@
   &--fluid {
 
     & .Form-inputLabel{
-      min-width: 85px;
+      min-width: 95px;
       text-align: right;
-      padding-left: 12px;
+      display: inline;
+      padding: 0 12px 0 0;
 
     }
   }

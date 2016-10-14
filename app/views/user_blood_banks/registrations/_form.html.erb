@@ -73,6 +73,13 @@
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
+
+        <% if resource.id %>
+          <div class="field">
+            <%= f.label :current_password %><br />
+            <%= f.password_field :current_password, autocomplete: "off" %>
+          </div>
+        <% end %>
       </div>
     </div>
 

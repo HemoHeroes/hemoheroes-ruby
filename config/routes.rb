@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :demand_blood_banks
+
   devise_for :user_blood_donators, controllers: {
     sessions: 'sessions',
     registrations: 'user_blood_donators/registrations'

@@ -7,7 +7,7 @@ var Modal = (function(){
       modal.style.visibility = 'visible';
 
       const modalContent = document.getElementsByClassName('js-modalContent')[0];
-      modalContent.style.top = '50%'
+      modalContent.style.top = '50%';
     },
 
 
@@ -17,7 +17,7 @@ var Modal = (function(){
       modal.style.visibility = 'hidden';
 
       const modalContent = document.getElementsByClassName('js-modalContent')[0];
-      modalContent.style.top = '40%'
+      modalContent.style.top = '40%';
     }
   }
 
