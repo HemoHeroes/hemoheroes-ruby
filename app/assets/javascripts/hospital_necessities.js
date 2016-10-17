@@ -27,6 +27,7 @@ ready(function(){
 
     var confirmRequest = function(){
       var confirmRequestButton = document.getElementsByClassName('js-nextButton')[0];
+      console.log(confirmRequestButton);
       confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};

@@ -1,10 +1,5 @@
 function ready(fn) {
 
-  document.addEventListener("turbolinks:load", function() {
-    fn();
-    return true;
-  })
-
   if (document.readyState != 'loading'){
     fn();
   } else if (document.addEventListener) {
@@ -13,8 +8,12 @@ function ready(fn) {
     document.addEventListener("turbolinks:load", fn);
   } else {
     document.attachEvent('onreadystatechange', function() {
-      if (document.readyState != 'loading')
-      fn();
+      if (document.readyState != 'loading'){
+        fn();
+      }
     });
+    document.addEventListener("turbolinks:load", function() {
+      fn();
+    })
   }
 }
