@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user_donator = UserBloodDonator.create! :name => 'Pedrao dos Login', :email => 'pedraodoador@hotmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345678912'
+user_bank = UserBloodBank.create! :name => 'Pedrao dos Banco', :email => 'pedrao@admin.com', :password => '123456', :password_confirmation => '123456', :cnpj => '12345678912345'
