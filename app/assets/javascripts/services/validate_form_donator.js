@@ -42,7 +42,7 @@ var validateFormDonators = (function(){
       if(valueCPF.value == ""){
         document.getElementById('errorCPF').innerHTML = "O campo é obrigatório!";
         return false;
-      }else if (valueCPF.value.length<=14) {
+      }else if (valueCPF.value.length<14) {
         document.getElementById('errorCPF').innerHTML = "CPF inválido!";
         return false;
       }else{
@@ -60,7 +60,6 @@ var validateFormDonators = (function(){
         return false;
       }else if (valuePhone.value.length<14) {
         document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
-        console.log("Telefone inválido");
         return false;
       }else{
         document.getElementById('errorPhone').style.display = "none";
@@ -70,16 +69,16 @@ var validateFormDonators = (function(){
     validateDate: function(selector){
       var valueDate = document.getElementsByClassName(selector)[0];
 
-      VMasker(valueDate).maskPattern("99/99/9999");
+      // VMasker(valueDate).maskPattern("99/99/9999");
       document.getElementById('errorDate').style.display = "";
       if(valueDate.value == ""){
         document.getElementById('errorDate').innerHTML = "O campo é obrigatório!";
         return false;
       }
 
-      else if (valueDate.value.length<10) {
+      else if (valueDate.value.length >= 7 && valueDate.value.length <= 10) {
         document.getElementById('errorDate').innerHTML = "Data inválida!";
-        console.log("Data inválida");
+        //console.log("outra coisa");
         return false;
       }
 
@@ -88,21 +87,21 @@ var validateFormDonators = (function(){
       }
     },
 
-    validateDateLastDonation: function(selector){
-      var valueDateLastDonation = document.getElementsByClassName(selector)[0];
-      VMasker(valueDateLastDonation).maskPattern("99/99/9999");
-      document.getElementById('errorDateLastDonation').style.display = "";
-      if(valueDateLastDonation.value == ""){
-        document.getElementById('errorDateLastDonation').innerHTML = "O campo é obrigatório!";
-        return false;
-      }else if (valueDateLastDonation.value.length<10) {
-        document.getElementById('errorDateLastDonation').innerHTML = "Data inválida!";
-        console.log("Data inválida");
-        return false;
-      }else {
-        document.getElementById('errorDateLastDonation').style.display = "none";
-      }
-    },
+    // validateDateLastDonation: function(selector){
+    //   var valueDateLastDonation = document.getElementsByClassName(selector)[0];
+    //   VMasker(valueDateLastDonation).maskPattern("99/99/9999");
+    //   document.getElementById('errorDateLastDonation').style.display = "";
+    //   if(valueDateLastDonation.value == ""){
+    //     document.getElementById('errorDateLastDonation').innerHTML = "O campo é obrigatório!";
+    //     return false;
+    //   }else if (valueDateLastDonation.value.length<10) {
+    //     document.getElementById('errorDateLastDonation').innerHTML = "Data inválida!";
+    //     console.log("Data inválida");
+    //     return false;
+    //   }else {
+    //     document.getElementById('errorDateLastDonation').style.display = "none";
+    //   }
+    // },
 
     validateGenre: function(selector){
       var valueGenre = document.getElementsByClassName(selector)[0];

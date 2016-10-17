@@ -1,4 +1,4 @@
-//= require services/validate_form_service
+//= require services/validate_form_donator
 
 ready(function(){
   //REVER CONTROLLER (REGISTRATIONS???)
