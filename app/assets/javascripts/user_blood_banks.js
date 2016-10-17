@@ -13,13 +13,13 @@ ready(function(){
   };
   
   var validateForm = function(){
-    onlyInView("user_blood_banks", ["new", "edit"], function(){
-
       validateFormService.validateName('js-validateName','keyup');
       validateFormService.validateEmail('js-validateEmail','keyup');
       validateFormService.validateCNPJ('js-validateCNPJ','keyup');
-
-    })
+      validateFormService.validateAddress('js-validateAddress','keyup');
+      validateFormService.validateExtension('js-validateExtension','keyup');
+      validateFormService.validatePhone('js-validatePhone','keyup');
+      validateFormService.validatePassword('js-validatePassword','js-validatePasswordConfirmation','keyup');
   };
 
   initialize();
