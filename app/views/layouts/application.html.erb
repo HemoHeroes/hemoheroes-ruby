@@ -7,27 +7,14 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+
 </head>
 <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
   <%= render 'layouts/header'%>
-  <div class="OuterWrapper">
-    <% if user_blood_donator_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
-      </li>
-    <% elsif user_blood_bank_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "Registrar Doador", new_user_blood_donator_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, :class => 'navbar-link'  %>
-      </li>
-    <% end %>
 
+  <div class="OuterWrapper">
     <%= yield %>
   </div>
+
 </body>
 </html>
