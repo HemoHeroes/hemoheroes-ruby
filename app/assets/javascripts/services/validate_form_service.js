@@ -107,7 +107,7 @@ var validateFormService = (function(){
         document.getElementById('errorCPF').style.display = "none";
       }
     },
-    
+
 
     validateCEP: function(selector, action){
       var valueCEP = document.getElementsByClassName(selector)[0];

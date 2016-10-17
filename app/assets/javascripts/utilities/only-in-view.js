@@ -3,6 +3,7 @@ function onlyInView(controller, actions, callback){
   var currentAction = document.body.getAttribute("data-action");
 
   if(currentController != controller){
+    console.log("Ele ta na controller atual: "+currentController);
     return false;
   }
 

@@ -8,7 +8,6 @@ ready(function(){
       confirmRequest();
     };
 
-
     var validateForm = function(){
       var allInputNumbers = document.getElementsByClassName('js-necessityInput');
 
@@ -28,7 +27,6 @@ ready(function(){
 
     var confirmRequest = function(){
       var confirmRequestButton = document.getElementsByClassName('js-nextButton')[0];
-
       confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};
@@ -38,13 +36,11 @@ ready(function(){
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
 
-
         var confirmRequestList = document.getElementsByClassName('js-confirmRequestList')[0];
 
         Object.keys(valuesOfConfirmInput).forEach(function(key){
 
           if(valuesOfConfirmInput[key] != "") {
-            console.log(valuesOfConfirmInput[key]);
             var liTag = document.createElement("li");
             var requestText = document.createTextNode(valuesOfConfirmInput[key] + " Doador(es) do tipo " + key);
 
