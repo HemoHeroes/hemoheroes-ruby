@@ -5,9 +5,10 @@
   border: 3px solid #cecccc;
   border-radius: 15px;
   overflow: hidden;
-  @include mobile{;
+  @include mobile{
     margin: 30px;
     align-content: center;
+
   }
 
   &-header {
@@ -16,7 +17,7 @@
     padding: 12px 25px;
     background-color: #6495ED;
 
-    @include mobile {;
+    @include mobile {
       padding: 10px;
     }
   }
@@ -24,13 +25,17 @@
   &-titleBox {
     display: flex;
     align-items: center;
+    @include mobile{
+        padding-left: 15px;
+    }
   }
 
   &-title {
     color: $light-font-color;
     font-size: 1.2rem;
     @include mobile {
-      font-size: 1.4rem;
+      font-size: 1rem;
+
     }
   }
 
@@ -48,7 +53,7 @@
   }
 
   &-body {
-    text-align: justify;
+    text-align: center;
     padding: 12px 25px 25px;
     box-sizing: border-box;
     min-height: 100px;
@@ -60,7 +65,6 @@
     }
 
   }
-
 
   &-stepBox {
     background: #ffffff;
