@@ -41,7 +41,7 @@
           <div class="Form-group">
 
             <span class="Form-inputLabel u-size2of12">CPNJ: </span>
-            <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ" %>
+            <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ",:maxlength => 18 %>
             <span id="errorCNPJ" style="display:none;" class="errorMessage"></span>
 
           </div>
@@ -62,7 +62,7 @@
           <div class="Form-group">
 
             <span class="Form-inputLabel u-size2of12">Telefone:</span>
-            <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone" %>
+            <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone",:maxlength => 14 %>
             <span id="errorPhone" style="display:none;" class="errorMessage"></span>
 
           </div>
@@ -72,7 +72,7 @@
           <div class="Form-group">
 
             <span class="Form-inputLabel u-size2of12">Ramal:</span>
-            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension" %>
+            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension", :maxlength => 4%>
             <span id="errorExtension" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
 
           </div>

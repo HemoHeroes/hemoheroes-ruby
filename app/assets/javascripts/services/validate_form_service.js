@@ -104,16 +104,18 @@ var validateFormService = (function(){
         document.getElementById('errorEmail').style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(valueEmail.value.trim());
-        if (!emailValidate && valueEmail.value != "") {
+        document.getElementById('errorEmail').style.display = "";
+
+        if (valueEmail.value == "") {
           document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
           validForm[3] = false;
           buttonValidForm();
         }
-        if(valueEmail.value == ""){
+        if(!emailValidate && valueEmail.value != ""){
           document.getElementById('errorEmail').innerHTML = "E-mail inválido!";
           validForm[3] = false;
           buttonValidForm();
-        }else{
+        }else if(emailValidate){
           document.getElementById('errorEmail').style.display = "none";
           validForm[3] = true;
           buttonValidForm();
@@ -140,7 +142,7 @@ var validateFormService = (function(){
     validateExtension: function(selector, action){
       var valueExtension = document.getElementsByClassName(selector)[0];
       valueExtension.addEventListener(action, function(){
-        VMasker(valueExtension).maskPattern("(99)9999-9999");
+        VMasker(valueExtension).maskPattern("9999");
         if (valueExtension.value == "") {
           document.getElementById('errorExtension').style.display = "";
           validForm[5] = false;
