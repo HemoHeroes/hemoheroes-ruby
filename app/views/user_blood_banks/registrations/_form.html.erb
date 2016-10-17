@@ -20,97 +20,95 @@
     </div>
   </div>
 
-  <div class="Container-section">
-    <div class="Grid">
-      <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Nome: </span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :name, class: "Input Input-value js-validateName" %>
+
+
+  <div class="Container-body">
+    <div class="Form Form--fluid">
+
+      <div class="Grid">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Nome: </span>
+            <%= f.text_field :name, class: "js-validateName Form-inputValue u-size10of12" %>
             <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+
           </div>
         </div>
-      </div>
 
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
 
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">CPNJ: </span>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
 
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :cnpj, class: "Input Input-value js-validateCNPJ" %>
+            <span class="Form-inputLabel u-size2of12">CPNJ: </span>
+            <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ" %>
             <span id="errorCNPJ" style="display:none;" class="errorMessage"></span>
-          </div>
 
+          </div>
         </div>
-      </div>
 
 
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Email:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :email, class: "Input Input-value js-validateEmail" %>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Email:</span>
+            <%= f.text_field :email, class: "Form-inputValue u-size10of12 js-validateEmail" %>
             <span id="errorEmail" style="display:none;" class="errorMessage"></span>
+
           </div>
         </div>
-      </div>
 
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Telefone:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :phone, class: "Input Input-value js-validatePhone" %>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Telefone:</span>
+            <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone" %>
             <span id="errorPhone" style="display:none;" class="errorMessage"></span>
+
           </div>
         </div>
-      </div>
 
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Ramal:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :extension, class: "Input Input-value js-validateExtension" %>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Ramal:</span>
+            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension" %>
             <span id="errorExtension" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+
           </div>
         </div>
-      </div>
 
-      <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
-        <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Endereço:</span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :adress, class: "Input Input-value js-validateAddress" %>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Endereço:</span>
+            <%= f.text_field :adress, class: "Form-inputValue u-size10of12 js-validateAddress" %>
             <span id="errorAddress" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+
           </div>
         </div>
-      </div>
 
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Senha: </span>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class:"js-validatePassword" %>
-        <span id="errorPassword" style="display:none;" class="errorMessage"></span>
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", class:"js-validatePasswordConfirmation" %>
-          <span id="errorPasswordConfirmation" style="display:none;" class="errorMessage"></span>
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Senha: </span>
+            <% if @minimum_password_length %>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class:"js-validatePassword Form-inputValue u-size10of12" %>
+            <span id="errorPassword" style="display:none;" class="errorMessage"></span>
+          </div>
         </div>
+
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+
+            <span class="Form-inputLabel u-size2of12">Confirme a senha: </span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class:"js-validatePasswordConfirmation Form-inputValue u-size10of12" %>
+            <span id="errorPasswordConfirmation" style="display:none;" class="errorMessage"></span>
+
+          </div>
+        </div>
+
 
         <% if resource.id %>
         <div class="field">
@@ -118,25 +116,15 @@
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
         <% end %>
+
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateForm"  %>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="Grid">
-      <div class="actions">
-        <div class="Grid-cell u-size1of2">
-          <!-- <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %> -->
-
-          <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm"  %>
-          <!-- <button type="submit" class="Button Button--medium is-actived js-validateForm" >Cadastrar</button> -->
-
-        </div>
-        <div class="Grid-cell u-size1of2">
-          <!-- <%= f.submit "Limpar", class: "Button Button--medium" %> -->
-
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
 
