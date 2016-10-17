@@ -58,7 +58,6 @@ ready(function(){
       cancelRequestButton.addEventListener("click", function(){
         var clearRequestList = document.querySelector('.js-confirmRequestList');
         clearRequestList.innerHTML = "";
-        console.log(clearRequestList);
         Modal.close();
       })
     }
