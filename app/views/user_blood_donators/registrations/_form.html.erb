@@ -69,7 +69,7 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
-              <%= f.text_field :date_birth, class: "Form-inputValue js-validateDate" %>
+              <%= f.date_field :date_birth, class: "Form-inputValue js-validateDate" %>
               <span id="errorDate" style="display:none;" class="errorMessage"></span>
             </div>
           </div>
@@ -150,7 +150,7 @@
       </div>
 
       <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm" %>
-      <%= f.submit "Limpar", class: "Button Button--medium" %>
+      <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
 
     </div>
 

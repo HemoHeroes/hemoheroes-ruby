@@ -1,7 +1,8 @@
 //= require services/validate_form_service
 
 ready(function(){
-  onlyInView("user_blood_donators", ["new", "edit"], function(){
+  //REVER CONTROLLER (REGISTRATIONS???)
+  onlyInView("registrations", ["new", "edit"], function(){
 
 
 
@@ -10,58 +11,58 @@ ready(function(){
     };
 
     var validateForm = function(){
-      var inputName      = document.getElementsByClassName('js-validateName')[0];
-      var inputEmail     = document.getElementsByClassName('js-validateEmail')[0];
-      var inputCPF       = document.getElementsByClassName('js-validateCPF')[0];
-      var inputPhone     = document.getElementsByClassName('js-validatePhone')[0];
-      var inputDate      = document.getElementsByClassName('js-validateDate')[0];
-      var radioGenre     = document.getElementsByClassName('js-validateGenre')[0];
-      var checkTerms     = document.getElementsByClassName('js-validateTerms')[0];
+      var inputName             = document.getElementsByClassName('js-validateName')[0];
+      var inputEmail            = document.getElementsByClassName('js-validateEmail')[0];
+      var inputCPF              = document.getElementsByClassName('js-validateCPF')[0];
+      var inputPhone            = document.getElementsByClassName('js-validatePhone')[0];
+      var inputDate             = document.getElementsByClassName('js-validateDate')[0];
+      var radioGenre            = document.getElementsByClassName('js-validateGenre')[0];
+      var checkTerms            = document.getElementsByClassName('js-validateTerms')[0];
       var inputDateLastDonation = document.getElementsByClassName('js-validateDateLastDonation')[0];
-      var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
+      var buttonRegister        = document.getElementsByClassName('js-validateForm')[0];
 
       buttonRegister.addEventListener('click', function(event){
-        validateFormService.validateName('js-validateName');
-        validateFormService.validateEmail('js-validateEmail');
-        validateFormService.validatePhone('js-validatePhone');
-        validateFormService.validateCPF('js-validateCPF');
-        validateFormService.validateDate('js-validateDate');
-        validateFormService.validateDateLastDonation('js-validateDateLastDonation');
-        validateFormService.validateTerms('js-validateTerms');
-        validateFormService.validateGenre('js-validateGenre');
+        validateFormDonators.validateName('js-validateName');
+        validateFormDonators.validateEmail('js-validateEmail');
+        validateFormDonators.validatePhone('js-validatePhone');
+        validateFormDonators.validateCPF('js-validateCPF');
+        validateFormDonators.validateDate('js-validateDate');
+        validateFormDonators.validateDateLastDonation('js-validateDateLastDonation');
+        validateFormDonators.validateTerms('js-validateTerms');
+        validateFormDonators.validateGenre('js-validateGenre');
         event.preventDefault();
       })
 
       inputName.addEventListener('focusout', function(){
-        validateFormService.validateName('js-validateName');
+        validateFormDonators.validateName('js-validateName');
       })
 
       inputEmail.addEventListener('keyup', function(){
-        validateFormService.validateEmail('js-validateEmail');
+        validateFormDonators.validateEmail('js-validateEmail');
       })
 
       inputCPF.addEventListener('keyup', function(){
-        validateFormService.validateCPF('js-validateCPF');
+        validateFormDonators.validateCPF('js-validateCPF');
       })
 
       inputPhone.addEventListener('keyup', function(){
-        validateFormService.validatePhone('js-validatePhone');
+        validateFormDonators.validatePhone('js-validatePhone');
       })
 
       inputDate.addEventListener('keyup', function(){
-        validateFormService.validateDate('js-validateDate');
+        validateFormDonators.validateDate('js-validateDate');
       })
 
       inputDateLastDonation.addEventListener('keyup', function(){
-        validateFormService.validateDateLastDonation('js-validateDateLastDonation');
+        validateFormDonators.validateDateLastDonation('js-validateDateLastDonation');
       })
 
       radioGenre.addEventListener('onclick', function(){
-        validateFormService.validateGenre('js-validateGenre');
+        validateFormDonators.validateGenre('js-validateGenre');
       })
 
       checkTerms.addEventListener('checked', function(){
-        validateFormService.validateTerms('js-validateTerms');
+        validateFormDonators.validateTerms('js-validateTerms');
       })
 
     };
