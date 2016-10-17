@@ -27,6 +27,9 @@ var validateFormService = (function(){
     if(!invalidInput){
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
       buttonRegister.classList.remove('is-disabled');
+    }else{
+      var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
+      buttonRegister.classList.add('is-disabled');
     }
   }
 
@@ -78,16 +81,16 @@ var validateFormService = (function(){
         document.getElementById('errorPhone').style.display = "";
         if(valuePhone.value == ""){
           document.getElementById('errorPhone').innerHTML = "O campo é obrigatório!";
-          validForm[3] = false;
+          validForm[2] = false;
           buttonValidForm();
         }else if (valuePhone.value.length<14) {
           document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
-          validForm[3] = false;
+          validForm[2] = false;
           buttonValidForm();
 
         }else{
           document.getElementById('errorPhone').style.display = "none";
-          validForm[3] = true;
+          validForm[2] = true;
           buttonValidForm();
         }
       });
@@ -102,16 +105,16 @@ var validateFormService = (function(){
         var emailValidate = regexEmailValidate.test(valueEmail.value.trim());
         if (!emailValidate && valueEmail.value != "") {
           document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
-          validForm[2] = false;
+          validForm[3] = false;
           buttonValidForm();
         }
         if(valueEmail.value == ""){
           document.getElementById('errorEmail').innerHTML = "E-mail inválido!";
-          validForm[2] = false;
+          validForm[3] = false;
           buttonValidForm();
         }else{
           document.getElementById('errorEmail').style.display = "none";
-          validForm[2] = true;
+          validForm[3] = true;
           buttonValidForm();
         }
       });
@@ -123,11 +126,11 @@ var validateFormService = (function(){
       valueAddress.addEventListener(action, function(){
         if (valueAddress.value == "") {
           document.getElementById('errorAddress').style.display = "";
-          validForm[3] = false;
+          validForm[4] = false;
           buttonValidForm();
         }else{
           document.getElementById('errorAddress').style.display = "none";
-          validForm[3] = true;
+          validForm[4] = true;
           buttonValidForm();
         }
       });
@@ -139,11 +142,11 @@ var validateFormService = (function(){
         VMasker(valueExtension).maskPattern("(99)9999-9999");
         if (valueExtension.value == "") {
           document.getElementById('errorExtension').style.display = "";
-          validForm[4] = false;
+          validForm[5] = false;
           buttonValidForm();
         }else{
           document.getElementById('errorExtension').style.display = "none";
-          validForm[4] = true;
+          validForm[5] = true;
           buttonValidForm();
         }
       });
@@ -157,10 +160,16 @@ var validateFormService = (function(){
         document.getElementById('errorPassword').style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           document.getElementById('errorPassword').innerHTML = "Senha deve ter no minimo 6 digitos!";
+          validForm[6] = false;
+          buttonValidForm();
         }else if(valuePassword.value.length == 0){
           document.getElementById('errorPassword').innerHTML = "O campo senha é obrigatório!";
+          validForm[6] = false;
+          buttonValidForm();
         }else{
           document.getElementById('errorPassword').style.display = "none";
+          validForm[6] = true;
+          buttonValidForm();
         }
       });
 
@@ -168,13 +177,58 @@ var validateFormService = (function(){
         document.getElementById('errorPasswordConfirmation').style.display = "";
         if (valuePasswordConfirmation.value.length > 0 && valuePasswordConfirmation.value.length < 6){
           document.getElementById('errorPasswordConfirmation').innerHTML = "Senha deve ter no minimo 6 digitos!";
+          validForm[7] = false;
+          buttonValidForm();
         }else if(valuePasswordConfirmation.value.length == 0){
           document.getElementById('errorPasswordConfirmation').innerHTML = "O campo senha é obrigatório!";
+          validForm[7] = false;
+          buttonValidForm();
         }else{
           document.getElementById('errorPasswordConfirmation').style.display = "none";
+          validForm[7] = true;
+          buttonValidForm();
         }
+        if(valuePasswordConfirmation.value.length >= 6){
+          document.getElementById('errorPasswordConfirmation').style.display = "";
+          if(valuePasswordConfirmation.value != valuePassword.value){
+            document.getElementById('errorPasswordConfirmation').innerHTML = "As senhas não correspondem!";
+            validForm[8] = false;
+            buttonValidForm();
+          }else{
+            document.getElementById('errorPasswordConfirmation').style.display = "none";
+            validForm[8] = true;
+            buttonValidForm();
+          }
+        }
+
       });
-    }
+
+    },
+
+    validatePositiveNumber: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value < 0){
+          alert("Por favor, utilize apenas números maiores que 0!");
+          inputNumber[i].value = null;
+        }
+      }
+    },
+
+    validateEmptyInput: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      var button = document.getElementsByClassName("js-nextButton")[0];
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value != 0){
+          button.classList.add('is-actived');
+          button.classList.remove('is-disabled');
+          return true;
+        }
+      }
+      button.classList.add('is-disabled');
+      button.classList.remove('is-actived');
+      return false;
+    },
 
   }
 

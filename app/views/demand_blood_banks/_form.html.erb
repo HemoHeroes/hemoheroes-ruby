@@ -32,60 +32,60 @@
         <div class="Container-body">
           <div class="Grid Grid--withGutter">
 
-            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
               <div class="Grid">
-                <div>
-                  <label class="Form-inputLabel u-size3of12 ">A+</label>
-                  <%= f.number_field :a_positive, min: "0", max: "100", data: { type: "aPositive" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"%>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">A+</label>
+                  <%= f.number_field :a_positive, min: "0", max: "100", data: { type: "A+" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest"%>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12">B+</label>
-                  <%= f.number_field :b_positive, min: "0", max: "100", data: { type: "bPositive" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">B+</label>
+                  <%= f.number_field :b_positive, min: "0", max: "100", data: { type: "B+" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest" %>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12" >AB+</label>
-                  <%= f.number_field :ab_positive, min: "0", max: "100", data: { type: "abPositive" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"  %>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12" >AB+</label>
+                  <%= f.number_field :ab_positive, min: "0", max: "100", data: { type: "AB+" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest" %>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12">O+</label>
-                  <%= f.number_field :o_negative, min: "0", max: "100", data: { type: "oPositive" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
-                  <span class="Form-inputLabel u-size4of12  u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">O+</label>
+                  <%= f.number_field :o_positive, min: "0", max: "100", data: { type: "O+" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest" %>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
               </div>
 
             </div>
-            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizefull">
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
               <div class="Grid">
-                <div>
-                  <label class="Form-inputLabel u-size3of12">A-</label>
-                  <%= f.number_field :a_negative, min: "0", max: "100", data: { type: "aNegative" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"%>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10 ">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">A-</label>
+                  <%= f.number_field :a_negative, min: "0", max: "100", data: { type: "A-" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest"%>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12 ">B-</label>
-                  <%= f.number_field :b_negative, min: "0", max: "100", data: { type: "bNegative" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest"%>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12 ">B-</label>
+                  <%= f.number_field :b_negative, min: "0", max: "100", data: { type: "B-" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest"%>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12 ">AB-</label>
-                  <%= f.number_field :ab_negative, min: "0", max: "100", data: { type: "abNegative" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">AB-</label>
+                  <%= f.number_field :ab_negative, min: "0", max: "100", data: { type: "AB-" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest"%>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
-                <div>
-                  <label class="Form-inputLabel u-size3of12 ">O-</label>
-                  <%= f.number_field :o_negative, min: "0", max: "100", data: { type: "oNegative" },
-                  class: "Form-inputValue u-size4of12 js-necessityInput js-confirmRequest" %>
-                  <span class="Form-inputLabel u-size4of12 u-padding-0-0-0-10">doadores</span>
+                <div class="Form-group">
+                  <label class="Form-inputLabel u-desktop-size3of12  u-tablet-size3of12 u-mobile-3of12">O-</label>
+                  <%= f.number_field :o_negative, min: "0", max: "100", data: { type: "O-" },
+                  class: "Form-inputValue u-desktop-size4of12  u-tablet-size3of12 u-mobile-2of12 js-necessityInput js-confirmRequest" %>
+                  <span class="Form-inputDescription u-size4of12  u-tablet-size3of12 u-mobile-7of12 u-padding-0-0-0-10">doadores</span>
                 </div>
               </div>
             </div>

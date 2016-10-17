@@ -30,11 +30,6 @@
     }
   }
 
-  &-description {
-    font-size: 18px;
-    display: inline-block;
-  }
-
   &--fluid {
 
     & .Form-inputLabel{
@@ -50,14 +45,26 @@
     & .Form-inputLabel{
       font-size: 25px;
       line-height: 67px;
+      display: inline;
+      text-align: right;
+      padding: 0 12px 0 0;
       @include mobile {
         font-size:12pt;
+        width: 100px;
       };
     }
 
     & .Form-inputValue{
       padding: 10px;
       font-size: 25px;
+    }
+
+    & .Form-inputDescription {
+      font-size: 1.4rem;
+      color: scale-color($dark-font-color, $lightness: 10%);
+      @include mobile{
+        font-size: 1rem;
+      }
     }
   }
 
