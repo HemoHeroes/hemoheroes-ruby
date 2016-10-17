@@ -12,7 +12,7 @@ ready(function(){
     buttonRegister.classList.add('is-disabled');
   }
   var validateForm = function(){
-      validateFormService.validateName('js-validateName','keyup');
+      validateFormService.validateName('js-validateName','onBlur');
       validateFormService.validateEmail('js-validateEmail','keyup');
       validateFormService.validateCNPJ('js-validateCNPJ','keyup');
       validateFormService.validateAddress('js-validateAddress','keyup');

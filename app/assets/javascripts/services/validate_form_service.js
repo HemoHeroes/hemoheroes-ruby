@@ -78,13 +78,13 @@ var validateFormService = (function(){
     validatePhone: function(selector, action){
       var valuePhone = document.getElementsByClassName(selector)[0];
       valuePhone.addEventListener(action, function(){
-        VMasker(valuePhone).maskPattern("(99)99999-9999");
+        VMasker(valuePhone).maskPattern("(99)9999-9999");
         document.getElementById('errorPhone').style.display = "";
         if(valuePhone.value == ""){
           document.getElementById('errorPhone').innerHTML = "O campo é obrigatório!";
           validForm[2] = false;
           buttonValidForm();
-        }else if (valuePhone.value.length<14) {
+        }else if (valuePhone.value.length<13) {
           document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
           validForm[2] = false;
           buttonValidForm();
@@ -178,23 +178,10 @@ var validateFormService = (function(){
 
       valuePasswordConfirmation.addEventListener(action, function(){
         document.getElementById('errorPasswordConfirmation').style.display = "";
-        if (valuePasswordConfirmation.value.length > 0 && valuePasswordConfirmation.value.length < 6){
-          document.getElementById('errorPasswordConfirmation').innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validForm[7] = false;
-          buttonValidForm();
-        }else if(valuePasswordConfirmation.value.length == 0){
-          document.getElementById('errorPasswordConfirmation').innerHTML = "O campo senha é obrigatório!";
-          validForm[7] = false;
-          buttonValidForm();
-        }else{
-          document.getElementById('errorPasswordConfirmation').style.display = "none";
-          validForm[7] = true;
-          buttonValidForm();
-        }
-        if(valuePasswordConfirmation.value.length >= 6){
-          document.getElementById('errorPasswordConfirmation').style.display = "";
+
+        if(valuePasswordConfirmation.value.length >= 0){
           if(valuePasswordConfirmation.value != valuePassword.value){
-            document.getElementById('errorPasswordConfirmation').innerHTML = "As senhas não correspondem!";
+            document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
             validForm[8] = false;
             buttonValidForm();
           }else{
