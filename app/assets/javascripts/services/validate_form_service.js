@@ -9,7 +9,7 @@ var validateFormService = (function(){
   validForm[5] = false;
   validForm[6] = false;
   validForm[7] = false;
-  validForm[8] = false;
+
 
   var invalidInput = false;
 
@@ -182,11 +182,11 @@ var validateFormService = (function(){
         if(valuePasswordConfirmation.value.length >= 0){
           if(valuePasswordConfirmation.value != valuePassword.value){
             document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-            validForm[8] = false;
+            validForm[7] = false;
             buttonValidForm();
           }else{
             document.getElementById('errorPasswordConfirmation').style.display = "none";
-            validForm[8] = true;
+            validForm[7] = true;
             buttonValidForm();
           }
         }
