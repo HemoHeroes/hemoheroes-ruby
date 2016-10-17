@@ -2,7 +2,6 @@ var validateFormDonators = (function(){
 
   return {
 
-
     validateName: function(selector){
       var valueName = document.getElementsByClassName(selector)[0];
       document.getElementById('errorName').style.display = "";
@@ -129,4 +128,6 @@ var validateFormDonators = (function(){
       }
     }
   }
+
+
 })()
