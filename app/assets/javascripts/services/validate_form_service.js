@@ -203,7 +203,7 @@ var validateFormService = (function(){
 
       });
 
-    }
+    },
 
     validatePositiveNumber: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');

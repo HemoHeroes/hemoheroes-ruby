@@ -43,7 +43,7 @@ ready(function(){
 
           if(valuesOfConfirmInput[key] != "") {
             var liTag = document.createElement("li");
-            var requestText = document.createTextNode(valuesOfConfirmInput[key] + " Doador(es) do tipo " + key);
+            var requestText = document.createTextNode(valuesOfConfirmInput[key] + " do tipo " + key);
 
             confirmRequestList.appendChild(liTag);
             liTag.appendChild(requestText);
