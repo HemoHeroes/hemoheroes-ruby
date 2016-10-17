@@ -1,10 +1,10 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<% if resource.errors.any? %>
+<%= form_for(user_blood_bank) do |f| %>
+<% if user_blood_bank.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+  <h2><%= pluralize(user_blood_bank.errors.count, "error") %> prohibited this user_blood_bank from being saved:</h2>
 
   <ul>
-    <% resource.errors.full_messages.each do |message| %>
+    <% user_blood_bank.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
   </ul>
@@ -25,13 +25,13 @@
       <!-- 2 Enters = divisão de linha | 1 Enter = divisão de coluna -->
       <div class="Grid Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-largePhone-size6of12 u-smallPhone-sizeFull">
         <div class="Grid">
-          <div class="Grid-cell u-size2of12">
-            <span class="Input Input-label">Nome: </span>
-          </div>
-          <div class="Grid-cell u-size10of12">
-            <%= f.text_field :name, class: "Input Input-value js-validateName" %>
-            <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
-          </div>
+            <div class="Grid-cell u-size2of12">
+              <span class="Input Input-label">Nome: </span>
+            </div>
+            <div class="Grid-cell u-size10of12">
+              <%= f.text_field :name, class: "Input Input-value js-validateName" %>
+              <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            </div>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :phone, class: "Input Input-value js-validatePhone" %>
-            <span id="errorPhone" style="display:none;" class="errorMessage"></span>
+            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :extension, class: "Input Input-value js-validateExtension" %>
-            <span id="errorExtension" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
           </div>
         </div>
       </div>
@@ -94,30 +94,13 @@
           </div>
           <div class="Grid-cell u-size10of12">
             <%= f.text_field :adress, class: "Input Input-value js-validateAddress" %>
-            <span id="errorAddress" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            <span id="errorAddress" style="display:none;" class="errorAddress"></span>
+            asdsadas
           </div>
         </div>
       </div>
 
-      <div class="Grid-cell u-size2of12">
-        <span class="Input Input-label">Senha: </span>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class:"js-validatePassword" %>
-        <span id="errorPassword" style="display:none;" class="errorMessage"></span>
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", class:"js-validatePasswordConfirmation" %>
-          <span id="errorPasswordConfirmation" style="display:none;" class="errorMessage"></span>
-        </div>
-
-        <% if resource.id %>
-        <div class="field">
-          <%= f.label :current_password %><br />
-          <%= f.password_field :current_password, autocomplete: "off" %>
-        </div>
-        <% end %>
+        <%= hidden_field :password, :value => @password %>
       </div>
     </div>
 
@@ -126,8 +109,8 @@
         <div class="Grid-cell u-size1of2">
           <!-- <%= f.submit "Cadastrar", class: "Button Button--medium is-actived" %> -->
 
-          <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm"  %>
-          <!-- <button type="submit" class="Button Button--medium is-actived js-validateForm" >Cadastrar</button> -->
+                  <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateForm"  %>
+              <!-- <button type="submit" class="Button Button--medium is-actived js-validateForm" >Cadastrar</button> -->
 
         </div>
         <div class="Grid-cell u-size1of2">
