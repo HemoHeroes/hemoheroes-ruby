@@ -32,7 +32,7 @@ ready(function(){
         var valuesOfConfirmInput = {};
 
         for(var counter = 0, inputsToConfirmlength = inputsToConfirm.length; counter < inputsToConfirmlength; counter++) {
-          var dataTypeAttribute = inputsToConfirm[counter].getAttribute('inputsToConfirm');
+          var dataTypeAttribute = inputsToConfirm[counter].getAttribute('data-type');
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
 
