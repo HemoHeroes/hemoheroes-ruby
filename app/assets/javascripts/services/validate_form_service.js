@@ -1,6 +1,5 @@
 
 var validateFormService = (function(){
-  console.log("funcionouValidadeFOrmService");
   var validForm = [];
   validForm[0] = false;
   validForm[1] = false;
@@ -27,8 +26,10 @@ var validateFormService = (function(){
     if(!invalidInput){
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
       buttonRegister.classList.remove('is-disabled');
+      buttonRegister.classList.add('is-actived');
     }else{
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
+      buttonRegister.classList.remove('is-actived');
       buttonRegister.classList.add('is-disabled');
     }
   }
