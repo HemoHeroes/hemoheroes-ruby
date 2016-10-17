@@ -6,6 +6,7 @@ ready(function(){
     var initialize = function(){
       validateForm();
       confirmRequest();
+      cancelRequest();
     };
 
     var validateForm = function(){
@@ -26,8 +27,7 @@ ready(function(){
 
 
     var confirmRequest = function(){
-      var confirmRequestButton = document.getElementsByClassName('js-nextButton')[0];
-      console.log(confirmRequestButton);
+      var confirmRequestButton = document.querySelector('.js-nextButton');
       confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};
@@ -37,7 +37,7 @@ ready(function(){
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
 
-        var confirmRequestList = document.getElementsByClassName('js-confirmRequestList')[0];
+        var confirmRequestList = document.querySelector('.js-confirmRequestList');
 
         Object.keys(valuesOfConfirmInput).forEach(function(key){
 
@@ -52,6 +52,16 @@ ready(function(){
         });
       });
     };
+
+    var cancelRequest = function(){
+      var cancelRequestButton = document.querySelector('.js-cancelRequestButton');
+      cancelRequestButton.addEventListener("click", function(){
+        var clearRequestList = document.querySelector('.js-confirmRequestList');
+        clearRequestList.innerHTML = "";
+        console.log(clearRequestList);
+        Modal.close();
+      })
+    }
     initialize();
   })
 })
