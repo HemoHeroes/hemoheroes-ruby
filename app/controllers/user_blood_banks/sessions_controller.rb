@@ -8,9 +8,7 @@ class UserBloodBanks::SessionsController < Devise::SessionsController
 
     # POST /resource/sign_in
     def create
-        puts "OPAAAAAAAAAAAAAAAAAAA"
         puts params.inspect
-        puts "OPAAAAAAAAAAAAAAAAAAAAAA"
         super
     end
 

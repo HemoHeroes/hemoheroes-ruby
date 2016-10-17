@@ -9,9 +9,9 @@ class SessionsController < Devise::SessionsController
 
     if @user.valid_password?(params[:user_blood_donator][:password])
       sign_in(@user)
-      redirect_to root_path, alert: "Logado com sucesso!"
+      redirect_to dashboard_path, alert: "#{@user.name} tá na área!"
     else
-      redirect_to root_path, alert: "Senha invalida!"
+      redirect_to new_user_blood_donator_session_path, alert: "Dados invalidos!"
     end
   end
 
