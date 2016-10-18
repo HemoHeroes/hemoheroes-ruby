@@ -1,19 +1,10 @@
 function ready(fn) {
 
-  if (document.readyState != 'loading'){
-    fn();
-  } else if (document.addEventListener) {
-    document.addEventListener('DOMContentLoaded', fn);
-  } else if (document.documentElement.hasAttribute("data-turbolinks-preview")) {
+  if (document.documentElement.hasAttribute("data-turbolinks-track")) {
     document.addEventListener("turbolinks:load", fn);
+  } else if (document.readyState != 'loading'){
+    fn();
   } else {
-    document.attachEvent('onreadystatechange', function() {
-      if (document.readyState != 'loading'){
-        fn();
-      }
-    });
-    document.addEventListener("turbolinks:load", function() {
-      fn();
-    })
+    document.addEventListener("turbolinks:load", fn)
   }
 }
