@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
-    config.action_mailer.perform_deliveries = true
+    config.action_mailer.perform_deliveries = true[]
     #configure mail do mail
     config.action_mailer.delivery_method = :smtp
     #SMTP settings for gmail

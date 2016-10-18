@@ -10,12 +10,12 @@
         <li>
           <% if user_blood_donator_signed_in? %>
           <li>
-            <%= "Bem vindo, #{current_person.name}" %>
+            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
             <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
           </li>
           <% elsif user_blood_bank_signed_in? %>
           <li>
-            <%= "Bem vindo, #{current_person.name}" %>
+            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
             <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
           </li>
           <% else %>
