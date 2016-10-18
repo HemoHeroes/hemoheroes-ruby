@@ -20,11 +20,11 @@ var validateFormDonators = (function(){
     }
 
     if(!invalidInput){
-      var buttonRegister = document.getElementsByClassName('js-validateButton')[0];
+      var buttonRegister = document.querySelector('.js-validateButton');
       buttonRegister.classList.remove('is-disabled');
       buttonRegister.classList.add('is-actived');
     }else{
-      var buttonRegister = document.getElementsByClassName('js-validateButton')[0];
+      var buttonRegister = document.querySelector('.js-validateButton');
       buttonRegister.classList.remove('is-actived');
       buttonRegister.classList.add('is-disabled');
     }
@@ -34,7 +34,7 @@ var validateFormDonators = (function(){
 
 
     validateName: function(selector, action){
-      var valueName = document.getElementsByClassName(selector)[0];
+      var valueName = document.querySelector(selector);
       valueName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "";
         if (valueName.value == "") {
@@ -54,7 +54,7 @@ var validateFormDonators = (function(){
 
 
     validateEmail: function(selector, action){
-      var valueEmail = document.getElementsByClassName(selector)[0];
+      var valueEmail = document.querySelector(selector);
 
       valueEmail.addEventListener(action, function(){
 
@@ -83,7 +83,7 @@ var validateFormDonators = (function(){
 
 
     validateCPF: function(selector, action){
-      var valueCPF = document.getElementsByClassName(selector)[0];
+      var valueCPF = document.querySelector(selector);
       valueCPF.addEventListener(action, function(){
 
         VMasker(valueCPF).maskPattern("999.999.999-99");
@@ -108,7 +108,7 @@ var validateFormDonators = (function(){
 
 
     validatePhone: function(selector, action){
-      var valuePhone = document.getElementsByClassName(selector)[0];
+      var valuePhone = document.querySelector(selector);
       valuePhone.addEventListener(action, function(){
 
         VMasker(valuePhone).maskPattern("(99)9999-9999");
@@ -132,7 +132,7 @@ var validateFormDonators = (function(){
     },
 
     validateTerms: function(selector, action){
-      var valueTerms = document.getElementsByClassName(selector)[0];
+      var valueTerms = document.querySelector(selector);
       valueTerms.addEventListener(action, function(){
         document.getElementById('errorTerms').style.display = "";
         if(valueTerms.checked == true) {
@@ -149,10 +149,21 @@ var validateFormDonators = (function(){
       });
     },
 
-
     validatePassword: function(selector, selectorConfirmation, action ){
-      var valuePassword = document.getElementsByClassName(selector)[0];
-      var valuePasswordConfirmation = document.getElementsByClassName(selectorConfirmation)[0];
+      var valuePassword = document.querySelector(selector);
+      var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
+
+      var testPasswordEquals = function(senha, confirmaSenha) {
+        if(senha != confirmaSenha){
+          document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
+          validFormDonator[6] = false;
+          buttonValidFormDonator();
+        }else{
+          document.getElementById('errorPasswordConfirmation').style.display = "none";
+          validFormDonator[6] = true;
+          buttonValidFormDonator();
+        }
+      };
 
       valuePassword.addEventListener(action, function(){
         document.getElementById('errorPassword').style.display = "";
@@ -173,18 +184,6 @@ var validateFormDonators = (function(){
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });
-
-      var testPasswordEquals = function(senha, confirmaSenha) {
-        if(senha != confirmaSenha){
-          document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-          validFormDonator[6] = false;
-          buttonValidFormDonator();
-        }else{
-          document.getElementById('errorPasswordConfirmation').style.display = "none";
-          validFormDonator[6] = true;
-          buttonValidFormDonator();
-        }
-      };
 
       valuePasswordConfirmation.addEventListener(action, function(){
         document.getElementById('errorPasswordConfirmation').style.display = "";
