@@ -69,7 +69,9 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
-              <%= f.date_field :date_birth, class: "Form-inputValue js-validateDate" %>
+              <%= f.date_select :date_birth, {order: [:day, :month, :year],
+                start_year: Date.today.year-16, end_year: Date.today.year-69},
+                with_css_classes: true, class: "Form-inputValue js-validateDate" %>
               <span id="errorDate" style="display:none;" class="errorMessage"></span>
             </div>
           </div>
@@ -108,8 +110,11 @@
           <!-- LAST DONATION -->
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Ultima doação: </span>
-              <%= f.date_field :last_donation, class: "Form-inputValue" %>
+              <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
+              <%= f.date_select :last_donation, {order: [:day, :month, :year],
+                start_year: Date.today.year, end_year: Date.today.year-53},
+                with_css_classes: true, class: "Form-inputValue js-validateDate" %>
+              <span id="errorDate" style="display:none;" class="errorMessage"></span>
             </div>
           </div>
 
