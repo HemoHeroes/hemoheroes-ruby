@@ -170,33 +170,27 @@ var validateFormDonators = (function(){
           document.getElementById('errorPassword').style.display = "none";
           validFormDonator[5] = true;
           buttonValidFormDonator();
-          if(valuePasswordConfirmation.value != valuePassword.value){
-            document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-            validFormDonator[6] = false;
-            buttonValidFormDonator();
-          }else{
-            document.getElementById('errorPasswordConfirmation').style.display = "none";
-            validFormDonator[6] = true;
-            buttonValidFormDonator();
-          }
+          testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });
 
+      var testPasswordEquals = function(senha, confirmaSenha) {
+        if(senha != confirmaSenha){
+          document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
+          validFormDonator[6] = false;
+          buttonValidFormDonator();
+        }else{
+          document.getElementById('errorPasswordConfirmation').style.display = "none";
+          validFormDonator[6] = true;
+          buttonValidFormDonator();
+        }
+      };
+
       valuePasswordConfirmation.addEventListener(action, function(){
         document.getElementById('errorPasswordConfirmation').style.display = "";
-
         if(valuePasswordConfirmation.value.length >= 0){
-          if(valuePasswordConfirmation.value != valuePassword.value){
-            document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-            validFormDonator[6] = false;
-            buttonValidFormDonator();
-          }else{
-            document.getElementById('errorPasswordConfirmation').style.display = "none";
-            validFormDonator[6] = true;
-            buttonValidFormDonator();
-          }
+          testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
-
       });
 
     }
