@@ -38,7 +38,7 @@ var validateFormDonators = (function(){
       valueName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "";
         if (valueName.value == "") {
-          document.getElementById('errorName').style.display = "O campo é obrigatório!";
+          document.getElementById('errorName').style.display = "Campo obrigatório!";
           validFormDonator[0] = false;
           buttonValidFormDonator();
           return false;
@@ -63,13 +63,13 @@ var validateFormDonators = (function(){
         document.getElementById('errorEmail').style.display = "";
 
         if (!emailValidate) {
-          document.getElementById('errorEmail').innerHTML = "Email inválido!";
+          document.getElementById('errorEmail').innerHTML = "e-mail inválido!";
           validFormDonator[1] = false;
           buttonValidFormDonator();
           return false;
         }
         if(valueEmail.value == ""){
-          document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorEmail').innerHTML = "Campo obrigatório!";
           validFormDonator[1] = false;
           buttonValidFormDonator();
           return false;
@@ -89,7 +89,7 @@ var validateFormDonators = (function(){
         VMasker(valueCPF).maskPattern("999.999.999-99");
         document.getElementById('errorCPF').style.display = "";
         if(valueCPF.value == ""){
-          document.getElementById('errorCPF').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorCPF').innerHTML = "Campo obrigatório!";
           validFormDonator[2] = false;
           buttonValidFormDonator();
           return false;
@@ -114,7 +114,7 @@ var validateFormDonators = (function(){
         VMasker(valuePhone).maskPattern("(99)9999-9999");
         document.getElementById('errorPhone').style.display = "";
         if(valuePhone.value == ""){
-          document.getElementById('errorPhone').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorPhone').innerHTML = "Campo obrigatório!";
           validFormDonator[3] = false;
           buttonValidFormDonator();
           return false;
@@ -173,7 +173,7 @@ var validateFormDonators = (function(){
           buttonValidFormDonator();
           return false;
         }else if(valuePassword.value.length == 0){
-          document.getElementById('errorPassword').innerHTML = "O campo senha é obrigatório!";
+          document.getElementById('errorPassword').innerHTML = "Campo obrigatório!";
           validFormDonator[5] = false;
           buttonValidFormDonator();
           return false;
