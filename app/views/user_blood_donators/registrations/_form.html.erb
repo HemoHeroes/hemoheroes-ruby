@@ -31,7 +31,7 @@
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Nome: </span>
               <%= f.text_field :name, class: "Form-inputValue  js-validateName  u-size10of12" %>
-              <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+              <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório</span>
             </div>
           </div>
 
@@ -79,7 +79,8 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Tipo sanguíneo: </span>
-              <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },  { class: "Form-inputValue u-size10of12" } %>
+              <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },
+              { class: "Form-inputValue u-size10of12" } %>
             </div>
           </div>
 
@@ -117,9 +118,9 @@
               <span class="Form-inputLabel u-size2of12">Sexo: </span>
               <div class="Radio">
                 <%= label_tag(:genre, "Masculino") %>
-                <%= radio_button_tag :genre, "masculino", false, class: "Radio-label js-validateGenre" %>
+                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                 <%= label_tag(:genre, "Feminino") %>
-                <%= radio_button_tag :genre, "feminino", false, class: "Radio-label js-validateGenre" %>
+                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                 <span id="errorGenre" style="display:none;" class="errorMessage"></span>
               </div>
             </div>
@@ -140,7 +141,7 @@
                 <%= check_box_tag(:accept_terms, false, false, class: "js-validateTerms")  %>
               </div>
               <div class="Checkbox-label">
-                <%= label_tag(:accept_terms, "Aceito os termos de uso", class: "js-validateTerms") %>
+                <%= label_tag(:accept_terms, "Aceito os termos de uso") %>
                 <span id="errorTerms" style="display:none;" class="errorMessage"></span>
               </div>
             </div>
@@ -148,7 +149,7 @@
         </div>
       </div>
 
-      <%= f.submit "Cadastrar", class: "Button Button--medium is-actived js-validateButton" %>
+      <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButton" %>
       <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
 
     </div>

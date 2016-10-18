@@ -1,7 +1,7 @@
 //= require services/validate_form_donator
 
 ready(function(){
-  onlyInView("registrations", ["new", "edit"], function(){
+  // onlyInView("registrations", ["new", "edit"], function(){
 
     var initialize = function(){
       buttonValidFormDonator();
@@ -11,6 +11,7 @@ ready(function(){
     var buttonValidFormDonator = function(){
       var buttonRegister = document.getElementsByClassName('js-validateButton')[0];
       buttonRegister.classList.add('is-disabled');
+      //buttonRegister.classList.add('is-actived');
     }
 
     var validateFormDonator = function(){
@@ -18,8 +19,7 @@ ready(function(){
       validateFormDonators.validateEmail('js-validateEmail', 'keyup');
       validateFormDonators.validatePhone('js-validatePhone', 'keyup');
       validateFormDonators.validateCPF('js-validateCPF', 'keyup');
-      validateFormDonators.validateTerms('js-validateTerms', 'keyup');
-      validateFormDonators.validateGenre('js-validateGenre', 'keyup');
+      validateFormDonators.validateTerms('js-validateTerms', 'click');
     };
 
 
@@ -27,4 +27,4 @@ ready(function(){
 
   });
 
-});
+// });
