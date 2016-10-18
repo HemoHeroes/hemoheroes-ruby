@@ -10,6 +10,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
+    NotificationMailer.welcome_email(@user_blood_donator).deliver_later
+    puts("OOOOOOOOOOOOOOOOOOOOO PAAAAAAAAAAAAAAAAAAAAII!!")
   end
 
   # GET /resource/edit
