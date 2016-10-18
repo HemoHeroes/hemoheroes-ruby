@@ -1,44 +1,46 @@
 
-<div class="Container Container--centralize">
-  <div class="Container-header">
+
+    <div class="Modal-content">
+      <div class="Modal-header">
     <div class="Grid">
       <div class="Grid-cell u-sizeFull">
-        <h3 class="Container-header-text">Login Unificado</h2>
+        <div class="Modal-titleBox">
+          <h3 class="Modal-title">Login Unificado</h3>
+        </div>
       </div>
     </div>
   </div>
 
   <%= alert %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="Container-body">
+  <div class="Modal-body">
     <div class="Form Form--fluid">
       <div class="Grid">
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
-        <div class="Grid-cell u-desktop-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size1of12 u-mobile-sizeFull"></div>
+        <div class="Grid-cell u-desktop-size9of12 u-mobile-sizeFull">
             <div class="Form-group">
                 <span class="Form-inputLabel u-size2of12">CPF/CNPJ:</span>
                 <input type="text" class="Form-inputValue u-size10of12" name="documento" />
             </div>
         </div>
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
+        <div class="Grid-cell u-desktop-size2of12 u-mobile-sizeFull"></div>
 
 
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
-        <div class="Grid-cell u-desktop-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size1of12 u-mobile-sizeFull"></div>
+        <div class="Grid-cell u-desktop-size9of12 u-mobile-sizeFull">
             <div class="Form-group">
                 <span class="Form-inputLabel u-size2of12">Senha:</span>
                 <%= f.password_field :password, class:"Form-inputValue u-size10of12", autocomplete: "off" %>
             </div>
         </div>
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size2of12 u-mobile-sizeFull">
         </div>
 
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
-        <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
-          <div class="Grid-cell u-desktop-size3of12" style="text-align:right; padding: 10px 5px 0 0;" >
-            <%= f.submit "Login", class:"Button Button--medium is-actived" %>
-          </div>
-          <div class="Grid-cell u-desktop-size3of12 u-mobile-sizeFull"></div>
+        <div class="Grid-cell u-desktop-size1of12 u-mobile-sizeFull"></div>
+        <div class="Grid-cell u-desktop-size9of12" style="text-align:right; padding: 10px 5px 0 0;" >
+          <%= f.submit "Login", class:"Button Button--medium is-actived" %>
+        </div>
+        <div class="Grid-cell u-desktop-size2of12 u-mobile-sizeFull"></div>
       </div>
     </div>
   </div>
