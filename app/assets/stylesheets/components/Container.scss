@@ -1,14 +1,16 @@
 @import "variables";
 
-.Container{
+.Container {
   float: left;
   border: 3px solid #cecccc;
   border-radius: 15px;
   overflow: hidden;
-  @include mobile{
+  @include tablet {
+    margin: 30px;
+  }
+  @include mobile {
     margin: 30px;
     align-content: center;
-
   }
 
   &-header {

@@ -9,17 +9,17 @@ ready(function(){
     };
 
     var buttonValidFormDonator = function(){
-      var buttonRegister = document.getElementsByClassName('js-validateButton')[0];
+      var buttonRegister = document.querySelector('.js-validateButton');
       buttonRegister.classList.add('is-disabled');
     }
 
     var validateFormDonator = function(){
-      validateFormDonators.validateName('js-validateName', 'focusout');
-      validateFormDonators.validateCPF('js-validateCPF', 'focusout');
-      validateFormDonators.validateEmail('js-validateEmail', 'focusout');
-      validateFormDonators.validatePhone('js-validatePhone', 'focusout');
-      validateFormDonators.validateTerms('js-validateTerms', 'click');
-      validateFormDonators.validatePassword('js-validatePassword','js-validatePasswordConfirmation','keyup');
+      validateFormDonators.validateName('.js-validateName', 'focusout');
+      validateFormDonators.validateCPF('.js-validateCPF', 'focusout');
+      validateFormDonators.validateEmail('.js-validateEmail', 'focusout');
+      validateFormDonators.validatePhone('.js-validatePhone', 'focusout');
+      validateFormDonators.validateTerms('.js-validateTerms', 'click');
+      validateFormDonators.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
 

@@ -119,10 +119,10 @@
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Sexo: </span>
               <div class="Radio">
+                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                 <%= label_tag(:genre, "Masculino") %>
                 <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                 <%= label_tag(:genre, "Feminino") %>
-                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                 <span id="errorGenre" style="display:none;" class="errorMessage"></span>
               </div>
             </div>
