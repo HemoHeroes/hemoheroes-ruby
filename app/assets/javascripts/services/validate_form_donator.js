@@ -6,6 +6,8 @@ var validateFormDonators = (function(){
   validFormDonator[2] = false;
   validFormDonator[3] = false;
   validFormDonator[4] = false;
+  validFormDonator[5] = false;
+  validFormDonator[6] = false;
 
   var invalidInput = false;
 
@@ -145,7 +147,51 @@ var validateFormDonators = (function(){
           return false;
         }
       });
-    }
+    },
+
+
+        validatePassword: function(selector, selectorConfirmation, action ){
+          var valuePassword = document.getElementsByClassName(selector)[0];
+          var valuePasswordConfirmation = document.getElementsByClassName(selectorConfirmation)[0];
+
+          valuePassword.addEventListener(action, function(){
+            document.getElementById('errorPassword').style.display = "";
+            if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
+              document.getElementById('errorPassword').innerHTML = "Senha deve ter no minimo 6 digitos!";
+              validFormDonator[5] = false;
+              buttonValidFormDonator();
+              return false;
+            }else if(valuePassword.value.length == 0){
+              document.getElementById('errorPassword').innerHTML = "O campo senha é obrigatório!";
+              validFormDonator[5] = false;
+              buttonValidFormDonator();
+              return false;
+            }else{
+              document.getElementById('errorPassword').style.display = "none";
+              validFormDonator[5] = true;
+              buttonValidFormDonator();
+            }
+          });
+
+          valuePasswordConfirmation.addEventListener(action, function(){
+            document.getElementById('errorPasswordConfirmation').style.display = "";
+
+            if(valuePasswordConfirmation.value.length >= 0){
+              if(valuePasswordConfirmation.value != valuePassword.value){
+                document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
+                validFormDonator[6] = false;
+                buttonValidFormDonator();
+              }else{
+                document.getElementById('errorPasswordConfirmation').style.display = "none";
+                validFormDonator[6] = true;
+                buttonValidFormDonator();
+              }
+            }
+
+          });
+
+        }
+
 
 
   } // return
