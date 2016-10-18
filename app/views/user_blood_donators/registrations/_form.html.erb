@@ -1,75 +1,77 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <% if resource.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
+<% if resource.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
 
-    <ul>
-      <% user_blood_donator.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+  <ul>
+    <% user_blood_donator.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="Container">
-    <div class="Container-header">
-      <div class="Grid">
-        <div class="Grid-cell u-sizeFull">
-          <h3 class="Container-header-text"> Cadastro de doador </h3>
-        </div>
+<div class="Container">
+  <div class="Container-header">
+    <div class="Grid">
+      <div class="Grid-cell u-sizeFull">
+        <h3 class="Container-header-text"> Cadastro de doador </h3>
       </div>
     </div>
+  </div>
 
-    <div class="Container-body">
+  <div class="Container-body">
 
-      <div class="Form Form--fluid">
-        <div class="Grid">
+    <div class="Form Form--fluid">
+      <div class="Grid">
 
 
-          <!-- NAME -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-            <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Nome: </span>
-              <%= f.text_field :name, class: "Form-inputValue  js-validateName  u-size10of12" %>
-              <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório</span>
-            </div>
+        <!-- NAME -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Nome: </span>
+            <%= f.text_field :name, class: "Form-inputValue  js-validateName  u-size10of12" %>
+            <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório</span>
           </div>
+        </div>
 
 
-          <!-- CPF -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-            <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">CPF: </span>
-              <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
-              <span id="errorCPF" style="display:none;" class="errorMessage"></span>
-            </div>
+        <!-- CPF -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">CPF: </span>
+            <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
+            <span id="errorCPF" style="display:none;" class="errorMessage"></span>
           </div>
+        </div>
 
 
-          <!-- EMAIL -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-            <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Email: </span>
-              <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
-              <span id="errorEmail" style="display:none;" class="errorMessage"></span>
-            </div>
+        <!-- EMAIL -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Email: </span>
+            <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
+            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
           </div>
+        </div>
 
 
-          <!-- PHONE -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-            <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Telefone: </span>
-              <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
-              <span id="errorPhone" style="display:none;" class="errorMessage"></span>
-            </div>
+        <!-- PHONE -->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Telefone: </span>
+            <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
+            <span id="errorPhone" style="display:none;" class="errorMessage"></span>
           </div>
+        </div>
 
-          <!-- DATA OF BIRTH-->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-            <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
-              <%= f.date_field :date_birth, class: "Form-inputValue js-validateDate" %>
+        <!-- DATA OF BIRTH-->
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Form-group">
+            <span class="Form-inputLabel u-size2of12">Data de nascimento: </span>
+            <%= f.date_select :date_birth, {order: [:day, :month, :year],
+              start_year: Date.today.year-16, end_year: Date.today.year-69},
+              with_css_classes: true, class: "Form-inputValue js-validateDate" %>
               <span id="errorDate" style="display:none;" class="errorMessage"></span>
             </div>
           </div>
@@ -109,54 +111,68 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <span class="Form-inputLabel u-size2of12">Ultima doação: </span>
-              <%= f.date_field :last_donation, class: "Form-inputValue" %>
+              <%= f.date_select :last_donation, {order: [:day, :month, :year],
+                start_year: Date.today.year, end_year: Date.today.year-53},
+                with_css_classes: true, class: "Form-inputValue js-validateDate", include_blank: true, include_blank: "Não sei" %>
+                <span id="errorDate" style="display:none;" class="errorMessage"></span>
+              </div>
+              <div class="Form-group">
+                <div class="Checkbox">
+                  <%= check_box_tag(:check_last_donation, 'accepted', false, disable:false) %>
+                </div>
+                <div class="Checkbox">
+                  <%= label_tag(:check_last_donation, "Eu nunca fiz uma doação") %>
+                </div>
+              </div>
             </div>
-          </div>
 
 
-          <!-- GENDER -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+            <!-- GENDER -->
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+              <div class="Form-group">
+                <span class="Form-inputLabel u-size2of12">Sexo: </span>
+                <div class="Radio">
+                  <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+                  <%= label_tag(:genre, "Masculino") %>
+                  <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+                  <%= label_tag(:genre, "Feminino") %>
+                  <span id="errorGenre" style="display:none;" class="errorMessage"></span>
+                </div>
+              </div>
+            </div>
+
+
+
+
             <div class="Form-group">
-              <span class="Form-inputLabel u-size2of12">Sexo: </span>
-              <div class="Radio">
-                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
-                <%= label_tag(:genre, "Masculino") %>
-                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
-                <%= label_tag(:genre, "Feminino") %>
-                <span id="errorGenre" style="display:none;" class="errorMessage"></span>
+              <div class="Checkbox">
+                <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
+              </div>
+              <div class="Checkbox">
+                <%= label_tag(:notification, "Desejo receber notificações") %>
               </div>
             </div>
-          </div>
 
-          <div class="Form-group">
-            <div class="Checkbox">
-              <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
-            </div>
-            <div class="Checkbox">
-              <%= label_tag(:notification, "Desejo receber notificações") %>
-            </div>
-          </div>
-
-          <div class="Form-group">
-            <div class="Checkbox">
-              <div class="Checkbox-input">
-                <%= check_box_tag(:accept_terms, false, false, class: "js-validateTerms")  %>
-              </div>
-              <div class="Checkbox-label">
-                <%= label_tag(:accept_terms, "Aceito os termos de uso") %>
-                <span id="errorTerms" style="display:none;" class="errorMessage"></span>
+            <div class="Form-group">
+              <div class="Checkbox">
+                <div class="Checkbox-input">
+                  <%= check_box_tag(:accept_terms, false, false, class: "js-validateTerms")  %>
+                </div>
+                <div class="Checkbox-label">
+                  <%= label_tag(:accept_terms, "Aceito os termos de uso") %>
+                  <span id="errorTerms" style="display:none;" class="errorMessage"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButton" %>
-      <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
+        <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButton" %>
+        <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
+
+      </div>
 
     </div>
 
-  </div>
 
-
-  <% end %>
+    <% end %>
