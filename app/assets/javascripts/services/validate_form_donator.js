@@ -153,8 +153,8 @@ var validateFormDonators = (function(){
       var valuePassword = document.querySelector(selector);
       var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
 
-      var testPasswordEquals = function(senha, confirmaSenha) {
-        if(senha != confirmaSenha){
+      var testPasswordEquals = function(password, confirmPassword) {
+        if(password != confirmPassword){
           document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
           validFormDonator[6] = false;
           buttonValidFormDonator();
