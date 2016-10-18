@@ -58,6 +58,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
+    config.action_mailer.perform_deliveries = true
     #configure mail do mail
     config.action_mailer.delivery_method = :smtp
     #SMTP settings for gmail
@@ -66,6 +67,7 @@ Rails.application.configure do
       :port                 => 587,
       :user_name            => "aceleradora10@gmail.com",
       :password             =>  "rubyheroes",
+      :domain               => 'gmail',
       :authentication       => "plain",
       :enable_starttls_auto => true
     }
