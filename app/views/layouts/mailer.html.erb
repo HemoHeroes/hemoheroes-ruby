@@ -8,14 +8,21 @@
   </head>
 
   <body>
-   <h1>Welcome to example.com, <%= @user.name %></h1>
+   <h1>Doadores solicitados</h1>
    <p>
-     You have successfully signed up to example.com,
-     your username is: none.<br>
+     Doadores tipo A+: <%= @blood_necessity.a_positive %>
+     Doadores tipo A-: <%= @blood_necessity.a_negative %>
+     Doadores tipo B+: <%= @blood_necessity.b_positive %>
+     Doadores tipo B-: <%= @blood_necessity.b_negative %>
+     Doadores tipo AB+: <%= @blood_necessity.ab_positive %>
+     Doadores tipo AB-: <%= @blood_necessity.ab_negative %>
+     Doadores tipo O+: <%= @blood_necessity.o_positive %>
+     Doadores tipo O-: <%= @blood_necessity.o_negative %>
    </p>
    <p>
-     To login to the site, just follow this link: <%= @url %>.
+     Att,
+
+     Equipe RubyHeroes :D
    </p>
-   <p>Thanks for joining and have a great day!</p>
  </body>
 </html>
