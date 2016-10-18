@@ -8,4 +8,13 @@ class NotificationMailer < ApplicationMailer
     #mail(to: @user.email, subject: 'Welcome to My Awesome Site')
     mail(to: "aceleradora10@gmail.com", subject: 'Teste implementação')
   end
+
+  def get_donators
+    user_blood_donators = UserBloodDonator.all
+
+    user_blood_donators.each do |donator|
+      blood_array = donate_blood_to(donator.blood_type)
+    end
+
+  end
 end
