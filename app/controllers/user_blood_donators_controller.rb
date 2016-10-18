@@ -27,7 +27,7 @@ class UserBloodDonatorsController < ApplicationController
   #   @user_blood_donator = UserBloodDonator.new(user_blood_donator_params)
   #   respond_to do |format|
   #     if @user_blood_donator.save
-  #       NotificationMailer.welcome_email(@user_blood_donator).deliver_later
+  #       NotificationMailer.send_email(@user_blood_donator).deliver_later
   #       format.html { redirect_to @user_blood_donator, notice: 'user_blood_donator was successfully created.' }
   #       format.json { render :show, status: :created, location: @user_blood_donator }
   #     else
