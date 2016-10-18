@@ -13,7 +13,11 @@ class NotificationMailer < ApplicationMailer
     user_blood_donators = UserBloodDonator.all
 
     user_blood_donators.each do |donator|
-      blood_array = donate_blood_to(donator.blood_type)
+      if donator.notification
+        if(last_donation < 30.day.ago)
+
+        end
+      end
     end
 
   end
