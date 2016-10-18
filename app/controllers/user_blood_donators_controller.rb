@@ -23,21 +23,19 @@ class UserBloodDonatorsController < ApplicationController
 
   # POST /user_blood_donators
   # POST /user_blood_donators.json
-  def create
-    @user_blood_donator = UserBloodDonator.new(user_blood_donator_params)
-
-
-    respond_to do |format|
-      if @user_blood_donator.save
-        NotificationMailer.welcome_email(@user_blood_donator).deliver
-        format.html { redirect_to @user_blood_donator, notice: 'user_blood_donator was successfully created.' }
-        format.json { render :show, status: :created, location: @user_blood_donator }
-      else
-        format.html { render :new }
-        format.json { render json: @user_blood_donator.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @user_blood_donator = UserBloodDonator.new(user_blood_donator_params)
+  #   respond_to do |format|
+  #     if @user_blood_donator.save
+  #       NotificationMailer.welcome_email(@user_blood_donator).deliver_later
+  #       format.html { redirect_to @user_blood_donator, notice: 'user_blood_donator was successfully created.' }
+  #       format.json { render :show, status: :created, location: @user_blood_donator }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @user_blood_donator.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /user_blood_donators/1
   # PATCH/PUT /user_blood_donators/1.json
