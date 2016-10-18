@@ -14,10 +14,10 @@ ready(function(){
     }
 
     var validateFormDonator = function(){
-      validateFormDonators.validateName('js-validateName', 'keyup');
-      validateFormDonators.validateCPF('js-validateCPF', 'keyup');
-      validateFormDonators.validateEmail('js-validateEmail', 'keyup');
-      validateFormDonators.validatePhone('js-validatePhone', 'keyup');
+      validateFormDonators.validateName('js-validateName', 'focusout');
+      validateFormDonators.validateCPF('js-validateCPF', 'focusout');
+      validateFormDonators.validateEmail('js-validateEmail', 'focusout');
+      validateFormDonators.validatePhone('js-validatePhone', 'focusout');
       validateFormDonators.validateTerms('js-validateTerms', 'click');
       validateFormDonators.validatePassword('js-validatePassword','js-validatePasswordConfirmation','keyup');
     };
