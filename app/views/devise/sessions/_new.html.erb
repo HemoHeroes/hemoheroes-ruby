@@ -45,7 +45,13 @@
 
         <div class="Grid-cell u-desktop-size1of12 u-mobile-sizeFull"></div>
         <div class="Grid-cell u-desktop-size9of12" style="text-align:right; padding: 10px 5px 0 0;" >
-          <%= f.submit "Login", class:"Button Button--medium is-actived" %>
+
+          <div class="Button-group u-float-right">
+            <div class="Button" onclick="Modal.close('.js-modalLogin')">
+              Voltar
+            </div>
+            <%= f.submit "Login", class:"Button is-actived" %>
+          </div>
         </div>
         <div class="Grid-cell u-desktop-size2of12 u-mobile-sizeFull"></div>
       </div>
