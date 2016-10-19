@@ -14,6 +14,9 @@
 
   <div class="OuterWrapper">
     <%= yield %>
+    <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
+      <%= render "devise/sessions/new" %>
+    <% end %>
   </div>
 
 </body>
