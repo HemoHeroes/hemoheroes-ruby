@@ -5,18 +5,12 @@ var Modal = (function(){
 
       const modal = document.querySelector(selector);
 
-      if(selector == ".js-modalConfirmRequest"){
-        modal.style.opacity = 1;
-        modal.style.visibility = 'visible';
-
-      }
-
       if(selector == ".js-modalSuccessMessage"){
         Modal.close(".js-modalConfirmRequest");
-        modal.style.opacity = 1;
-        modal.style.visibility = 'visible';
-
       }
+
+      modal.style.opacity = 1;
+      modal.style.visibility = 'visible';
 
       const modalContent = document.querySelector(selector + ' .js-modalContent');
       modalContent.style.top = '50%';
