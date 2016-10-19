@@ -8,6 +8,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+  <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
+  <script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:313896,hjsv:5};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
 </head>
 <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
   <%= render 'layouts/header'%>
@@ -15,7 +27,7 @@
   <div class="OuterWrapper">
     <%= yield %>
     <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
-      <%= render "devise/sessions/new" %>
+    <%= render "devise/sessions/new" %>
     <% end %>
   </div>
 </body>
