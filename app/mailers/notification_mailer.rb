@@ -16,7 +16,8 @@ class NotificationMailer < ApplicationMailer
 
     user_blood_donators.each do |donator|
       if donator.notification
-        if(last_donation < 30.day.ago)
+        if(Date.current - last_donation < 30)
+          puts "Pailindo"
 
         end
       end
