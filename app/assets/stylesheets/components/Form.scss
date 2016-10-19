@@ -6,10 +6,18 @@
     overflow: auto;
     display: flex;
     align-items: center;
+    padding: 10px;
     @include mobile{
       display: inline;
+      margin: 10px;
     }
 
+  }
+  &-groupDemand{
+    margin: 25px 0 0 0;
+    overflow: auto;
+    display: flex;
+    align-items: center;
   }
 
   &-inputLabel {

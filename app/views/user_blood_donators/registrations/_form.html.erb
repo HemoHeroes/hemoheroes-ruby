@@ -84,10 +84,10 @@
         <!-- DATA OF BIRTH-->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
               <span>Data de nascimento: </span>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
               <%= f.date_select :date_birth, {order: [:day, :month, :year],
                 start_year: Date.today.year-16, end_year: Date.today.year-69},
                 with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12"%>
@@ -100,10 +100,10 @@
           <!-- BLOOD TYPE -->
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
-              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+              <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
                 <span class="Form-inputDescription u-size2of12">Tipo sanguíneo: </span>
               </div>
-              <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+              <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
                 <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },
                 { class: "Form-inputValue u-size10of12" } %>
               </div>
@@ -142,10 +142,10 @@
           <!-- LAST DONATION -->
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
-              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+              <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
                 <span>Ultima doação: </span>
               </div>
-              <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+              <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
                 <%= f.date_select :last_donation, {order: [:day, :month, :year],
                   start_year: Date.today.year, end_year: Date.today.year-53},
                   with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12",
@@ -166,11 +166,10 @@
 
             <!-- GENDER -->
             <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-              <div class="Form-group">
-                <div class="Form-inputDescription u-size2of12">
+               <div class="Grid-cell u-desktop-size4of12 u-tablet-size4of12 u-mobile-sizeof12">
                   <span>Sexo: </span>
                 </div>
-                <div class="Radio">
+                <div class="Radio u-desktop-size8of12 u-tablet-size8of12 u-mobile-size9of12">
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                   <%= label_tag(:genre, "Masculino") %>
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
@@ -178,7 +177,7 @@
                   <span id="errorGenre" style="display:none;" class="red-text"></span>
                 </div>
               </div>
-            </div>
+
 
 
             <div class="Form-group">
