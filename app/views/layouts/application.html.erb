@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-<% if Rails.env == 'production' %>
+<% if ENV['RAILS_ENV'] == 'production' %>
 
   <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
   <script>
