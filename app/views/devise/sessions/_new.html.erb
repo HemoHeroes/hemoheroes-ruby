@@ -1,5 +1,11 @@
+<% if flash[:manifesto_modal] %>
+<div class="Modal js-modal js-modalLogin" style="opacity: 1; visibility: visible;">
+  <div class="Modal-content js-modalContent" style="top: 50%;">
+<% else %>
 <div class="Modal js-modal js-modalLogin">
   <div class="Modal-content js-modalContent">
+<% end %>
+
       <div class="Modal-header">
     <div class="Grid">
       <div class="Grid-cell u-sizeFull">
@@ -10,13 +16,15 @@
     </div>
   </div>
 
-  <%= alert %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="Modal-body">
     <div class="Form Form--fluid">
       <div class="Grid">
         <div class="Grid-cell u-desktop-size1of12 u-mobile-sizeFull"></div>
         <div class="Grid-cell u-desktop-size9of12 u-mobile-sizeFull">
+          <p>
+            <%= alert %>
+          </p>
             <div class="Form-group">
                 <span class="Form-inputLabel u-size2of12">CPF/CNPJ:</span>
                 <input type="text" class="Form-inputValue u-size10of12" name="documento" />
@@ -44,4 +52,6 @@
     </div>
   </div>
   <% end %>
+
+
 </div>

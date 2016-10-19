@@ -14,12 +14,17 @@ class SessionsController < Devise::SessionsController
       @user = UserBloodBank.find_for_authentication(cnpj: params[:documento])
     end
 
-    if @user.valid_password?(senha)
-      sign_in(@user)
-      redirect_to dashboard_path, alert: "#{@user.name} tá na área!"
+    if (@user == nil)
+      redirect_to root_path , alert:"Documento inválido", flash: { manifesto_modal: true }
     else
-      redirect_to new_user_blood_donator_session_path, alert: "Dados invalidos!"
+      if @user.valid_password?(senha)
+        sign_in(@user)
+        redirect_to dashboard_path, alert: "#{@user.name} tá na área!"
+      else
+        redirect_to root_path , alert:"Senha inválida", flash: { manifesto_modal: true }
+      end
     end
+
   end
 
   private
