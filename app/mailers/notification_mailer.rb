@@ -5,8 +5,10 @@ class NotificationMailer < ApplicationMailer
   def send_email(blood_necessity)
     @blood_necessity = blood_necessity
     @url  = 'https://snap-ci.com/aceleradora-TW/HemoHeroes/branch/master'
-    #mail(to: @user.email, subject: 'Welcome to My Awesome Site')
-    mail(to: "aceleradora10@gmail.com", subject: 'Teste implementação')
+    mail(to: "aceleradora10@gmail.com",
+         subject: 'Teste implementação',
+         template_path: 'notification_mailer',
+         template_name: 'welcome_email')
   end
 
   def get_donators

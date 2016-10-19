@@ -28,7 +28,6 @@ class UserBloodBanksController < ApplicationController
 
     respond_to do |format|
       if @user_blood_bank.save
-        NotificationMailer.send_email(@user_blood_bank).deliver
         format.html { redirect_to @user_blood_bank, notice: 'UserBloodBank was successfully created.' }
         format.json { render :show, status: :created, location: @user_blood_bank }
       else
