@@ -11,19 +11,18 @@ var validateFormService = (function(){
   validForm[7] = false;
 
 
-  var invalidInput = false;
+  var invalidButton = true;
 
   var buttonValidForm = function(){
     console.log(validForm)
-    invalidInput = false;
+    invalidButton = true;
     for(var i = 0; i < validForm.length; i++){
-      console.log(validForm[i])
       if(validForm[i]==false){
-        invalidInput = true;
+        invalidButton = false;
       }
     }
 
-    if(!invalidInput){
+    if(invalidButton){
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
       buttonRegister.classList.remove('is-disabled');
       buttonRegister.classList.add('is-actived');
