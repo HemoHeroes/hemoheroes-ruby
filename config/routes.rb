@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     post 'cadastroBanco' => 'user_blood_banks/registrations#create' , :as => :user_blood_bank_registration
   end
 
+  #get '/dashboard', to: 'welcome#index', :as => :dashboard
+  get '/necessidadeBanco', to: 'demand_blood_banks#new', :as => :necessidadeBanco
   get '/dashboard', to: 'welcome#index', :as => :dashboard
   root 'application#index'
 
