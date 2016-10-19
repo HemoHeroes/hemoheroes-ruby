@@ -15,6 +15,7 @@ class DemandBloodBanksController < ApplicationController
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
+    @lastUpdateNecessity = DemandBloodBank.last.updated_at
   end
 
   # GET /demand_blood_banks/1/edit

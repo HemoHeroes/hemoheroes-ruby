@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014132149) do
+ActiveRecord::Schema.define(version: 20161019153858) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
-    t.integer "a_positive"
-    t.integer "a_negative"
-    t.integer "b_positive"
-    t.integer "b_negative"
-    t.integer "ab_positive"
-    t.integer "ab_negative"
-    t.integer "o_positive"
-    t.integer "o_negative"
+    t.integer  "a_positive"
+    t.integer  "a_negative"
+    t.integer  "b_positive"
+    t.integer  "b_negative"
+    t.integer  "ab_positive"
+    t.integer  "ab_negative"
+    t.integer  "o_positive"
+    t.integer  "o_negative"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_blood_banks", force: :cascade do |t|
