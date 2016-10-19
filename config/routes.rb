@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   devise_for :user_blood_donators, :skip => [:sessions, :registrations]
   as :user_blood_donator do
-    get 'login' => 'devise/sessions#new', :as => :new_user_blood_donator_session
     post 'login' => 'sessions#create', :as => :user_blood_donator_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_blood_donator_session
 
@@ -14,7 +13,6 @@ Rails.application.routes.draw do
 
   devise_for :user_blood_banks, :skip => [:sessions, :registrations]
   as :user_blood_bank do
-    get 'login' => 'devise/sessions#new', :as => :new_user_blood_bank_session
     post 'login' => 'sessions#create', :as => :user_blood_bank_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_blood_bank_session
 
