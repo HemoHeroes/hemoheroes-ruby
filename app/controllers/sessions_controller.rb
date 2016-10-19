@@ -22,10 +22,10 @@ class SessionsController < Devise::SessionsController
     if @user.valid_password?(senha)
       sign_in(@user)
       user_dashboard(@user)
-      else
-        redirect_to root_path , alert:"Senha inválida", flash: { manifesto_modal: true }
-      end
+    else
+      redirect_to root_path , alert:"Senha inválida", flash: { manifesto_modal: true }
     end
+
 
   end
 
