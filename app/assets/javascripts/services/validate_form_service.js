@@ -35,8 +35,8 @@ var validateFormService = (function(){
 
   return {
 
-    validateName: function(selector,action){
-      var valueName = document.getElementsByClassName(selector)[0];
+    validateName: function(selector, action){
+      var valueName = document.querySelector(selector);
       valueName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "none";
         if (valueName.value == "") {
@@ -51,7 +51,7 @@ var validateFormService = (function(){
     },
 
     validateCNPJ: function(selector, action){
-      var valueCNPJ = document.getElementsByClassName(selector)[0];
+      var valueCNPJ = document.querySelector(selector);
       valueCNPJ.addEventListener(action, function(){
         VMasker(valueCNPJ).maskPattern("99.999.999/9999-99");
 
@@ -75,7 +75,7 @@ var validateFormService = (function(){
 
 
     validatePhone: function(selector, action){
-      var valuePhone = document.getElementsByClassName(selector)[0];
+      var valuePhone = document.querySelector(selector);
       valuePhone.addEventListener(action, function(){
         VMasker(valuePhone).maskPattern("(99)9999-9999");
         document.getElementById('errorPhone').style.display = "";
@@ -98,7 +98,7 @@ var validateFormService = (function(){
 
 
     validateEmail: function(selector, action){
-      var valueEmail = document.getElementsByClassName(selector)[0];
+      var valueEmail = document.querySelector(selector);
       valueEmail.addEventListener(action, function(){
         document.getElementById('errorEmail').style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -124,7 +124,7 @@ var validateFormService = (function(){
 
 
     validateAddress: function(selector, action){
-      var valueAddress = document.getElementsByClassName(selector)[0];
+      var valueAddress = document.querySelector(selector);
       valueAddress.addEventListener(action, function(){
         if (valueAddress.value == "") {
           document.getElementById('errorAddress').style.display = "";
@@ -139,7 +139,7 @@ var validateFormService = (function(){
     },
 
     validateExtension: function(selector, action){
-      var valueExtension = document.getElementsByClassName(selector)[0];
+      var valueExtension = document.querySelector(selector);
       valueExtension.addEventListener(action, function(){
         VMasker(valueExtension).maskPattern("9999");
         if (valueExtension.value == "") {
@@ -155,8 +155,8 @@ var validateFormService = (function(){
     },
 
     validatePassword: function(selector, selectorConfirmation, action ){
-      var valuePassword = document.getElementsByClassName(selector)[0];
-      var valuePasswordConfirmation = document.getElementsByClassName(selectorConfirmation)[0];
+      var valuePassword = document.querySelector(selector);
+      var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
 
       valuePassword.addEventListener(action, function(){
         document.getElementById('errorPassword').style.display = "";
