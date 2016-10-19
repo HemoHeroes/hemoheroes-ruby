@@ -28,7 +28,7 @@
             clique aqui para continuar o pedido de solicitação.</p>
 
             <div class="u-float-center u-margin-bottom-medium">
-              <div onclick="Modal.open()"
+              <div onclick="Modal.open('.js-modalConfirmRequest')"
               class= "Button Button--medium is-disabled js-nextButton">Avançar</div>
             </div>
 
@@ -50,7 +50,7 @@
 
 <!-- MODAL ------------------------------------------>
 
-<div class="Modal js-modal">
+<div class="Modal js-modal js-modalConfirmRequest">
 
   <div class="Modal-content js-modalContent">
     <div class="Modal-header">
@@ -90,7 +90,7 @@
               <div class="Button Button--fluid u-size6of12 js-cancelRequestButton">
                 Cancelar
               </div>
-              <div class="Button Button--fluid u-size6of12 is-actived">
+              <div onclick="Modal.open('.js-modalSuccessMessage')" class="Button Button--fluid u-size6of12 is-actived">
                 Confirmar
               </div>
             </div>
@@ -100,5 +100,59 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- MODAL ------------------------------------------>
+
+<div class="Modal js-modal js-modalSuccessMessage">
+
+  <div class="Modal-content js-modalContent">
+    <div class="Modal-header">
+      <div class="Modal-stepBox">
+        <div class="Modal-step">
+          3
+        </div>
+      </div>
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title">
+          Confirmar solicitação
+        </h3>
+      </div>
+    </div>
+
+    <div class="Modal-body">
+      <div class="u-sizeFull">
+        <h2 class="Modal-subsTitle">Doadores Solicitados:</h2>
+      </div>
+
+      <div class="Grid">
+        <div class="Grid-cell u-desktop-size5of12 u-tablet-size6of12 u-mobile-sizefull">
+
+          <div class="Modal-typesRequest">
+            <ul class="js-confirmRequestList">
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="Grid-cell u-desktop-size7of12 u-tablet-size6of12 u-mobile-sizefull">
+          <div class="Modal-confirmation">
+            <span>
+              Enviar solicitação aos doadores dos tipos sanguíneos necessários?
+            </span>
+            <div class="Button-group">
+              <div class="Button Button--fluid u-size6of12 js-cancelRequestButton">
+                Cancelar
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <%= link_to 'Back', demand_blood_banks_path %>

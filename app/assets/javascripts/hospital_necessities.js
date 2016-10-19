@@ -53,14 +53,17 @@ ready(function(){
       });
     };
 
+
     var cancelRequest = function(){
       var cancelRequestButton = document.querySelector('.js-cancelRequestButton');
       cancelRequestButton.addEventListener("click", function(){
         var clearRequestList = document.querySelector('.js-confirmRequestList');
         clearRequestList.innerHTML = "";
-        Modal.close();
+        Modal.close(".js-modalConfirmRequest");
       })
     }
+
+
     initialize();
   })
 })
