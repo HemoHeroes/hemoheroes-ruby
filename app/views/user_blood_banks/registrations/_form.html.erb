@@ -29,9 +29,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Nome: </span>
-            <%= f.text_field :name, class: "js-validateName Form-inputValue u-size10of12" %>
-            <span id="errorName" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            <span class="Form-inputLabel u-size2of12">Nome<span class="red-text">*</span></span>
+            <%= f.text_field :name, class: "js-validateName Form-inputValue u-size10of12", placeholder: "Ex: Hospital Carlos Schallenberger" %>
+            <span id="errorName" style="display:none;" class="red-text">Campo obrigatório!</span>
 
           </div>
         </div>
@@ -40,9 +40,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">CPNJ: </span>
-            <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ",:maxlength => 18 %>
-            <span id="errorCNPJ" style="display:none;" class="errorMessage"></span>
+            <span class="Form-inputLabel u-size2of12">CNPJ<span class="red-text">*</span></span>
+            <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ",:maxlength => 18, placeholder: "Digite apenas números" %>
+            <span id="errorCNPJ" style="display:none;" class="red-text"></span>
 
           </div>
         </div>
@@ -51,9 +51,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Email:</span>
-            <%= f.text_field :email, class: "Form-inputValue u-size10of12 js-validateEmail" %>
-            <span id="errorEmail" style="display:none;" class="errorMessage"></span>
+            <span class="Form-inputLabel u-size2of12">E-mail<span class="red-text">*</span></span>
+            <%= f.text_field :email, class: "Form-inputValue u-size10of12 js-validateEmail", placeholder: "Ex: carlosirla@seuemail.com.br" %>
+            <span id="errorEmail" style="display:none;" class="red-text"></span>
 
           </div>
         </div>
@@ -61,9 +61,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Telefone:</span>
-            <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone",:maxlength => 13 %>
-            <span id="errorPhone" style="display:none;" class="errorMessage"></span>
+            <span class="Form-inputLabel u-size2of12">Telefone<span class="red-text">*</span></span>
+            <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone",:maxlength => 13, placeholder: "Ex: (51) 9876-5432" %>
+            <span id="errorPhone" style="display:none;" class="red-text"></span>
 
           </div>
         </div>
@@ -71,9 +71,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Ramal:</span>
-            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension", :maxlength => 4%>
-            <span id="errorExtension" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            <span class="Form-inputLabel u-size2of12">Ramal</span>
+            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension", :maxlength => 4, placeholder: "Ex: 1234"%>
+            <span id="errorExtension" style="display:none;" class="red-text">Campo obrigatório!</span>
 
           </div>
         </div>
@@ -81,9 +81,9 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Endereço:</span>
-            <%= f.text_field :adress, class: "Form-inputValue u-size10of12 js-validateAddress" %>
-            <span id="errorAddress" style="display:none;" class="errorMessage">O campo é obrigatório!</span>
+            <span class="Form-inputLabel u-size2of12">Endereço<span class="red-text">*</span></span>
+            <%= f.text_field :adress, class: "Form-inputValue u-size10of12 js-validateAddress", placeholder: "Ex: Av. Ipiranga, 6681"%>
+            <span id="errorAddress" style="display:none;" class="red-text">Campo obrigatório!</span>
 
           </div>
         </div>
@@ -91,20 +91,20 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Senha: </span>
+            <span class="Form-inputLabel u-size2of12">Senha<span class="red-text">*</span></span>
             <% if @minimum_password_length %>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", class:"js-validatePassword Form-inputValue u-size10of12" %>
-            <span id="errorPassword" style="display:none;" class="errorMessage"></span>
+            <%= f.password_field :password, autocomplete: "off", class:"js-validatePassword Form-inputValue u-size10of12", placeholder: "Senha" %>
+            <span id="errorPassword" style="display:none;" class="red-text"></span>
           </div>
         </div>
 
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
 
-            <span class="Form-inputLabel u-size2of12">Confirme a senha: </span>
-            <%= f.password_field :password_confirmation, autocomplete: "off", class:"js-validatePasswordConfirmation Form-inputValue u-size10of12" %>
-            <span id="errorPasswordConfirmation" style="display:none;" class="errorMessage"></span>
+            <span class="Form-inputLabel u-size2of12">Confirmar senha<span class="red-text">*</span></span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class:"js-validatePasswordConfirmation Form-inputValue u-size10of12", placeholder: "Confirme sua senha" %>
+            <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
 
           </div>
         </div>

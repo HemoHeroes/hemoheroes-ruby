@@ -57,7 +57,7 @@ var validateFormService = (function(){
 
         document.getElementById('errorCNPJ').style.display = "";
         if(valueCNPJ.value == ""){
-          document.getElementById('errorCNPJ').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorCNPJ').innerHTML = "Campo obrigatório!";
           validForm[1] = false;
           buttonValidForm();
         }else if (valueCNPJ.value.length<18) {
@@ -80,7 +80,7 @@ var validateFormService = (function(){
         VMasker(valuePhone).maskPattern("(99)9999-9999");
         document.getElementById('errorPhone').style.display = "";
         if(valuePhone.value == ""){
-          document.getElementById('errorPhone').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorPhone').innerHTML = "Campo obrigatório!";
           validForm[2] = false;
           buttonValidForm();
         }else if (valuePhone.value.length<13) {
@@ -106,12 +106,12 @@ var validateFormService = (function(){
         document.getElementById('errorEmail').style.display = "";
 
         if (valueEmail.value == "") {
-          document.getElementById('errorEmail').innerHTML = "O campo é obrigatório!";
+          document.getElementById('errorEmail').innerHTML = "Campo obrigatório!";
           validForm[3] = false;
           buttonValidForm();
         }
         if(!emailValidate && valueEmail.value != ""){
-          document.getElementById('errorEmail').innerHTML = "E-mail inválido!";
+          document.getElementById('errorEmail').innerHTML = "e-mail inválido!";
           validForm[3] = false;
           buttonValidForm();
         }else if(emailValidate){
@@ -165,7 +165,7 @@ var validateFormService = (function(){
           validForm[6] = false;
           buttonValidForm();
         }else if(valuePassword.value.length == 0){
-          document.getElementById('errorPassword').innerHTML = "O campo senha é obrigatório!";
+          document.getElementById('errorPassword').innerHTML = "Campo obrigatório!";
           validForm[6] = false;
           buttonValidForm();
         }else{
