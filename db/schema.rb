@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019153858) do
+
+ActiveRecord::Schema.define(version: 20161019164529) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
     t.integer  "a_positive"
@@ -44,7 +45,7 @@ ActiveRecord::Schema.define(version: 20161019153858) do
     t.string   "cnpj"
     t.string   "lat"
     t.string   "long"
-    t.string   "adress"
+    t.string   "address"
     t.index ["cnpj"], name: "index_user_blood_banks_on_cnpj", unique: true
     t.index ["email"], name: "index_user_blood_banks_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_blood_banks_on_reset_password_token", unique: true

@@ -13,13 +13,13 @@ ready(function(){
       buttonRegister.classList.add('is-disabled');
     }
     var validateForm = function(){
-      validateFormService.validateName('js-validateName','keyup');
-      validateFormService.validateEmail('js-validateEmail','keyup');
-      validateFormService.validateCNPJ('js-validateCNPJ','keyup');
-      validateFormService.validateAddress('js-validateAddress','keyup');
-      validateFormService.validateExtension('js-validateExtension','keyup');
-      validateFormService.validatePhone('js-validatePhone','keyup');
-      validateFormService.validatePassword('js-validatePassword','js-validatePasswordConfirmation','keyup');
+      validateFormService.validateName('.js-validateName','keyup');
+      validateFormService.validateEmail('.js-validateEmail','focusout');
+      validateFormService.validateCNPJ('.js-validateCNPJ','keyup');
+      validateFormService.validateAddress('.js-validateAddress','keyup');
+      validateFormService.validateExtension('.js-validateExtension','keyup');
+      validateFormService.validatePhone('.js-validatePhone','keyup');
+      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
     initialize();
