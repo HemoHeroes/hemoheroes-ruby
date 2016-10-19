@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20161019164529) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
