@@ -10,7 +10,6 @@
   </ul>
 </div>
 <% end %>
-<div class="Grid Grid--withGutter">
 <div class="Container u-margin-10">
   <div class="Container-header">
     <div class="Grid">
@@ -133,7 +132,7 @@
                 <span>Confirmar de senha: </span>
               </div>
               <div class="u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
-                <%= f.password_field :password, class: "Form-inputValue js-validatePassword" %>
+                <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation" %>
                 <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
               </div>
             </div>
@@ -211,5 +210,4 @@
 
       </div>
 
-</div>
       <% end %>

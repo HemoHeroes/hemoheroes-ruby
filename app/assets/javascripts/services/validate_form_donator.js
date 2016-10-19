@@ -156,11 +156,11 @@ var validateFormDonators = (function(){
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
           document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-          validFormDonator[6] = false;
+          validFormDonator[5] = false;
           buttonValidFormDonator();
         }else{
           document.getElementById('errorPasswordConfirmation').style.display = "none";
-          validFormDonator[6] = true;
+          validFormDonator[5] = true;
           buttonValidFormDonator();
         }
       };
@@ -169,17 +169,17 @@ var validateFormDonators = (function(){
         document.getElementById('errorPassword').style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           document.getElementById('errorPassword').innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validFormDonator[5] = false;
+          validFormDonator[6] = false;
           buttonValidFormDonator();
           return false;
         }else if(valuePassword.value.length == 0){
           document.getElementById('errorPassword').innerHTML = "Campo obrigatório!";
-          validFormDonator[5] = false;
+          validFormDonator[6] = false;
           buttonValidFormDonator();
           return false;
         }else{
           document.getElementById('errorPassword').style.display = "none";
-          validFormDonator[5] = true;
+          validFormDonator[6] = true;
           buttonValidFormDonator();
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
