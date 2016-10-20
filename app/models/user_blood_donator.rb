@@ -5,8 +5,7 @@ class UserBloodDonator < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable,
   authentication_keys: [:cpf]
 
-  after_save :send_notification
-
+  
   def donate_blood_to(donator_blood_type)
     case (donator_blood_type)
     when "A+"
@@ -35,13 +34,6 @@ class UserBloodDonator < ApplicationRecord
 
   def email_changed?
     false
-  end
-
-
-  protected
-
-  def send_notification
-    NotificationMailer.send_email.deliver_now
   end
 
 end

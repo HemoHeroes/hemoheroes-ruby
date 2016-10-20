@@ -10,6 +10,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
+    send_notification
   end
 
   # GET /resource/edit
@@ -60,4 +61,11 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     # def after_inactive_sign_up_path_for(resource)
     #   super(resource)
     # end
+
+    protected
+
+    def send_notification
+      NotificationMailer.send_email.deliver_now
+    end
+
   end
