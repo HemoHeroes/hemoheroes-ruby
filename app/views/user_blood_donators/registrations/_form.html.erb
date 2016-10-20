@@ -30,7 +30,7 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-              <span>Nome: </span>
+              <span>Nome<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
               <%= f.text_field :name, class: "Form-inputValue  js-validateName" %>
@@ -44,7 +44,7 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-              <span>CPF: </span>
+              <span>CPF<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
               <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
@@ -58,7 +58,7 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-              <span> Email: </span>
+              <span> Email<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
               <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
@@ -72,7 +72,7 @@
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-              <span>Telefone: </span>
+              <span>Telefone<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
               <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
@@ -115,7 +115,7 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-                <span>Senha: </span>
+                <span>Senha<span class="red-text">*</span></span>
               </div>
               <div class="u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
                 <%= f.password_field :password, class: "Form-inputValue js-validatePassword" %>
@@ -129,7 +129,7 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
-                <span>Confirmar de senha: </span>
+                <span>Confirmar senha<span class="red-text">*</span></span>
               </div>
               <div class="u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
                 <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation" %>
@@ -143,7 +143,7 @@
           <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
-                <span>Ultima doação: </span>
+                <span>Última doação: </span>
               </div>
               <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
                 <%= f.date_select :last_donation, {order: [:day, :month, :year],
