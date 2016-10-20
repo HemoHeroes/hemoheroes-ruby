@@ -23,6 +23,7 @@ class UserBloodDonatorsController < ApplicationController
 
   # POST /user_blood_donators
   # POST /user_blood_donators.json
+  
   # def create
   #   @user_blood_donator = UserBloodDonator.new(user_blood_donator_params)
   #   respond_to do |format|
