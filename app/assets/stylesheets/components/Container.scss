@@ -13,6 +13,10 @@
     align-content: center;
   }
 
+  &-noBorder{
+    border: 0px !important;
+  }
+
   &-header {
     width:100%;
     box-sizing: border-box;

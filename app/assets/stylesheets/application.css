@@ -14,3 +14,11 @@
  *= require_self
  *= require JonsModularUI/index
  */
+
+.index-image {
+  background: url(../assets/doacao-de-sangue.jpg);
+  background-size: 100%;
+  height: 184px;
+  width:234px;
+  margin-top: 180px;
+}
