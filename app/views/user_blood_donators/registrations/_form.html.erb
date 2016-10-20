@@ -10,7 +10,7 @@
   </ul>
 </div>
 <% end %>
-<div class="Container u-margin-10">
+<div class="Container Grid-cell u-tablet-sizeFull u-margin">
   <div class="Container-header">
     <div class="Grid">
       <div class="Grid-cell u-sizeFull">
@@ -27,12 +27,12 @@
 
 
         <!-- NAME -->
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>Nome<span class="red-text">*</span></span>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :name, class: "Form-inputValue  js-validateName" %>
               <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
             </div>
@@ -41,12 +41,12 @@
 
 
         <!-- CPF -->
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>CPF<span class="red-text">*</span></span>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
               <span id="errorCPF" style="display:none;" class="red-text"></span>
             </div>
@@ -55,12 +55,12 @@
 
 
         <!-- EMAIL -->
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span> Email<span class="red-text">*</span></span>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
               <span id="errorEmail" style="display:none;" class="red-text"></span>
             </div>
@@ -69,12 +69,12 @@
 
 
         <!-- PHONE -->
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>Telefone<span class="red-text">*</span></span>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
               <span id="errorPhone" style="display:none;" class="red-text"></span>
             </div>
@@ -82,12 +82,12 @@
         </div>
 
         <!-- DATA OF BIRTH-->
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
+            <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size3of12 u-mobile-sizeFull">
               <span>Data de nascimento: </span>
             </div>
-            <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
+            <div class="Grid-cell u-desktop-size9of12 u-tablet-size9of12 u-mobile-sizeFull">
               <%= f.date_select :date_birth, {order: [:day, :month, :year],
                 start_year: Date.today.year-16, end_year: Date.today.year-69},
                 with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12"%>
@@ -98,26 +98,26 @@
 
 
           <!-- BLOOD TYPE -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
-              <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
-                <span class="Form-inputDescription u-size2of12">Tipo sanguíneo: </span>
+              <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size3of12 u-mobile-sizeFull">
+                <span class="Form-inputDescription u-size3of12">Tipo sanguíneo: </span>
               </div>
-              <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
+              <div class="Grid-cell u-desktop-size9of12 u-tablet-size9of12 u-mobile-sizeFull">
                 <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },
-                { class: "Form-inputValue u-size10of12" } %>
+                { class: "Form-inputValue u-size9of12" } %>
               </div>
             </div>
           </div>
 
 
           <!-- PASSWORD -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
-              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <span>Senha<span class="red-text">*</span></span>
               </div>
-              <div class="u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+              <div class="u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <%= f.password_field :password, class: "Form-inputValue js-validatePassword" %>
                 <span id="errorPassword" style="display:none;" class="red-text"></span>
               </div>
@@ -126,12 +126,12 @@
 
 
           <!-- PASSWORD CONFIRMATION -->
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
-              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size2of12 u-mobile-sizeFull">
+              <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <span>Confirmar senha<span class="red-text">*</span></span>
               </div>
-              <div class="u-desktop-size10of12 u-tablet-size10of12 u-mobile-sizeFull">
+              <div class="u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation" %>
                 <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
               </div>
@@ -141,7 +141,7 @@
 
           <!-- LAST DONATION -->
 
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
                 <span>Última doação: </span>
@@ -157,7 +157,7 @@
             </div>
 
 
-            <div class=" Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+            <div class=" Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
               <div class="Form-group">
                 <div class="Checkbox">
                   <%= check_box_tag(:check_last_donation, 'accepted', false, disable:false) %>
@@ -172,7 +172,7 @@
 
             <!-- GENDER -->
             <div class="Form-group">
-            <div class="Grid-cell u-desktop-sizeFull u-tablet-size6of12 u-mobile-sizeFull u-margin-top-medium">
+            <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
                 <span>Sexo: </span>
                 <div class="Radio u-padding-bottom">
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
