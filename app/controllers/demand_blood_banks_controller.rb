@@ -28,7 +28,7 @@ class DemandBloodBanksController < ApplicationController
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
       if @demand_blood_bank.save
-        NotificationMailer.send_email(@demand_blood_bank).deliver_later
+        NotificationMailer.send_email(@demand_blood_bank).deliver_now
         format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
