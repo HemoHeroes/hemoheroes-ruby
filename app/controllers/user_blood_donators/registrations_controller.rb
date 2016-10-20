@@ -11,6 +11,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   def create
     super
     send_notification
+    get_donators
   end
 
   # GET /resource/edit
@@ -63,9 +64,31 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     # end
 
     protected
+    def get_donators
+      puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+      puts "Entrou no Método"
+      puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+      all_user_blood_donators = UserBloodDonator.all
+      all_user_blood_donators.each do |donator|
+        puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+        puts "Percorreu o Array de todos usuários"
+        puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+
+        # if donator.notification
+        #   puts "entrou no laço de notificacao ativada"
+        # if(Date.current - last_donation < 30)
+        #   puts "Pailindo"
+        # end
+        # end
+      end
+    end
 
     def send_notification
       NotificationMailer.send_email.deliver_now
+    end
+
+    def teste_chamada
+      NotificationMailer.get_donators
     end
 
   end

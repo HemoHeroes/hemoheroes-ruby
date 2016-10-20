@@ -23,19 +23,19 @@ class UserBloodBanksController < ApplicationController
 
   # POST /user_blood_banks
   # POST /user_blood_banks.json
-  def create
-    @user_blood_bank = UserBloodBank.new(user_blood_bank_params)
-
-    respond_to do |format|
-      if @user_blood_bank.save
-        format.html { redirect_to @user_blood_bank, notice: 'UserBloodBank was successfully created.' }
-        format.json { render :show, status: :created, location: @user_blood_bank }
-      else
-        format.html { render :new }
-        format.json { render json: @user_blood_bank.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @user_blood_bank = UserBloodBank.new(user_blood_bank_params)
+  #
+  #   respond_to do |format|
+  #     if @user_blood_bank.save
+  #       format.html { redirect_to @user_blood_bank, notice: 'UserBloodBank was successfully created.' }
+  #       format.json { render :show, status: :created, location: @user_blood_bank }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @user_blood_bank.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /user_blood_banks/1
   # PATCH/PUT /user_blood_banks/1.json
