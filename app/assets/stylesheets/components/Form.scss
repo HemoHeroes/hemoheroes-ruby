@@ -11,8 +11,20 @@
       display: inline;
       margin: 10px;
     }
-
   }
+
+  &-groupBlock {
+    margin: 5px 0 0 0;
+    display: block;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    @include mobile{
+      display: inline;
+      margin: 10px;
+    }
+  }
+
   &-groupDemand{
     margin: 25px 0 0 0;
     overflow: auto;
@@ -76,7 +88,7 @@
       @include mobile{
         font-size: 1rem;
       }
+    }
   }
-}
 
 }
