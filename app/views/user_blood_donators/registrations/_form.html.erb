@@ -158,7 +158,7 @@
 
 
             <div class=" Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-              <div class="Form-group">
+              <div class="Form-group u-padding-top">
                 <div class="Checkbox">
                   <%= check_box_tag(:check_last_donation, 'accepted', false, disable:false) %>
                   <div class="Checkbox">
@@ -171,10 +171,13 @@
 
 
             <!-- GENDER -->
-            <div class="Form-group">
-            <div class="Grid-cell u-desktop-sizeFull u-tablet-size6of12 u-mobile-sizeFull u-margin-top-medium">
+
+            <div class="u-margin-top-medium u-padding-bottom u-padding-left10">
+              <div class="Grid-cell u-desktop-size1of12 u-tablet-size6of12 u-mobile-sizeFull">
                 <span>Sexo: </span>
-                <div class="Radio u-padding-bottom">
+            </div>
+            <div class="Grid-cell u-desktop-size11of12 u-tablet-size6of12 u-mobile-sizeFull">
+                <div>
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
                   <%= label_tag(:genre, "Masculino") %>
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
@@ -183,6 +186,8 @@
                 </div>
               </div>
             </div>
+
+
 
 
 
