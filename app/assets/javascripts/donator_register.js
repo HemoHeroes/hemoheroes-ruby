@@ -19,7 +19,7 @@ ready(function(){
       validateFormDonators.validateEmail('.js-validateEmail', 'focusout');
       validateFormDonators.validatePhone('.js-validatePhone', 'focusout');
       validateFormDonators.validateTerms('.js-validateTerms', 'click');
-      validateFormDonators.removeMask('.js-validateForm','click');
+      validateFormDonators.removeMask('js-validateForm','click');
       validateFormDonators.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
