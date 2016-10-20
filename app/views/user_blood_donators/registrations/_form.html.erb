@@ -26,62 +26,61 @@
       <div class="Grid">
 
 
-        <!-- NAME -->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>Nome<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :name, class: "Form-inputValue  js-validateName" %>
+              <%= f.text_field :name, class: "Form-inputValue  js-validateName", placeholder: "Ex: Fellipe Callegas" %>
               <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
             </div>
           </div>
         </div>
 
 
-        <!-- CPF -->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>CPF<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF" %>
+              <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF",
+              :maxlength => 14, placeholder: "Digite apenas números" %>
               <span id="errorCPF" style="display:none;" class="red-text"></span>
             </div>
           </div>
         </div>
 
 
-        <!-- EMAIL -->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span> Email<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :email, class: "Form-inputValue js-validateEmail" %>
+              <%= f.text_field :email, class: "Form-inputValue js-validateEmail",
+              placeholder: "Ex: carlosirla@seuemail.com.br" %>
               <span id="errorEmail" style="display:none;" class="red-text"></span>
             </div>
           </div>
         </div>
 
 
-        <!-- PHONE -->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
               <span>Telefone<span class="red-text">*</span></span>
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :phone, class: "Form-inputValue js-validatePhone" %>
+              <%= f.text_field :phone, class: "Form-inputValue js-validatePhone",
+              :maxlength => 13, placeholder: "Ex: (51) 9876-5432" %>
               <span id="errorPhone" style="display:none;" class="red-text"></span>
             </div>
           </div>
         </div>
 
-        <!-- DATA OF BIRTH-->
+
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size3of12 u-mobile-sizeFull">
@@ -97,7 +96,6 @@
           </div>
 
 
-          <!-- BLOOD TYPE -->
           <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size3of12 u-mobile-sizeFull">
@@ -111,35 +109,32 @@
           </div>
 
 
-          <!-- PASSWORD -->
           <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <span>Senha<span class="red-text">*</span></span>
               </div>
               <div class="u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-                <%= f.password_field :password, class: "Form-inputValue js-validatePassword" %>
+                <%= f.password_field :password, class: "Form-inputValue js-validatePassword", placeholder: "Senha" %>
                 <span id="errorPassword" style="display:none;" class="red-text"></span>
               </div>
             </div>
           </div>
 
 
-          <!-- PASSWORD CONFIRMATION -->
+
           <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
               <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
                 <span>Confirmar senha<span class="red-text">*</span></span>
               </div>
               <div class="u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-                <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation" %>
+                <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation", placeholder: "Confirme sua senha" %>
                 <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
               </div>
             </div>
           </div>
 
-
-          <!-- LAST DONATION -->
 
           <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
             <div class="Form-group">
@@ -170,9 +165,8 @@
 
 
 
-            <!-- GENDER -->
             <div class="Form-group">
-            <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
+              <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
                 <span>Sexo: </span>
                 <div class="Radio u-padding-bottom">
                   <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
@@ -205,9 +199,9 @@
             </div>
           </div>
           <div class="u-margin-right-medium u-float-right">
-          <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButton " %>
-          <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
-        </div>
+            <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButton " %>
+            <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
+          </div>
         </div>
 
         <% end %>
