@@ -14,7 +14,7 @@
 *= require_self
 *= require JonsModularUI/index
 */
-@import "variables";
+
 
 .index-image {
   background-image: url("https://goo.gl/LKGY2D");
