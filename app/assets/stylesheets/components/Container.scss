@@ -6,11 +6,15 @@
   border-radius: 15px;
   overflow: hidden;
   @include tablet {
-    margin: 50px;
+    margin: 30px;
   }
   @include mobile {
     margin: 30px;
     align-content: center;
+  }
+
+  &-noBorder{
+    border: 0px !important;
   }
 
   &-header {

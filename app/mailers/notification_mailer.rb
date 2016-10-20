@@ -1,5 +1,6 @@
 class NotificationMailer < ApplicationMailer
 
+
   default from: 'aceleradora10@gmail.com'
 
   def send_email
