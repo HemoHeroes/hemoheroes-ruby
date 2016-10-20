@@ -6,7 +6,7 @@ ready(function(){
     var initialize = function(){
       validateForm();
       confirmRequest();
-      cancelRequest();
+      clearRequestList();
     };
 
     var validateForm = function(){
@@ -54,14 +54,16 @@ ready(function(){
     };
 
 
-    var cancelRequest = function(){
-      var cancelRequestButton = document.querySelector('.js-cancelRequestButton');
-      cancelRequestButton.addEventListener("click", function(){
+    var clearRequestList = function(){
+      var cancelRequestButtons = document.querySelectorAll('.js-modalButton');
+      addEventListenerToArray(cancelRequestButtons, "click", function(){
         var clearRequestList = document.querySelector('.js-confirmRequestList');
         clearRequestList.innerHTML = "";
         Modal.close(".js-modalConfirmRequest");
       })
     }
+
+
 
 
     initialize();
