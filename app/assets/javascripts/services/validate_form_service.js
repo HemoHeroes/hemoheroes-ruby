@@ -45,6 +45,8 @@ var validateFormService = (function(){
         valueCNPJ = valueCNPJ.replace("-", "");
         valueCNPJ = valueCNPJ.replace("/", "");
         document.getElementsByClassName('js-validateCNPJ')[0].value = valueCNPJ;
+
+
       });
     },
 

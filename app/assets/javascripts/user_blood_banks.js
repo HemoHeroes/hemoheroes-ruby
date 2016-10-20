@@ -12,6 +12,8 @@ ready(function(){
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
       buttonRegister.classList.add('is-disabled');
     }
+
+
     var validateForm = function(){
       validateFormService.validateName('.js-validateName','keyup');
       validateFormService.validateEmail('.js-validateEmail','focusout');

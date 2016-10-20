@@ -20,11 +20,11 @@ var validateFormDonators = (function(){
     }
 
     if(!invalidInput){
-      var buttonRegister = document.querySelector('.js-validateButton');
+      var buttonRegister = document.querySelector('.js-validateForm');
       buttonRegister.classList.remove('is-disabled');
       buttonRegister.classList.add('is-actived');
     }else{
-      var buttonRegister = document.querySelector('.js-validateButton');
+      var buttonRegister = document.querySelector('.js-validateForm');
       buttonRegister.classList.remove('is-actived');
       buttonRegister.classList.add('is-disabled');
     }
@@ -32,6 +32,17 @@ var validateFormDonators = (function(){
 
   return {
 
+    removeMask: function(selector, action){
+      var button = document.getElementsByClassName(selector)[0];
+       button.addEventListener(action, function(){
+        var valueCPF = document.getElementsByClassName('js-validateCPF')[0].value;
+        valueCPF= valueCPF.replace(".", "");
+        valueCPF = valueCPF.replace(".", "");
+        valueCPF = valueCPF.replace("-", "");
+        valueCPF = valueCPF.replace("/", "");
+        document.getElementsByClassName('js-validateCPF')[0].value = valueCPF;
+      });
+    },
 
     validateName: function(selector, action){
       var valueName = document.querySelector(selector);

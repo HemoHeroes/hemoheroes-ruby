@@ -9,7 +9,7 @@ ready(function(){
     };
 
     var buttonValidFormDonator = function(){
-      var buttonRegister = document.querySelector('.js-validateButton');
+      var buttonRegister = document.querySelector('.js-validateForm');
       buttonRegister.classList.add('is-disabled');
     }
 
@@ -19,6 +19,8 @@ ready(function(){
       validateFormDonators.validateEmail('.js-validateEmail', 'focusout');
       validateFormDonators.validatePhone('.js-validatePhone', 'focusout');
       validateFormDonators.validateTerms('.js-validateTerms', 'click');
+      validateFormDonators.removeMask('js-validateForm','click');
+
       validateFormDonators.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
