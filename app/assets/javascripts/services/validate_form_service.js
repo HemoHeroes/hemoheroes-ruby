@@ -27,6 +27,7 @@ var validateFormService = (function(){
       buttonRegister.classList.remove('is-disabled');
       buttonRegister.classList.add('is-actived');
     }else{
+
       var buttonRegister = document.getElementsByClassName('js-validateForm')[0];
       buttonRegister.classList.remove('is-actived');
       buttonRegister.classList.add('is-disabled');
@@ -34,6 +35,18 @@ var validateFormService = (function(){
   }
 
   return {
+
+    removeMask: function(selector, action){
+      var button = document.getElementsByClassName(selector)[0];
+      button.addEventListener(action, function(){
+        var valueCNPJ = document.getElementsByClassName('js-validateCNPJ')[0].value;
+        valueCNPJ = valueCNPJ.replace(".", "");
+        valueCNPJ = valueCNPJ.replace(".", "");
+        valueCNPJ = valueCNPJ.replace("-", "");
+        valueCNPJ = valueCNPJ.replace("/", "");
+        document.getElementsByClassName('js-validateCNPJ')[0].value = valueCNPJ;
+      });
+    },
 
     validateName: function(selector, action){
       var valueName = document.querySelector(selector);

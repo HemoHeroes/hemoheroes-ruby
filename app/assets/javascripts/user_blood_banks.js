@@ -19,6 +19,7 @@ ready(function(){
       validateFormService.validateAddress('.js-validateAddress','keyup');
       validateFormService.validateExtension('.js-validateExtension','keyup');
       validateFormService.validatePhone('.js-validatePhone','keyup');
+      validateFormService.removeMask('js-validateForm','click');
       validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
