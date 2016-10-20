@@ -48,7 +48,11 @@ var validateFormService = (function(){
 
 
   var elementExist = function(selector){
-    var element = document.querySelector(selector);
+    if(typeof selector == "string"){
+      var element = document.querySelector(selector);
+    } else if (typeof selector == "object") {
+      var element = selector;
+    }
 
     if (element == null) {
       return false;
@@ -167,11 +171,12 @@ var validateFormService = (function(){
 
 
     validateAddress: function(selector, action){
-      if (elementExist(selector) == false){
+      var inputAddress = document.querySelector(selector);
+
+      if (elementExist(inputAddress) == false){
         return;
       }
 
-      var inputAddress = document.querySelector(selector);
       inputAddress.addEventListener(action, function(){
         if (inputAddress.value == "") {
           document.getElementById('errorAddress').style.display = "";
@@ -187,11 +192,12 @@ var validateFormService = (function(){
 
 
     validateExtension: function(selector, action){
-      if (elementExist(selector) == false){
+      var inputExtension = document.querySelector(selector);
+
+      if (elementExist(inputExtension) == false){
         return;
       }
 
-      var inputExtension = document.querySelector(selector);
       inputExtension.addEventListener(action, function(){
         VMasker(inputExtension).maskPattern("9999");
         if (inputExtension.value == "") {
