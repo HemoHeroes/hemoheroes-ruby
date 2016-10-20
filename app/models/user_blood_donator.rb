@@ -41,7 +41,7 @@ class UserBloodDonator < ApplicationRecord
   protected
 
   def send_notification
-    NotificationMailer.send_email(['abc']).deliver_now
+    NotificationMailer.send_email.deliver_now
   end
 
 end

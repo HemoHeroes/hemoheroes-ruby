@@ -18,6 +18,10 @@
   &-logo {
     font-size: 2rem;
     font-weight: 900;
+    & a {
+      text-decoration: none;
+      color: $light-font-color;
+    }
   }
 
   &-links {
