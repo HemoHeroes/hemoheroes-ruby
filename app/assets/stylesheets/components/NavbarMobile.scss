@@ -1,14 +1,10 @@
 @import "variables";
 
-.Navbar {
+.NavbarMobile {
   $header-background-color: #FFFAF5;
   $border-color: #FFFFE0;
 
-  @include mobile {
-    display: none;
-  };
-
-  @include tablet {
+  @include desktop {
     display: none;
   };
 
@@ -47,5 +43,4 @@
       padding: 0 15px;
     }
   }
-
 }

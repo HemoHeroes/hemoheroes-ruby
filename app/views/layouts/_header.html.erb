@@ -30,3 +30,36 @@
     </div>
   </div>
 </div>
+
+<div class="NavbarMobile">
+  <div class="NavbarMobile-content">
+    <div class="NavbarMobile-logo" >
+      <a href="/">HemoHeroes</a>
+    </div>
+
+    <div class="Navbar-links">
+      <ul>
+        <li>
+          <% if user_blood_donator_signed_in? %>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+            <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+          </li>
+          <% elsif user_blood_bank_signed_in? %>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+            <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to "Registrar Doador", new_user_blood_donator_registration_path, :class => '' %>
+            <%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, :class => '' %>
+
+            <div class="Button Button--small" onclick="Modal.open('.js-modalLogin')">Login</div>
+          </li>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
