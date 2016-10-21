@@ -10,8 +10,11 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
-    send_notification
-    get_donators
+
+    if UserBloodDonator.find_for_authentication(cpf: params[:document])
+      send_notification
+    end
+
   end
 
   # GET /resource/edit
@@ -64,22 +67,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
     protected
     def get_donators
-      puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-      puts "Entrou no Método"
-      puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
       all_user_blood_donators = UserBloodDonator.all
-      all_user_blood_donators.each do |donator|
-        puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-        puts "Percorreu o Array de todos usuários"
-        puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-
-        # if donator.notification
-        #   puts "entrou no laço de notificacao ativada"
-        # if(Date.current - last_donation < 30)
-        #   puts "Pailindo"
-        # end
-        # end
-      end
     end
 
     def send_notification
