@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020125558) do
+ActiveRecord::Schema.define(version: 20161021152456) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
     t.integer  "a_positive"
@@ -52,18 +52,18 @@ ActiveRecord::Schema.define(version: 20161020125558) do
   end
 
   create_table "user_blood_donators", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "name"
     t.date     "date_birth"
     t.string   "phone"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20161020125558) do
     t.boolean  "notification"
     t.string   "genre"
     t.string   "blood_type"
-    t.boolean  "admin"
+    t.boolean  "admin",                  default: false
     t.date     "last_donation"
     t.string   "cep"
     t.string   "long"
