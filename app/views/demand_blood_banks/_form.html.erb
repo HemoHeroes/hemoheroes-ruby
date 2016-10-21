@@ -1,4 +1,3 @@
-<%= form_for(@demand_blood_bank) do |f| %>
 <div class="Container">
   <div class="Container-header">
     <div class="Grid">
@@ -29,6 +28,7 @@
       </div>
       <% end %>
       <div class="Form Form--large ">
+        <%= form_for(@demand_blood_bank) do |f| %>
         <div class="Container-body">
           <div class="Grid Grid--withGutter">
 
@@ -91,6 +91,6 @@
             </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>

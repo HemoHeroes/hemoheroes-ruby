@@ -5,7 +5,7 @@ class UserBloodDonator < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable,
   authentication_keys: [:cpf]
 
-  
+
   def donate_blood_to(donator_blood_type)
     case (donator_blood_type)
     when "A+"
@@ -25,6 +25,7 @@ class UserBloodDonator < ApplicationRecord
     when "AB-"
       can_donate_to = ['O-', 'B-', 'A-', 'AB-']
     end
+    return can_donate_to
   end
 
 
