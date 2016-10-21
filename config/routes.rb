@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
     get 'cadastroDoador' => 'user_blood_donators/registrations#new' , :as => :new_user_blood_donator_registration
     post 'cadastroDoador' => 'user_blood_donators/registrations#create' , :as => :user_blood_donator_registration
+
+    # =newPrototipo
+    # Routes for tests new user_blood_donators/registrations/form_v2
+    get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
   end
 
   devise_for :user_blood_banks, :skip => [:sessions, :registrations]
@@ -27,5 +31,6 @@ Rails.application.routes.draw do
 
   # Routes for components in construction
   get '/components', to: 'components#index'
+
 
 end

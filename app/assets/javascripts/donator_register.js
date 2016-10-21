@@ -1,7 +1,7 @@
 //= require services/validate_form_donator
 
 ready(function(){
-   onlyInView("registrations", ["new", "edit"], function(){
+  onlyInView("registrations", ["new", "edit"], function(){
 
     var initialize = function(){
       buttonValidFormDonator();
@@ -28,4 +28,4 @@ ready(function(){
 
   });
 
- });
+});
