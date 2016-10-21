@@ -25,7 +25,6 @@ class UserBloodDonator < ApplicationRecord
     when "AB-"
       can_donate_to = ['O-', 'B-', 'A-', 'AB-']
     end
-    return can_donate_to
   end
 
 
