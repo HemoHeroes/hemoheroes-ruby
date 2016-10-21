@@ -8,10 +8,10 @@ class SessionsController < Devise::SessionsController
     @user = nil
     senha = get_param_password params
 
-    @user = UserBloodDonator.find_for_authentication(cpf: params[:documento])
+    @user = UserBloodDonator.find_for_authentication(cpf: params[:document])
 
     if (@user == nil)
-      @user = UserBloodBank.find_for_authentication(cnpj: params[:documento])
+      @user = UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
 
 
