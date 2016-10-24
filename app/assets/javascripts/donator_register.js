@@ -1,4 +1,4 @@
-//= require services/validate_form_donator
+//= require services/validate_form_service
 
 ready(function(){
   onlyInView("registrations", ["new", "edit"], "blood-donator", function(){

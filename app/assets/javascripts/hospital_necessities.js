@@ -1,15 +1,14 @@
 // = require services/validate_form_service
 
 ready(function(){
-
   onlyInView("demand_blood_banks", ["new", "edit"], function(){
     var initialize = function(){
-      validateForm();
+      validateFormBank();
       confirmRequest();
       clearRequestList();
     };
 
-    var validateForm = function(){
+    var validateFormBank = function(){
       var allInputNumbers = document.getElementsByClassName('js-necessityInput');
 
       for(var i = 0; i < allInputNumbers.length; i++){
@@ -17,11 +16,11 @@ ready(function(){
         inputNumber.addEventListener("keyup", function(){
           validateFormService.validatePositiveNumber();
           validateFormService.validateEmptyInput();
-        })
+        });
         inputNumber.addEventListener("click", function(){
           validateFormService.validatePositiveNumber();
           validateFormService.validateEmptyInput();
-        })
+        });
       }
     };
 

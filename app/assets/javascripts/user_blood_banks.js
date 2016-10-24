@@ -4,7 +4,7 @@ ready(function(){
   onlyInView("registrations", ["new"],"blood-bank", function(){
     var initialize = function(){
       buttonValidForm();
-      validateForm();
+      validateFormBank();
     };
 
     var buttonValidForm = function(){
@@ -12,7 +12,7 @@ ready(function(){
       buttonRegisterBank.classList.add('is-disabled');
     }
 
-    var validateForm = function(){
+    var validateFormBank = function(){
       validateFormService.validateName('.js-validateName','focusout');
       validateFormService.validateEmail('.js-validateEmail','focusout');
       validateFormService.validateCNPJ('.js-validateCNPJ','keyup');

@@ -1,13 +1,14 @@
 var validateFormService = (function(){
-  var validForm = [];
-  validForm[0] = false;
-  validForm[1] = false;
-  validForm[2] = false;
-  validForm[3] = false;
-  validForm[4] = false;
-  validForm[5] = false;
-  validForm[6] = false;
-  validForm[7] = false;
+
+  var validFormBank = [];
+  validFormBank[0] = false;
+  validFormBank[1] = false;
+  validFormBank[2] = false;
+  validFormBank[3] = false;
+  validFormBank[4] = false;
+  validFormBank[5] = false;
+  validFormBank[6] = false;
+  validFormBank[7] = false;
 
   var validFormDonator = [];
   validFormDonator[0] = false;
@@ -19,13 +20,13 @@ var validateFormService = (function(){
   validFormDonator[6] = false;
 
 
-  var buttonValidBank = function(selector){
+  var buttonValidFormBank = function(selector){
     if(elementExist(selector)){
       return false;
     }
     var invalidButtonBank = false;
-    for(var i = 0; i < validForm.length; i++){
-      if(validForm[i]==false){
+    for(var i = 0; i < validFormBank.length; i++){
+      if(validFormBank[i]==false){
         invalidButtonBank = true;
       }
     }
@@ -107,13 +108,13 @@ var validateFormService = (function(){
         if (inputName.value) {
           document.getElementById('errorName').style.display = "none";
           validFormDonator[0] = true;
-          validForm[0] = true;
-          buttonValidBank('.js-validateButtonBank');
+          validFormBank[0] = true;
+          buttonValidFormBank('.js-validateButtonBank');
           buttonValidFormDonator();
         } else {
           validFormDonator[0] = false;
-          validForm[0] = false;
-          buttonValidBank();
+          validFormBank[0] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
           return false;
         }
@@ -130,18 +131,18 @@ var validateFormService = (function(){
           document.getElementById('errorCNPJ').style.display = "";
           if(inputCNPJ.value == ""){
             document.getElementById('errorCNPJ').innerHTML = "Campo obrigatório!";
-            validForm[1] = false;
-            buttonValidBank();
+            validFormBank[1] = false;
+            buttonValidFormBank();
             return false;
           }else if (inputCNPJ.value.length<18) {
             document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
-            validForm[1] = false;
-            buttonValidBank();
+            validFormBank[1] = false;
+            buttonValidFormBank();
             return false;
           }else{
             document.getElementById('errorCNPJ').style.display = "none";
-            validForm[1] = true;
-            buttonValidBank();
+            validFormBank[1] = true;
+            buttonValidFormBank();
           }
         });
       }
@@ -156,21 +157,21 @@ var validateFormService = (function(){
         if(inputPhone.value == ""){
           document.getElementById('errorPhone').innerHTML = "Campo obrigatório!";
           validFormDonator[1] = false;
-          validForm[2] = false;
-          buttonValidBank();
+          validFormBank[2] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }else if (inputPhone.value.length<13) {
           document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
           validFormDonator[1] = false;
-          validForm[2] = false;
-          buttonValidBank();
+          validFormBank[2] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
 
         }else{
           document.getElementById('errorPhone').style.display = "none";
           validFormDonator[1] = true;
-          validForm[2] = true;
-          buttonValidBank();
+          validFormBank[2] = true;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }
       });
@@ -188,21 +189,21 @@ var validateFormService = (function(){
         if (inputEmail.value == "") {
           document.getElementById('errorEmail').innerHTML = "Campo obrigatório!";
           validFormDonator[2] = false;
-          validForm[3] = false;
-          buttonValidBank();
+          validFormBank[3] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }
         if(!emailValidate && inputEmail.value != ""){
           document.getElementById('errorEmail').innerHTML = "e-mail inválido!";
           validFormDonator[2] = false;
-          validForm[3] = false;
-          buttonValidBank();
+          validFormBank[3] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }else if(emailValidate){
           document.getElementById('errorEmail').style.display = "none";
           validFormDonator[2] = true;
-          validForm[3] = true;
-          buttonValidBank();
+          validFormBank[3] = true;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }
       });
@@ -219,16 +220,15 @@ var validateFormService = (function(){
       inputAddress.addEventListener(action, function(){
         if (inputAddress.value == "") {
           document.getElementById('errorAddress').style.display = "";
-          validForm[4] = false;
-          buttonValidBank();
+          validFormBank[4] = false;
+          buttonValidFormBank();
         }else{
           document.getElementById('errorAddress').style.display = "none";
-          validForm[4] = true;
-          buttonValidBank();
+          validFormBank[4] = true;
+          buttonValidFormBank();
         }
       });
     },
-
 
     validateExtension: function(selector, action){
       var inputExtension = document.querySelector(selector);
@@ -241,18 +241,15 @@ var validateFormService = (function(){
         VMasker(inputExtension).maskPattern("9999");
         if (inputExtension.value == "") {
           document.getElementById('errorExtension').style.display = "";
-          validForm[5] = false;
-          buttonValidBank();
+          validFormBank[5] = false;
+          buttonValidFormBank();
         }else{
           document.getElementById('errorExtension').style.display = "none";
-          validForm[5] = true;
-          buttonValidBank();
+          validFormBank[5] = true;
+          buttonValidFormBank();
         }
       });
     },
-
-
-
 
     validatePassword: function(selector, selectorConfirmation, action ){
       var valuePassword = document.querySelector(selector);
@@ -262,40 +259,39 @@ var validateFormService = (function(){
         if(password != confirmPassword){
           document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
           validFormDonator[3] = false;
-          validForm[6] = false;
-          buttonValidBank();
+          validFormBank[6] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }else{
           document.getElementById('errorPasswordConfirmation').style.display = "none";
           validFormDonator[3] = true;
-          validForm[6] = true;
-          buttonValidBank();
+          validFormBank[6] = true;
+          buttonValidFormBank();
           buttonValidFormDonator();
         }
       };
-
 
       valuePassword.addEventListener(action, function(){
         document.getElementById('errorPassword').style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           document.getElementById('errorPassword').innerHTML = "Senha deve ter no minimo 6 digitos!";
           validFormDonator[4] = false;
-          validForm[7] = false;
-          buttonValidBank();
+          validFormBank[7] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
           return false;
         }else if(valuePassword.value.length == 0){
           document.getElementById('errorPassword').innerHTML = "Campo obrigatório!";
           validFormDonator[4] = false;
-          validForm[7] = false;
-          buttonValidBank();
+          validFormBank[7] = false;
+          buttonValidFormBank();
           buttonValidFormDonator();
           return false;
         }else{
           document.getElementById('errorPassword').style.display = "none";
           validFormDonator[4] = true;
-          validForm[7] = true;
-          buttonValidBank();
+          validFormBank[7] = true;
+          buttonValidFormBank();
           buttonValidFormDonator();
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
@@ -309,45 +305,6 @@ var validateFormService = (function(){
       });
 
     },
-
-
-    validatePositiveNumber: function(){
-      var inputNumber = document.getElementsByClassName('js-necessityInput');
-      for(var i = 0; i < 8; i++){
-        if(inputNumber[i].value < 0){
-          alert("Por favor, utilize apenas números maiores que 0!");
-          inputNumber[i].value = null;
-        }
-      }
-    },
-
-
-    validateEmptyInput: function(){
-      var inputNumber = document.getElementsByClassName('js-necessityInput');
-      var button = document.getElementsByClassName("js-nextButton")[0];
-      for(var i = 0; i < 8; i++){
-        if(inputNumber[i].value != 0){
-          button.classList.add('is-actived');
-          button.classList.remove('is-disabled');
-          return true;
-        }
-      }
-      button.classList.add('is-disabled');
-      button.classList.remove('is-actived');
-      return false;
-    },
-
-
-    activeButton: function(){
-      toggleValidateButton(true);
-    },
-
-
-    disableButton: function(){
-      toggleValidateButton(false);
-    },
-
-    //DONATORS <<<<<
 
     validateCPF: function(selector, action){
       var valueCPF = document.querySelector(selector);
@@ -390,7 +347,41 @@ var validateFormService = (function(){
           return false;
         }
       });
+    },
+
+    validatePositiveNumber: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value < 0){
+          alert("Por favor, utilize apenas números maiores que 0!");
+          inputNumber[i].value = null;
+        }
+      }
+    },
+
+    validateEmptyInput: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      var button = document.getElementsByClassName("js-nextButton")[0];
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value != 0){
+          button.classList.add('is-actived');
+          button.classList.remove('is-disabled');
+          return true;
+        }
+      }
+      button.classList.add('is-disabled');
+      button.classList.remove('is-actived');
+      return false;
+    },
+
+    activeButton: function(){
+      toggleValidateButton(true);
+    },
+
+    disableButton: function(){
+      toggleValidateButton(false);
     }
+
 
   } // return
 
