@@ -1,26 +1,25 @@
 //= require services/validate_form_donator
 
 ready(function(){
-   onlyInView("registrations", ["new", "edit"], function(){
-
+  onlyInView("registrations", ["new", "edit"], "blood-donator", function(){
     var initialize = function(){
-      buttonValidFormDonator();
+      buttonValidForm();
       validateFormDonator();
     };
 
-    var buttonValidFormDonator = function(){
-      var buttonRegister = document.querySelector('.js-validateForm');
-      buttonRegister.classList.add('is-disabled');
+    var buttonValidForm = function(){
+      var buttonRegisterDonator = document.querySelector('.js-validateButtonDonator');
+      buttonRegisterDonator.classList.add('is-disabled');
     }
 
     var validateFormDonator = function(){
-      validateFormDonators.validateName('.js-validateName', 'focusout');
-      validateFormDonators.validateCPF('.js-validateCPF', 'focusout');
-      validateFormDonators.validateEmail('.js-validateEmail', 'focusout');
-      validateFormDonators.validatePhone('.js-validatePhone', 'focusout');
-      validateFormDonators.validateTerms('.js-validateTerms', 'click');
-      validateFormDonators.removeMask('js-validateForm','click');
-      validateFormDonators.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
+      validateFormService.validateName('.js-validateName', 'focusout');
+      validateFormService.validateCPF('.js-validateCPF', 'keyup');
+      validateFormService.validateEmail('.js-validateEmail', 'focusout');
+      validateFormService.validatePhone('.js-validatePhone', 'focusout');
+      validateFormService.validateTerms('.js-validateTerms','click');
+      validateFormService.removeMask('.js-validateButtonDonator','.js-validateCPF','click');
+      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
 
@@ -28,4 +27,4 @@ ready(function(){
 
   });
 
- });
+});

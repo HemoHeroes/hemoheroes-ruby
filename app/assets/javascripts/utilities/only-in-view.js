@@ -1,7 +1,8 @@
-function onlyInView(controller, actions, callback){
+function onlyInView(controller, actions, options, callback){
   var currentController = document.body.getAttribute("data-controller");
   var currentAction = document.body.getAttribute("data-action");
-
+  var currrentResource = document.body.getAttribute("data-resource");
+  console.log("Resource atual: "+currrentResource);
   if(currentController != controller){
     console.log("Controller atual: "+currentController);
     return false;
@@ -9,12 +10,12 @@ function onlyInView(controller, actions, callback){
 
   if(Array.isArray(actions)) {
     for(var i = 0, counter = actions.length; i < counter; i++){
-      if (currentAction == actions[i]){
+      if (currentAction == actions[i]&&currrentResource==options){
         callback();
       }
     }
   } else {
-    if (currentAction == actions){
+    if (currentAction == actions&&currrentResource==options){
       callback();
     }
   }

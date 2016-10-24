@@ -1,25 +1,25 @@
 //= require services/validate_form_service
 
 ready(function(){
-  onlyInView("registrations", ["new"], function(){
-
+  onlyInView("registrations", ["new"],"blood-bank", function(){
     var initialize = function(){
+      buttonValidForm();
       validateForm();
     };
 
     var buttonValidForm = function(){
-      var buttonRegister = document.querySelector('.js-validateForm');
-      buttonRegister.classList.add('is-disabled');
+      var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
+      buttonRegisterBank.classList.add('is-disabled');
     }
 
     var validateForm = function(){
-      validateFormService.validateName('.js-validateName','keyup');
+      validateFormService.validateName('.js-validateName','focusout');
       validateFormService.validateEmail('.js-validateEmail','focusout');
       validateFormService.validateCNPJ('.js-validateCNPJ','keyup');
-      validateFormService.validateAddress('.js-validateAddress','keyup');
-      validateFormService.validateExtension('.js-validateExtension','keyup');
+      validateFormService.validateAddress('.js-validateAddress','focusout');
+      validateFormService.validateExtension('.js-validateExtension','focusout');
       validateFormService.validatePhone('.js-validatePhone','keyup');
-      validateFormService.removeMask('.js-validateForm','click');
+      validateFormService.removeMask('.js-validateButtonBank','.js-validateCNPJ','click');
       validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
