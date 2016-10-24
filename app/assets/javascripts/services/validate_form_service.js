@@ -80,14 +80,8 @@ var validateFormService = (function(){
   };
   return {
 
-    validInput: function(){
-      console.log(validateFormService.validateName('.js-validateName','keyup'));
-    },
-
-
     removeMask: function(button, selector, action){
       var button = document.querySelector(button);
-      console.log(selector);
       button.addEventListener(action, function(){
         var valueCNPJ = document.querySelector(selector).value;
         valueCNPJ = valueCNPJ.replace(".", "");
@@ -100,9 +94,7 @@ var validateFormService = (function(){
 
 
     validateName: function(selector, action){
-
       var inputName = document.querySelector(selector);
-
       inputName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "";
         if (inputName.value) {
@@ -127,7 +119,6 @@ var validateFormService = (function(){
         var inputCNPJ = document.querySelector(selector);
         inputCNPJ.addEventListener(action, function(){
           VMasker(inputCNPJ).maskPattern("99.999.999/9999-99");
-
           document.getElementById('errorCNPJ').style.display = "";
           if(inputCNPJ.value == ""){
             document.getElementById('errorCNPJ').innerHTML = "Campo obrigatório!";
@@ -185,7 +176,6 @@ var validateFormService = (function(){
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
         document.getElementById('errorEmail').style.display = "";
-
         if (inputEmail.value == "") {
           document.getElementById('errorEmail').innerHTML = "Campo obrigatório!";
           validFormDonator[2] = false;
@@ -212,11 +202,9 @@ var validateFormService = (function(){
 
     validateAddress: function(selector, action){
       var inputAddress = document.querySelector(selector);
-
       if (elementExist(inputAddress) == false){
         return;
       }
-
       inputAddress.addEventListener(action, function(){
         if (inputAddress.value == "") {
           document.getElementById('errorAddress').style.display = "";
@@ -232,11 +220,9 @@ var validateFormService = (function(){
 
     validateExtension: function(selector, action){
       var inputExtension = document.querySelector(selector);
-
       if (elementExist(inputExtension) == false){
         return;
       }
-
       inputExtension.addEventListener(action, function(){
         VMasker(inputExtension).maskPattern("9999");
         if (inputExtension.value == "") {
@@ -383,6 +369,6 @@ var validateFormService = (function(){
     }
 
 
-  } // return
+  }
 
 })()
