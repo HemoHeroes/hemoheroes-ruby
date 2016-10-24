@@ -7,10 +7,7 @@ var Modal = (function(){
 
       if(selector == ".js-modalSuccessMessage"){
         Modal.close(".js-modalConfirmRequest");
-        alert('antes submit');
-        alert(document.querySelector("#demand_blood_banks_form"));
         document.querySelector('#demand_blood_banks_form').submit();
-        alert('depois submit');
       }
 
       modal.style.opacity = 1;
