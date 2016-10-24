@@ -14,20 +14,19 @@ class NotificationMailer < ApplicationMailer
 
 
   def send_email_to_donators(demand)
+    cont = 0
     @donators = UserBloodDonator.all
     @donators.each do |donator|
-      puts("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-      puts(check_able_to_donate(donator))
     end
   end
 
   def check_able_to_donate(donator)
-    return difference_in_days = (donator.last_donation - DateTime.now.to_date).to_i
-    # if donator.genre == "masculino"
-    #
-    # else
-    #
-    # end
+    difference_in_days = (DateTime.now.to_date - donator.last_donation).to_i
+    if difference_in_days > 30
+      return true
+    end
+    return false
   end
+
 
 end
