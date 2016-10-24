@@ -15,7 +15,7 @@ class DemandBloodBanksController < ApplicationController
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
-    @lastUpdateNecessity = DemandBloodBank.last.updated_at
+    # @lastUpdateNecessity = DemandBloodBank.last.updated_at
   end
 
   # GET /demand_blood_banks/1/edit
@@ -28,7 +28,7 @@ class DemandBloodBanksController < ApplicationController
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
       if @demand_blood_bank.save
-        NotificationMailer.send_email_to_donators(@demand_blood_bank).deliver_now
+        # NotificationMailer.send_email_to_donators(@demand_blood_bank).deliver_now
         format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
