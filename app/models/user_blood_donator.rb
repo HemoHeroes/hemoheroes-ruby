@@ -1,8 +1,8 @@
 class UserBloodDonator < ApplicationRecord
-  validates_presence_of :name, :email, :cpf, :phone
+  #validates_presence_of :name, :email, :cpf, :phone
 
-  validates_uniqueness_of :cpf
-  validates_uniqueness_of :email
+  # validates_uniqueness_of :cpf
+  # validates_uniqueness_of :email
 
 
   # Include default devise modules. Others available are:
