@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021152456) do
+ActiveRecord::Schema.define(version: 20161024164216) do
 
   create_table "demand_blood_banks", force: :cascade do |t|
     t.integer  "a_positive"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20161021152456) do
     t.integer  "o_negative"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.date     "last_notification"
+    t.boolean  "appear"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "user_blood_banks", force: :cascade do |t|
