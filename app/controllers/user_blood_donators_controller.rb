@@ -17,13 +17,21 @@ class UserBloodDonatorsController < ApplicationController
     @user_blood_donator = UserBloodDonator.new
   end
 
+
+  # =newPrototipo
+  # GET /user_blood_donators/new
+  def newPrototipo
+    @user_blood_donator = UserBloodDonator.new
+    render 'user_blood_donators/registrations/newPrototipo'
+  end
+
   # GET /user_blood_donators/1/edit
   def edit
   end
 
   # POST /user_blood_donators
   # POST /user_blood_donators.json
-  
+
   # def create
   #   @user_blood_donator = UserBloodDonator.new(user_blood_donator_params)
   #   respond_to do |format|
@@ -62,13 +70,13 @@ class UserBloodDonatorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_blood_donator
-      @user_blood_donator = UserBloodDonator.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_blood_donator
+    @user_blood_donator = UserBloodDonator.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_blood_donator_params
-      params.require(:user_blood_donator).permit(:name, :date_birth, :cpf, :email, :phone, :password, :blood_type, :admin, :notification, :last_donation, :cep, :lat, :long, :genre)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_blood_donator_params
+    params.require(:user_blood_donator).permit(:name, :date_birth, :cpf, :email, :phone, :password, :blood_type, :admin, :notification, :last_donation, :cep, :lat, :long, :genre)
+  end
 end

@@ -11,6 +11,10 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+
+    if UserBloodBank.find_for_authentication(cnpj: params[:document])
+      send_notification
+    end
   end
 
   # GET /resource/edit

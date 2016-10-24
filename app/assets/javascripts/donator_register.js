@@ -2,6 +2,7 @@
 
 ready(function(){
   onlyInView("registrations", ["new", "edit"], "blood-donator", function(){
+
     var initialize = function(){
       buttonValidForm();
       validateFormDonator();

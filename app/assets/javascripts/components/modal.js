@@ -7,6 +7,7 @@ var Modal = (function(){
 
       if(selector == ".js-modalSuccessMessage"){
         Modal.close(".js-modalConfirmRequest");
+        document.querySelector('#demand_blood_banks_form').submit();
       }
 
       modal.style.opacity = 1;

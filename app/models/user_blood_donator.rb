@@ -1,11 +1,17 @@
 class UserBloodDonator < ApplicationRecord
+  validates_presence_of :name, :email, :cpf, :phone
+
+  validates_uniqueness_of :cpf
+  validates_uniqueness_of :email
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
   authentication_keys: [:cpf]
 
-  
+
   def donate_blood_to(donator_blood_type)
     case (donator_blood_type)
     when "A+"

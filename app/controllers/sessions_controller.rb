@@ -8,22 +8,27 @@ class SessionsController < Devise::SessionsController
     @user = nil
     senha = get_param_password params
 
-    @user = UserBloodDonator.find_for_authentication(cpf: params[:documento])
+    @user = UserBloodDonator.find_for_authentication(cpf: params[:document])
 
     if (@user == nil)
-      @user = UserBloodBank.find_for_authentication(cnpj: params[:documento])
+      @user = UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
 
 
     if (@user == nil)
       redirect_to root_path , alert:"Documento inválido", flash: { manifesto_modal: true }
     else
+      unless @user.actived
+        return redirect_to root_path , alert:"Usuário ainda não autorizado!", flash: { manifesto_modal: true }
+      end
+
       if @user.valid_password?(senha)
         sign_in(@user)
         user_dashboard(@user)
       else
         redirect_to root_path , alert:"Senha inválida", flash: { manifesto_modal: true }
       end
+
     end
   end
 
