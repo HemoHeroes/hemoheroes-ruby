@@ -1,3 +1,4 @@
+ // =newPrototipo
 var validateFormDonators_prototype = (function(){
 
   var validFormDonator_prototype = [];
@@ -29,19 +30,6 @@ var validateFormDonators_prototype = (function(){
   }
 
   return {
-
-    removeMask: function(selector, action){
-      var button = document.getElementsByClassName(selector)[0];
-       button.addEventListener(action, function(){
-        var valueCPF = document.getElementsByClassName('js-validateCPF')[0].value;
-        valueCPF= valueCPF.replace(".", "");
-        valueCPF = valueCPF.replace(".", "");
-        valueCPF = valueCPF.replace("-", "");
-        valueCPF = valueCPF.replace("/", "");
-        document.getElementsByClassName('js-validateCPF')[0].value = valueCPF;
-      });
-    },
-
     validateName: function(selector, action){
       var valueName = document.querySelector(selector);
       valueName.addEventListener(action, function(){
@@ -53,7 +41,6 @@ var validateFormDonators_prototype = (function(){
           return false;
         }
         else {
-          console.log("sssssssssss");
           validFormDonator_prototype[0] = true;
           buttonValidFormDonator_prototype();
           document.getElementById('errorName').style.display = "none";
@@ -139,7 +126,7 @@ var validateFormDonators_prototype = (function(){
           return false;
         }else{
           document.getElementById('errorPassword').style.display = "none";
-          validFormDonator_prototype[6] = true;
+          validFormDonator_prototype[4] = true;
           buttonValidFormDonator_prototype();
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }

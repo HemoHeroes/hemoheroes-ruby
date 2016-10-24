@@ -38,20 +38,6 @@
             </div>
           </div>
         </div>
-
-
-        <!-- <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <span>CPF<span class="red-text">*</span></span>
-            </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :cpf, class: "Form-inputValue js-validateCPF",
-              :maxlength => 14, placeholder: "Digite apenas números" %>
-              <span id="errorCPF" style="display:none;" class="red-text"></span>
-            </div>
-          </div>
-        </div> -->
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
@@ -65,29 +51,13 @@
           </div>
         </div>
 
-
-
-        <!-- <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-        <div class="Form-group">
-        <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-        <span>Telefone<span class="red-text">*</span></span>
-      </div>
-      <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-      <%= f.text_field :phone, class: "Form-inputValue js-validatePhone",
-      :maxlength => 13, placeholder: "Ex: (51) 9876-5432" %>
-      <span id="errorPhone" style="display:none;" class="red-text"></span>
-    </div>
-  </div>
-</div> -->
-
-
 <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
   <div class="Form-group">
     <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size3of12 u-mobile-sizeFull">
       <span>Idade: </span>
     </div>
     <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-      <%= f.text_field :date_birth, class: "Form-inputValue " %>
+      <%= f.text_field :phone, class: "Form-inputValue " %>
 
     </div>
     </div>
@@ -167,19 +137,16 @@
       <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
         <span>Sexo: </span>
         <div class="Radio u-padding-bottom">
-          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
           <%= label_tag(:genre, "Masculino") %>
-          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
           <%= label_tag(:genre, "Feminino") %>
-          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
           <%= label_tag(:genre, "Outro") %>
           <span id="errorGenre" style="display:none;" class="red-text"></span>
         </div>
       </div>
     </div>
-
-
-
     <div class="Form-groupBlock">
       <div class="Checkbox">
         <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
@@ -198,6 +165,7 @@
       </div>
     </div>
   </div>
+
   <div class="u-margin-right-medium u-float-right">
     <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateForm " %>
     <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
