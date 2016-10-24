@@ -12,7 +12,7 @@ class NotificationMailer < ApplicationMailer
     template_name: 'welcome_email')
 
 
-    def send_notification_to_donators(demand)
+    def send_email_to_donators(demand)
       puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
       puts "Entrou no Método"
       puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
@@ -24,6 +24,6 @@ class NotificationMailer < ApplicationMailer
           puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
         end
       end
-    end    
+    end
   end
 end
