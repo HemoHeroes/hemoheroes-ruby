@@ -50,20 +50,6 @@
             </div>
           </div>
         </div>
-
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-size3of12 u-mobile-sizeFull">
-              <span>Idade: </span>
-            </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.number_field :date_birth, class: "Form-inputValue js-validateIdade" %>
-              <span id="errorIdade" style="display:none;" class="red-text"></span>
-            </div>
-          </div>
-        </div>
-
-
         <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
           <div class="Form-group">
             <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size3of12 u-mobile-sizeFull">
@@ -102,37 +88,6 @@
             </div>
           </div>
         </div>
-
-
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size3of12 u-tablet-size2of12 u-mobile-sizeFull">
-              <span>Última doação: </span>
-            </div>
-            <div class="Grid-cell u-desktop-size9of12 u-tablet-size10of12 u-mobile-sizeFull">
-              <%= f.date_select :last_donation, {order: [:month, :year],
-                start_year: Date.today.year, end_year: Date.today.year-1},
-                with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12",
-                include_blank: true, include_blank: "Não sei" %>
-                <span id="errorDate" style="display:none;" class="red-text"></span>
-              </div>
-            </div>
-          </div>
-
-
-          <div class=" Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull u-padding-top-10">
-            <div class="Form-group">
-              <div class="Checkbox">
-                <%= check_box_tag(:check_last_donation, 'accepted', false, disable:false) %>
-                <div class="Checkbox">
-                  <%= label_tag(:check_last_donation, "Eu nunca fiz uma doação") %>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
           <div class="Form-group">
             <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
 
@@ -140,10 +95,8 @@
               <div class="Radio u-padding-bottom">
                 <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
                 <%= label_tag(:genre, "Masculino") %>
-                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
+                <%= radio_button_tag :genre, "sexo", false, class: "Radio-label",  checked: "Feminino"%>
                 <%= label_tag(:genre, "Feminino") %>
-                <!-- <%= radio_button_tag :genre, "sexo", false, class: "Radio-label", checked: "Outro" %>
-                <%= label_tag(:genre, "Outro") %> -->
                 <span id="errorGenre" style="display:none;" class="red-text"></span>
               </div>
             </div>

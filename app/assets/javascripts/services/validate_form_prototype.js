@@ -48,29 +48,6 @@ var validateFormDonators_prototype = (function(){
       });
     },
 
-
-    validateIdade: function(selector, action){
-      var valueIdade = document.querySelector(selector);
-      valueIdade.addEventListener(action, function(){
-        document.getElementById('errorIdade').style.display = "";
-        if (valueIdade.value == "") {
-          console.log("TO NO PRIMEIRO IF");
-          document.getElementById('errorIdade').innerHTML = "Por favor, informe sua idade";
-          return false;
-        }
-        if (valueIdade.value >= 16 && valueIdade.value <= 69){
-          console.log("TO NO SEGUNDO IF");
-          document.getElementById('errorIdade').style.display = "none";
-        }
-        else if ((valueIdade.value < 16) || (valueIdade.value > 69)){
-          console.log("TO NO ELSE");
-          document.getElementById('errorIdade').innerHTML = "Você esta fora da faixa etária de doação";
-          return false;
-        }
-      });
-    },
-
-
     validateEmail: function(selector, action){
       var valueEmail = document.querySelector(selector);
 

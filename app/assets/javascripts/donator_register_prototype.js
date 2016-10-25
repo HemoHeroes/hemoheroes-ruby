@@ -17,7 +17,6 @@ ready(function(){
       validateFormDonators_prototype.validateName('.js-validateName', 'focusout');
       validateFormDonators_prototype.validateEmail('.js-validateEmail', 'focusout');
       validateFormDonators_prototype.validateTerms('.js-validateTerms', 'click');
-      validateFormDonators_prototype.validateIdade('.js-validateIdade', 'focusout');
       validateFormDonators_prototype.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
