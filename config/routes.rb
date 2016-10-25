@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :demand_blood_banks
 
   devise_for :user_blood_donators, :skip => [:sessions, :registrations]
