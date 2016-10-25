@@ -1,8 +1,8 @@
 // = require services/validate_form_prototype
 
 ready(function(){
-   onlyInView("user_blood_donators", ["newPrototipo", "edit"],"blood_prototype", function(){
 
+  onlyInView("user_blood_donators", ["newPrototipo", "edit"],"blood_prototype", function(){
     var initialize = function(){
       buttonValidFormDonator_prototype();
       validateFormDonator_prototype();
@@ -10,7 +10,7 @@ ready(function(){
 
     var buttonValidFormDonator_prototype = function(){
       var buttonRegister = document.querySelector('.js-validateForm_prototype');
-        buttonRegister.classList.add('is-disabled');
+      buttonRegister.classList.add('is-disabled');
     }
 
     var validateFormDonator_prototype = function(){
@@ -25,4 +25,4 @@ ready(function(){
 
   });
 
- });
+});
