@@ -9,7 +9,6 @@ class DemandBloodBanksController < ApplicationController
 
   # GET /demand_blood_banks/1
   # GET /demand_blood_banks/1.json
-  end
 
   # GET /demand_blood_banks/new
   def new
