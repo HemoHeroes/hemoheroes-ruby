@@ -11,12 +11,12 @@ class SessionsController < Devise::SessionsController
     @user = UserBloodDonator.find_for_authentication(email: params[:document])
 
     if (@user == nil)
-      @user = UserBloodBank.find_for_authentication(email: params[:document])
+      @user = UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
 
 
     if (@user == nil)
-      redirect_to root_path , alert:"Documento inválido", flash: { manifesto_modal: true }
+      redirect_to root_path , alert:"Login inválido", flash: { manifesto_modal: true }
     else
       if @user.instance_of? UserBloodBank
         unless @user.actived
