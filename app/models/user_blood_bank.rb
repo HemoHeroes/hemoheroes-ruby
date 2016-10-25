@@ -1,5 +1,5 @@
 class UserBloodBank < ApplicationRecord
-  validates_presence_of :name, :email, :cnpj, :phone, :extension, :address
+  validates_presence_of :name, :email, :cnpj
 
   validates_uniqueness_of :cnpj
   validates_uniqueness_of :email
