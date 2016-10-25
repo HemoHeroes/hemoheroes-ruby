@@ -338,6 +338,9 @@ var validateFormService = (function(){
     validatePositiveNumber: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
       for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value==0){
+          inputNumber[i].value = null;
+        }
         if(inputNumber[i].value < 0){
           alert("Por favor, utilize apenas números maiores que 0!");
           inputNumber[i].value = null;
@@ -348,7 +351,9 @@ var validateFormService = (function(){
     validateEmptyInput: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
       var button = document.getElementsByClassName("js-nextButton")[0];
+
       for(var i = 0; i < 8; i++){
+
         if(inputNumber[i].value != 0){
           button.classList.add('is-actived');
           button.classList.remove('is-disabled');

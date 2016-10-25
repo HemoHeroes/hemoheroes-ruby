@@ -9,6 +9,7 @@ class DemandBloodBanksController < ApplicationController
 
   # GET /demand_blood_banks/1
   # GET /demand_blood_banks/1.json
+  # end
 
   # GET /demand_blood_banks/new
   def new
@@ -23,6 +24,7 @@ class DemandBloodBanksController < ApplicationController
   # POST /demand_blood_banks
   # POST /demand_blood_banks.json
   def create
+    puts params.inspect
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
       if @demand_blood_bank.save

@@ -31,7 +31,7 @@ var validateFormDonators_prototype = (function(){
 
   return {
     validateName: function(selector, action){
-      var valueName = document.querySelector(selector);
+      var valueName = document.querySelector('.js-validateName');
       valueName.addEventListener(action, function(){
         document.getElementById('errorName').style.display = "";
         if (valueName.value == "") {

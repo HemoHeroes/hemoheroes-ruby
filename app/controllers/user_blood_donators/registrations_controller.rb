@@ -4,7 +4,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   # GET /resource/sign_up
   def new
-    @resource = "blood-donator"
+    @resourceT = "blood-donator"
     super
   end
 

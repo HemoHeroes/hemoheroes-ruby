@@ -1,8 +1,10 @@
 // = require services/validate_form_service
 
 ready(function(){
-  onlyInView("demand_blood_banks", ["new", "edit"], function(){
+  onlyInView("demand_blood_banks", ["new", "edit"],null, function(){
+    console.log("ASUDHASUHDUHAS");
     var initialize = function(){
+      console.log("OOIIII");
       validateFormBank();
       confirmRequest();
       clearRequestList();
@@ -24,7 +26,6 @@ ready(function(){
       }
     };
 
-
     var confirmRequest = function(){
       var confirmRequestButton = document.querySelector('.js-nextButton');
       confirmRequestButton.addEventListener("click", function(){
@@ -40,7 +41,7 @@ ready(function(){
 
         Object.keys(valuesOfConfirmInput).forEach(function(key){
 
-          if(valuesOfConfirmInput[key] != "") {
+          if(valuesOfConfirmInput[key] != "" && valuesOfConfirmInput[key]!=0) {
             var liTag = document.createElement("li");
             var requestText = document.createTextNode(valuesOfConfirmInput[key] + " do tipo " + key);
 
@@ -52,7 +53,6 @@ ready(function(){
       });
     };
 
-
     var clearRequestList = function(){
       var cancelRequestButtons = document.querySelectorAll('.js-modalButton');
       addEventListenerToArray(cancelRequestButtons, "click", function(){
@@ -62,9 +62,7 @@ ready(function(){
       })
     }
 
-
-
-
     initialize();
-  })
-})
+
+  });
+});
