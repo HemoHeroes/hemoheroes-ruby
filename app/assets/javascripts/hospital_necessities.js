@@ -2,27 +2,24 @@
 
 ready(function(){
   onlyInView("demand_blood_banks", ["new", "edit"],null, function(){
-    console.log("ASUDHASUHDUHAS");
     var initialize = function(){
-      console.log("OOIIII");
       validateFormBank();
       confirmRequest();
-      clearRequestList();
+      clearRequest();
     };
 
     var validateFormBank = function(){
       var allInputNumbers = document.getElementsByClassName('js-necessityInput');
 
+      var validateOnAction = function() {
+        validateFormService.validatePositiveNumber();
+        validateFormService.validateEmptyInput();
+      };
+
       for(var i = 0; i < allInputNumbers.length; i++){
         var inputNumber = allInputNumbers[i];
-        inputNumber.addEventListener("keyup", function(){
-          validateFormService.validatePositiveNumber();
-          validateFormService.validateEmptyInput();
-        });
-        inputNumber.addEventListener("click", function(){
-          validateFormService.validatePositiveNumber();
-          validateFormService.validateEmptyInput();
-        });
+        inputNumber.addEventListener("keyup", validateOnAction);
+        inputNumber.addEventListener("click", validateOnAction);
       }
     };
 
@@ -31,29 +28,25 @@ ready(function(){
       confirmRequestButton.addEventListener("click", function(){
         var inputsToConfirm = document.getElementsByClassName('js-confirmRequest');
         var valuesOfConfirmInput = {};
-
         for(var counter = 0, inputsToConfirmlength = inputsToConfirm.length; counter < inputsToConfirmlength; counter++) {
           var dataTypeAttribute = inputsToConfirm[counter].getAttribute('data-type');
           valuesOfConfirmInput[dataTypeAttribute] = inputsToConfirm[counter].value;
         }
 
         var confirmRequestList = document.querySelector('.js-confirmRequestList');
-
         Object.keys(valuesOfConfirmInput).forEach(function(key){
-
           if(valuesOfConfirmInput[key] != "" && valuesOfConfirmInput[key]!=0) {
             var liTag = document.createElement("li");
             var requestText = document.createTextNode(valuesOfConfirmInput[key] + " do tipo " + key);
-
             confirmRequestList.appendChild(liTag);
             liTag.appendChild(requestText);
-
           }
         });
       });
     };
 
-    var clearRequestList = function(){
+
+    var clearRequest = function(){
       var cancelRequestButtons = document.querySelectorAll('.js-modalButton');
       addEventListenerToArray(cancelRequestButtons, "click", function(){
         var clearRequestList = document.querySelector('.js-confirmRequestList');
