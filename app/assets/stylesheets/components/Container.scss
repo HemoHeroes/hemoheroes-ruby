@@ -21,7 +21,7 @@
     width:100%;
     box-sizing: border-box;
     padding: 12px 25px;
-    background-color: #6495ED;
+    background-color: $brand-color;
 
     @include mobile {
       padding: 10px;
