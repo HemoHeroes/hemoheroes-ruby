@@ -24,18 +24,28 @@ class DemandBloodBanksController < ApplicationController
   # POST /demand_blood_banks
   # POST /demand_blood_banks.json
   def create
-    puts params.inspect
-    @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
-    respond_to do |format|
-      if @demand_blood_bank.save
-        NotificationMailer.send_email_to_donators(@demand_blood_bank).deliver_now
-        format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
-        format.json { render :show, status: :created, location: @demand_blood_bank }
-      else
-        format.html { render :new }
-        format.json { render json: @demand_blood_bank.errors, status: :unprocessable_entity }
-      end
+
+    @doadores = UserBloodDonator.all
+    # puts @doador.last.email
+
+    @doadores.each do |doador|
+      NotificationMailer.send_email(doador).deliver_now
     end
+
+    # @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
+    # respond_to do |format|
+    #   if @demand_blood_bank.save
+    #
+    #
+    #
+    #     NotificationMailer.send_email_to_donators(@demand_blood_bank).deliver_now
+    #     format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
+    #     format.json { render :show, status: :created, location: @demand_blood_bank }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @demand_blood_bank.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /demand_blood_banks/1
