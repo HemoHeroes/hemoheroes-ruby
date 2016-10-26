@@ -1,3 +1,5 @@
+require 'date'
+
 class DemandBloodBanksController < ApplicationController
   before_action :set_demand_blood_bank, only: [:show, :edit, :update, :destroy]
 
@@ -30,9 +32,20 @@ class DemandBloodBanksController < ApplicationController
     respond_to do |format|
       if @demand_blood_bank.save
 
-        @doadores = UserBloodDonator.all
-        @doadores.each do |doador|
-          NotificationMailer.send_email(doador).deliver_now
+        @donators = UserBloodDonator.all
+        @donators.each do |donator|
+          if user_can_recive_email(donator, @demand_blood_bank)
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "enviando email para #{donator.name}"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+            NotificationMailer.send_email(donator).deliver_now
+          end
         end
 
         format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
@@ -77,5 +90,47 @@ class DemandBloodBanksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def demand_blood_bank_params
     params.require(:demand_blood_bank).permit(:a_positive, :a_negative, :b_positive, :b_negative, :ab_positive, :ab_negative, :o_positive, :o_negative)
+  end
+
+  def user_can_recive_email(user, demand)
+    return false unless user.notification
+    return false unless check_donation_interval user
+    return false unless check_last_donation_request user
+    return false unless blood_type_is_request(user, demand)
+    true
+  end
+
+  def blood_type_is_request(user, demand)
+    make_demand_array(demand).include? user.blood_type
+  end
+
+  def make_demand_array demand
+    array = Array.new
+    array.push("A+") unless demand.a_positive.nil?
+    array.push("A-") unless demand.a_negative.nil?
+    array.push("B+") unless demand.b_positive.nil?
+    array.push("B-") unless demand.b_negative.nil?
+    array.push("AB+") unless demand.ab_positive.nil?
+    array.push("AB-") unless demand.ab_negative.nil?
+    array.push("O+") unless demand.o_positive.nil?
+    array.push("O-") unless demand.o_negative.nil?
+    array
+  end
+
+  def check_last_donation_request donator
+    if (Date.today - donator.last_request).to_i > 7
+      return true
+    end
+    false
+  end
+
+  def check_donation_interval donator
+    difference_in_days = (Date.today - donator.last_donation).to_i
+    if donator.genre == 'm' && difference_in_days > 60
+      return true
+    elsif donator.genre == 'f' && difference_in_days > 90
+      return true
+    end
+    false
   end
 end

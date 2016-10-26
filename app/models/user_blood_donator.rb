@@ -3,8 +3,6 @@ class UserBloodDonator < ApplicationRecord
   has_and_belongs_to_many :notifications
   #validates_presence_of :name, :email, :cpf, :phone
 
-
-
   # validates_uniqueness_of :cpf
   # validates_uniqueness_of :email
 
@@ -13,29 +11,6 @@ class UserBloodDonator < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
   authentication_keys: [:cpf]
-
-
-  def donate_blood_to(donator_blood_type)
-    case (donator_blood_type)
-    when "A+"
-      can_donate_to = ['O+', 'A+', 'O-', 'A-']
-    when "B+"
-      can_donate_to = ['O+', 'B+', 'O-', 'B-']
-    when "AB+"
-      can_donate_to = ['O+', 'A+', 'O-', 'A-', 'B+', 'B-', 'AB+', 'AB-']
-    when "O+"
-      can_donate_to = ['O+', 'O-']
-    when "O-"
-      can_donate_to = ['O-']
-    when "A-"
-      can_donate_to = ['O-', 'A-']
-    when "B-"
-      can_donate_to = ['O-', 'B-']
-    when "AB-"
-      can_donate_to = ['O-', 'B-', 'A-', 'AB-']
-    end
-  end
-
 
   def email_required?
     false
