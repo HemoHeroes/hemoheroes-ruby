@@ -33,7 +33,7 @@
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :name, class: "js-validateName Form-inputValue u-size10of12",
-               placeholder: "Ex: Hospital Carlos Schallenberger" %>
+              placeholder: "Ex: Hospital Carlos Schallenberger" %>
               <span id="errorName" style="display:none;" class="red-text">Campo obrigatório!</span>
             </div>
           </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
               <%= f.text_field :email, class: "Form-inputValue u-size10of12 js-validateEmail",
-               placeholder: "Ex: carlosirla@seuemail.com.br" %>
+              placeholder: "Ex: carlosirla@seuemail.com.br" %>
               <span id="errorEmail" style="display:none;" class="red-text"></span>
             </div>
           </div>
@@ -87,7 +87,7 @@
           </div>
           <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
             <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension",
-             :maxlength => 4, placeholder: "Ex: 1234"%>
+            :maxlength => 4, placeholder: "Ex: 1234"%>
             <span id="errorExtension" style="display:none;" class="red-text">Campo obrigatório!</span>
           </div>
         </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
           <%= f.text_field :address, class: "Form-inputValue u-size10of12 js-validateAddress",
-           placeholder: "Ex: Av. Ipiranga, 6681"%>
+          placeholder: "Ex: Av. Ipiranga, 6681"%>
           <span id="errorAddress" style="display:none;" class="red-text">Campo obrigatório!</span>
         </div>
       </div>
@@ -115,7 +115,7 @@
         <% if @minimum_password_length %>
         <% end %>
         <%= f.password_field :password, autocomplete: "off",
-         class:"js-validatePassword Form-inputValue u-size10of12", placeholder: "Senha" %>
+        class:"js-validatePassword Form-inputValue u-size10of12", placeholder: "Senha" %>
         <span id="errorPassword" style="display:none;" class="red-text"></span>
       </div>
     </div>
@@ -128,7 +128,7 @@
     </div>
     <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
       <%= f.password_field :password_confirmation, autocomplete: "off",
-       class:"js-validatePasswordConfirmation Form-inputValue u-size10of12", placeholder: "Confirme sua senha" %>
+      class:"js-validatePasswordConfirmation Form-inputValue u-size10of12", placeholder: "Confirme sua senha" %>
       <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
     </div>
   </div>
@@ -145,7 +145,9 @@
 <div class="Grid-cell u-sizeFull">
   <div class="u-margin-right-medium u-float-right">
     <div class="Form-group">
-      <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateButtonBank"  %>
+      <div onclick="Modal.open('.js-modalMessageRegisterBank')">
+      <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank"  %>
+    </div>
     </div>
   </div>
 </div>
@@ -156,3 +158,27 @@
 </div>
 
 <% end %>
+
+<div class="Modal js-modal js-modalMessageRegisterBank">
+
+  <div class="Modal-content js-modalContent">
+    <div class="Modal-header">
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title">
+        Cadastro em analise
+        </h3>
+      </div>
+    </div>
+
+    <div class="Modal-body">
+      <div class="u-align-center u-padding-left u-padding-right">
+        <span class="u-font-size20 ">Seu cadastro foi realizado com sucesso, aguarde a confirmação do administrador do sistema. </span>
+      </div>
+      <div class="u-align-center u-padding-top u-padding-bottom">
+        <div onclick="Modal.close('.js-modalMessageRegisterBank')" class="Button Button--medium u-size3of12 is-actived ">
+          OK
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

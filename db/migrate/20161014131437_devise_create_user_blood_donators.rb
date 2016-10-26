@@ -37,7 +37,7 @@ class DeviseCreateUserBloodDonators < ActiveRecord::Migration[5.0]
       t.string     :phone
       t.string     :cpf
       t.boolean    :notification
-      t.string     :genre
+      t.string     :genre   
       t.string     :blood_type
       t.boolean    :admin
       t.date       :last_donation

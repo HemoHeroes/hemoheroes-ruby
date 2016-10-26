@@ -2,7 +2,6 @@
 
 .Navbar {
   $header-background-color: #FFFAF5;
-  $border-color: #FFFFE0;
 
   @include mobile {
     display: none;
@@ -12,10 +11,9 @@
     display: none;
   };
 
-  color: $light-font-color;
-  background-color: $brand-color;
   width: 100%;
   margin: 0 0 35px 0;
+  border-bottom: 1px solid $border-color;
 
   &-content{
     display: flex;
@@ -28,7 +26,7 @@
     font-weight: 900;
     & a {
       text-decoration: none;
-      color: $light-font-color;
+      color: $brand-color;
     }
   }
 

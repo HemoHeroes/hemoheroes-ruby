@@ -11,9 +11,9 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-
+    blood_bank = UserBloodBank.last
+    NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
-      send_notification
     end
   end
 
@@ -57,7 +57,8 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
     # The path used after sign up.
     def after_sign_up_path_for(resource)
-      dashboard_path
+      sign_out
+      root_path
     end
     #
     # # The path used after sign up for inactive accounts.

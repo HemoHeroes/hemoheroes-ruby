@@ -16,7 +16,7 @@ ready(function(){
       validateFormService.validateName('.js-validateName', 'focusout');
       validateFormService.validateCPF('.js-validateCPF', 'keyup');
       validateFormService.validateEmail('.js-validateEmail', 'focusout');
-      validateFormService.validatePhone('.js-validatePhone', 'focusout');
+      validateFormService.validatePhone('.js-validatePhone', 'keyup');
       validateFormService.validateTerms('.js-validateTerms','click');
       validateFormService.removeMask('.js-validateButtonDonator','.js-validateCPF','click');
       validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');

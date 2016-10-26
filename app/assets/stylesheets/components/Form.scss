@@ -4,12 +4,15 @@
   &-group {
     margin: 25px 0 0 0;
     overflow: auto;
-    display: flex;
     align-items: center;
     padding: 10px;
     @include mobile{
       display: inline;
       margin: 10px;
+    }
+
+    & .Form-inputLabel{
+      margin-bottom: 6px;
     }
   }
 
@@ -33,7 +36,7 @@
   }
 
   &-inputLabel {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     display: inline-flex;
   }
@@ -90,5 +93,7 @@
       }
     }
   }
+
+
 
 }

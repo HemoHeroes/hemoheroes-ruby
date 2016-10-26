@@ -2,8 +2,8 @@
 
 .Container {
   float: left;
-  border: 2px solid #cecccc;
-  border-radius: 15px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
   overflow: hidden;
   @include tablet {
     margin: 30px;
@@ -21,7 +21,7 @@
     width:100%;
     box-sizing: border-box;
     padding: 12px 25px;
-    background-color: $brand-color;
+    background-color: hsla(0, 0%, 85%, 1);
 
     @include mobile {
       padding: 10px;
@@ -37,7 +37,7 @@
   }
 
   &-title {
-    color: $light-font-color;
+    color: $dark-font-color;
     font-size: 1.2rem;
     @include mobile {
       font-size: 1rem;
@@ -108,5 +108,6 @@
     margin: auto;
     float:none;
   }
+
 
 }

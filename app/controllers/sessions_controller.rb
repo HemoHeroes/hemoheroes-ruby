@@ -49,6 +49,7 @@ class SessionsController < Devise::SessionsController
     else
       #redirect_to dashboard_path, alert: "#{@user.name} tá na área!"
       redirect_to necessidadeBanco_path, alert: "#{@user.name}"
+
     end
   end
 

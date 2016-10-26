@@ -100,8 +100,7 @@
                 <span class="Form-inputDescription u-size3of12">Tipo sanguíneo: </span>
               </div>
               <div class="Grid-cell u-desktop-size9of12 u-tablet-size9of12 u-mobile-sizeFull">
-                <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },
-                { class: "Form-inputValue u-size9of12" } %>
+                <%= f.select :blood_type, ['Não sei', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], {include_blank: false}, class: "Form-inputValue u-size9of12" %>
               </div>
             </div>
           </div>
@@ -167,9 +166,9 @@
               <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
                 <span>Sexo: </span>
                 <div class="Radio u-padding-bottom">
-                  <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+                  <%= f.radio_button :genre, "M", :class => "Radio-label", checked: true %>
                   <%= label_tag(:genre, "Masculino") %>
-                  <%= radio_button_tag :genre, "sexo", false, class: "Radio-label js-validateGenre" %>
+                  <%= f.radio_button :genre, "F", :class => "Radio-label" %>
                   <%= label_tag(:genre, "Feminino") %>
                   <span id="errorGenre" style="display:none;" class="red-text"></span>
                 </div>
@@ -180,11 +179,12 @@
 
             <div class="Form-groupBlock">
               <div class="Checkbox">
-                <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
+                <%= f.check_box :notification %>
                 <div class="Checkbox">
                   <%= label_tag(:notification, "Desejo receber notificações") %>
                 </div>
               </div>
+
               <div class="Checkbox">
                 <div class="Checkbox-input">
                   <%= check_box_tag(:accept_terms, false, false, class: "js-validateTerms")  %>
