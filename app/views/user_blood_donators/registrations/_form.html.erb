@@ -100,8 +100,7 @@
                 <span class="Form-inputDescription u-size3of12">Tipo sanguíneo: </span>
               </div>
               <div class="Grid-cell u-desktop-size9of12 u-tablet-size9of12 u-mobile-sizeFull">
-                <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], { include_blank: "Não sei" },
-                { class: "Form-inputValue u-size9of12" } %>
+                <%= f.select :blood_type, ['Não sei', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'], {include_blank: false}, class: "Form-inputValue u-size9of12" %>
               </div>
             </div>
           </div>
