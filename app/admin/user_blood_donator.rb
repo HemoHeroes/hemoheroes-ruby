@@ -10,6 +10,7 @@ ActiveAdmin.register UserBloodDonator do
     actions
   end
 
- permit_params :name, :date_birth, :cpf, :email, :phone, :password, :blood_type, :admin, :notification, :last_donation, :cep, :lat, :long, :genre
+ permit_params :name, :date_birth, :cpf, :email, :phone, :password, :blood_type,
+ :admin, :notification, :last_donation, :cep, :lat, :long, :genre
 
 end
