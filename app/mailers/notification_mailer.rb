@@ -19,10 +19,10 @@ class NotificationMailer < ApplicationMailer
     return false
   end
 
-  def send_notification_to_admin (blood_bank)
+  def send_notification_to_admin(blood_bank)
     @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
-    @blood_bank = blood_bank
-    mail(to: "aceleradora10@gmail.com",
+    @blood_bank_name = blood_bank.name
+    mail(to: 'aceleradora10@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
     template_path: 'notification_mailer',
     template_name: 'new_blood_bank_email')

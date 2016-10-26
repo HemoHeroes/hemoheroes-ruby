@@ -12,7 +12,7 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   def create
     super
     blood_bank = UserBloodBank.last
-    NotificationMailer.send_notification_to_admin blood_bank
+    NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
   end
