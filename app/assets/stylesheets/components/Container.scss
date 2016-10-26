@@ -3,7 +3,7 @@
 .Container {
   float: left;
   border: 2px solid #cecccc;
-  border-radius: 15px;
+  border-radius: 5px;
   overflow: hidden;
   @include tablet {
     margin: 30px;
@@ -108,5 +108,4 @@
     margin: auto;
     float:none;
   }
-
 }

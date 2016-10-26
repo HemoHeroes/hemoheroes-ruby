@@ -15,7 +15,7 @@
   <div class="Container-header">
     <div class="Grid">
       <div class="Grid-cell u-sizeFull">
-        <h3 class="Container-title"> Cadastro de doador </h3>
+        <h3 class="Container-title u-margin-small"> Cadastro de doador </h3>
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@
             </div>
           </div>
         </div>
-        <div class="Form-groupBlock">
+        <div class="Form-groupBlock u-margin-left">
           <div class="Checkbox">
             <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
             <div class="Checkbox">
@@ -128,8 +128,8 @@
       </div>
 
       <div class="u-margin-right-medium u-float-right">
+        <%= button_tag "Limpar", type: :reset, class: "Button Button--medium Button--invisible" %>
         <%= f.submit "Cadastrar", class: "Button Button--medium is-disabled js-validateForm_prototype" %>
-        <%= button_tag "Limpar", type: :reset, class: "Button Button--medium" %>
       </div>
 
     </div>
