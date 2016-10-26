@@ -26,3 +26,4 @@ DemandBloodBank.create! a_positive: 12, ab_positive:5
 puts "Doador criado com cpf: #{user_donator.cpf} e senha 123456"
 puts "Banco Desativado criado com cnpj: #{user_bank.cnpj} e senha 123456"
 puts "Banco Ativado criado com cnpj: #{user_bank_actived.cnpj} e senha 123456"
+AdminUser.create!(email: 'pedraoativado@admin.com', password: '123456', password_confirmation: '123456')
