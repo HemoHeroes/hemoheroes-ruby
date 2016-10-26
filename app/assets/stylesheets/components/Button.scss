@@ -2,7 +2,7 @@
 
 .Button {
   $canceled-background-color: #e74c3c;
-  $actived-background-color: #32CD32;
+  $actived-background-color: #2ecc71;
   $default-background-color: #CDC9C9;
 
   background: $default-background-color;
@@ -52,6 +52,7 @@
     border: 0;
     color: grey;
   }
+  
 
   &.is-canceled{
     background: $canceled-background-color;
@@ -77,16 +78,5 @@
     color: scale-color($default-background-color, $lightness: -25%);
     box-shadow: none;
   }
-
-}
-
-// classes abaixo usadas para identificar elementos pelo js
-
-.js-nextButton {
-
-}
-
-
-.js-confirmRequest {
 
 }

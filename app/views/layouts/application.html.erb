@@ -7,8 +7,9 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-<% if ENV['ENV_FOR_HOTJAR'] == 'production' %>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+  
+  <% if ENV['ENV_FOR_HOTJAR'] == 'production' %>
 
   <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
   <script>
