@@ -25,12 +25,12 @@ class DemandBloodBanksController < ApplicationController
   # POST /demand_blood_banks.json
   def create
 
-    @doadores = UserBloodDonator.all
 
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
       if @demand_blood_bank.save
 
+        @doadores = UserBloodDonator.all
         @doadores.each do |doador|
           NotificationMailer.send_email(doador).deliver_now
         end
