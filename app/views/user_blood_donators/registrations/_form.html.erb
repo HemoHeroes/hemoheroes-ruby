@@ -166,9 +166,9 @@
               <div class="Grid-cell u-desktop-sizeFull u-tablet-sizeFull u-mobile-sizeFull u-margin-top-medium">
                 <span>Sexo: </span>
                 <div class="Radio u-padding-bottom">
-                  <%= f.radio_button :genre, "M", :class => "Radio-label js-validateGenre"  %>
+                  <%= f.radio_button :genre, "M", :class => "Radio-label", checked: true %>
                   <%= label_tag(:genre, "Masculino") %>
-                  <%= f.radio_button :genre, "F", :class => "Radio-label js-validateGenre" %>
+                  <%= f.radio_button :genre, "F", :class => "Radio-label" %>
                   <%= label_tag(:genre, "Feminino") %>
                   <span id="errorGenre" style="display:none;" class="red-text"></span>
                 </div>
