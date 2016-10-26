@@ -11,8 +11,9 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    blood_bank = UserBloodBank.last
+    NotificationMailer.send_notification_to_admin blood_bank
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
-      send_notification
     end
   end
 
