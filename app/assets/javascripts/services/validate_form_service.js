@@ -19,19 +19,19 @@ var validateFormService = (function(){
       button.classList.add('is-disabled');
     }
   };
-  
+
   var buttonValidFormBank = function(selector){
     if(elementExist(selector)){
       return false;
     }
     var invalidButtonBank = false;
     for(var i = 0; i < validFormBank.length; i++){
-      if(validFormBank[i]==false){
+      if(validFormBank[i] == false){
         invalidButtonBank = true;
       }
     }
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
-    if(buttonRegisterBank!= null){
+    if(buttonRegisterBank != null){
       if(!invalidButtonBank){
         buttonChange("actived", buttonRegisterBank);
 
@@ -40,7 +40,6 @@ var validateFormService = (function(){
       }
     }
   };
-
 
   var buttonValidFormDonator = function(selector){
     if(elementExist(selector)) return false
@@ -51,9 +50,8 @@ var validateFormService = (function(){
       }
     }
 
-
     var buttonRegisterDonator = document.querySelector('.js-validateButtonDonator');
-    if(buttonRegisterDonator!= null){
+    if(buttonRegisterDonator != null){
       if(!invalidButtonDonator){
         buttonChange("actived", buttonRegisterDonator);
       }else{
@@ -69,15 +67,14 @@ var validateFormService = (function(){
   };
 
   var validateSingleInputForm = function(type, indice, status){
-    if(type=="bank"){
+    if(type == "bank"){
       validFormBank[indice] = status;
       buttonValidFormBank();
-    }else if(type=="donator"){
+    }else if(type == "donator"){
       validFormDonator[indice] = status;
       buttonValidFormDonator();
     }
   };
-
 
   var elementExist = function(selector){
     if(typeof selector == "string"){
@@ -105,7 +102,6 @@ var validateFormService = (function(){
       });
     },
 
-
     validateName: function(selector, action){
       var inputName = document.querySelector(selector);
       var errorName = document.getElementById('errorName');
@@ -115,14 +111,13 @@ var validateFormService = (function(){
         errorName.style.display = "";
         if (inputName.value && nameValidate) {
           errorName.style.display = "none";
-          validateInputForms(0,0,true);
+          validateInputForms(0, 0, true);
         } else {
-          validateInputForms(0,0,false);
+          validateInputForms(0, 0, false);
           return false;
         }
       });
     },
-
 
     validateCNPJ: function(selector, action){
       if(elementExist(selector)){
@@ -133,16 +128,15 @@ var validateFormService = (function(){
           errorCNPJ.style.display = "";
           if(inputCNPJ.value == "" || inputCNPJ.value.length<18){
             errorCNPJ.innerHTML = "CNPJ inválido!";
-            validateSingleInputForm("bank",1, false);
+            validateSingleInputForm("bank", 1, false);
             return false;
           }else{
             errorCNPJ.style.display = "none";
-            validateSingleInputForm("bank",1, true);
+            validateSingleInputForm("bank", 1, true);
           }
         });
       }
     },
-
 
     validatePhone: function(selector, action){
       var inputPhone = document.querySelector(selector);
@@ -160,25 +154,23 @@ var validateFormService = (function(){
       });
     },
 
-
     validateEmail: function(selector, action){
       var inputEmail = document.querySelector(selector);
       var errorEmail = document.getElementById('errorEmail');
       inputEmail.addEventListener(action, function(){
-        document.getElementById('errorEmail').style.display = "";
+        errorEmail.style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
         errorEmail.style.display = "";
-      if(!emailValidate && inputEmail.value != ""){
+        if(!emailValidate && inputEmail.value != ""){
           errorEmail.innerHTML = "E-mail inválido!";
-          validateInputForms(2,3, false);
+          validateInputForms(2, 3, false);
         }else if(emailValidate){
           errorEmail.style.display = "none";
-          validateInputForms(2,3, true);
+          validateInputForms(2, 3, true);
         }
       });
     },
-
 
     validateAddress: function(selector, action){
       var inputAddress = document.querySelector(selector);
@@ -218,15 +210,15 @@ var validateFormService = (function(){
     validatePassword: function(selector, selectorConfirmation, action ){
       var valuePassword = document.querySelector(selector);
       var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
-      var errorPasswordConfirmation =   document.getElementById('errorPasswordConfirmation');
+      var errorPasswordConfirmation = document.getElementById('errorPasswordConfirmation');
 
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
           errorPasswordConfirmation.innerHTML = "Senhas não correspondem!";
-          validateInputForms(3,6, false);
+          validateInputForms(3, 6, false);
         }else{
           errorPasswordConfirmation.style.display = "none";
-          validateInputForms(3,6, true);
+          validateInputForms(3, 6, true);
         }
       };
 
@@ -235,14 +227,14 @@ var validateFormService = (function(){
         errorPassword.style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           errorPassword.innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validateInputForms(4,7, false);
+          validateInputForms(4, 7, false);
           return false;
         }else if(valuePassword.value.length == 0){
-          validateInputForms(4,7, false);
+          validateInputForms(4, 7, false);
           return false;
         }else{
           errorPassword.style.display = "none";
-          validateInputForms(4,7, true);
+          validateInputForms(4, 7, true);
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });
@@ -265,15 +257,14 @@ var validateFormService = (function(){
         errorCPF.style.display = "";
         if(valueCPF.value == "" || valueCPF.value.length<14){
           errorCPF.innerHTML = "CPF inválido!";
-          validateSingleInputForm("donator",5, false);
+          validateSingleInputForm("donator", 5, false);
           return false;
         }else{
           errorCPF.style.display = "none";
-          validateSingleInputForm("donator",5, true);
+          validateSingleInputForm("donator", 5, true);
         }
       });
     },
-
 
     validateTerms: function(selector, action){
       var valueTerms = document.querySelector(selector);
@@ -283,11 +274,11 @@ var validateFormService = (function(){
         errorValueTerms.style.display = "";
         if(valueTerms.checked == true) {
           errorValueTerms.style.display = "none";
-          validateSingleInputForm("donator",6, true);
+          validateSingleInputForm("donator", 6, true);
         }
         else {
           errorValueTerms.innerHTML = "Você deve aceitar os termos de uso!";
-          validateSingleInputForm("donator",6, false);
+          validateSingleInputForm("donator", 6, false);
           return false;
         }
       });
@@ -296,7 +287,7 @@ var validateFormService = (function(){
     validatePositiveNumber: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
       for(var i = 0; i < 8; i++){
-        if(inputNumber[i].value==0){
+        if(inputNumber[i].value == 0){
           inputNumber[i].value = null;
         }
         if(inputNumber[i].value < 0){
@@ -308,7 +299,7 @@ var validateFormService = (function(){
 
     validateEmptyInput: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
-      var button = document.getElementsByClassName("js-nextButton")[0];
+      var button = document.querySelector(".js-nextButton");
 
       for(var i = 0; i < 8; i++){
 
