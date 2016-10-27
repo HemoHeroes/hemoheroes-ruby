@@ -1,42 +1,11 @@
-<h1 class="u-margin">Solicitar doadores</h1>
-
-<div class="Grid Grid--withGutter">
-  <div class="Grid-cell u-desktop-size8of12 u-tablet-sizefull u-mobile-sizefull">
-
-    <%= render 'form', demand_blood_bank: @demand_blood_bank %>
-  </div>
-  <div class="Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizefull">
-
-    <div class="Grid-cell sizefull">
-      <div class="Container">
-        <div class="Container-header">
-          <div class="Grid">
-            <div class="Grid-cell u-size4of12">
-              <div class="Container-stepBox">
-                <span class="Container-step">2</span>
-              </div>
-            </div>
-            <div class="Grid-cell u-size8of12">
-              <div class="Container-titleBox">
-                <h3 class="Container-title"> Solicitar Doações </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="Container-body">
-          <p>Após informar a quantidade de doadores para cada tipo sanguíneo,
-            clique aqui para continuar o pedido de solicitação.</p>
-
-            <div class="u-float-center u-margin-bottom-medium">
-              <div onclick="Modal.open('.js-modalConfirmRequest')"
-              class= "Button Button--medium is-disabled js-nextButton">Avançar</div>
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
+<section class="u-outerWrapper">
+  <h1 class="u-margin-bottom-medium">Solicitar doadores</h1>
+  <div class="Grid Grid--withGutter">
+    <div class="Grid-cell u-desktop-size8of12 u-tablet-sizefull u-mobile-sizefull">
+      <%= render 'form', demand_blood_bank: @demand_blood_bank %>
+    </div>
+    <div class="Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizefull">
+      <%= render 'confirmation_container' %>
     </div>
   </div>
 
@@ -45,6 +14,11 @@
     <span>Última atualização <%= @lastUpdateNecessity %></span>
   </div>
 </div>
+
+</section>
+
+
+
 
 <!-- MODAL ------------------------------------------>
 
@@ -124,14 +98,11 @@
         <span class="u-font-size20 ">Seu pedido de solicitação foi recebido com sucesso pela equipe do HemoHeroes.</span>
       </div>
       <div class="u-align-center u-padding-top u-padding-bottom">
-        <div onclick="Modal.close('.js-modalSuccessMessage')" class="Button Button--fluid u-size6of12 is-actived ">
-          OK
+
+        <div onclick="Modal.close('.js-modalSuccessMessage')">
+          <%= button_to "OK", necessidadeBanco_path, method: :get, class:"Button Button--fluid u-size6of12 is-actived" %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-<%= link_to 'Back', demand_blood_banks_path %>

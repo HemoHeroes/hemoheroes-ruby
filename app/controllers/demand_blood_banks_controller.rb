@@ -45,7 +45,7 @@ class DemandBloodBanksController < ApplicationController
           end
         end
 
-        format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully created.' }
+        format.html { }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
         format.html { render :new }

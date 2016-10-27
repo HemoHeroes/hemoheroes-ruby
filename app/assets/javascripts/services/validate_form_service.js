@@ -10,6 +10,16 @@ var validateFormService = (function(){
     validFormDonator[i] = false;
   }
 
+  var buttonChange = function(state, button){
+    if (state == "actived") {
+      button.classList.remove('is-disabled');
+      button.classList.add('is-actived');
+    }else if (state == "disabled") {
+      button.classList.remove('is-actived');
+      button.classList.add('is-disabled');
+    }
+  };
+  
   var buttonValidFormBank = function(selector){
     if(elementExist(selector)){
       return false;
@@ -23,12 +33,10 @@ var validateFormService = (function(){
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
     if(buttonRegisterBank!= null){
       if(!invalidButtonBank){
-        buttonRegisterBank.classList.remove('is-disabled');
-        buttonRegisterBank.classList.add('is-actived');
+        buttonChange("actived", buttonRegisterBank);
 
       }else{
-        buttonRegisterBank.classList.remove('is-actived');
-        buttonRegisterBank.classList.add('is-disabled');
+        buttonChange("disabled", buttonRegisterBank);
       }
     }
   };
@@ -43,14 +51,13 @@ var validateFormService = (function(){
       }
     }
 
+
     var buttonRegisterDonator = document.querySelector('.js-validateButtonDonator');
     if(buttonRegisterDonator!= null){
       if(!invalidButtonDonator){
-        buttonRegisterDonator.classList.remove('is-disabled');
-        buttonRegisterDonator.classList.add('is-actived');
+        buttonChange("actived", buttonRegisterDonator);
       }else{
-        buttonRegisterDonator.classList.remove('is-actived');
-        buttonRegisterDonator.classList.add('is-disabled');
+        buttonChange("disabled", buttonRegisterDonator);
       }
     }
   };
@@ -70,6 +77,7 @@ var validateFormService = (function(){
       buttonValidFormDonator();
     }
   };
+
 
   var elementExist = function(selector){
     if(typeof selector == "string"){
@@ -305,13 +313,11 @@ var validateFormService = (function(){
       for(var i = 0; i < 8; i++){
 
         if(inputNumber[i].value != 0){
-          button.classList.add('is-actived');
-          button.classList.remove('is-disabled');
+          buttonChange("actived", button);
           return true;
         }
       }
-      button.classList.add('is-disabled');
-      button.classList.remove('is-actived');
+      buttonChange("disabled", button);
       return false;
     },
 

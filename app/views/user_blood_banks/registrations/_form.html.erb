@@ -12,7 +12,7 @@
 <% end %>
 
 <div class="Grid Grid--alignCenter">
-  <div class="Grid-cell u-size10of12">
+  <div class="Grid-cell u-size7of12 u-outerWrapper">
 
     <div class="Container Container--primary Grid-cell u-tablet-sizeFull u-margin-bottom-large">
       <div class="Container-header">
@@ -137,15 +137,8 @@
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
     <% end %>
-
-    <div class="u-padding-20-0-0-10">
-      <span class="red-text"><b>*</b> Campos obrigatórios</span>
-    </div>
-
-    <div class="Grid-cell u-sizeFull">
-      <div class="u-margin-right-medium u-float-right">
-          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank",onclick: "Modal.open('.js-modalMessageRegisterBank')"%>
-    </div>
+    <div class="Container-footer">
+      <%= f.submit "Cadastrar",class: "Button Button--medium u-float-right is-disabled js-validateButtonBank" %>
     </div>
 
   </div>
