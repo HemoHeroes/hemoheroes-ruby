@@ -27,12 +27,12 @@ class DemandBloodBanksController < ApplicationController
   # POST /demand_blood_banks.json
   def create
 
-
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
       if @demand_blood_bank.save!
 
         @donators = UserBloodDonator.all
+
         @donators.each do |donator|
           if user_can_recive_email(donator, @demand_blood_bank)
             response = NotificationMailer.send_email(donator).deliver_now
@@ -124,9 +124,9 @@ class DemandBloodBanksController < ApplicationController
 
   def check_donation_interval donator
     difference_in_days = (Date.today - donator.last_donation).to_i
-    if donator.genre == 'm' && difference_in_days > 60
+    if donator.genre.downcase == 'm' && difference_in_days > 60
       return true
-    elsif donator.genre == 'f' && difference_in_days > 90
+    elsif donator.genre.downcase == 'f' && difference_in_days > 90
       return true
     end
     false
