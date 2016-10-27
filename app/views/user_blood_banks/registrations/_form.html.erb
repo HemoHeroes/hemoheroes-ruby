@@ -19,8 +19,6 @@
         <h3 class="Container-title u-margin-small"> Cadastro de Hospital </h3>
       </div>
 
-
-
       <div class="Container-body">
         <div class="Form">
 
@@ -142,7 +140,7 @@
 
     <div class="Grid-cell u-sizeFull">
       <div class="u-margin-right-medium u-float-right">
-          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank" %>
+          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank",onclick: "Modal.open('.js-modalMessageRegisterBank')"%>
     </div>
     </div>
 
