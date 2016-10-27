@@ -19,7 +19,13 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def made_donation
-  
+    puts "JA DOEI"
+    puts "JA DOEI"
+    puts "JA DOEI"
+    puts "JA DOEI"
+    puts "JA DOEI"
+    puts "JA DOEI"
+    puts "JA DOEI"
   end
 
   # GET /resource/edit
