@@ -29,7 +29,7 @@
       </div>
       <% end %>
       <div class="Form Form--large ">
-        <%= form_for @demand_blood_bank, html: { id: 'demand_blood_banks_form' } do |f| %>
+        <%= form_for @demand_blood_bank, html: { id: 'demand_blood_banks_form' },  remote: true do |f| %>
         <div class="Container-body">
           <div class="Grid Grid--withGutter">
 
