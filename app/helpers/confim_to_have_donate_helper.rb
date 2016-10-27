@@ -1,0 +1,2 @@
+module ConfimToHaveDonateHelper
+end

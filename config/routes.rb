@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'confim_to_have_donate/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :demand_blood_banks
