@@ -16,6 +16,15 @@
     align-items: center;
   }
 
+  &-hamburger {
+    width: 50px;
+    height: 40px;
+    background: $border-color;
+    @include desktop{
+      display: none;
+    }
+  }
+
   &-logo {
     font-size: 2rem;
     font-weight: 900;
@@ -62,6 +71,7 @@
       top: 60px;
       background: white;
       left: 0;
+      display: none;
     }
     .Navbar-links li{
       display: block;
