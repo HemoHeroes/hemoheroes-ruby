@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'cadastroDoador' => 'user_blood_donators/registrations#new' , :as => :new_user_blood_donator_registration
     post 'cadastroDoador' => 'user_blood_donators/registrations#create' , :as => :user_blood_donator_registration
 
+    get 'jaDoei' => 'user_blood_donators/registrations#ja_doei', :as => :ja_doei
+
     # =newPrototipo
     # Routes for tests new user_blood_donators/registrations/form_v2
      get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
