@@ -50,9 +50,13 @@
     background: none;
     box-shadow: none;
     border: 0;
-    color: grey;
+    color: scale-color($light-font-color, $lightness: -40%);
+    &:hover {
+      background: none;
+      color: scale-color($light-font-color, $lightness: -70%);
+    }
   }
-  
+
 
   &.is-canceled{
     background: $canceled-background-color;
@@ -77,6 +81,7 @@
     pointer-events: none;
     color: scale-color($default-background-color, $lightness: -25%);
     box-shadow: none;
+    border: 0;
   }
 
 }
