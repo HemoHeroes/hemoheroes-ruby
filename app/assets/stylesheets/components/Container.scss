@@ -37,7 +37,6 @@
     font-size: 1.2rem;
     @include mobile {
       font-size: 1rem;
-
     }
   }
 
@@ -109,6 +108,15 @@
   &--centralize {
     margin: auto;
     float:none;
+  }
+
+  &--primary {
+    & .Container-header {
+      background: $brand-color;
+    }
+    & .Container-title {
+      color: $light-font-color;
+    }
   }
 
 
