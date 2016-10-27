@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'confim_to_have_donate/index'
+  get 'mensagem_de_confirmacao' => 'confirm_to_have_donate#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

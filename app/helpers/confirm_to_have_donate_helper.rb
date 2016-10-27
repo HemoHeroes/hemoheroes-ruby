@@ -1,0 +1,2 @@
+module ConfirmToHaveDonateHelper
+end
