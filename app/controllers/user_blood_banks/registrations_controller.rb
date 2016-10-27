@@ -2,20 +2,30 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
+
   # GET /resource/sign_up
   def new
+
     @resourceT = "blood-bank"
     super
+
+
   end
 
   # POST /resource
   def create
+
     super
     blood_bank = UserBloodBank.last
     NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
+
+
+
   end
+
+
 
   # GET /resource/edit
   # def edit
@@ -57,7 +67,9 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
     # The path used after sign up.
     def after_sign_up_path_for(resource)
       sign_out
-      root_path
+      new_user_blood_bank_registration_path(success:true)
+
+
     end
     #
     # # The path used after sign up for inactive accounts.

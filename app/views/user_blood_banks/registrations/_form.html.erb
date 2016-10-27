@@ -172,8 +172,8 @@
         <span class="u-font-size20 ">Seu cadastro foi realizado com sucesso, aguarde a confirmação do administrador do sistema. </span>
       </div>
       <div class="u-align-center u-padding-top u-padding-bottom">
-        <div onclick="Modal.close('.js-modalMessageRegisterBank')" class="Button Button--medium u-size3of12 is-actived ">
-          OK
+        <div onclick="Modal.close('.js-modalMessageRegisterBank')">
+          <%= button_to "OK", root_path, method: :get, class:"Button Button--medium u-size3of12 is-actived" %>
         </div>
       </div>
     </div>
