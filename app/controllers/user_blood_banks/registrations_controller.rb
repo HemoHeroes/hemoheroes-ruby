@@ -16,10 +16,10 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   def create
 
     super
-    blood_bank = UserBloodBank.last
-    NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
-    if UserBloodBank.find_for_authentication(cnpj: params[:document])
-    end
+    # blood_bank = UserBloodBank.last
+    # NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
+    # if UserBloodBank.find_for_authentication(cnpj: params[:document])
+    # end
 
 
 
@@ -67,7 +67,7 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
     # The path used after sign up.
     def after_sign_up_path_for(resource)
       sign_out
-      new_user_blood_bank_registration_path(success:true)
+      # new_user_blood_bank_registration_path(success:true)
 
 
     end
