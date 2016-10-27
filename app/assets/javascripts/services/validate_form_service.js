@@ -1,7 +1,7 @@
 var validateFormService = (function(){
 
   var validFormBank = [];
-  for(var i = 0; i<=7;i++){
+  for(var i = 0; i<=6;i++){
     validFormBank[i] = false;
   }
 
@@ -189,24 +189,6 @@ var validateFormService = (function(){
       });
     },
 
-    validateExtension: function(selector, action){
-      var inputExtension = document.querySelector(selector);
-      var errorExtension = document.getElementById('errorExtension');
-      if (elementExist(inputExtension) == false){
-        return;
-      }
-      inputExtension.addEventListener(action, function(){
-        VMasker(inputExtension).maskPattern("9999");
-        if (inputExtension.value == "") {
-          errorExtension.style.display = "";
-          validateSingleInputForm("bank", 5, false);
-        }else{
-          errorExtension.style.display = "none";
-          validateSingleInputForm("bank", 5, true);
-        }
-      });
-    },
-
     validatePassword: function(selector, selectorConfirmation, action ){
       var valuePassword = document.querySelector(selector);
       var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
@@ -215,10 +197,10 @@ var validateFormService = (function(){
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
           errorPasswordConfirmation.innerHTML = "Senhas não correspondem!";
-          validateInputForms(3, 6, false);
+          validateInputForms(3, 5, false);
         }else{
           errorPasswordConfirmation.style.display = "none";
-          validateInputForms(3, 6, true);
+          validateInputForms(3, 5, true);
         }
       };
 
@@ -227,14 +209,14 @@ var validateFormService = (function(){
         errorPassword.style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           errorPassword.innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validateInputForms(4, 7, false);
+          validateInputForms(4, 6, false);
           return false;
         }else if(valuePassword.value.length == 0){
-          validateInputForms(4, 7, false);
+          validateInputForms(4, 6, false);
           return false;
         }else{
           errorPassword.style.display = "none";
-          validateInputForms(4, 7, true);
+          validateInputForms(4, 6, true);
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });

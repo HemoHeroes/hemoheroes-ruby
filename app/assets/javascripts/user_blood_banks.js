@@ -17,7 +17,6 @@ ready(function(){
       validateFormService.validateEmail('.js-validateEmail','focusout');
       validateFormService.validateCNPJ('.js-validateCNPJ','keyup');
       validateFormService.validateAddress('.js-validateAddress','focusout');
-      validateFormService.validateExtension('.js-validateExtension','focusout');
       validateFormService.validatePhone('.js-validatePhone','keyup');
       validateFormService.removeMask('.js-validateButtonBank','.js-validateCNPJ','click');
       validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
