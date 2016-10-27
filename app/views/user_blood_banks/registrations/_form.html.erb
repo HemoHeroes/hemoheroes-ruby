@@ -11,148 +11,145 @@
 </div>
 <% end %>
 
-<div class="Container  Grid-cell u-tablet-sizeFull">
-  <div class="Container-header">
-    <div class="Grid">
-      <div class="Grid-cell u-sizeFull">
-        <h3 class="Container-title"> Cadastro de Hospital </h3>
+<div class="Grid Grid--alignCenter">
+  <div class="Grid-cell u-size10of12">
+
+    <div class="Container  Grid-cell u-tablet-sizeFull u-margin-bottom-large">
+      <div class="Container-header">
+        <h3 class="Container-title u-margin-small"> Cadastro de Hospital </h3>
       </div>
-    </div>
-  </div>
 
 
 
-  <div class="Container-body">
-    <div class="Form Form--fluid">
+      <div class="Container-body">
+        <div class="Form">
 
-      <div class="Grid">
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <span>Nome<span class="red-text">*</span></span>
+          <div class="Grid">
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+              <div class="Form-group">
+                <div class="Form-inputLabel u-sizeFull">
+                  <span>Nome<span class="red-text">*</span></span>
+                </div>
+                <div class="u-sizeFull">
+                  <%= f.text_field :name, class: "js-validateName Form-inputValue u-sizeFull",
+                  placeholder: "Ex: Hospital Carlos Schallenberger" %>
+                  <span id="errorName" style="display:none;" class="red-text">Campo obrigatório!</span>
+                </div>
+              </div>
             </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :name, class: "js-validateName Form-inputValue u-size10of12",
-              placeholder: "Ex: Hospital Carlos Schallenberger" %>
-              <span id="errorName" style="display:none;" class="red-text">Campo obrigatório!</span>
+
+
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+              <div class="Form-group">
+                <div class="Form-inputLabel u-sizeFull">
+                  <span>CNPJ<span class="red-text">*</span></span>
+                </div>
+                <div class="u-sizeFull">
+                  <%= f.text_field :cnpj, class: "Form-inputValue js-validateCNPJ",
+                  :maxlength => 18, placeholder: "Digite apenas números" %>
+                  <span id="errorCNPJ" style="display:none;" class="red-text"></span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+              <div class="Form-group">
+                <div class="Form-inputLabel u-sizeFull">
+                  <span>E-mail<span class="red-text">*</span></span>
+                </div>
+                <div class="u-sizeFull">
+                  <%= f.text_field :email, class: "Form-inputValue js-validateEmail",
+                  placeholder: "Ex: carlosirla@seuemail.com.br" %>
+                  <span id="errorEmail" style="display:none;" class="red-text"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+              <div class="Form-group">
+                <div class="Form-inputLabel u-sizeFull">
+                  <span>Telefone<span class="red-text">*</span></span>
+                </div>
+                <div class="u-sizeFull">
+                  <%= f.text_field :phone, class: "Form-inputValue js-validatePhone",
+                  :maxlength => 13, placeholder: "Ex: (51) 9876-5432" %>
+                  <span id="errorPhone" style="display:none;" class="red-text"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+              <div class="Form-group">
+                <div class="Form-inputLabel u-sizeFull"
+                <span>Ramal<span class="red-text">*</span></span>
+              </div>
+              <div class="u-sizeFull">
+                <%= f.text_field :extension, class: "Form-inputValue js-validateExtension",
+                :maxlength => 4, placeholder: "Ex: 1234"%>
+                <span id="errorExtension" style="display:none;" class="red-text">Campo obrigatório!</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
+            <div class="Form-group">
+              <div class="Form-inputLabel u-sizeFull"
+              <span>Endereço<span class="red-text">*</span></span>
+            </div>
+            <div class="u-sizeFull">
+              <%= f.text_field :address, class: "Form-inputValue js-validateAddress",
+              placeholder: "Ex: Av. Ipiranga, 6681"%>
+              <span id="errorAddress" style="display:none;" class="red-text">Campo obrigatório!</span>
             </div>
           </div>
         </div>
-
-
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <span>CNPJ<span class="red-text">*</span></span>
-            </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :cnpj, class: "Form-inputValue u-size10of12 js-validateCNPJ",
-              :maxlength => 18, placeholder: "Digite apenas números" %>
-              <span id="errorCNPJ" style="display:none;" class="red-text"></span>
-            </div>
-          </div>
-        </div>
-
 
         <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
           <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <span>E-mail<span class="red-text">*</span></span>
-            </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :email, class: "Form-inputValue u-size10of12 js-validateEmail",
-              placeholder: "Ex: carlosirla@seuemail.com.br" %>
-              <span id="errorEmail" style="display:none;" class="red-text"></span>
-            </div>
+            <div class="Form-inputLabel u-sizeFull"
+            <span>Senha<span class="red-text">*</span></span>
           </div>
-        </div>
-
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <span>Telefone<span class="red-text">*</span></span>
-            </div>
-            <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-              <%= f.text_field :phone, class: "Form-inputValue u-size10of12 js-validatePhone",
-              :maxlength => 13, placeholder: "Ex: (51) 9876-5432" %>
-              <span id="errorPhone" style="display:none;" class="red-text"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-          <div class="Form-group">
-            <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull"
-            <span>Ramal<span class="red-text">*</span></span>
-          </div>
-          <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-            <%= f.text_field :extension, class: "Form-inputValue u-size10of12 js-validateExtension",
-            :maxlength => 4, placeholder: "Ex: 1234"%>
-            <span id="errorExtension" style="display:none;" class="red-text">Campo obrigatório!</span>
+          <div class="u-sizeFull">
+            <% if @minimum_password_length %>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off",
+            class:"js-validatePassword Form-inputValue", placeholder: "Senha" %>
+            <span id="errorPassword" style="display:none;" class="red-text"></span>
           </div>
         </div>
       </div>
 
       <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
         <div class="Form-group">
-          <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull"
-          <span>Endereço<span class="red-text">*</span></span>
+          <div class="Form-inputLabel u-sizeFull"
+          <span>Confirmar senha<span class="red-text">*</span></span>
         </div>
-        <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-          <%= f.text_field :address, class: "Form-inputValue u-size10of12 js-validateAddress",
-          placeholder: "Ex: Av. Ipiranga, 6681"%>
-          <span id="errorAddress" style="display:none;" class="red-text">Campo obrigatório!</span>
+        <div class="u-sizeFull">
+          <%= f.password_field :password_confirmation, autocomplete: "off",
+          class:"js-validatePasswordConfirmation Form-inputValue", placeholder: "Confirme sua senha" %>
+          <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
         </div>
       </div>
     </div>
 
-    <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-      <div class="Form-group">
-        <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull"
-        <span>Senha<span class="red-text">*</span></span>
+
+    <% if resource.id %>
+    <div class="field">
+      <%= f.label :current_password %><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+    <% end %>
+
+    <div class="Grid-cell u-sizeFull">
+      <div class="u-margin-right-medium u-float-right">
+        <div onclick="Modal.open('.js-modalMessageRegisterBank')">
+          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank"  %>
+        </div>
       </div>
-      <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-        <% if @minimum_password_length %>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "off",
-        class:"js-validatePassword Form-inputValue u-size10of12", placeholder: "Senha" %>
-        <span id="errorPassword" style="display:none;" class="red-text"></span>
-      </div>
     </div>
+
   </div>
-
-  <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-sizeFull">
-    <div class="Form-group">
-      <div class="Form-inputDescription u-desktop-size2of12 u-tablet-sizeFull u-mobile-sizeFull"
-      <span>Confirmar senha<span class="red-text">*</span></span>
-    </div>
-    <div class="Grid-cell u-desktop-size10of12 u-tablet-sizeFull u-mobile-sizeFull">
-      <%= f.password_field :password_confirmation, autocomplete: "off",
-      class:"js-validatePasswordConfirmation Form-inputValue u-size10of12", placeholder: "Confirme sua senha" %>
-      <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
-    </div>
-  </div>
-</div>
-
-
-<% if resource.id %>
-<div class="field">
-  <%= f.label :current_password %><br />
-  <%= f.password_field :current_password, autocomplete: "off" %>
-</div>
-<% end %>
-
-<div class="Grid-cell u-sizeFull">
-  <div class="u-margin-right-medium u-float-right">
-    <div class="Form-group">
-      <div onclick="Modal.open('.js-modalMessageRegisterBank')">
-      <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank"  %>
-    </div>
-    </div>
-  </div>
-</div>
-
-</div>
 </div>
 </div>
 </div>
@@ -165,7 +162,7 @@
     <div class="Modal-header">
       <div class="Modal-titleBox">
         <h3 class="Modal-title">
-        Cadastro em analise
+          Cadastro em analise
         </h3>
       </div>
     </div>
@@ -181,4 +178,6 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>

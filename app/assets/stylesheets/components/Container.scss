@@ -13,10 +13,6 @@
     align-content: center;
   }
 
-  &-noBorder{
-    border: 0px !important;
-  }
-
   &-header {
     width:100%;
     box-sizing: border-box;
@@ -32,7 +28,7 @@
     display: flex;
     align-items: center;
     @include mobile{
-        padding-left: 15px;
+      padding-left: 15px;
     }
   }
 
@@ -69,7 +65,13 @@
     @include mobile {;
       padding: 10px;
     }
+  }
 
+  &-footer {
+    padding: 12px 15px 0;
+    border-top: 1px solid $border-color;
+    overflow: auto;
+    margin: 15px -15px 0px;
   }
 
   &-stepBox {
