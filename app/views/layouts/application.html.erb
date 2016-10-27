@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
-  
+
   <% if ENV['ENV_FOR_HOTJAR'] == 'production' %>
 
   <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
@@ -27,12 +27,9 @@
 </head>
 <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-resource="<%=@resourceT unless @resourceT.nil? %>">
   <%= render 'layouts/header'%>
-
-  <div class="OuterWrapper">
     <%= yield %>
     <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
     <%= render "devise/sessions/new" %>
     <% end %>
-  </div>
 </body>
 </html>
