@@ -30,12 +30,18 @@ class DemandBloodBanksController < ApplicationController
 
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
     respond_to do |format|
-      if @demand_blood_bank.save
+      if @demand_blood_bank.save!
 
         @donators = UserBloodDonator.all
         @donators.each do |donator|
           if user_can_recive_email(donator, @demand_blood_bank)
-            NotificationMailer.send_email(donator).deliver_now
+            response = NotificationMailer.send_email(donator).deliver_now
+
+            Notification.create! :last_notification => Date.today,
+                                 :appear => false,
+                                 :user_blood_donators_id => donator.id,
+                                 :demand_blood_banks_id => @demand_blood_bank.id
+
           end
         end
 
@@ -109,7 +115,8 @@ class DemandBloodBanksController < ApplicationController
   end
 
   def check_last_donation_request donator
-    if (Date.today - donator.last_request).to_i > 7
+    last_notification = Notification.where(:user_blood_donators_id => donator.id).last
+    if last_notification.nil? || (Date.today - last_notification.last_notification).to_i > 7
       return true
     end
     false

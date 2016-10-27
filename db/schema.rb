@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026161439) do
+ActiveRecord::Schema.define(version: 20161027135859) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -59,8 +59,12 @@ ActiveRecord::Schema.define(version: 20161026161439) do
   create_table "notifications", force: :cascade do |t|
     t.date     "last_notification"
     t.boolean  "appear"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "user_blood_donators_id"
+    t.integer  "demand_blood_banks_id"
+    t.index ["demand_blood_banks_id"], name: "index_notifications_on_demand_blood_banks_id"
+    t.index ["user_blood_donators_id"], name: "index_notifications_on_user_blood_donators_id"
   end
 
   create_table "user_blood_banks", force: :cascade do |t|
@@ -114,7 +118,6 @@ ActiveRecord::Schema.define(version: 20161026161439) do
     t.string   "cep"
     t.string   "long"
     t.string   "lat"
-    t.date     "last_request"
     t.index ["cpf"], name: "index_user_blood_donators_on_cpf", unique: true
     t.index ["email"], name: "index_user_blood_donators_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_blood_donators_on_reset_password_token", unique: true
