@@ -1,26 +1,17 @@
 var validateFormService = (function(){
 
   var validFormBank = [];
-  validFormBank[0] = false;
-  validFormBank[1] = false;
-  validFormBank[2] = false;
-  validFormBank[3] = false;
-  validFormBank[4] = false;
-  validFormBank[5] = false;
-  validFormBank[6] = false;
-  validFormBank[7] = false;
+  for(var i = 0; i<=7;i++){
+    validFormBank[i] = false;
+  }
 
   var validFormDonator = [];
-  validFormDonator[0] = false;
-  validFormDonator[1] = false;
-  validFormDonator[2] = false;
-  validFormDonator[3] = false;
-  validFormDonator[4] = false;
-  validFormDonator[5] = false;
-  validFormDonator[6] = false;
-
+  for(var i = 0; i<=6;i++){
+    validFormDonator[i] = false;
+  }
 
   var buttonValidFormBank = function(selector){
+    console.log("buttonvalidformBank2");
     if(elementExist(selector)){
       return false;
     }
@@ -33,10 +24,12 @@ var validateFormService = (function(){
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
     if(buttonRegisterBank!= null){
       if(!invalidButtonBank){
+        console.log("botaofodaaaa");
         buttonRegisterBank.classList.remove('is-disabled');
         buttonRegisterBank.classList.add('is-actived');
 
       }else{
+        console.log("botaaovalcilao");
         buttonRegisterBank.classList.remove('is-actived');
         buttonRegisterBank.classList.add('is-disabled');
       }
@@ -64,7 +57,22 @@ var validateFormService = (function(){
       }
     }
   };
+  var validateInputForms = function(indiceDonator, indiceBank, status){
+    validFormDonator[indiceDonator] = status;
+    validFormBank[indiceBank] = status;
+    buttonValidFormBank();
+    buttonValidFormDonator();
+  };
 
+  var validateSingleInputForm = function(type, indice, status){
+    if(type=="bank"){
+      validFormBank[indice] = status;
+      buttonValidFormBank();
+    }else if(type=="donator"){
+      validFormDonator[indice] = status;
+      buttonValidFormDonator();
+    }
+  };
 
   var elementExist = function(selector){
     if(typeof selector == "string"){
@@ -95,21 +103,16 @@ var validateFormService = (function(){
 
     validateName: function(selector, action){
       var inputName = document.querySelector(selector);
+      var errorName = document.getElementById('errorName');
       inputName.addEventListener(action, function(){
         var regexNameValidate = /^[a-zA-Z\s]*$/;
         var nameValidate = regexNameValidate.test(inputName.value.trim());
-        document.getElementById('errorName').style.display = "";
+        errorName.style.display = "";
         if (inputName.value && nameValidate) {
-          document.getElementById('errorName').style.display = "none";
-          validFormDonator[0] = true;
-          validFormBank[0] = true;
-          buttonValidFormBank('.js-validateButtonBank');
-          buttonValidFormDonator();
+          errorName.style.display = "none";
+          validateInputForms(0,0,true);
         } else {
-          validFormDonator[0] = false;
-          validFormBank[0] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          validateInputForms(0,0,false);
           return false;
         }
       });
@@ -119,23 +122,21 @@ var validateFormService = (function(){
     validateCNPJ: function(selector, action){
       if(elementExist(selector)){
         var inputCNPJ = document.querySelector(selector);
+        var errorCNPJ = document.getElementById('errorCNPJ')
         inputCNPJ.addEventListener(action, function(){
           VMasker(inputCNPJ).maskPattern("99.999.999/9999-99");
-          document.getElementById('errorCNPJ').style.display = "";
+          errorCNPJ.style.display = "";
           if(inputCNPJ.value == ""){
-            document.getElementById('errorCNPJ').innerHTML = "Campo obrigatório!";
-            validFormBank[1] = false;
-            buttonValidFormBank();
+            errorCNPJ.innerHTML = "Campo obrigatório!";
+            validateSingleInputForm("bank",1, false);
             return false;
           }else if (inputCNPJ.value.length<18) {
-            document.getElementById('errorCNPJ').innerHTML = "CNPJ inválido!";
-            validFormBank[1] = false;
-            buttonValidFormBank();
+            errorCNPJ.innerHTML = "CNPJ inválido!";
+            validateSingleInputForm("bank",1, false);
             return false;
           }else{
-            document.getElementById('errorCNPJ').style.display = "none";
-            validFormBank[1] = true;
-            buttonValidFormBank();
+            errorCNPJ.style.display = "none";
+            validateSingleInputForm("bank",1, true);
           }
         });
       }
@@ -144,28 +145,19 @@ var validateFormService = (function(){
 
     validatePhone: function(selector, action){
       var inputPhone = document.querySelector(selector);
+      var errorPhone = document.getElementById('errorPhone');
       inputPhone.addEventListener(action, function(){
         VMasker(inputPhone).maskPattern("(99)9999-9999");
-        document.getElementById('errorPhone').style.display = "";
+        errorPhone.style.display = "";
         if(inputPhone.value == ""){
-          document.getElementById('errorPhone').innerHTML = "Campo obrigatório!";
-          validFormDonator[1] = false;
-          validFormBank[2] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPhone.innerHTML = "Campo obrigatório!";
+          validateInputForms(1,2, false);
         }else if (inputPhone.value.length<13) {
-          document.getElementById('errorPhone').innerHTML = "Telefone inválido!";
-          validFormDonator[1] = false;
-          validFormBank[2] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
-
+          errorPhone.innerHTML = "Telefone inválido!";
+          validateInputForms(1,2, false);
         }else{
-          document.getElementById('errorPhone').style.display = "none";
-          validFormDonator[1] = true;
-          validFormBank[2] = true;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPhone.style.display = "none";
+          validateInputForms(1,2, true);
         }
       });
     },
@@ -173,30 +165,22 @@ var validateFormService = (function(){
 
     validateEmail: function(selector, action){
       var inputEmail = document.querySelector(selector);
+      var errorEmail = document.getElementById('errorEmail');
       inputEmail.addEventListener(action, function(){
         document.getElementById('errorEmail').style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
-        document.getElementById('errorEmail').style.display = "";
+        errorEmail.style.display = "";
         if (inputEmail.value == "") {
-          document.getElementById('errorEmail').innerHTML = "Campo obrigatório!";
-          validFormDonator[2] = false;
-          validFormBank[3] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorEmail.innerHTML = "Campo obrigatório!";
+          validateInputForms(2,3, false);
         }
         if(!emailValidate && inputEmail.value != ""){
-          document.getElementById('errorEmail').innerHTML = "e-mail inválido!";
-          validFormDonator[2] = false;
-          validFormBank[3] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorEmail.innerHTML = "e-mail inválido!";
+          validateInputForms(2,3, false);
         }else if(emailValidate){
-          document.getElementById('errorEmail').style.display = "none";
-          validFormDonator[2] = true;
-          validFormBank[3] = true;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorEmail.style.display = "none";
+          validateInputForms(2,3, true);
         }
       });
     },
@@ -204,37 +188,35 @@ var validateFormService = (function(){
 
     validateAddress: function(selector, action){
       var inputAddress = document.querySelector(selector);
+      var errorAddress = document.getElementById('errorAddress');
       if (elementExist(inputAddress) == false){
         return;
       }
       inputAddress.addEventListener(action, function(){
-        if (inputAddress.value == "") {
-          document.getElementById('errorAddress').style.display = "";
-          validFormBank[4] = false;
-          buttonValidFormBank();
+        if (inputAddress.value == ""){
+          errorAddress.style.display = "";
+          validateSingleInputForm("bank", 4, false);
         }else{
-          document.getElementById('errorAddress').style.display = "none";
-          validFormBank[4] = true;
-          buttonValidFormBank();
+          errorAddress.style.display = "none";
+          validateSingleInputForm("bank", 4, true);
         }
       });
     },
 
     validateExtension: function(selector, action){
       var inputExtension = document.querySelector(selector);
+      var errorExtension = document.getElementById('errorExtension');
       if (elementExist(inputExtension) == false){
         return;
       }
       inputExtension.addEventListener(action, function(){
         VMasker(inputExtension).maskPattern("9999");
         if (inputExtension.value == "") {
-          document.getElementById('errorExtension').style.display = "";
-          validFormBank[5] = false;
-          buttonValidFormBank();
+          errorExtension.style.display = "";
+          validateSingleInputForm("bank", 5, false);
         }else{
-          document.getElementById('errorExtension').style.display = "none";
-          validFormBank[5] = true;
-          buttonValidFormBank();
+          errorExtension.style.display = "none";
+          validateSingleInputForm("bank", 5, true);
         }
       });
     },
@@ -242,51 +224,38 @@ var validateFormService = (function(){
     validatePassword: function(selector, selectorConfirmation, action ){
       var valuePassword = document.querySelector(selector);
       var valuePasswordConfirmation = document.querySelector(selectorConfirmation);
+      var errorPasswordConfirmation =   document.getElementById('errorPasswordConfirmation');
 
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
-          document.getElementById('errorPasswordConfirmation').innerHTML = "Senhas não correspondem!";
-          validFormDonator[3] = false;
-          validFormBank[6] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPasswordConfirmation.innerHTML = "Senhas não correspondem!";
+          validateInputForms(3,6, false);
         }else{
-          document.getElementById('errorPasswordConfirmation').style.display = "none";
-          validFormDonator[3] = true;
-          validFormBank[6] = true;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPasswordConfirmation.style.display = "none";
+          validateInputForms(3,6, true);
         }
       };
 
       valuePassword.addEventListener(action, function(){
-        document.getElementById('errorPassword').style.display = "";
+        var errorPassword = document.getElementById('errorPassword');
+        errorPassword.style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
-          document.getElementById('errorPassword').innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validFormDonator[4] = false;
-          validFormBank[7] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPassword.innerHTML = "Senha deve ter no minimo 6 digitos!";
+          validateInputForms(4,7, false);
           return false;
         }else if(valuePassword.value.length == 0){
-          document.getElementById('errorPassword').innerHTML = "Campo obrigatório!";
-          validFormDonator[4] = false;
-          validFormBank[7] = false;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPassword.innerHTML = "Campo obrigatório!";
+          validateInputForms(4,7, false);
           return false;
         }else{
-          document.getElementById('errorPassword').style.display = "none";
-          validFormDonator[4] = true;
-          validFormBank[7] = true;
-          buttonValidFormBank();
-          buttonValidFormDonator();
+          errorPassword.style.display = "none";
+          validateInputForms(4,7, true);
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });
 
       valuePasswordConfirmation.addEventListener(action, function(){
-        document.getElementById('errorPasswordConfirmation').style.display = "";
+        errorPasswordConfirmation.style.display = "";
         if(valuePasswordConfirmation.value.length >= 0){
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
@@ -296,42 +265,40 @@ var validateFormService = (function(){
 
     validateCPF: function(selector, action){
       var valueCPF = document.querySelector(selector);
+      var errorCPF = document.getElementById('errorCPF');
+
       valueCPF.addEventListener(action, function(){
-
         VMasker(valueCPF).maskPattern("999.999.999-99");
-        document.getElementById('errorCPF').style.display = "";
+        errorCPF.style.display = "";
         if(valueCPF.value == ""){
-          document.getElementById('errorCPF').innerHTML = "Campo obrigatório!";
-          validFormDonator[5] = false;
-
-          buttonValidFormDonator();
+          errorCPF.innerHTML = "Campo obrigatório!";
+          validateSingleInputForm("donator",5, false);
           return false;
         }else if (valueCPF.value.length<14) {
-          document.getElementById('errorCPF').innerHTML = "CPF inválido!";
-          validFormDonator[5] = false;
-          buttonValidFormDonator();
+          errorCPF.innerHTML = "CPF inválido!";
+          validateSingleInputForm("donator",5, false);
           return false;
         }else{
-          document.getElementById('errorCPF').style.display = "none";
-          validFormDonator[5] = true;
-          buttonValidFormDonator();
+          errorCPF.style.display = "none";
+          validateSingleInputForm("donator",5, true);
         }
       });
     },
 
+
     validateTerms: function(selector, action){
       var valueTerms = document.querySelector(selector);
+      var errorValueTerms = document.getElementById('errorTerms');
+
       valueTerms.addEventListener(action, function(){
-        document.getElementById('errorTerms').style.display = "";
+        errorValueTerms.style.display = "";
         if(valueTerms.checked == true) {
-          document.getElementById('errorTerms').style.display = "none";
-          validFormDonator[6] = true;
-          buttonValidFormDonator();
+          errorValueTerms.style.display = "none";
+          validateSingleInputForm("donator",6, true);
         }
         else {
-          document.getElementById('errorTerms').innerHTML = "Você deve aceitar os termos de uso!";
-          validFormDonator[6] = false;
-          buttonValidFormDonator();
+          errorValueTerms.innerHTML = "Você deve aceitar os termos de uso!";
+          validateSingleInputForm("donator",6, false);
           return false;
         }
       });
@@ -374,7 +341,6 @@ var validateFormService = (function(){
     disableButton: function(){
       toggleValidateButton(false);
     }
-
 
   }
 
