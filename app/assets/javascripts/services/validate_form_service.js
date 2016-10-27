@@ -11,7 +11,6 @@ var validateFormService = (function(){
   }
 
   var buttonValidFormBank = function(selector){
-    console.log("buttonvalidformBank2");
     if(elementExist(selector)){
       return false;
     }
@@ -24,12 +23,10 @@ var validateFormService = (function(){
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
     if(buttonRegisterBank!= null){
       if(!invalidButtonBank){
-        console.log("botaofodaaaa");
         buttonRegisterBank.classList.remove('is-disabled');
         buttonRegisterBank.classList.add('is-actived');
 
       }else{
-        console.log("botaaovalcilao");
         buttonRegisterBank.classList.remove('is-actived');
         buttonRegisterBank.classList.add('is-disabled');
       }
@@ -126,11 +123,7 @@ var validateFormService = (function(){
         inputCNPJ.addEventListener(action, function(){
           VMasker(inputCNPJ).maskPattern("99.999.999/9999-99");
           errorCNPJ.style.display = "";
-          if(inputCNPJ.value == ""){
-            errorCNPJ.innerHTML = "Campo obrigatório!";
-            validateSingleInputForm("bank",1, false);
-            return false;
-          }else if (inputCNPJ.value.length<18) {
+          if(inputCNPJ.value == "" || inputCNPJ.value.length<18){
             errorCNPJ.innerHTML = "CNPJ inválido!";
             validateSingleInputForm("bank",1, false);
             return false;
@@ -149,10 +142,7 @@ var validateFormService = (function(){
       inputPhone.addEventListener(action, function(){
         VMasker(inputPhone).maskPattern("(99)9999-9999");
         errorPhone.style.display = "";
-        if(inputPhone.value == ""){
-          errorPhone.innerHTML = "Campo obrigatório!";
-          validateInputForms(1,2, false);
-        }else if (inputPhone.value.length<13) {
+        if(inputPhone.value == "" || inputPhone.value.length<13 ){
           errorPhone.innerHTML = "Telefone inválido!";
           validateInputForms(1,2, false);
         }else{
@@ -171,12 +161,8 @@ var validateFormService = (function(){
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
         errorEmail.style.display = "";
-        if (inputEmail.value == "") {
-          errorEmail.innerHTML = "Campo obrigatório!";
-          validateInputForms(2,3, false);
-        }
-        if(!emailValidate && inputEmail.value != ""){
-          errorEmail.innerHTML = "e-mail inválido!";
+      if(!emailValidate && inputEmail.value != ""){
+          errorEmail.innerHTML = "E-mail inválido!";
           validateInputForms(2,3, false);
         }else if(emailValidate){
           errorEmail.style.display = "none";
@@ -244,7 +230,6 @@ var validateFormService = (function(){
           validateInputForms(4,7, false);
           return false;
         }else if(valuePassword.value.length == 0){
-          errorPassword.innerHTML = "Campo obrigatório!";
           validateInputForms(4,7, false);
           return false;
         }else{
@@ -270,11 +255,7 @@ var validateFormService = (function(){
       valueCPF.addEventListener(action, function(){
         VMasker(valueCPF).maskPattern("999.999.999-99");
         errorCPF.style.display = "";
-        if(valueCPF.value == ""){
-          errorCPF.innerHTML = "Campo obrigatório!";
-          validateSingleInputForm("donator",5, false);
-          return false;
-        }else if (valueCPF.value.length<14) {
+        if(valueCPF.value == "" || valueCPF.value.length<14){
           errorCPF.innerHTML = "CPF inválido!";
           validateSingleInputForm("donator",5, false);
           return false;
@@ -341,7 +322,6 @@ var validateFormService = (function(){
     disableButton: function(){
       toggleValidateButton(false);
     }
-
   }
 
 })()

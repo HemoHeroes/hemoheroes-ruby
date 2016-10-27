@@ -19,9 +19,9 @@
         <h3 class="Container-title u-margin-small"> Cadastro de Hospital </h3>
       </div>
 
+
       <div class="Container-body">
         <div class="Form">
-
           <div class="Grid">
             <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
               <div class="Form-group">
@@ -31,7 +31,7 @@
                 <div class="u-sizeFull">
                   <%= f.text_field :name, class: "js-validateName Form-inputValue u-sizeFull",
                   placeholder: "Ex: Hospital Carlos Schallenberger" %>
-                  <span id="errorName" style="display:none;" class="red-text">Campo obrigatório!</span>
+                  <span id="errorName" style="display:none;" class="red-text">Nome inválido!</span>
                 </div>
               </div>
             </div>
@@ -137,6 +137,10 @@
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div>
     <% end %>
+
+    <div class="u-padding-20-0-0-10">
+      <span class="red-text"><b>*</b> Campos obrigatórios</span>
+    </div>
 
     <div class="Grid-cell u-sizeFull">
       <div class="u-margin-right-medium u-float-right">
