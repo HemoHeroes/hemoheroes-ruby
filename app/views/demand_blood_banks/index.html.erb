@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hospital Necessities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>A positive</th>
+      <th>A negative</th>
+      <th>B positive</th>
+      <th>B negative</th>
+      <th>Ab positive</th>
+      <th>Ab negative</th>
+      <th>O positive</th>
+      <th>O negative</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demand_blood_banks.each do |demand_blood_bank| %>
+      <tr>
+        <td><%= demand_blood_bank.a_positive %></td>
+        <td><%= demand_blood_bank.a_negative %></td>
+        <td><%= demand_blood_bank.b_positive %></td>
+        <td><%= demand_blood_bank.b_negative %></td>
+        <td><%= demand_blood_bank.ab_positive %></td>
+        <td><%= demand_blood_bank.ab_negative %></td>
+        <td><%= demand_blood_bank.o_positive %></td>
+        <td><%= demand_blood_bank.o_negative %></td>
+        <td><%= link_to 'Show', demand_blood_bank %></td>
+        <td><%= link_to 'Edit', edit_demand_blood_bank_path(demand_blood_bank) %></td>
+        <td><%= link_to 'Destroy', demand_blood_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospital Necessity', new_demand_blood_bank_path %>

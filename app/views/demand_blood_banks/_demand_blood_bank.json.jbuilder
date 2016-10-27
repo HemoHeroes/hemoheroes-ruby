@@ -1,0 +1,2 @@
+json.extract! demand_blood_bank, :id, :a_positive, :a_negative, :b_positive, :b_negative, :ab_positive, :ab_negative, :o_positive, :o_negative, :created_at, :updated_at
+json.url demand_blood_bank_url(demand_blood_bank, format: :json)

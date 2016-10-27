@@ -133,7 +133,6 @@
       </div>
     </div>
 
-
     <% if resource.id %>
     <div class="field">
       <%= f.label :current_password %><br />
@@ -143,10 +142,8 @@
 
     <div class="Grid-cell u-sizeFull">
       <div class="u-margin-right-medium u-float-right">
-        <div onclick="Modal.open('.js-modalMessageRegisterBank')">
-          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank"  %>
-        </div>
-      </div>
+          <%= f.submit "Cadastrar",class: "Button Button--medium is-disabled js-validateButtonBank" %>
+    </div>
     </div>
 
   </div>

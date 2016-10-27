@@ -10,7 +10,6 @@ class UserBloodDonators::SessionsController < Devise::SessionsController
     def create
         puts params.inspect
         super
-
     end
 
     # DELETE /resource/sign_out
