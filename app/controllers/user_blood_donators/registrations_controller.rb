@@ -28,9 +28,10 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def cancel_notification
-
-    donator = UserBloodDonator.find_by notification_token:params['token']
-    unless donator.nil?
+    puts params['token']
+    donator = UserBloodDonator.find_by( notification_token: "kkkkkk")
+    puts donator
+    if donator != nil
       donator.notification = false
       donator.notification_token = ""
       donator.save!
@@ -69,7 +70,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :cpf, :date_birth,
       :phone, :password, :notification,
       :genre, :blood_type, :admin,
-      :last_donation, :cep, :long, :lat])
+      :last_donation, :cep, :long, :lat,
+      :last_donation_token, :notification_token])
     end
 
     # If you have extra params to permit, append them to the sanitizer.
