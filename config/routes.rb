@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     # =newPrototipo
     # Routes for tests new user_blood_donators/registrations/form_v2
      get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
+
+     get 'cancelNotification', to: 'user_blood_donators/registrations#cancel_notification'
+     
   end
 
   devise_for :user_blood_banks, :skip => [:sessions, :registrations]
