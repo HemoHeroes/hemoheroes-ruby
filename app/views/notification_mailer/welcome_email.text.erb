@@ -1,11 +1,22 @@
 
-Olá. <%= @user.name %>
-Ajude nosso amigo Walter White que está com câncer..
-
-Agradecemos a preferência.
-
-<%= DateTime.now %>
- <%= made_donation_url + "/" + @user.last_donation_token %>
-
-Link para Quero doar
-Link para Não quero mais receber notificações
+<div>
+  <p>
+    Olá. <%= @user.name %>
+  </p>
+  <p>
+    Ajude nosso amigo Walter White que está com câncer..
+  </p>
+  <p>
+    Agradecemos a preferência.
+  </p>
+  <%= DateTime.now %>
+  <p>
+    <%= made_donation_url + "/" + @user.last_donation_token %>
+  </p>
+  <p>
+    Link para Quero doar
+  </p>
+  <p>
+    Link para Não quero mais receber notificações
+  </p>
+</div>
