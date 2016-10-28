@@ -31,7 +31,7 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     transition: 0.5s all ease;
     @include mobile {
-      width: calc(100vw - 10px);
+     width: calc(100vw - 10px);
     };
   }
 
@@ -43,6 +43,9 @@
 
   &-small{
         min-width: 350px;
+        @include mobile{
+        min-width: 290px;
+        }
   }
   &-stepBox {
     background: #ffffff;
@@ -80,6 +83,7 @@
     overflow: auto;
     padding: 15px;
     height: 100%;
+
   }
 
   &-subTitle {
