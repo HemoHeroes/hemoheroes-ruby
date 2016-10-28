@@ -1,19 +1,19 @@
 <section class="Section u-align-center u-outerWrapper">
 
-  <% if flash[:cancelnotification_modal]  %>
+  <% if flash[:notification_modal]  %>
   <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
     <div class="Modal-content js-modalContent" style="top: 50%;">
 
       <div class="Modal-header">
         <div class="Modal-titleBox">
-          <h3 class="Modal-title">Notificação Cancelada</h3>
+          <h3 class="Modal-title"><%= flash[:title] %></h3>
         </div>
       </div>
 
 
       <div class="Modal-body">
         <div class="u-align-center u-padding-left u-padding-right">
-          <span class="u-font-size20 ">A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.</span>
+          <span class="u-font-size20 "><%= flash[:message] %></span>
         </div>
         <div class="u-align-center u-padding-top u-padding-bottom">
           <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>

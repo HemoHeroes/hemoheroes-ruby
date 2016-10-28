@@ -19,12 +19,16 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def made_donation
-    puts "@@@@@@@@@@@@@@@@@@@@@@@"
-    puts "@@@@@@@@@@@@@@@@@@@@@@@"
-    puts params.inspect
-    puts "@@@@@@@@@@@@@@@@@@@@@@@"
-    puts "@@@@@@@@@@@@@@@@@@@@@@@"
-    redirect_to root_path
+
+    donator = UserBloodDonator.find_by last_donation_token:params['receiveToken']
+    unless donator.nil?
+      donator.last_donation = DateTime.now
+      donator.notification_token = ""
+      donator.save!
+
+    end
+    redirect_to root_path, flash: { notification_modal: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
+
   end
 
   def cancel_notification
@@ -36,7 +40,9 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.notification_token = ""
       donator.save!
     end
-    redirect_to root_path, flash: { cancelnotification_modal: true }
+
+    redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
+
   end
 
   # GET /resource/edit
