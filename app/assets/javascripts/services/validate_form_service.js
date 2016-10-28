@@ -106,7 +106,7 @@ var validateFormService = (function(){
       var inputName = document.querySelector(selector);
       var errorName = document.getElementById('errorName');
       inputName.addEventListener(action, function(){
-        var regexNameValidate = /^[a-zA-Z\s]*$/;
+        var regexNameValidate = /^[A-zÀ-ú\s]*$/;
         var nameValidate = regexNameValidate.test(inputName.value.trim());
         errorName.style.display = "";
         if (inputName.value && nameValidate) {

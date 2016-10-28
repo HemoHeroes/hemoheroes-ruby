@@ -21,8 +21,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
 
-
-
   end
 
 

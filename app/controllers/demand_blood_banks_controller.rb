@@ -36,18 +36,15 @@ class DemandBloodBanksController < ApplicationController
         @donators.each do |donator|
           if user_can_recive_email(donator, @demand_blood_bank)
             donator.last_donation_token = SecureRandom.urlsafe_base64.to_s
-            donator.notification_token = SecureRandom.urlsafe_base64.to_s
+            # donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
             response = NotificationMailer.send_email(donator).deliver_now
-
             Notification.create! :last_notification => Date.today,
                                  :appear => false,
                                  :user_blood_donators_id => donator.id,
                                  :demand_blood_banks_id => @demand_blood_bank.id
-
           end
         end
-
         format.html { }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
