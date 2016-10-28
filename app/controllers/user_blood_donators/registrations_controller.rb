@@ -31,6 +31,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
     donator = UserBloodDonator.find_by notification_token:params['token']
     unless donator.nil?
+      donator.notification = false
       donator.notification_token = ""
       donator.save!
     end
