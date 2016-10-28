@@ -20,12 +20,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   def made_donation
     puts "JA DOEI"
-    puts "JA DOEI"
-    puts "JA DOEI"
-    puts "JA DOEI"
-    puts "JA DOEI"
-    puts "JA DOEI"
-    puts "JA DOEI"
+    redirect_to root_path
   end
 
   def cancel_notification
