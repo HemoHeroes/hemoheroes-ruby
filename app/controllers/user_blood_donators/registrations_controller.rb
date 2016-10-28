@@ -28,8 +28,13 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def cancel_notification
-    puts params.inspect
-    redirect_to root_path , flash: { cancelnotification_modal: true }
+
+    donator = UserBloodDonator.find_by notification_token:params['token']
+    unless donator.nil?
+      donator.notification_token = ""
+      donator.save!
+    end
+    redirect_to root_path, flash: { cancelnotification_modal: true }
   end
 
   # GET /resource/edit
