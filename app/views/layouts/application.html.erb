@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 
   <% if ENV['ENV_FOR_HOTJAR'] == 'production' %>
-
   <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
   <script>
   (function(h,o,t,j,a,r){
@@ -24,12 +23,27 @@
   </script>
   <% end %>
 
+  <!-- Analytics -->
+  <% if ENV['RAILS_ENV'] == 'production' %>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86456679-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <% end %>
+
 </head>
+
+
 <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-resource="<%=@resourceT unless @resourceT.nil? %>">
   <%= render 'layouts/header'%>
-    <%= yield %>
-    <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
-    <%= render "devise/sessions/new" %>
-    <% end %>
+  <%= yield %>
+  <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
+  <%= render "devise/sessions/new" %>
+  <% end %>
 </body>
 </html>
