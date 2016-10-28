@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     # Routes for tests new user_blood_donators/registrations/form_v2
     get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
 
-    get 'cancelNotification/:token', to: 'user_blood_donators/registrations#cancel_notification'
+    get 'cancelNotification/:token', to: 'user_blood_donators/registrations#cancel_notification', :as => :cancel_notification
 
 
   end

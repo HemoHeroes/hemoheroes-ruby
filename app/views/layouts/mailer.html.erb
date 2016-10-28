@@ -12,12 +12,12 @@
     <%= DateTime.now %>
   </p>
   <p>
-    <a href="<%= made_donation_path + "/" + @user.last_donation_token %>">Já doei!</a>
+    <a href="<%= made_donation_url @user.last_donation_token %>">Já doei!</a>
   </p>
   <p>
     Link para Quero doar
   </p>
   <p>
-    <!-- <a href="<%= cancel_notification_path + "/" + @user.notification_token %>">Não quero mais receber notificações</a> -->
+    <a href="<%= cancel_notification_url @user.notification_token %>">Não quero mais receber notificações</a>
   </p>
 </div>
