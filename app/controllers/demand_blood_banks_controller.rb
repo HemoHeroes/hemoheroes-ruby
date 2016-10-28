@@ -36,7 +36,7 @@ class DemandBloodBanksController < ApplicationController
         @donators.each do |donator|
           if user_can_recive_email(donator, @demand_blood_bank)
             donator.last_donation_token = SecureRandom.urlsafe_base64.to_s
-            donator.notification_token = SecureRandom.urlsafe_base64.to_s
+            # donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
             response = NotificationMailer.send_email(donator).deliver_now
 
