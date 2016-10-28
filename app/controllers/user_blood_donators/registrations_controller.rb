@@ -28,6 +28,10 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     puts "JA DOEI"
   end
 
+  def cancel_notification
+    redirect_to root_path , flash: { cancelnotification_modal: true }
+  end
+
   # GET /resource/edit
   # def edit
   #   super
