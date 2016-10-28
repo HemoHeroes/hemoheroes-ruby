@@ -39,15 +39,12 @@ class DemandBloodBanksController < ApplicationController
             # donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
             response = NotificationMailer.send_email(donator).deliver_now
-
             Notification.create! :last_notification => Date.today,
                                  :appear => false,
                                  :user_blood_donators_id => donator.id,
                                  :demand_blood_banks_id => @demand_blood_bank.id
-
           end
         end
-
         format.html { }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
