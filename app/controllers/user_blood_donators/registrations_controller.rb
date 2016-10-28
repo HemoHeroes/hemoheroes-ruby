@@ -24,6 +24,11 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def cancel_notification
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    puts params.inspect
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     redirect_to root_path , flash: { cancelnotification_modal: true }
   end
 
