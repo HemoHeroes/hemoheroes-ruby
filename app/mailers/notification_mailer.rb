@@ -8,8 +8,8 @@ class NotificationMailer < ApplicationMailer
     @url  = 'https://snap-ci.com/aceleradora-TW/HemoHeroes/branch/master'
     mail(to: @user.email,
     subject: 'Teste implementação',
-    template_path: 'notification_mailer',
-    template_name: 'welcome_email')
+    template_path: 'layouts',
+    template_name: 'mailer.html.erb')
   end
 
   def send_notification_to_admin blood_bank

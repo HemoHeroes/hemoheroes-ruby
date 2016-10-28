@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
+Olá. <%= @user.name %>
+Ajude nosso amigo Walter White que está com câncer..
 
-    </style>
-  </head>
+Agradecemos a preferência.
 
-  <body>
-   <h1>Doadores solicitados</h1>
-   <p>
-     Doadores tipo A+: <%= @blood_necessity.a_positive %>
-     Doadores tipo A-: <%= @blood_necessity.a_negative %>
-     Doadores tipo B+: <%= @blood_necessity.b_positive %>
-     Doadores tipo B-: <%= @blood_necessity.b_negative %>
-     Doadores tipo AB+: <%= @blood_necessity.ab_positive %>
-     Doadores tipo AB-: <%= @blood_necessity.ab_negative %>
-     Doadores tipo O+: <%= @blood_necessity.o_positive %>
-     Doadores tipo O-: <%= @blood_necessity.o_negative %>
-   </p>
-   <p>
-     Att,
+<%= DateTime.now %>
+ <%= made_donation_url + "/" + @user.last_donation_token %>
 
-     Equipe RubyHeroes :D
-   </p>
- </body>
-</html>
+Link para Quero doar
+Link para Não quero mais receber notificações
