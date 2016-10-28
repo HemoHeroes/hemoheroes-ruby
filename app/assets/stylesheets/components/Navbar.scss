@@ -17,9 +17,10 @@
   }
 
   &-hamburger {
+    background-image: url("https://goo.gl/5dy7yG");
     width: 50px;
     height: 40px;
-    background: $border-color;
+      background-size: 100%;
     @include desktop{
       display: none;
     }
