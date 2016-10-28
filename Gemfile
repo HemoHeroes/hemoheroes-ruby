@@ -43,7 +43,12 @@ end
 
 group :test do
     gem 'rspec'
+    gem 'capybara'
+    gem 'poltergeist'
+    gem 'selenium-webdriver'
+    gem 'rspec-rails'
 end
+
 
 group :production do
   gem 'pg'
