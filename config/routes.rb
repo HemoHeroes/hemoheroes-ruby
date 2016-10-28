@@ -15,17 +15,14 @@ Rails.application.routes.draw do
     post 'cadastroDoador' => 'user_blood_donators/registrations#create' , :as => :user_blood_donator_registration
 
 
-    get 'madeDonation/:recerberToken', to: 'user_blood_donators/registrations#made_donation', :as => :made_donation
+    get 'madeDonation/:receiveToken', to: 'user_blood_donators/registrations#made_donation', :as => :made_donation
 
     # =newPrototipo
     # Routes for tests new user_blood_donators/registrations/form_v2
-     get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
+    get 'cadastroDoador2' => 'user_blood_donators#newPrototipo'
 
-<<<<<<< HEAD
-     get 'cancelNotification/:token', to: 'user_blood_donators/registrations#cancel_notification'
-=======
-     get 'cancelNotification', to: 'user_blood_donators/registrations#cancel_notification'
->>>>>>> #0 <@lucimarNeves,@irlatrevisan> - Imprimir parâmetros do método made_donation
+    get 'cancelNotification/:token', to: 'user_blood_donators/registrations#cancel_notification'
+
 
   end
 
