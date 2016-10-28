@@ -1,9 +1,46 @@
 <section class="Section u-align-center u-outerWrapper">
 
   <% if flash[:cancelnotification_modal]  %>
-    <%= "Confirmação" %>
+  <%= "Confirmação" %>
+
+  <div class="Modal js-modal" style="opacity: 1; visibility: visible;">
+    <div class="Modal-content js-modalContent" style="top: 50%;">
+
+      <div class="Modal-header">
+        <div class="Grid">
+          <div class="Grid-cell u-sizeFull">
+            <div class="Modal-titleBox">
+              <h3 class="Modal-title">Notificação Cancelada</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Modal-body Modal-small">
+
+        <div class="Grid">
+          <div class="Grid-cell u-sizeFull">
+              A partir de agora você não receberá mais emails de solcitação do Hemoheroes
+          </div>
+          <div class="Button-group u-float-right ">
+            <div class="Button" onclick="Modal.close('.js-modalLogin')">
+              Fechar
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
   <% end %>
-  
+
   <h1>Bem vindo ao HemoHeroes</h1>
 
   <p class="u-font-size18">
