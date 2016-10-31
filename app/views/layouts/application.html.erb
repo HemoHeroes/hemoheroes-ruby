@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
 
-  <% if ENV['ENV_FOR_HOTJAR'] == 'production' %>
+  <% if ENV['ENV_TESTS'] == 'production' %>
   <!-- Hotjar Tracking Code for http://hemoheroestw-staging.herokuapp.com/ -->
   <script>
   (function(h,o,t,j,a,r){
@@ -24,7 +24,7 @@
   <% end %>
 
   <!-- Analytics -->
-  <% if ENV['RAILS_ENV'] == 'production' %>
+  <% if ENV['ENV_TESTS'] == 'production' %>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
