@@ -32,9 +32,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def cancel_notification
-    puts params['token']
-    donator = UserBloodDonator.find_by( notification_token: "kkkkkk")
-    puts donator
+
+    donator = UserBloodDonator.find_by( notification_token: params['token'])
     if donator != nil
       donator.notification = false
       donator.notification_token = ""
