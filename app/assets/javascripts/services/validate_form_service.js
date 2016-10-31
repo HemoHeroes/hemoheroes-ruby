@@ -89,7 +89,7 @@ var validateFormService = (function(){
     }
   };
 
-  function calcChecker1(firstNineDigits) {
+  var calcChecker1 = function(firstNineDigits) {
     var sum = null;
     for (var j = 0; j < 9; ++j) {
       sum += firstNineDigits.toString().charAt(j) * (10 - j);
@@ -99,7 +99,7 @@ var validateFormService = (function(){
     return checker1;
   };
 
-  function calcChecker2(cpfWithChecker1) {
+  var calcChecker2 = function(cpfWithChecker1) {
     var sum = null;
     for (var k = 0; k < 10; ++k) {
       sum += cpfWithChecker1.toString().charAt(k) * (11 - k);
@@ -109,7 +109,7 @@ var validateFormService = (function(){
     return checker2;
   };
 
-  validate = function (value) {
+  var validateCPFNumbers = function (value) {
     var cleanCPF = value.replace(/\.|\-|\s/g, ''),
     firstNineDigits = cleanCPF.substring(0, 9),
     checker = cleanCPF.substring(9, 11);
@@ -284,14 +284,16 @@ var validateFormService = (function(){
       valueCPF.addEventListener(action, function(){
         VMasker(valueCPF).maskPattern("999.999.999-99");
         errorCPF.style.display = "";
-        if(valueCPF.value == "" || valueCPF.value.length<14){
-          errorCPF.innerHTML = "CPF inválido!";
-          validateSingleInputForm("donator", 5, false);
-          return false;
-        }else{
+
+        if(validateCPFNumbers(valueCPF.value)) {
           errorCPF.style.display = "none";
           validateSingleInputForm("donator", 5, true);
+          return true;
         }
+        errorCPF.innerHTML = "CPF inválido!";
+        validateSingleInputForm("donator", 5, false);
+        return false;
+
       });
     },
 
