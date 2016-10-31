@@ -14,6 +14,7 @@ ready(function(){
       var validateOnAction = function() {
         validateFormService.validatePositiveNumber();
         validateFormService.validateEmptyInput();
+        validateFormService.validateMaxNumber();
       };
 
       for(var i = 0; i < allInputNumbers.length; i++){

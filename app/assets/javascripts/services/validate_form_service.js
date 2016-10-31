@@ -325,6 +325,15 @@ var validateFormService = (function(){
       }
     },
 
+    validateMaxNumber: function(){
+      var inputNumber = document.getElementsByClassName('js-necessityInput');
+      for(var i = 0; i < 8; i++){
+        if(inputNumber[i].value > 100){
+          inputNumber[i].value = 100;
+        }
+      }
+    },
+
     validateEmptyInput: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
       var button = document.querySelector(".js-nextButton");
