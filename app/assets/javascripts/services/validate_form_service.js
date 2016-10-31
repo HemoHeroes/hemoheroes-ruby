@@ -141,10 +141,7 @@ var validateFormService = (function(){
       var button = document.querySelector(button);
       button.addEventListener(action, function(){
         var valueCNPJ = document.querySelector(selector).value;
-        valueCNPJ = valueCNPJ.replace(".", "");
-        valueCNPJ = valueCNPJ.replace(".", "");
-        valueCNPJ = valueCNPJ.replace("-", "");
-        valueCNPJ = valueCNPJ.replace("/", "");
+        valueCNPJ = valueCNPJ.replace(/\.|\-|\s|\//g, '');
         document.querySelector(selector).value = valueCNPJ;
       });
     },
