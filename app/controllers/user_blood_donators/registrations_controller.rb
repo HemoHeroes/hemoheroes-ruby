@@ -21,12 +21,12 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   def made_donation
 
     donator = UserBloodDonator.find_by last_donation_token:params['receiveToken']
-    unless donator.nil?
+    if donator != nil
       donator.last_donation = DateTime.now
-      donator.notification_token = ""
+      donator.last_donation_token = ""
       donator.save!
-
     end
+    
     redirect_to root_path, flash: { notification_modal: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
 
   end
