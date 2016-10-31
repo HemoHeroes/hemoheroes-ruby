@@ -5,7 +5,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-
     @resourceT = "blood-bank"
     super
 
@@ -14,10 +13,9 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-
-    super
     blood_bank = UserBloodBank.last
-    NotificationMailer.send_notification_to_admin(blood_bank).deliver_now
+    NotificationMailer.send_notification_to_admin.deliver_now
+    super
     if UserBloodBank.find_for_authentication(cnpj: params[:document])
     end
 

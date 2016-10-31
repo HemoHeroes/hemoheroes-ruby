@@ -7,5 +7,4 @@ class UserBloodDonatorsController < ApplicationController
     render 'user_blood_donators/registrations/newPrototipo'
   end
 
-  
 end

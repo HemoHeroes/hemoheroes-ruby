@@ -8,6 +8,12 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     super
   end
 
+  def newPrototipo
+    @resourceT = "blood_prototype"
+    @user_blood_donator = UserBloodDonator.new
+    render 'user_blood_donators/registrations/newPrototipo'
+  end
+
   # POST /resource
   def create
     super
