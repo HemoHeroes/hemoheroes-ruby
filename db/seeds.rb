@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_donator = UserBloodDonator.create! :name => 'Pedrao dos Login', :email => 'cristianferreira_gks@hotmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345678912', :blood_type => 'O-', :notification => true, :genre => 'm', :last_donation => DateTime.now - 100.days
-user_donator = UserBloodDonator.create! :name => 'Doador A+', :email => 'matheus.mvo10@gmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345678332', :blood_type => 'A+', :notification => false, :genre => 'm', :last_donation => DateTime.now - 100.days
+# user_donator = UserBloodDonator.create! :name => 'Doador A+', :email => 'matheus.mvo10@gmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345678332', :blood_type => 'A+', :notification => false, :genre => 'm', :last_donation => DateTime.now - 100.days
 user_donator = UserBloodDonator.create! :name => 'Doador A-', :email => 'sheilanara.web@gmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345678911', :blood_type => 'A-', :notification => true, :genre => 'f', :last_donation => DateTime.now - 100.days
 user_donator = UserBloodDonator.create! :name => 'Doador B-', :email => 'mathias.voelcker@acad.pucrs.br', :password => '123456', :password_confirmation => '123456', :cpf => '12366678912', :blood_type => 'B-', :notification => true, :genre => 'm', :last_donation => DateTime.now - 20.days
 user_donator = UserBloodDonator.create! :name => 'Doador AB+', :email => 'lucas1998@gmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345623452', :blood_type => 'AB+', :notification => true, :genre => 'm', :last_donation => DateTime.now - 100.days
