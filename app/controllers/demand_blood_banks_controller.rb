@@ -40,9 +40,9 @@ class DemandBloodBanksController < ApplicationController
             donator.save!
             response = NotificationMailer.send_email(donator).deliver_now
             Notification.create! :last_notification => Date.today,
-                                 :appear => false,
-                                 :user_blood_donators_id => donator.id,
-                                 :demand_blood_banks_id => @demand_blood_bank.id
+            :appear => false,
+            :user_blood_donators_id => donator.id,
+            :demand_blood_banks_id => @demand_blood_bank.id
           end
         end
         format.html { }
@@ -123,6 +123,9 @@ class DemandBloodBanksController < ApplicationController
   end
 
   def check_donation_interval donator
+    if donator.last_donation == nil
+      return true
+    end
     difference_in_days = (Date.today - donator.last_donation).to_i
     if donator.genre.downcase == 'm' && difference_in_days > 60
       return true
