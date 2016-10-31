@@ -16,6 +16,7 @@
 #         fill_in "user_blood_bank_password_confirmation", with: "123456"
 #       end
 #
+#
 #       expect(page).to have_button(class: "Button", class: "is-actived")
 #     end
 #   end
