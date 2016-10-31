@@ -13,7 +13,11 @@
 
       <div class="Modal-body">
         <div class="u-align-center u-padding-left u-padding-right">
+          <% if flash[:confirm_to_have_donate]  %>
+            <%= render "confirm_to_have_donate/index" %>
+          <% else  %>
           <span class="u-font-size20 "><%= flash[:message] %></span>
+          <% end %>
         </div>
         <div class="u-align-center u-padding-top u-padding-bottom">
           <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>

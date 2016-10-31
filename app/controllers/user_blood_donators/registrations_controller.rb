@@ -32,8 +32,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.last_donation_token = ""
       donator.save!
     end
-    
-    redirect_to root_path, flash: { notification_modal: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
+
+    redirect_to root_path, flash: { notification_modal: true, confirm_to_have_donate: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
 
   end
 
