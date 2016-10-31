@@ -88,6 +88,53 @@ var validateFormService = (function(){
       return true;
     }
   };
+
+  function calcChecker1(firstNineDigits) {
+    var sum = null;
+    for (var j = 0; j < 9; ++j) {
+      sum += firstNineDigits.toString().charAt(j) * (10 - j);
+    }
+    var lastSumChecker1 = sum % 11;
+    var checker1 = lastSumChecker1 < 2 ? 0 : 11 - lastSumChecker1;
+    return checker1;
+  };
+
+  function calcChecker2(cpfWithChecker1) {
+    var sum = null;
+    for (var k = 0; k < 10; ++k) {
+      sum += cpfWithChecker1.toString().charAt(k) * (11 - k);
+    }
+    var lastSumChecker2 = sum % 11;
+    var checker2 = lastSumChecker2 < 2 ? 0 : 11 - lastSumChecker2;
+    return checker2;
+  };
+
+  validate = function (value) {
+    var cleanCPF = value.replace(/\.|\-|\s/g, ''),
+    firstNineDigits = cleanCPF.substring(0, 9),
+    checker = cleanCPF.substring(9, 11);
+
+    if (cleanCPF.length !== 11) {
+      return false;
+    }
+
+    // Checking if all digits are equal
+    for (var i = 0; i < 10; i++) {
+      if ('' + firstNineDigits + checker === Array(12).join(i)) {
+        return false;
+      }
+    }
+
+    var checker1 = calcChecker1(firstNineDigits);
+    var checker2 = calcChecker2(firstNineDigits + '' + checker1);
+
+    if (checker.toString() === checker1.toString() + checker2.toString()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return {
 
     removeMask: function(button, selector, action){
