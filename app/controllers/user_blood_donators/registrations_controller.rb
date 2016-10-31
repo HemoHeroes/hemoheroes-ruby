@@ -33,7 +33,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true, confirm_to_have_donate: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
+    redirect_to root_path, flash: { notification_modal: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
 
   end
 
@@ -46,7 +46,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true, confirm_to_have_donate: false, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
+    redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
 
   end
 
