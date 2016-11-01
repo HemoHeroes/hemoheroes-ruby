@@ -18,8 +18,8 @@
             <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
           </li>
           <% else %>
-          <li><%= link_to "Registrar Doador", new_user_blood_donator_registration_path%></li>
-          <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path %></li>
+          <li><%= link_to "Registrar Doador", new_user_blood_donator_registration_path, data: { turbolinks: "false" } %></li>
+          <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, data: { turbolinks: "false" } %></li>
           <li><a onclick="Modal.open('.js-modalLogin')">Login</a></li>
           <% end %>
       </ul>
