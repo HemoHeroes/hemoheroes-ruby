@@ -16,7 +16,7 @@ In Rails you can add to `vendor` path directly and request the `index.css` in `a
 
 ## Structure of components with Sass
 ```
-@import 'variables';
+@import '../variables';
 
 .Container{
   background: $color-container;
@@ -70,7 +70,7 @@ In Rails you can add to `vendor` path directly and request the `index.css` in `a
   }
 ```
 
-### Available variables to media-queries
+### Available ../variables to media-queries
 `desktop`: min-width: 1200px
 
 `tablet`: min-width: 900px and max-width: 1199
