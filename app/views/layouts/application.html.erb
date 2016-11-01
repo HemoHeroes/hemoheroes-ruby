@@ -26,6 +26,8 @@
   <!-- Analytics -->
   <% if ENV['ENV_TESTS'] == 'production' %>
   <!-- Teste A/B com Analytics -->
+
+  <% if controller.controller_name == 'registrations' &&  controller.action_name == 'new' %>
   <!-- Google Analytics Content Experiment code -->
   <script>function utmx_section(){}function utmx(){}(function(){var
     k='132453866-0',d=document,l=d.location,c=d.cookie;
@@ -40,6 +42,7 @@
           '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
           </script><script>utmx('url','A/B');</script>
           <!-- End of Google Analytics Content Experiment code -->
+          <% end %>
 
           <!-- Analytics -->
           <script>
