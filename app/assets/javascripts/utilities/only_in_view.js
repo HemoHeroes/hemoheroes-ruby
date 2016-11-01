@@ -3,9 +3,11 @@ function onlyInView(controller, actions, options, callback){
   var currentController = document.body.getAttribute("data-controller");
   var currentAction = document.body.getAttribute("data-action");
   var currrentResource = document.body.getAttribute("data-resource");
-  console.log("Action atual: "+currentAction)
+
+  console.log("Controller atual: "+currentController);
+  console.log("Action atual: "+currentAction);
+
   if (currentController != controller){
-    console.log("Controller atual: "+currentController);
     return false;
   }
 
