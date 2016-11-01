@@ -1,7 +1,6 @@
 @import "variables";
 
 .Container {
-  float: left;
   border: 1px solid $border-color;
   border-radius: 5px;
   overflow: hidden;
@@ -117,6 +116,12 @@
     & .Container-title {
       color: $light-font-color;
     }
+  }
+
+  &--invisible{
+    border: 2px solid $brand-color;
+    box-shadow: 0px 1px 3px hsla(3, 50%, 50%, 1);
+    
   }
 
 
