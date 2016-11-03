@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :demand_blood_banks
 
+
   devise_for :user_blood_donators, :skip => [:sessions, :registrations]
   as :user_blood_donator do
     post 'login' => 'sessions#create', :as => :user_blood_donator_session

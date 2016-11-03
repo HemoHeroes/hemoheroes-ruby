@@ -17,11 +17,6 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
-
-    if UserBloodDonator.find_for_authentication(cpf: params[:document])
-      send_notification
-    end
-
   end
 
   def made_donation
