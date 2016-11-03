@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20161103170934) do
     t.string   "lat"
     t.string   "last_donation_token"
     t.string   "notification_token"
+    t.integer  "use_hemoheroes"
     t.index ["cpf"], name: "index_user_blood_donators_on_cpf", unique: true
     t.index ["email"], name: "index_user_blood_donators_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_blood_donators_on_reset_password_token", unique: true
