@@ -8,4 +8,8 @@
   @include tablet {
     padding: 35px 15px;
   }
+
+  &--secondary {
+    background: scale-color($body-color, $lightness: -10%);
+  }
 }

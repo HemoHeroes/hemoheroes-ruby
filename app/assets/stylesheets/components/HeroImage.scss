@@ -1,6 +1,7 @@
 @import '../variables';
 
-.HeroImage{
+.HeroImage {
+  color: $light-font-color;
   width: 100%;
   height: 100%;
   left: 0;
@@ -14,4 +15,10 @@
   @include tablet {
     padding: 35px 15px;
   }
+
+  & h1, h2 {
+    color: $light-font-color;
+  }
+
+  
 }
