@@ -109,6 +109,7 @@ GEM
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    geocoder (1.4.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     has_scope (0.7.0)
@@ -271,6 +272,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   devise
+  geocoder
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

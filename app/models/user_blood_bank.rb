@@ -1,5 +1,5 @@
 class UserBloodBank < ApplicationRecord
-  validates_presence_of :name, :email, :cnpj
+  validates_presence_of :name, :email, :cnpj, :address
 
   validates_uniqueness_of :cnpj
   validates_uniqueness_of :email
@@ -8,6 +8,10 @@ class UserBloodBank < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
   authentication_keys: [:cnpj]
+
+  geocoded_by :address
+
+  after_validation :geocode
 
   def email_required?
     false
