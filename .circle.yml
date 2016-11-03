@@ -2,4 +2,4 @@ deployment:
   staging:
     branch: master
     heroku:
-      hemoheroes: foo-bar-123 # appname must not include upper-case characters
+      appname: hemoheroestw-staging # appname must not include upper-case characters
