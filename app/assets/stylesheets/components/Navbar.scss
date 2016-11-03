@@ -60,6 +60,7 @@
     }
   }
 
+
   @include mobile {
     .Navbar-logo {
       font-size: 1.7rem;
@@ -82,4 +83,7 @@
       border-top: 1px solid $border-color;
     }
   }
+
+
+
 }
