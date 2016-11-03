@@ -34,13 +34,20 @@ class ActiveRecord::Base
     @@shared_connection || retrieve_connection
   end
 end
-ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection  
 
+########################
+# Capybara configurações
+########################
+
+# 1. Registra webdrivers
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-Capybara.javascript_driver = :chrome
+# 2 Indica qual webdriver utilizar
+Capybara.javascript_driver = :poltergeist
+
+
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

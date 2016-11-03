@@ -15,11 +15,11 @@ ready(function(){
     var validateFormBank = function(){
       validateFormService.validateName('.js-validateName','focusout');
       validateFormService.validateEmail('.js-validateEmail','focusout');
-      validateFormService.validateCNPJ('.js-validateCNPJ','keyup');
+      validateFormService.validateCNPJ('.js-validateCNPJ','focusout');
       validateFormService.validateAddress('.js-validateAddress','focusout');
-      validateFormService.validatePhone('.js-validatePhone','keyup');
+      validateFormService.validatePhone('.js-validatePhone','focusout');
       validateFormService.removeMask('.js-validateButtonBank','.js-validateCNPJ','click');
-      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
+      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','focusout');
     };
 
     initialize();

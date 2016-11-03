@@ -20,11 +20,6 @@
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 
-
-Capybara.configure do |config|
-  config.default_driver = :poltergeist
-end
-
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
