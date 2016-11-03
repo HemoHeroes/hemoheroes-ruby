@@ -7,21 +7,27 @@
 
     <div class="Navbar-links js-navbarMobile">
       <ul>
-          <% if user_blood_donator_signed_in? %>
-          <li>
-            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
-            <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
-          </li>
-          <% elsif user_blood_bank_signed_in? %>
-          <li>
-            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
-            <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
-          </li>
-          <% else %>
-          <li><%= link_to "Registrar Doador", new_user_blood_donator_registration_path, data: { turbolinks: "false" } %></li>
-          <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, data: { turbolinks: "false" } %></li>
-          <li><a onclick="Modal.open('.js-modalLogin')">Login</a></li>
-          <% end %>
+        <% if user_blood_donator_signed_in? %>
+        <li>
+          <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+          <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+        </li>
+        <% elsif user_blood_bank_signed_in? %>
+        <li>
+          <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+          <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+        </li>
+        <% else %>
+
+        <li><%= link_to "Onde doar", root_path,
+                data: { turbolinks: "false" } %></li>
+        <li><%= link_to "Sobre", root_path,
+                data: { turbolinks: "false" } %></li>
+        <li><%= link_to "Cadastro", new_user_blood_donator_registration_path,
+                data: { turbolinks: "false" } %></li>
+        <!-- <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, data: { turbolinks: "false" } %></li> -->
+        <!-- <li><a onclick="Modal.open('.js-modalLogin')">Login</a></li> -->
+        <% end %>
       </ul>
     </div>
   </div>
