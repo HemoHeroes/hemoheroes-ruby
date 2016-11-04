@@ -1,5 +1,6 @@
 <!-- Hero Image -->
 
+<!-- Modal de Cancelar notificações -->
 <section class="HeroImage u-align-center">
   <% if flash[:notification_modal]  %>
   <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
@@ -10,7 +11,6 @@
           <h3 class="Modal-title"><%= flash[:title] %></h3>
         </div>
       </div>
-
 
       <div class="Modal-body">
         <div class="u-align-center u-padding-left u-padding-right">
@@ -25,9 +25,37 @@
   </div>
   <% end %>
 
+  <!-- Modal de feedback para o HemoHeroes -->
+  <% if flash[:made_modal]  %>
+  <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
+    <div class="Modal-content js-modalContent" style="top: 50%;">
+
+      <div class="Modal-header">
+        <div class="Modal-titleBox">
+          <h3 class="Modal-title"><%= flash[:title] %></h3>
+        </div>
+      </div>
+
+      <div class="Modal-body">
+        <span class="Modal--textModal"><%= flash[:message] %></span>
+        <div class="Modal-body">
+          <div class="Button-group u-float-right">
+            <div class="Button is-actived" onclick="">Sim</div>
+            <div class="Button" onclick="Modal.close('.js-modal')">Não</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <% end %>
+
+
   <h2 class="u-font-size40">
     Seu sangue pode salvar vidas
   </h2>
+
+  <h1>Bem vindo ao HemoHeroes</h1>
 
   <h1 class="u-font-size70">SEJA UM DOADOR</h1>
 
@@ -49,81 +77,81 @@
 <section class="Section Section--secondary">
   <div class="Grid Grid--withGutter">
     <div class="Grid-cell u-desktop-sizefull u-tablet-sizefull u-mobile-sizefull u-align-center">
-        <h2>SOBRE</h2>
-        <p class="u-font-size14 u-padding-left u-padding-right u-padding-bottom u-text-align-justify">
-          <img src="https://1.bp.blogspot.com/-5UZTaTWfagE/V7nKbm_yUuI/AAAAAAAAEoQ/6FuI-tGq9KAVxfaE8Y16AkK5uWc2YQUbgCLcB/s1600/Doa%25C3%25A7%25C3%25A3o-de-sangue.png" style="width:304px;height:228px; float:left;
-    margin-top:10px;" />
-          Porque doar sangue é um ato de responsabilidade social!
-          E esta responsabilidade social não se deve limitar à simples doação de sangue por
-          um cidadão. É importante que este cidadão transforme outro cidadão em doador
-          de sangue, formando-se uma corrente de agentes multiplicadores e disseminadores da
-          importância social da doação de sangue. Quando isto acontecer não faltará sangue
-          para o atendimento da população
-          e a sociedade terá realmente cumprido seu importante papel nesse processo.
+      <h2>SOBRE</h2>
+      <p class="u-font-size14 u-padding-left u-padding-right u-padding-bottom u-text-align-justify">
+        <img src="https://1.bp.blogspot.com/-5UZTaTWfagE/V7nKbm_yUuI/AAAAAAAAEoQ/6FuI-tGq9KAVxfaE8Y16AkK5uWc2YQUbgCLcB/s1600/Doa%25C3%25A7%25C3%25A3o-de-sangue.png" style="width:304px;height:228px; float:left;
+        margin-top:10px;" />
+        Porque doar sangue é um ato de responsabilidade social!
+        E esta responsabilidade social não se deve limitar à simples doação de sangue por
+        um cidadão. É importante que este cidadão transforme outro cidadão em doador
+        de sangue, formando-se uma corrente de agentes multiplicadores e disseminadores da
+        importância social da doação de sangue. Quando isto acontecer não faltará sangue
+        para o atendimento da população
+        e a sociedade terá realmente cumprido seu importante papel nesse processo.
 
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-          Mathias é o Batman!Mathias é o Batman!
-        </p>
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+        Mathias é o Batman!Mathias é o Batman!
+      </p>
     </div>
   </div>
 </section>
@@ -133,7 +161,7 @@
 <section class="Section u-outerWrapper">
   <div class="Grid Grid--withGutter">
     <div class="Grid-cell u-desktop-sizefull u-tablet-sizefull u-mobile-sizefull u-align-center">
-        <h2>NECESSIDADE</h2>
+      <h2>NECESSIDADE</h2>
     </div>
   </div>
 </section>

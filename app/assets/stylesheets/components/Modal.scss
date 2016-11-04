@@ -83,7 +83,6 @@
     overflow: auto;
     padding: 15px;
     height: 100%;
-
   }
 
   &-subTitle {
@@ -112,6 +111,11 @@
   &-successMessage{
     font-size: 14px;
     padding: 0 15px;
+  }
+
+  &--textModal {
+    color: black;
+    font-size: 20px;
   }
 
   &-buttons {

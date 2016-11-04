@@ -36,48 +36,50 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true,
-      message:"Você doou. Parabéns! Muito bacana. Legalzão hein", title:"Você doou via HemoHeroes?" }
+    redirect_to root_path, flash: { made_modal: true,
+      message:"Você doou via HemoHeroes?", title:"Pesquisa" }
 
-  end
-
-  def cancel_notification
-
-    donator = UserBloodDonator.find_by( notification_token: params['token'])
-    if donator != nil
-      donator.notification = false
-      donator.notification_token = ""
-      donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
+    def cancel_notification
 
-  end
+      donator = UserBloodDonator.find_by( notification_token: params['token'])
+      if donator != nil
+        donator.notification = false
+        donator.notification_token = ""
+        donator.save!
+      end
 
-  # protected
+      redirect_to root_path, flash: { notification_modal: true,
+        message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.",
+        title:"Notificação Cancelada" }
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :cpf, :date_birth,
-      :phone, :password, :notification,
-      :genre, :blood_type, :admin,
-      :last_donation, :cep, :long, :lat,
-      :last_donation_token, :notification_token])
-    end
+      end
+
+      # protected
+
+      # If you have extra params to permit, append them to the sanitizer.
+      def configure_sign_up_params
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :cpf, :date_birth,
+          :phone, :password, :notification,
+          :genre, :blood_type, :admin,
+          :last_donation, :cep, :long, :lat,
+          :last_donation_token, :notification_token])
+        end
 
 
-    def after_sign_up_path_for(resource)
-      dashboard_path
-    end
+        def after_sign_up_path_for(resource)
+          dashboard_path
+        end
 
 
-    protected
-    def get_donators
-      all_user_blood_donators = UserBloodDonator.all
-    end
+        protected
+        def get_donators
+          all_user_blood_donators = UserBloodDonator.all
+        end
 
-    def send_notification
-      NotificationMailer.send_email.deliver_now
-    end
+        def send_notification
+          NotificationMailer.send_email.deliver_now
+        end
 
-  end
+      end
