@@ -31,7 +31,7 @@ class DemandBloodBanksController < ApplicationController
     respond_to do |format|
       if @demand_blood_bank.save!
 
-        @donators = UserBloodDonator.all
+        @donators = UserBloodDonator.where blood_type:(make_demand_array(@demand_blood_bank))
 
         @donators.each do |donator|
           if user_can_recive_email(donator, @demand_blood_bank)
@@ -93,12 +93,7 @@ class DemandBloodBanksController < ApplicationController
     return false unless user.notification
     return false unless check_donation_interval user
     return false unless check_last_donation_request user
-    return false unless blood_type_is_request(user, demand)
     true
-  end
-
-  def blood_type_is_request(user, demand)
-    make_demand_array(demand).include? user.blood_type
   end
 
   def make_demand_array demand
