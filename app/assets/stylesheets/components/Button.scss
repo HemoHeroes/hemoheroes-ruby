@@ -2,6 +2,9 @@
 
 .Button
 {
+    $default-background-color: #cdc9c9;
+    $canceled-background-color: #e74c3c;
+    $actived-background-color: #2ecc71;
     font-size: .8rem;
     font-weight: 700;
 
@@ -19,9 +22,6 @@
     background: $default-background-color;
     box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .25);
 
-    $canceled-background-color: #e74c3c;
-    $actived-background-color: #2ecc71;
-    $default-background-color: #cdc9c9;
 
     &:hover
     {
