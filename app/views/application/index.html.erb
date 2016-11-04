@@ -65,12 +65,24 @@
 
 
 </section>
-<% @banks.each do |bank| %>
-<%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:blue%7Clabel:S%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x400&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
-<% end %>
+
+<!-- Maps -->
+<section class="HeroMaps u-align-center">
+  <div class="Grid Grid--withGutter u-align-center">
+      <p class = "u-font-size18">
+        <h2>Onde posso doar?</h2>
+        <% @banks.each do |bank| %>
+        <div class="Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizefull u-align-center ">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x400&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      </div>
+      <% end %>
+      </p>
+
+  </div>
+</section>
+
 
 <div class="u-divider"></div>
-
 
 <!-- Sobre -->
 
