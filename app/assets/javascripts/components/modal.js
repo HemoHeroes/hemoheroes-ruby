@@ -22,7 +22,14 @@ var Modal = (function(){
       modal.style.opacity = 0;
       modal.style.visibility = 'hidden';
 
+    },
+
+    confirm_feedback_donation: function(selector){
+      if(selector == ".js-modalSuccessfeedback"){
+        document.querySelector('#feedback_donation').submit();
+      }
     }
+
   }
 
 })()
