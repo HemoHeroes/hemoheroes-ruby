@@ -2,112 +2,111 @@
 
 .Button
 {
-    $default-background-color: #cdc9c9;
-    $canceled-background-color: #e74c3c;
-    $actived-background-color: #2ecc71;
-    font-size: .8rem;
-    font-weight: 700;
-
-    display: inline-block;
-
-    box-sizing: border-box;
-    padding: 12px;
-
-    text-align: center;
-    text-transform: uppercase;
-
-    color: $dark-font-color;
-    border: 1px solid hsla(0, 10%, 65%, 1);
-    border-radius: 3px;
-    background: $default-background-color;
-    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .25);
+  $default-background-color: #cdc9c9;
+  $canceled-background-color: #e74c3c;
+  $actived-background-color: #2ecc71;
+  font-size: .8rem;
+  font-weight: 700;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $dark-font-color;
+  border: 1px solid hsla(0, 10%, 65%, 1);
+  border-radius: 3px;
+  background: $default-background-color;
+  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .25);
+  font-size: .8rem;
+  font-weight: 700;
 
 
+
+  &:hover
+  {
+    cursor: pointer;
+
+    background-color: scale-color($default-background-color, $lightness: -10%);
+  }
+
+  &-group
+  {
+    display: flex;
+
+    margin: 12px -6px;
+
+    & .Button
+    {
+      margin: 0 6px;
+    }
+  }
+
+  &--large
+  {
+    padding: 20px;
+
+    font-size: 16px;
+  }
+
+  &--small
+  {
+    padding: 10px;
+
+    font-size: 10px;
+  }
+
+  &--fluid
+  {
+    width: 100%;
+  }
+  &--medium
+  {
+    width: 180px;
+  }
+
+  &--invisible
+  {
+    color: scale-color($light-font-color, $lightness: -40%);
+    border: 0;
+    background: none;
+    box-shadow: none;
     &:hover
     {
-        cursor: pointer;
-
-        background-color: scale-color($default-background-color, $lightness: -10%);
+      color: scale-color($light-font-color, $lightness: -70%);
+      background: none;
     }
+  }
 
-    &-group
+
+  &.is-canceled
+  {
+    color: $light-font-color;
+    background: $canceled-background-color;
+    &:hover
     {
-        display: flex;
-
-        margin: 12px -6px;
-
-        & .Button
-        {
-            margin: 0 6px;
-        }
+      background-color: scale-color($canceled-background-color, $lightness: -10%);
     }
+  }
 
-    &--large
+  &.is-actived
+  {
+    color: $light-font-color;
+    border-color: scale-color($actived-background-color, $lightness: -25%);
+    background: $actived-background-color;
+    &:hover
     {
-        font-size: 16px;
-
-        padding: 20px;
+      background-color: scale-color($actived-background-color, $lightness: -10%);
     }
-
-    &--small
-    {
-        font-size: 10px;
-
-        padding: 10px;
-    }
-
-    &--fluid
-    {
-        width: 100%;
-    }
-    &--medium
-    {
-        width: 180px;
-    }
-
-    &--invisible
-    {
-        color: scale-color($light-font-color, $lightness: -40%);
-        border: 0;
-        background: none;
-        box-shadow: none;
-        &:hover
-        {
-            color: scale-color($light-font-color, $lightness: -70%);
-            background: none;
-        }
-    }
+  }
 
 
-    &.is-canceled
-    {
-        color: $light-font-color;
-        background: $canceled-background-color;
-        &:hover
-        {
-            background-color: scale-color($canceled-background-color, $lightness: -10%);
-        }
-    }
+  &.is-disabled
+  {
+    cursor: not-allowed;
+    pointer-events: none;
 
-    &.is-actived
-    {
-        color: $light-font-color;
-        border-color: scale-color($actived-background-color, $lightness: -25%);
-        background: $actived-background-color;
-        &:hover
-        {
-            background-color: scale-color($actived-background-color, $lightness: -10%);
-        }
-    }
-
-
-    &.is-disabled
-    {
-        cursor: not-allowed;
-        pointer-events: none;
-
-        color: scale-color($default-background-color, $lightness: -25%);
-        border: 0;
-        box-shadow: none;
-    }
+    color: scale-color($default-background-color, $lightness: -25%);
+    border: 0;
+    box-shadow: none;
+  }
 }
