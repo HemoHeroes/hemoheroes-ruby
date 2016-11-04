@@ -1,90 +1,113 @@
-@import "../variables";
+@import '../variables';
 
-.Button {
-  $canceled-background-color: #e74c3c;
-  $actived-background-color: #2ecc71;
-  $default-background-color: #CDC9C9;
+.Button
+{
+    font-size: .8rem;
+    font-weight: 700;
 
-  background: $default-background-color;
-  color: $dark-font-color;
-  padding: 12px;
-  font-weight: 700;
-  border-radius: 3px;
-  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.25);
-  display: inline-block;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid hsla(0, 10%, 65%, 1);
-  font-size: 0.8rem;
-  text-transform: uppercase;
+    display: inline-block;
 
-  &:hover {
-    background-color: scale-color($default-background-color, $lightness: -10%);
-    cursor: pointer;
-  }
+    box-sizing: border-box;
+    padding: 12px;
 
-  &-group {
-    margin: 12px -6px;
-    display: flex;
+    text-align: center;
+    text-transform: uppercase;
 
-    & .Button {
-      margin: 0px 6px;
+    color: $dark-font-color;
+    border: 1px solid hsla(0, 10%, 65%, 1);
+    border-radius: 3px;
+    background: $default-background-color;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .25);
+
+    $canceled-background-color: #e74c3c;
+    $actived-background-color: #2ecc71;
+    $default-background-color: #cdc9c9;
+
+    &:hover
+    {
+        cursor: pointer;
+
+        background-color: scale-color($default-background-color, $lightness: -10%);
     }
-  }
 
-  &--large {
-    padding: 20px;
-    font-size: 16px;
-  }
+    &-group
+    {
+        display: flex;
 
-  &--small {
-    padding: 10px;
-    font-size: 10px;
-  }
+        margin: 12px -6px;
 
-  &--fluid {
-    width: 100%;
-  }
-  &--medium{
-    width: 180px;
-  }
-
-  &--invisible{
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: scale-color($light-font-color, $lightness: -40%);
-    &:hover {
-      background: none;
-      color: scale-color($light-font-color, $lightness: -70%);
+        & .Button
+        {
+            margin: 0 6px;
+        }
     }
-  }
 
+    &--large
+    {
+        font-size: 16px;
 
-  &.is-canceled{
-    background: $canceled-background-color;
-    color: $light-font-color;
-    &:hover{
-      background-color: scale-color($canceled-background-color, $lightness: -10%);
+        padding: 20px;
     }
-  }
 
-  &.is-actived{
-    background: $actived-background-color;
-    color: $light-font-color;
-    border-color: scale-color($actived-background-color, $lightness: -25%);
-    &:hover{
-      background-color: scale-color($actived-background-color, $lightness: -10%);
+    &--small
+    {
+        font-size: 10px;
+
+        padding: 10px;
     }
-  }
+
+    &--fluid
+    {
+        width: 100%;
+    }
+    &--medium
+    {
+        width: 180px;
+    }
+
+    &--invisible
+    {
+        color: scale-color($light-font-color, $lightness: -40%);
+        border: 0;
+        background: none;
+        box-shadow: none;
+        &:hover
+        {
+            color: scale-color($light-font-color, $lightness: -70%);
+            background: none;
+        }
+    }
 
 
-  &.is-disabled{
-    cursor: not-allowed;
-    pointer-events: none;
-    color: scale-color($default-background-color, $lightness: -25%);
-    box-shadow: none;
-    border: 0;
-  }
+    &.is-canceled
+    {
+        color: $light-font-color;
+        background: $canceled-background-color;
+        &:hover
+        {
+            background-color: scale-color($canceled-background-color, $lightness: -10%);
+        }
+    }
 
+    &.is-actived
+    {
+        color: $light-font-color;
+        border-color: scale-color($actived-background-color, $lightness: -25%);
+        background: $actived-background-color;
+        &:hover
+        {
+            background-color: scale-color($actived-background-color, $lightness: -10%);
+        }
+    }
+
+
+    &.is-disabled
+    {
+        cursor: not-allowed;
+        pointer-events: none;
+
+        color: scale-color($default-background-color, $lightness: -25%);
+        border: 0;
+        box-shadow: none;
+    }
 }
