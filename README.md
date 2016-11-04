@@ -15,5 +15,6 @@ Here are the steps for having HemoHeroes running on your local machine:
   --> $ cd HemoHeroes
   --> $ sudo chmod -rwx bin/docker.sh
   --> $ ./bin/docker.sh
+  --> $ sudo service docker start
   --> $ docker-compose build web
   --> $ docker-compose up web
