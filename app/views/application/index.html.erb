@@ -38,18 +38,26 @@
       </div>
 
       <div class="Modal-body">
+
         <span class="Modal--textModal"><%= flash[:message] %></span>
-        <div class="Modal-body">
+
+        <div class="u-margin-left-feedback">
+
           <form id="feedback_donation" action="/feedbackDonation" method="post">
             <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
-            <div class="Button-group u-float-right">
-              <div class="Button is-actived" onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')">Sim</div>
+            <div class="Grid">
+              <div class="Grid-cell u-desktop-size6of12">
+                <div class="Button Button--feedback u-margin-top-medium is-actived"
+                onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')"> Sim </div>
+              </div>
             </form>
-            <div class="Button" onclick="Modal.close('.js-modal')">Não</div>
+            <div class="Grid-cell u-desktop-size6of12">
+              <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived" onclick="Modal.close('.js-modal')"> Não </div>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
   <% end %>
