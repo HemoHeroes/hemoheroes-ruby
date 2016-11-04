@@ -25,7 +25,6 @@
     </div>
   </div>
   <% end %>
-
   <!-- Modal de feedback para o HemoHeroes -->
   <% if flash[:made_modal]  %>
   <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
@@ -66,18 +65,26 @@
   <h2 class="u-font-size40">
     Seu sangue pode salvar vidas
   </h2>
+
+
+<div>
   <h1 class="u-font-size70">SEJA UM DOADOR</h1>
+</div>
 
 
     <div class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">JUNTE-SE AO HEMOHEROES</div>
 
 
+<div>
+  <a href="#Maps" style="    height: 50px;
+    width: 50px;"><img class="AngleDown" src="https://i.imgsafe.org/cb4dc1dff9.png"></a>
+</div>
 
 </section>
 
 <!-- Maps -->
 
-<section class="Section">
+<section id="Maps" class="Section">
   <div class="Grid Grid--withGutter u-align-center">
       <p class = "u-font-size18">
       <h2>Onde Posso Doar?</h2>

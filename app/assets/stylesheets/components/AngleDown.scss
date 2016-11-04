@@ -1,0 +1,16 @@
+@import '../variables';
+
+.AngleDown {
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+
+  @include mobile {
+    width: 55px;
+    height: 55px;
+  }
+  @include tablet {
+    width: 60px;
+    height: 60px;
+  }
+}
