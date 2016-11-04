@@ -60,7 +60,6 @@
     }
   }
 
-
   @include mobile {
     .Navbar-logo {
       font-size: 1.7rem;
@@ -84,6 +83,9 @@
     }
   }
 
+}
 
-
+.Nav-ajust{
+  width: 100%;
+  height: 80px;
 }
