@@ -37,25 +37,19 @@
       </div>
 
       <div class="Modal-body">
-
         <span class="Modal--textModal"><%= flash[:message] %></span>
-
-        <div class="u-margin-left-feedback">
-
-          <form id="feedback_donation" action="/feedbackDonation" method="post">
-            <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
-            <div class="Grid">
-              <div class="Grid-cell u-desktop-size6of12">
-                <div class="Button Button--feedback u-margin-top-medium is-actived"
-                onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')"> Sim </div>
-              </div>
-            </form>
-            <div class="Grid-cell u-desktop-size6of12">
-              <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived" onclick="Modal.close('.js-modal')"> Não </div>
+        <form id="feedback_donation" action="/feedbackDonation" method="post">
+          <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
+          <div class="Grid">
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+              <div class="Button Button--feedback u-margin-top-medium is-actived"
+              onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')"> Sim </div>
             </div>
+          </form>
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+            <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived" onclick="Modal.close('.js-modal')"> Não </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -86,17 +80,17 @@
 
 <section id="Maps" class="Section">
   <div class="Grid Grid--withGutter u-align-center">
-      <p class = "u-font-size18">
+    <p class = "u-font-size18">
       <h2>Onde Posso Doar?</h2>
       <% @banks.each do |bank| %>
-          <div  class= "Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center">
-            <div><%= bank.name %></div>
-            <div class="Container Container--maps">
+      <div  class= "Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center">
+        <div><%= bank.name %></div>
+        <div class="Container Container--maps">
 
-            <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
-            <div><%= bank.address %></div>
-          </div>
+          <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+          <div><%= bank.address %></div>
         </div>
+      </div>
       <% end %>
     </p>
   </div>
