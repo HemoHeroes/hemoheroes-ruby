@@ -2,6 +2,7 @@
 
 <!-- Modal de Cancelar notificações -->
 <section class="HeroImage u-align-center">
+  <div class="HeroImage-overlay"></div>
   <% if flash[:notification_modal]  %>
   <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
     <div class="Modal-content js-modalContent" style="top: 50%;">
@@ -13,9 +14,9 @@
       </div>
 
       <div class="Modal-body">
-        <div class="u-align-center u-padding-left u-padding-right">
-          <span class="u-font-size20 "><%= flash[:message] %></span>
-        </div>
+
+        <span class="Modal--textModal"><%= flash[:message] %></span>
+
         <div class="u-align-center u-padding-top u-padding-bottom">
           <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>
         </div>
@@ -39,8 +40,11 @@
       <div class="Modal-body">
         <span class="Modal--textModal"><%= flash[:message] %></span>
         <div class="Modal-body">
-          <div class="Button-group u-float-right">
-            <div class="Button is-actived" onclick="">Sim</div>
+          <form id="feedback_donation" action="/feedbackDonation" method="post">
+            <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
+            <div class="Button-group u-float-right">
+              <div class="Button is-actived" onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')">Sim</div>
+            </form>
             <div class="Button" onclick="Modal.close('.js-modal')">Não</div>
           </div>
         </div>
@@ -57,26 +61,25 @@
   <h1 class="u-font-size70">SEJA UM DOADOR</h1>
 
   <a href="/cadastroDoador">
-    <div class="Button Button--medium is-actived u-margin-top-large">Cadastre-se</div>
+    <div class="Button Button--large  is-actived-secundary u-margin-top-large">JUNTE-SE AO HEMOHEROES</div>
   </a>
 
 
 </section>
 
 <!-- Maps -->
-<section class="HeroMaps u-align-center">
+
+<section class="Section">
   <div class="Grid Grid--withGutter u-align-center">
     <p class = "u-font-size18">
-      <h2>Onde posso doar?</h2>
+      <h2>Onde Posso Doar?</h2>
       <% @banks.each do |bank| %>
-      <div class="Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center ">
-        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x400&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      <div class="Container Container--maps Grid Grid-cell u-desktop-size6of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
         <div><%= bank.address%></div>
-
       </div>
       <% end %>
     </p>
-
   </div>
 </section>
 
@@ -156,24 +159,8 @@
         Mathias é o Batman!Mathias é o Batman!
         Mathias é o Batman!Mathias é o Batman!
         Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
-        Mathias é o Batman!Mathias é o Batman!
+
       </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- Mapa -->
-<section class="Section u-outerWrapper">
-  <div class="Grid Grid--withGutter">
-    <div class="Grid-cell u-desktop-sizefull u-tablet-sizefull u-mobile-sizefull u-align-center">
-      <h2>NECESSIDADE</h2>
     </div>
   </div>
 </section>
