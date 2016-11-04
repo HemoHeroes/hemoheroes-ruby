@@ -16,9 +16,19 @@
     padding: 35px 15px;
   }
 
-  & h1, h2 {
+  & h1 {
     color: $light-font-color;
+    text-shadow: 0 3px 14px #000;
   }
 
-  
+
+  & h2{
+    color: $light-font-color;
+    text-shadow: 0 3px 14px #000;
+      font-weight: 400;
+  }
+
+
+
+
 }
