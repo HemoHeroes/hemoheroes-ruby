@@ -2,7 +2,7 @@
 
 ready(function(){
 
-  onlyInView("user_blood_donators", ["newPrototipo", "edit"],"blood_prototype", function(){
+  // onlyInView("user_blood_donators", ["newPrototipo", "edit"],"blood_prototype", function(){
     var initialize = function(){
       buttonValidFormDonator_prototype();
       validateFormDonator_prototype();
@@ -22,6 +22,6 @@ ready(function(){
 
     initialize();
 
-  });
+  // });
 
 });

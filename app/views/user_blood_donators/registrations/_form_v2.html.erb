@@ -17,137 +17,146 @@
           </div>
         </div>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <% if resource.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
+        <form class="new_user_blood_donator" id="new_user_blood_donator" action="/cadastroDoador" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="hJ33FVGdCf3dntfs8kC6twKZLdEQsygeXLTP5YZ8JZ+AWtPT+/+TT5emuonnBMrXZgLvY76sa4QW61eKJynOsw==">
+          <% if resource.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
 
-          <ul>
-            <% user_blood_donator.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-        <% end %>
+            <ul>
+              <% user_blood_donator.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
 
 
-        <div class="Grid-cell u-tablet-sizeFull u-mobile-sizeFull u-outerWrapper">
-          <div class="Container Container--primary Grid-cell u-tablet-sizeFull">
-            <div class="Modal-body Modal-small">
-              <div class="Form">
-                <div class="Grid">
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span>Nome<span class="red-text">*</span></span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <%= f.text_field :name, class: "Form-inputValue  js-validateName",
-                              placeholder: "Ex: Fellipe Callegas" %>
-                        <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
+          <div class="Grid-cell u-tablet-sizeFull u-mobile-sizeFull u-outerWrapper">
+            <div class="Container Container--primary Grid-cell u-tablet-sizeFull">
+              <div class="Modal-body Modal-small">
+                <div class="Form">
+                  <div class="Grid">
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span>Nome<span class="red-text">*</span></span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <input class="Form-inputValue  js-validateName" placeholder="Ex: Fellipe Callegas" type="text" name="user_blood_donator[name]" id="user_blood_donator_name">
+                          <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span> Email<span class="red-text">*</span></span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <%= f.text_field :email, class: "Form-inputValue js-validateEmail",
-                        placeholder: "Ex: carlosirla@seuemail.com.br" %>
-                        <span id="errorEmail" style="display:none;" class="red-text"></span>
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span> Email<span class="red-text">*</span></span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value="" name="user_blood_donator[email]" id="user_blood_donator_email">
+                          <span id="errorEmail" style="display:none;" class="red-text"></span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span>Senha<span class="red-text">*</span></span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <%= f.password_field :password, class: "Form-inputValue js-validatePassword",
-                              placeholder: "Senha" %>
-                        <span id="errorPassword" style="display:none;" class="red-text"></span>
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span>Senha<span class="red-text">*</span></span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <input class="Form-inputValue js-validatePassword" placeholder="Senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password">
+                          <span id="errorPassword" style="display:none;" class="red-text"></span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span>Confirmar senha<span class="red-text">*</span></span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <%= f.password_field :password, class: "Form-inputValue js-validatePasswordConfirmation",
-                              placeholder: "Confirme sua senha" %>
-                        <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span>Confirmar senha<span class="red-text">*</span></span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <input class="Form-inputValue js-validatePasswordConfirmation" placeholder="Confirme sua senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password">
+                          <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span> Tipo sanguíneo: </span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <%= f.select :blood_type, ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
-                            { include_blank: "Não sei" }, { class: "Form-inputValue" } %>
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span> Tipo sanguíneo: </span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <select class="Form-inputValue" name="user_blood_donator[blood_type]" id="user_blood_donator_blood_type"><option value="">Não sei</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <div class="Form-group">
-                      <div class="Form-inputLabel u-sizeFull">
-                        <span>Sexo: </span>
-                      </div>
-                      <div class="u-sizeFull">
-                        <div class="Radio u-padding-bottom">
-                          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label" %>
-                          <%= label_tag(:genre, "Masculino") %>
-                          <%= radio_button_tag :genre, "sexo", false, class: "Radio-label",  checked: "Feminino"%>
-                          <%= label_tag(:genre, "Feminino") %>
-                          <span id="errorGenre" style="display:none;" class="red-text"></span>
+                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                      <div class="Form-group">
+                        <div class="Form-inputLabel u-sizeFull">
+                          <span>Sexo: </span>
+                        </div>
+                        <div class="u-sizeFull">
+                          <div class="Radio u-padding-bottom">
+                            <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label">
+                            <label for="genre">Masculino</label>
+                            <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label" checked="checked">
+                            <label for="genre">Feminino</label>
+                            <span id="errorGenre" style="display:none;" class="red-text"></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="Form-groupBlock">
-                  <div class="Checkbox">
-                    <%= check_box_tag(:notification, 'accepted', false, disable:false) %>
+                  <div class="Form-groupBlock">
                     <div class="Checkbox">
-                      <%= label_tag(:notification, "Desejo receber notificações") %>
+                      <input type="checkbox" name="notification" id="notification" value="accepted" disable="false">
+                      <div class="Checkbox">
+                        <label for="notification">Desejo receber notificações</label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="Checkbox">
-                    <div class="Checkbox-input">
-                      <%= check_box_tag(:accept_terms, false, false, class: "js-validateTerms")  %>
-                    </div>
-                    <div class="Checkbox-label">
-                      <%= label_tag(:accept_terms, "Aceito os termos de uso") %>
-                      <span id="errorTerms" style="display:none;" class="red-text"></span>
+                    <div class="Checkbox">
+                      <div class="Checkbox-input">
+                        <input type="checkbox" name="accept_terms" id="accept_terms" value="false" class="js-validateTerms">
+                      </div>
+                      <div class="Checkbox-label">
+                        <label for="accept_terms">Aceito os termos de uso</label>
+                        <span id="errorTerms" style="display:none;" class="red-text"></span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="Container-footer">
-                <div class="u-float-right">
-                  <%= button_tag "Limpar", type: :reset, class: "Button Button--invisible" %>
-                  <%= f.submit "Cadastrar", class: "Button is-disabled js-validateForm_prototype" %>
+                <div class="Container-footer">
+                  <div class="u-float-right">
+                    <button name="button" type="reset" class="Button Button--invisible">Limpar</button>
+                    <input type="submit" name="commit" value="Cadastrar" class="Button is-disabled js-validateForm_prototype" data-disable-with="Cadastrar">
+                  </div>
+                  <div class="Button" onclick="Modal.close('.js-modalRegistration')"> Voltar </div>
                 </div>
+
+
               </div>
-
-              <% end %>
-
             </div>
           </div>
-        </div>
+        </form>
+
       </div>
     </div>
+  </div>
+</div>
+</div>
