@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: true do
   context "cadastro com dados corretos" do
 
-    it "deve aparecer uma modal com mensagem de sucesso" do
+    it "deve ativar o botao" do
       visit "/cadastroBanco"
 
       within("#new_user_blood_bank") do
@@ -25,10 +25,11 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
 
       expect(page).to have_button(class: "is-actived")
     end
+
   end
 
   context "cadastro com dados incorretos" do
-    it "deve aparecer uma modal com mensagem de erro" do
+    it "deve manter o botao desabilitado" do
       visit "/cadastroBanco"
 
       within("#new_user_blood_bank") do
