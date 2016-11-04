@@ -69,14 +69,16 @@
 <!-- Maps -->
 <section class="HeroMaps u-align-center">
   <div class="Grid Grid--withGutter u-align-center">
-      <p class = "u-font-size18">
-        <h2>Onde posso doar?</h2>
-        <% @banks.each do |bank| %>
-        <div class="Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizefull u-align-center ">
+    <p class = "u-font-size18">
+      <h2>Onde posso doar?</h2>
+      <% @banks.each do |bank| %>
+      <div class="Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center ">
         <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x400&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+        <div><%= bank.address%></div>
+
       </div>
       <% end %>
-      </p>
+    </p>
 
   </div>
 </section>

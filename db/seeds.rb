@@ -18,7 +18,7 @@ user_donator = UserBloodDonator.create! :name => 'Doador O-', :email => 'mathias
 user_donator = UserBloodDonator.create! :name => 'Doador B+', :email => 'leonarrangel@gmail.com', :password => '123456', :password_confirmation => '123456', :cpf => '12345672312', :blood_type => 'B+', :notification => true, :genre => 'm', :last_donation => DateTime.now - 100.days
 
 user_bank = UserBloodBank.create! :name => 'Hemocentro', :email => 'hemorgs-adm@fepps.rs.gov.br', :password => '123456', :password_confirmation => '123456', :cnpj => '00689359000118', :actived => false, :address => "Av. Bento Gonçalves, 3722 - Partenon, Porto Alegre"
-user_bank = UserBloodBank.create! :name => 'Hospital São Lucas', :email => 'contato@saolucas.br', :password => '123456', :password_confirmation => '123456', :cnpj => '11111111111111', :actived => false, :address => "Avenida Ipiranga, 6690 Jardim Botânico - Porto Alegre"
+user_bank = UserBloodBank.create! :name => 'Hospital São Lucas', :email => 'contato@saolucas.br', :password => '123456', :password_confirmation => '123456', :cnpj => '11111111111111', :actived => false, :address => "Av. Ipiranga, 6690 Partenon, Porto Alegre"
 user_bank_actived = UserBloodBank.create! :name => 'Pedrao dos Banco', :email => 'pedraoativado@admin.com', :password => '123456', :password_confirmation => '123456', :cnpj => '12345678912311', :actived => true, :address => "Largo Jornalista Glenio Peres - Porto Alegre"
 
 DemandBloodBank.create! a_positive: 12, ab_positive:5
