@@ -7,11 +7,13 @@ The following markups are supported for Unix OS. The dependencies listed are req
 
   --> Rails 5.0.0.1
   --> Ruby 2.3.1
-  
+
 
 Here are the steps for having HemoHeroes running on your local machine:
 
   --> $ git clone https://github.com/aceleradora-TW/HemoHeroes.git
   --> $ cd HemoHeroes
-  --> $ bundle install
-  --> $ rake db:migrate
+  --> $ sudo chmod -rwx bin/docker.sh
+  --> $ ./bin/docker.sh
+  --> $ docker-compose build web
+  --> $ docker-compose up web
