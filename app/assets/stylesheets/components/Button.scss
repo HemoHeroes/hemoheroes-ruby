@@ -20,91 +20,92 @@
   font-size: .8rem;
   font-weight: 700;
 
-
-
-  &:hover
-  {
+  &:hover {
     cursor: pointer;
-
     background-color: scale-color($default-background-color, $lightness: -10%);
   }
 
-  &-group
-  {
+  &-group {
     display: flex;
-
     margin: 12px -6px;
 
-    & .Button
-    {
+    & .Button {
       margin: 0 6px;
     }
   }
 
-  &--large
-  {
+  &--large {
     padding: 20px;
-
     font-size: 16px;
   }
 
-  &--small
-  {
+  &--small {
     padding: 10px;
-
     font-size: 10px;
   }
 
-  &--fluid
-  {
+  &--fluid {
     width: 100%;
   }
-  &--medium
-  {
+
+  &--medium {
     width: 180px;
   }
 
-  &--invisible
-  {
+  &--invisible {
     color: scale-color($light-font-color, $lightness: -40%);
     border: 0;
     background: none;
     box-shadow: none;
-    &:hover
-    {
+    &:hover {
       color: scale-color($light-font-color, $lightness: -70%);
       background: none;
     }
   }
 
 
-  &.is-canceled
-  {
+  &.is-canceled {
     color: $light-font-color;
     background: $canceled-background-color;
-    &:hover
-    {
+    &:hover {
       background-color: scale-color($canceled-background-color, $lightness: -10%);
     }
   }
 
-  &.is-actived
-  {
+  &.is-actived {
     color: $light-font-color;
     border-color: scale-color($actived-background-color, $lightness: -25%);
     background: $actived-background-color;
-    &:hover
-    {
+
+    &-secundary {
+      color: $light-font-color;
+      border-color: scale-color($brand-color, $lightness: -25%);
+      background: $brand-color;
+      &:hover {
+        background-color: scale-color($brand-color, $lightness: -10%);
+      }
+    }
+
+    &:hover {
       background-color: scale-color($actived-background-color, $lightness: -10%);
     }
+
   }
 
 
-  &.is-disabled
-  {
+  // &.is-actived-secundary {
+  //   color: $light-font-color;
+  //   border-color: scale-color($brand-color, $lightness: -25%);
+  //   background: $brand-color;
+  //   &:hover {
+  //     background-color: scale-color($brand-color, $lightness: -10%);
+  //   }
+  // }
+
+
+  &.is-disabled {
     cursor: not-allowed;
     pointer-events: none;
-
     color: scale-color($default-background-color, $lightness: -25%);
     border: 0;
     box-shadow: none;
