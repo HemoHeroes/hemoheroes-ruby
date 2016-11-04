@@ -65,8 +65,9 @@
       </div>
     </div>
 </section>
-
-
+<% @banks.each do |bank| %>
+  <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:blue%7Clabel:S%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x400&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+<% end %>
 
 <!-- Mapa -->
 <section class="Section u-outerWrapper">

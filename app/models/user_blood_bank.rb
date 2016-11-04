@@ -10,7 +10,6 @@ class UserBloodBank < ApplicationRecord
   authentication_keys: [:cnpj]
 
   geocoded_by :address
-
   after_validation :geocode
 
   def email_required?
