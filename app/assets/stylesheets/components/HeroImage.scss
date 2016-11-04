@@ -6,14 +6,26 @@
   height: 100%;
   left: 0;
   top: 0;
+  position: relative;
   background-size:cover;
-  background-image: url("http://i3.dailyrecord.co.uk/incoming/article3147435.ece/ALTERNATES/s1200/Young-blood-donors.jpg");
   padding: 216px 0;
   @include mobile {
     padding: 35px 15px;
   }
   @include tablet {
     padding: 35px 15px;
+  }
+
+  &-overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("http://i3.dailyrecord.co.uk/incoming/article3147435.ece/ALTERNATES/s1200/Young-blood-donors.jpg");
+    opacity: 0.8;
+    background-size: cover;
+    z-index: -1;
   }
 
   & h1 {
@@ -25,7 +37,7 @@
   & h2{
     color: $light-font-color;
     text-shadow: 0 3px 14px #000;
-      font-weight: 400;
+    font-weight: 400;
   }
 
 

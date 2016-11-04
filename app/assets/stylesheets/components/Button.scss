@@ -79,7 +79,7 @@
 
     &-secundary {
       color: $light-font-color;
-      border-color: scale-color($brand-color, $lightness: -25%);
+      border: 0px;
       background: $brand-color;
       &:hover {
         background-color: scale-color($brand-color, $lightness: -10%);
@@ -91,16 +91,6 @@
     }
 
   }
-
-
-  // &.is-actived-secundary {
-  //   color: $light-font-color;
-  //   border-color: scale-color($brand-color, $lightness: -25%);
-  //   background: $brand-color;
-  //   &:hover {
-  //     background-color: scale-color($brand-color, $lightness: -10%);
-  //   }
-  // }
 
 
   &.is-disabled {
