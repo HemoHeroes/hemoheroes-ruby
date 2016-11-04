@@ -13,6 +13,7 @@ label {
 }
 
 h1 {
+  color: $brand-color;
   font-size: 2.7rem;
   @include mobile{
     font-size: 2rem;
@@ -24,6 +25,7 @@ h1 {
 }
 
 h2 {
+  color: $brand-color;
   font-size: 2.3rem;
 }
 

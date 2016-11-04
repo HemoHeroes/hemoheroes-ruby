@@ -17,11 +17,6 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
-
-    if UserBloodDonator.find_for_authentication(cpf: params[:document])
-      send_notification
-    end
-
   end
 
   def made_donation
@@ -30,10 +25,19 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     if donator != nil
       donator.last_donation = DateTime.now
       donator.last_donation_token = ""
+
+      # if donator.use_hemoheroes == nil
+      #   donator.use_hemoheroes = 1
+      #
+      # else
+      #   donator.use_hemoheroes += 1
+      # end
+
       donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true, message:"Obrigada pela doação, com esse gesto você está ajudando a salvar vidas!", title:"Doação efetuada!" }
+    redirect_to root_path, flash: { notification_modal: true,
+      message:"Você doou. Parabéns! Muito bacana. Legalzão hein", title:"Você doou via HemoHeroes?" }
 
   end
 
