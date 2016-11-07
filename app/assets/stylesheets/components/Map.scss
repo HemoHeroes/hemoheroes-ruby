@@ -1,0 +1,23 @@
+@import 'variables';
+
+.Map {
+  font-size: 14px;
+  text-align: center;
+
+  &-name {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  &-image {
+    border: 1px solid $border-color;
+    border-radius: $container-radius;
+    margin: 6px 0;
+  }
+
+  &-group {
+    display: flex;
+    justify-content: space-around;
+  }
+
+}

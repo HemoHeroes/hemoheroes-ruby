@@ -1,109 +1,50 @@
-<!-- Hero Image -->
-
-<!-- Modal de Cancelar notificações -->
 <section class="HeroImage u-align-center">
   <div class="HeroImage-overlay"></div>
-  <% if flash[:notification_modal]  %>
-  <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
-    <div class="Modal-content js-modalContent" style="top: 50%;">
 
-      <div class="Modal-header">
-        <div class="Modal-titleBox">
-          <h3 class="Modal-title"><%= flash[:title] %></h3>
-        </div>
-      </div>
-
-      <div class="Modal-body">
-
-        <span class="Modal--textModal"><%= flash[:message] %></span>
-
-        <div class="u-align-center u-padding-top u-padding-bottom">
-          <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <% end %>
-  <!-- Modal de feedback para o HemoHeroes -->
-  <% if flash[:made_modal]  %>
-  <div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
-    <div class="Modal-content js-modalContent" style="top: 50%;">
-
-      <div class="Modal-header">
-        <div class="Modal-titleBox">
-          <h3 class="Modal-title"><%= flash[:title] %></h3>
-        </div>
-      </div>
-
-      <div class="Modal-body">
-        <span class="Modal--textModal"><%= flash[:message] %></span>
-        <form id="feedback_donation" action="/feedbackDonation" method="post">
-          <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
-          <div class="Grid">
-
-            <div class="Button-group">
-              <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
-                <div class="Button Button--feedback u-margin-top-medium is-actived"
-                onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')">Sim</div>
-              </div>
-
-              <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
-                <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived"
-                onclick="Modal.close('.js-modal')">Não</div>
-              </div>
-            </div>
-
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <% end %>
-
+  <%= render 'modal_notification' %>
+  <%= render 'modal_feedback' %>
 
   <h2 class="u-font-size40">
     Seu sangue pode salvar vidas
   </h2>
 
+  <h1>SEJA UM DOADOR</h1>
 
-  <div>
-    <h1 class="u-font-size70">SEJA UM DOADOR</h1>
+
+  <div class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">
+    JUNTE-SE AO HEMOHEROES
   </div>
-
-    <div id="btn-registration-blood-donator" class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">JUNTE-SE AO HEMOHEROES</div>
-
-  <div>
-    <a href="#Maps" style="    height: 50px;
-    width: 50px;"><img class="AngleDown" src="https://i.imgsafe.org/cb4dc1dff9.png"></a>
-  </div>
-
 </section>
 
-<!-- Maps -->
 
-<section id="Maps" class="Section">
-  <div class="Grid Grid--withGutter u-align-center">
-    <p class = "u-font-size18">
-      <h2><a name="link1">Onde Posso Doar?</a></h2>
-      <% @banks.each do |bank| %>
-      <div  class= "Grid Grid-cell u-desktop-size4of12 u-tablet-sizefull u-mobile-sizegit pullfull u-align-center">
-        <div><%= bank.name %></div>
-        <div class="Container Container--maps">
 
-          <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
-          <div><%= bank.address %></div>
-        </div>
+<section class="Section u-align-center">
+
+
+  <h2>Onde Posso Doar?</h2>
+  
+  <div class="Map-group">
+    <% @banks.each do |bank| %>
+    <div class="Map">
+      <div class="Map-name">
+        <%= bank.name %>
       </div>
-      <% end %>
-    </p>
+      <div class="Map-image">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      </div>
+      <div class="Map-address">
+        <%= bank.address %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </section>
+
 
 
 <div class="u-divider"></div>
 
-<!-- Sobre -->
+
 
 <section class="Section Section--secondary">
   <div class="Grid Grid--withGutter">

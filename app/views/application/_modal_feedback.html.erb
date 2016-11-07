@@ -1,0 +1,34 @@
+<% if flash[:made_modal]  %>
+<div class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
+  <div class="Modal-content js-modalContent" style="top: 50%;">
+
+    <div class="Modal-header">
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title"><%= flash[:title] %></h3>
+      </div>
+    </div>
+
+    <div class="Modal-body">
+      <span class="Modal--textModal"><%= flash[:message] %></span>
+      <form id="feedback_donation" action="/feedbackDonation" method="post">
+        <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
+        <div class="Grid">
+
+          <div class="Button-group">
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+              <div class="Button Button--feedback u-margin-top-medium is-actived"
+              onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')">Sim</div>
+            </div>
+
+            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+              <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived"
+              onclick="Modal.close('.js-modal')">Não</div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>
