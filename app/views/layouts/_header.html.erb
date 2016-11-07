@@ -19,10 +19,8 @@
         </li>
         <% else %>
 
-        <li><%= link_to "Onde doar", root_path,
-                data: { turbolinks: "false" } %></li>
-        <li><%= link_to "Sobre", root_path,
-                data: { turbolinks: "false" } %></li>
+        <li><a data-turbolinks="false" href="#link1">Onde doar</a></li>
+        <li><a data-turbolinks="false" href="#link2">Sobre</a></li>
         <!-- <li><%= link_to "Cadastro", new_user_blood_donator_registration_path,
                 data: { turbolinks: "false" } %></li> -->
         <!-- <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, data: { turbolinks: "false" } %></li> -->
