@@ -1,14 +1,19 @@
 <section class="HeroImage u-align-center">
+
+  <div class="HeroImage-background"></div>
   <div class="HeroImage-overlay"></div>
 
   <%= render 'modal_notification' %>
   <%= render 'modal_feedback' %>
 
-  <h2 class="u-font-size40">
+  <div class="HeroImage-title">
     Seu sangue pode salvar vidas
-  </h2>
+  </div>
 
-  <h1>SEJA UM DOADOR</h1>
+
+  <div class="HeroImage-subtitle">
+    SEJA UM DOADOR
+  </div>
 
 
   <div class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">
@@ -22,7 +27,7 @@
 
 
   <h2>Onde Posso Doar?</h2>
-  
+
   <div class="Map-group">
     <% @banks.each do |bank| %>
     <div class="Map">
