@@ -1,6 +1,13 @@
 <div class="Navbar <%= "Navbar--home" if current_page? '/' %>">
+  <div class="Navbar-hamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
+
   <div class="Navbar-content">
-    <div class="Navbar-hamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
+    <div class="Navbar-links js-navbarMobile">
+      <li><a data-turbolinks="false" href="#link1">Sobre</a></li>
+      <li><a data-turbolinks="false" href="#link2">Necessidade</a></li>
+      <li><a onclick="Modal.open('.js-modalRegistration')">Historia</a></li>
+    </div>
+
     <div class="Navbar-logo" >
       <a href="/">HemoHeroes</a>
     </div>
@@ -8,23 +15,19 @@
     <div class="Navbar-links js-navbarMobile">
       <ul>
         <% if user_blood_donator_signed_in? %>
-        <li>
-          <%= "Bem vindo, #{current_user_blood_donator.name}" %>
-          <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
-        </li>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+            <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+          </li>
         <% elsif user_blood_bank_signed_in? %>
-        <li>
-          <%= "Bem vindo, #{current_user_blood_bank.name}" %>
-          <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
-        </li>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+            <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+          </li>
         <% else %>
-
-        <li><a data-turbolinks="false" href="#link1">Onde doar</a></li>
-        <li><a data-turbolinks="false" href="#link2">Sobre</a></li>
-        <!-- <li><%= link_to "Cadastro", new_user_blood_donator_registration_path,
-                data: { turbolinks: "false" } %></li> -->
-        <!-- <li><%= link_to "Registrar Banco de Sangue", new_user_blood_bank_registration_path, data: { turbolinks: "false" } %></li> -->
-        <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li>
+          <li><a data-turbolinks="false" href="#link1">Onde doar</a></li>
+          <li><a data-turbolinks="false" href="#link2">Sobre</a></li>
+          <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li>
         <% end %>
       </ul>
     </div>
