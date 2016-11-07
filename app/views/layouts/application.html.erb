@@ -58,11 +58,12 @@
         </head>
 
         <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-resource="<%=@resourceT unless @resourceT.nil? %>">
-          <%= render 'layouts/header'%>
+          <%= render "layouts/header"%>
           <%= yield %>
           <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
           <%= render "devise/sessions/new" %>
           <%= render "user_blood_donators/registrations/form_v2" %>
+          <%= render "layouts/footer" %>
           <% end %>
         </body>
         </html>

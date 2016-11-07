@@ -1,0 +1,30 @@
+@import "../variables";
+
+.Footer {
+
+  $header-background-color: #FFFAF5;
+  background-color: $header-background-color;
+  width: 100%;
+
+  &-content{
+    padding: 21px;
+  }
+
+  &-links{
+
+
+
+    & a {
+      color: #333333;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 19px 15px;
+      &:hover {
+        background: $border-color;
+      }
+    }
+  }
+
+}
