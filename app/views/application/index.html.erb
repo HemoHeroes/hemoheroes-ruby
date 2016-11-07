@@ -41,15 +41,21 @@
         <form id="feedback_donation" action="/feedbackDonation" method="post">
           <input type="hidden" name="token_feedback" value="<%= flash[:id_donator] %>" >
           <div class="Grid">
-            <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
-              <div class="Button Button--feedback u-margin-top-medium is-actived"
-              onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')"> Sim </div>
+
+            <div class="Button-group">
+              <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+                <div class="Button Button--feedback u-margin-top-medium is-actived"
+                onclick="Modal.confirm_feedback_donation('.js-modalSuccessfeedback')">Sim</div>
+              </div>
+
+              <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
+                <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived"
+                onclick="Modal.close('.js-modal')">Não</div>
+              </div>
             </div>
-          </form>
-          <div class="Grid-cell u-desktop-size6of12 u-tablet-size6of12 u-mobile-size6of12">
-            <div class="size6of12 Button Button--feedback u-margin-top-medium is-actived" onclick="Modal.close('.js-modal')"> Não </div>
+
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -61,18 +67,18 @@
   </h2>
 
 
-<div>
-  <h1 class="u-font-size70">SEJA UM DOADOR</h1>
-</div>
+  <div>
+    <h1 class="u-font-size70">SEJA UM DOADOR</h1>
+  </div>
 
 
-    <div class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">JUNTE-SE AO HEMOHEROES</div>
+  <div class="Button Button--large  is-actived-secundary u-margin-top-large" onclick="Modal.open('.js-modalRegistration')">JUNTE-SE AO HEMOHEROES</div>
 
 
-<div>
-  <a href="#Maps" style="    height: 50px;
+  <div>
+    <a href="#Maps" style="    height: 50px;
     width: 50px;"><img class="AngleDown" src="https://i.imgsafe.org/cb4dc1dff9.png"></a>
-</div>
+  </div>
 
 </section>
 
