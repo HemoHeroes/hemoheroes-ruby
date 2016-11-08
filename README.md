@@ -1,5 +1,7 @@
 # HEMOHEROES
 
+[![CircleCI](https://circleci.com/gh/aceleradora-TW/HemoHeroes.svg?style=svg)](https://circleci.com/gh/aceleradora-TW/HemoHeroes)
+
 HemoHeroes é uma aplicação para conectar Bancos de Sangue aos doadores em potencial.
 
 ## Getting Started
