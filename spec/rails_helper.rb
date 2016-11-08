@@ -41,8 +41,10 @@ end
 ########################
 
 # 1. Registra webdrivers
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app,
+    js_errors: false
+  )
 end
 
 # 2 Indica qual webdriver utilizar

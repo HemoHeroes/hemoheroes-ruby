@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: true do
-  context "cadastro com dados corretos" do
+  context "quando cadastrar com dados corretos" do
 
     it "deve ativar o botao" do
       visit "/cadastroBanco"
@@ -29,7 +29,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
   end
 
 
-  context "cadastro com dados incorretos" do
+  context "quando cadastrar com dados incorretos" do
     it "deve manter o botao desabilitado" do
       visit "/cadastroBanco"
 
@@ -50,7 +50,6 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
         page.find('#user_blood_bank_password_confirmation').trigger(:focusout)
       end
 
-      sleep 2
       expect(page).to have_button(class: "is-disabled")
     end
   end

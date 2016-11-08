@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Antônio poderá criar uma conta de doador", type: :feature, js: true do
-  context "cadastro com dados corretos" do
+  context "quando cadastrar com dados corretos" do
 
     it "deve ativar botão de cadastro" do
       visit "/"
@@ -28,7 +28,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "cadastro com email incorreto" do
+  context "quando cadastrar com email incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find(".Button").click
@@ -54,7 +54,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "cadastro com nome incorreto" do
+  context "quando cadastrar com nome incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find(".Button").click
@@ -78,7 +78,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "cadastro com senhas diferentes" do
+  context "quando cadastrar com senhas diferentes" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find(".Button").click
@@ -105,7 +105,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "cadastro com senhas menor que 6 caracteres" do
+  context "quando cadastrar com senhas menor que 6 caracteres" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find(".Button").click
@@ -132,7 +132,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "cadastro com senhas menor que 6 caracteres" do
+  context "quando cadastrar com senhas menor que 6 caracteres" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find(".Button").click
