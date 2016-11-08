@@ -1,5 +1,3 @@
-// = require services/validate_form_prototype
-
 ready(function(){
 
   // onlyInView("user_blood_donators", ["newPrototipo", "edit"],"blood_prototype", function(){
