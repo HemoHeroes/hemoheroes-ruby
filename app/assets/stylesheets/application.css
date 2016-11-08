@@ -10,21 +10,16 @@
 * files in this directory. Styles in this file should be added after the last require_* statement.
 * It is generally better to create a new file per style scope.
 *
-*= require_tree .
-*= require_self
+
+
+*= require_directory ./base
 *= require JonsModularUI/index
+*= require_directory ./components
+*= require confirm_to_have_donate
+*= require demand_blood_banks
+*= require hospitals
+*= require users
+*= require welcome
+*= require_self
+*= require_directory ./utilities
 */
-
-
-.index-image {
-  background-image: url("https://goo.gl/LKGY2D");
-  background-size: 100%;
-  height: 184px;
-  width:234px;
-  margin-top: 180px;
-}
-.image-circle{
-  border-radius:100%;
-  width:140px;
-  height:140px;
-}
