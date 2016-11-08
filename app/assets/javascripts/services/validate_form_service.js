@@ -1,14 +1,20 @@
 var validateFormService = (function(){
 
   var validFormBank = [];
-  for(var i = 0; i<=6;i++){
+  for(var i = 0; i<=6; i++){
     validFormBank[i] = false;
   }
 
   var validFormDonator = [];
-  for(var i = 0; i<=6;i++){
+  for(var i = 0; i<=6; i++){
     validFormDonator[i] = false;
   }
+
+  var validSimpleFormDonator = [];
+  for (var i = 0; i<=4; i++){
+    validSimpleFormDonator[i] = false;
+  }
+
 
   var buttonChange = function(state, button){
     if (state == "actived") {
@@ -59,11 +65,32 @@ var validateFormService = (function(){
       }
     }
   };
-  var validateInputForms = function(indiceDonator, indiceBank, status){
-    validFormDonator[indiceDonator] = status;
+
+  var buttonValidSimpleFormDonator = function(selector){
+    if(elementExist(selector)) return false
+    var invalidButtonSimpleDonator = false;
+    for(var i = 0; i < validSimpleFormDonator.length; i++){
+      if(validSimpleFormDonator[i] == false){
+        invalidButtonSimpleDonator = true;
+      }
+    }
+
+    var buttonRegisterSimpleDonator = document.querySelector('.js-validateButtonSimpleDonator');
+    if(buttonRegisterSimpleDonator != null){
+      if(!invalidButtonSimpleDonator){
+        buttonChange("actived", buttonRegisterSimpleDonator);
+      }else{
+        buttonChange("disabled", buttonRegisterSimpleDonator);
+      }
+    }
+  };
+
+
+  var validateInputForms = function(indiceSimpleDonator, indiceBank, status){
+    validSimpleFormDonator[indiceSimpleDonator] = status;
     validFormBank[indiceBank] = status;
     buttonValidFormBank();
-    buttonValidFormDonator();
+    buttonValidSimpleFormDonator();
   };
 
   var validateSingleInputForm = function(type, indice, status){
@@ -73,6 +100,9 @@ var validateFormService = (function(){
     }else if(type == "donator"){
       validFormDonator[indice] = status;
       buttonValidFormDonator();
+    }else if (type == "simpleDonator"){
+      validSimpleFormDonator[indice] = status;
+      buttonValidSimpleFormDonator();
     }
   };
 
@@ -155,8 +185,10 @@ var validateFormService = (function(){
         errorName.style.display = "";
         if (inputName.value && nameValidate) {
           errorName.style.display = "none";
+          validateSingleInputForm("donator", 0, true);
           validateInputForms(0, 0, true);
         } else {
+          validateSingleInputForm("donator", 0, false);
           validateInputForms(0, 0, false);
           return false;
         }
@@ -190,10 +222,12 @@ var validateFormService = (function(){
         errorPhone.style.display = "";
         if(inputPhone.value == "" || inputPhone.value.length<13 ){
           errorPhone.innerHTML = "Telefone inválido!";
-          validateInputForms(1,2, false);
+          validateSingleInputForm("bank", 2, false);
+          validateSingleInputForm("donator", 1, false);
         }else{
           errorPhone.style.display = "none";
-          validateInputForms(1,2, true);
+          validateSingleInputForm("bank", 2, true);
+          validateSingleInputForm("donator", 1, true);
         }
       });
     },
@@ -208,10 +242,12 @@ var validateFormService = (function(){
         errorEmail.style.display = "";
         if(!emailValidate && inputEmail.value != ""){
           errorEmail.innerHTML = "E-mail inválido!";
-          validateInputForms(2, 3, false);
+          validateSingleInputForm("donator", 2, false);
+          validateInputForms(1, 3, false);
         }else if(emailValidate){
           errorEmail.style.display = "none";
-          validateInputForms(2, 3, true);
+          validateInputForms(1, 3, true);
+          validateSingleInputForm("donator", 2, true);
         }
       });
     },
@@ -241,10 +277,12 @@ var validateFormService = (function(){
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
           errorPasswordConfirmation.innerHTML = "Senhas não correspondem!";
-          validateInputForms(3, 5, false);
+          validateInputForms(2, 5, false);
+          validateSingleInputForm("donator", 3, false);
         }else{
           errorPasswordConfirmation.style.display = "none";
-          validateInputForms(3, 5, true);
+          validateInputForms(2, 5, true);
+          validateSingleInputForm("donator", 3, true);
         }
       };
 
@@ -253,14 +291,17 @@ var validateFormService = (function(){
         errorPassword.style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           errorPassword.innerHTML = "Senha deve ter no minimo 6 digitos!";
-          validateInputForms(4, 6, false);
+          validateInputForms(3, 6, false);
+          validateSingleInputForm("donator", 4, false);
           return false;
         }else if(valuePassword.value.length == 0){
-          validateInputForms(4, 6, false);
+          validateInputForms(3, 6, false);
+          validateSingleInputForm("donator", 4, false);
           return false;
         }else{
           errorPassword.style.display = "none";
-          validateInputForms(4, 6, true);
+          validateSingleInputForm("donator", 4, true);
+          validateInputForms(3, 6, true);
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
         }
       });
@@ -302,11 +343,13 @@ var validateFormService = (function(){
         errorValueTerms.style.display = "";
         if(valueTerms.checked == true) {
           errorValueTerms.style.display = "none";
+          validateSingleInputForm("simpleDonator", 4, true);
           validateSingleInputForm("donator", 6, true);
         }
         else {
           errorValueTerms.innerHTML = "Você deve aceitar os termos de uso!";
           validateSingleInputForm("donator", 6, false);
+          validateSingleInputForm("simpleDonator", 4, false);
           return false;
         }
       });
