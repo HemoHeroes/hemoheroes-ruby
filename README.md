@@ -11,7 +11,7 @@ Para rodar a aplicação você precisa executar os seguintes passos:
 1. `$ git clone https://github.com/aceleradora-TW/HemoHeroes.git`
 2. `$ cd HemoHeroes`
 3. `$ sudo chmod -rwx bin/docker.sh`
-4. `$ ./bin/docker.sh`
+4. `$ sudo ./bin/docker.sh`
 5. Deslogar e logar
 6. `$ sudo service docker start`
 7. `$ docker-compose build web`
