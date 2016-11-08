@@ -18,12 +18,11 @@
   }
 
   &-hamburger {
-    background-image: url("https://goo.gl/HLr9Vl");
-    width: 50px;
-    height: 40px;
-    background-size: 100%;
-    @include desktop{
-      display: none;
+    @include mobile{
+      background-image: url("https://goo.gl/HLr9Vl");
+      width: 50px;
+      height: 40px;
+      background-size: 100%;
     }
   }
 
