@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require utilities/ready
 //= require vanilla-masker
+//= require smooth-scroll
 //= require_tree .

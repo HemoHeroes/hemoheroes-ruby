@@ -25,8 +25,8 @@
             <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
           </li>
         <% else %>
-          <li><a data-turbolinks="false" href="#link1">Onde doar</a></li>
-          <li><a data-turbolinks="false" href="#link2">Sobre</a></li>
+          <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+          <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
           <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li>
         <% end %>
       </ul>
