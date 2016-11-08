@@ -1,6 +1,6 @@
 # HEMOHEROES
 
-[![CircleCI](https://circleci.com/gh/aceleradora-TW/HemoHeroes.svg?style=svg)](https://circleci.com/gh/aceleradora-TW/HemoHeroes)
+[![CircleCI](https://circleci.com/gh/aceleradora-TW/HemoHeroes.svg?style=svg)](https://circleci.com/gh/aceleradora-TW/HemoHeroes) <a href="https://codeclimate.com/github/aceleradora-TW/HemoHeroes"><img src="https://codeclimate.com/github/aceleradora-TW/HemoHeroes/badges/gpa.svg" /></a>
 
 HemoHeroes é uma aplicação para conectar Bancos de Sangue aos doadores em potencial.
 
