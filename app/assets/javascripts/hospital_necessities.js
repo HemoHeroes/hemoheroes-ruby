@@ -19,7 +19,7 @@ ready(function(){
 
       for(var i = 0; i < allInputNumbers.length; i++){
         var inputNumber = allInputNumbers[i];
-        inputNumber.addEventListener("keyup", validateOnAction);
+        inputNumber.addEventListener("focusout", validateOnAction);
         inputNumber.addEventListener("click", validateOnAction);
       }
     };

@@ -55,4 +55,31 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
     end
   end
 
+  # context "Encontrar modal" do
+  #   it "Cadastro em analise" do
+  #     visit "/cadastroBanco"
+  #
+  #     within("#new_user_blood_bank") do
+  #       fill_in "user_blood_bank_name", with: "Hospital São Lucas"
+  #       page.find('#user_blood_bank_name').trigger(:focusout)
+  #       fill_in "user_blood_bank_cnpj", with: "12345678912345"
+  #       page.find('#user_blood_bank_cnpj').trigger(:focusout)
+  #       fill_in "user_blood_bank_email", with: "katia@gmail.com"
+  #       page.find('#user_blood_bank_email').trigger(:focusout)
+  #       fill_in "user_blood_bank_phone", with: "5196501068"
+  #       page.find('#user_blood_bank_phone').trigger(:focusout)
+  #       fill_in "user_blood_bank_address", with: "Av. Ipiranga, 6681"
+  #       page.find('#user_blood_bank_address').trigger(:focusout)
+  #       fill_in "user_blood_bank_password", with: "123456"
+  #       page.find('#user_blood_bank_password').trigger(:focusout)
+  #       fill_in "user_blood_bank_password_confirmation", with: "123456"
+  #       page.find('#user_blood_bank_password_confirmation').trigger(:focusout)
+  #       click_button("blood-bank-register-button")
+  #     end
+  #
+  #     sleep 2
+  #     expect(page).to have_content("Seu cadastro foi realizado com sucesso, aguarde a confirmação do administrador do sistema.")
+  #   end
+  # end
+
 end
