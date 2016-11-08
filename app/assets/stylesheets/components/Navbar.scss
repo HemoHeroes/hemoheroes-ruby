@@ -67,6 +67,7 @@
   &--home {
     box-shadow: none;
     background-color: transparent;
+    position: fixed;
 
     & .Navbar-logo {
       text-align: center;
