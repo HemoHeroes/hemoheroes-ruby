@@ -17,6 +17,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   # POST /resource
   def create
     super
+    send_welcome_email
   end
 
   def made_donation
@@ -93,4 +94,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
             NotificationMailer.send_email.deliver_now
           end
 
+          def send_welcome_email
+            @user = UserBloodDonator.last
+            NotificationMailer.send_email_new_user(@user).deliver_now
+          end
         end
