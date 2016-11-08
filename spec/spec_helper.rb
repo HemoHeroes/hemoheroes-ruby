@@ -20,6 +20,8 @@
 
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'coveralls'
+Coveralls.wear!
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
