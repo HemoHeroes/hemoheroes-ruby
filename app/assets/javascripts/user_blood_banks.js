@@ -19,7 +19,7 @@ ready(function(){
       validateFormService.validateAddress('.js-validateAddress','focusout');
       validateFormService.validatePhone('.js-validatePhone','focusout');
       validateFormService.removeMask('.js-validateButtonBank','.js-validateCNPJ','click');
-      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','focusout');
+      validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
 
     initialize();
