@@ -46,7 +46,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
     end
   end
 
-  context "quando inserir dados inválidos" do
+  context "Quando inserir dados inválidos" do
     it "não deve ativar o botao" do
       visit "/necessidadeBanco"
 
@@ -64,7 +64,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
   end
 
   context "Quando botao avançar estiver ativado e for clicado" do
-    it "deve abrir modal" do
+    it "deve abrir modal de confirmação" do
           visit "/necessidadeBanco"
 
           fill_in "demand_blood_bank_a_positive", with: "5"
@@ -75,4 +75,19 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
           expect(page).to have_css(".Modal-confirmation")
     end
   end
+
+  context "Quando botao confirmar for clicado" do
+    it "deve abrir modal de mensagem de sucesso" do
+          visit "/necessidadeBanco"
+
+          fill_in "demand_blood_bank_a_positive", with: "5"
+          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+
+          find(".js-nextButton").click
+          find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
+
+          expect(page).to have_css(".js-modalSuccessMessage")
+    end
+  end
+
 end
