@@ -32,7 +32,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     end
 
     redirect_to root_path, flash: { made_modal: true,
-      message:"Você doou via HemoHeroes?", title:"Pesquisa", id_donator: id_donator }
+      message:"O motivo de sua doação foi um email de solicitação que você recebeu após se cadastrar no HemoHeroes?",
+      title:"Por favor, responda", id_donator: id_donator }
 
     end
 
