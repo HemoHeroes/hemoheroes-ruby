@@ -36,13 +36,14 @@ var validateFormService = (function(){
         invalidButtonBank = true;
       }
     }
+
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
     if(buttonRegisterBank != null){
       if(!invalidButtonBank){
         buttonChange("actived", buttonRegisterBank);
         buttonRegisterBank.addEventListener('click', function(){
           Modal.open('.js-modalMessageRegisterBank');
-        });
+        })
       }else{
         buttonChange("disabled", buttonRegisterBank);
       }
@@ -69,7 +70,7 @@ var validateFormService = (function(){
   };
 
   var buttonValidSimpleFormDonator = function(selector){
-    if(elementExist(selector)) return false
+    //if(elementExist(selector)) return false;
     var invalidButtonSimpleDonator = false;
     for(var i = 0; i < validSimpleFormDonator.length; i++){
       if(validSimpleFormDonator[i] == false){
@@ -407,7 +408,13 @@ var validateFormService = (function(){
 
     disableButton: function(){
       toggleValidateButton(false);
+    },
+
+    buttonReset: function(){
+      var buttonRegisterSimpleDonator = document.querySelector('.js-validateButtonSimpleDonator');
+      buttonChange("disabled", buttonRegisterSimpleDonator);
     }
+
   }
 
 })()
