@@ -1,15 +1,30 @@
-var Navbar = (function(){
+var Navbar = ready(function(){
 
-  return {
-    toggle: function(){
-      var navbar = document.querySelector(".js-navbarMobile");
-      var hamburgerIcon = document.querySelector(".js-openNavbar");
-      if (navbar.style.display == "none"){
-        navbar.style.display = "inline-block";
-      }
-      else {
-        navbar.style.display = "none";
-      }
+  var initialize = function(){
+    changeOnScroll();
+  }
+
+  var navbar = document.querySelector('.Navbar');
+
+  var changeModifier = function(show){
+    if (show){
+      navbar.classList.add('is-scrolling');
+    }else{
+      navbar.classList.remove('is-scrolling');
     }
   }
-})()
+
+  var changeOnScroll = function(){
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 0) {
+        changeModifier(true);
+      }
+      else {
+        changeModifier(false);
+      }
+    })
+  }
+
+  initialize();
+
+})

@@ -2,12 +2,12 @@
 
 .Navbar {
 
-  $header-background-color: #FFFAF5;
+  $header-background-color: #FFFFFF;
   width: 100%;
   margin: 0;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255,255,255,0.5);
-  position: absolute;
+  background-color: $header-background-color;
+  position: fixed;
   z-index: 2;
 
   &-content{
@@ -64,10 +64,12 @@
     }
   }
 
+
   &--home {
     box-shadow: none;
     background-color: transparent;
-    position: fixed;
+    transition: all 0.2s ease 0s;
+
 
     & .Navbar-logo {
       text-align: center;
@@ -87,6 +89,21 @@
         background: none;
       }
     }
-  }
 
+    &.is-scrolling {
+      background: $header-background-color;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+      & .Navbar-links a{
+        color: $dark-font-color;
+      }
+
+
+      & .Navbar-links a:hover{
+        color: scale-color($dark-font-color, $lightness: 15%);
+      }
+
+
+    }
+  }
 }
