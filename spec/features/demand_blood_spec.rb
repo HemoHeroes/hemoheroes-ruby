@@ -8,13 +8,13 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
       within("#demand_blood_banks_form") do
         fill_in "demand_blood_bank_a_positive", with: "5"
-          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+        page.find('#demand_blood_bank_a_positive').trigger(:focusout)
         fill_in "demand_blood_bank_b_positive", with: "5"
-          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+        page.find('#demand_blood_bank_a_positive').trigger(:focusout)
         fill_in "demand_blood_bank_a_negative", with: "5"
-          page.find('#demand_blood_bank_a_negative').trigger(:focusout)
+        page.find('#demand_blood_bank_a_negative').trigger(:focusout)
         fill_in "demand_blood_bank_b_negative", with: "5"
-          page.find('#demand_blood_bank_b_negative').trigger(:focusout)
+        page.find('#demand_blood_bank_b_negative').trigger(:focusout)
       end
 
       expect(page).to have_css(".Button.Button--medium.Button--fluid.js-nextButton.is-actived")
@@ -65,29 +65,50 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "Quando botao avançar estiver ativado e for clicado" do
     it "deve abrir modal de confirmação" do
-          visit "/necessidadeBanco"
+      visit "/necessidadeBanco"
 
-          fill_in "demand_blood_bank_a_positive", with: "5"
-          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+      fill_in "demand_blood_bank_a_positive", with: "5"
+      page.find('#demand_blood_bank_a_positive').trigger(:focusout)
 
-          find(".js-nextButton").click
+      find(".js-nextButton").click
 
-          expect(page).to have_css(".Modal-confirmation")
+      expect(page).to have_css(".Modal-confirmation")
     end
   end
 
   context "Quando botao confirmar for clicado" do
     it "deve abrir modal de mensagem de sucesso" do
-          visit "/necessidadeBanco"
+      visit "/necessidadeBanco"
 
-          fill_in "demand_blood_bank_a_positive", with: "5"
-          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+      fill_in "demand_blood_bank_a_positive", with: "5"
+      page.find('#demand_blood_bank_a_positive').trigger(:focusout)
 
-          find(".js-nextButton").click
-          find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
+      find(".js-nextButton").click
+      find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
 
-          expect(page).to have_css(".js-modalSuccessMessage")
+      expect(page).to have_css(".js-modalSuccessMessage")
     end
   end
 
+  context "Quando botao OK for clicado" do
+    it "deve redirecionar para tela de necessidade do banco" do
+      visit "/necessidadeBanco"
+
+      fill_in "demand_blood_bank_a_positive", with: "5"
+      page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+
+      find(".js-nextButton").click
+      find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
+      find("#button-OK").click
+
+      expect("").to eq(find("#demand_blood_bank_a_positive").value)
+      expect("").to eq(find("#demand_blood_bank_b_positive").value)
+      expect("").to eq(find("#demand_blood_bank_ab_positive").value)
+      expect("").to eq(find("#demand_blood_bank_o_positive").value)
+      expect("").to eq(find("#demand_blood_bank_o_negative").value)
+      expect("").to eq(find("#demand_blood_bank_a_negative").value)
+      expect("").to eq(find("#demand_blood_bank_ab_negative").value)
+      expect("").to eq(find("#demand_blood_bank_b_negative").value)
+    end
+  end
 end
