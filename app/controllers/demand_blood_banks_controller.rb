@@ -29,6 +29,7 @@ class DemandBloodBanksController < ApplicationController
   def create
 
     @demand_blood_bank = DemandBloodBank.new(demand_blood_bank_params)
+    @bank = current_user_blood_bank
     respond_to do |format|
       if @demand_blood_bank.save!
 
@@ -39,7 +40,8 @@ class DemandBloodBanksController < ApplicationController
             donator.last_donation_token = SecureRandom.urlsafe_base64.to_s
             donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
-            response = NotificationMailer.send_email(donator).deliver_now
+
+            response = NotificationMailer.send_email(donator, @bank).deliver_now
             Notification.create! :last_notification => Date.current,
             :appear => false,
             :user_blood_donators_id => donator.id,

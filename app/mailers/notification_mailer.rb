@@ -12,8 +12,9 @@ class NotificationMailer < ApplicationMailer
     template_name: 'new_user_donator_email.html.erb')
   end
 
-  def send_email user
+  def send_email(user, bank)
     @user = user
+    @bank = bank
     @url  = 'https://snap-ci.com/aceleradora-TW/HemoHeroes/branch/master'
     mail(to: @user.email,
     subject: 'Teste implementação',

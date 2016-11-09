@@ -1,23 +1,37 @@
-<div>
-  <p>
-    Olá. <%= @user.name %>
-  </p>
-  <p>
-    Ajude nosso amigo Walter White que está com câncer..
-  </p>
-  <p>
-    Agradecemos a preferência.
-  </p>
-  <p>
-    <%= DateTime.current %>
-  </p>
-  <p>
-    Link para Quero doar
-  </p>
-  <p>
-    <a href="<%= made_donation_url @user.last_donation_token %>">Doei Ultimamente</a>
-  </p>
-  <p>
-    <a href="<%= cancel_notification_url @user.notification_token %>">Não quero mais receber notificações</a>
-  </p>
+<div class="Email">
+  <div class="Email Email-boxTop">
+
+  </div>
+  <div class="Email Email-boxBody">
+  </div>
+
+  <div class="Email Email-content">
+    <div class="Email-content-head">
+      <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="100" height="100" />
+    </div>
+    <div class="Email-content-body">
+        <h2>Olá Herói <%= @user.name %></h2>
+      <span>Nós do HemoHeroes estamos precisando de sua ajuda no <%= @bank.name %>!</span>
+
+
+      <div>
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@bank.latitude}, #{@bank.longitude}&markers=color:red%7Clabel:H%7C#{@bank.latitude}, #{@bank.longitude}&zoom=15&size=200x150&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      </div>
+
+      <div>
+
+      </div>
+    </div>
+    <div class="Email-content-contentButtons">
+      <div class="Button Button--medium is-canceled">
+        <a href="<%= made_donation_url @user.last_donation_token %>">Quero doar!</a>
+      </div>
+      <div class="Button Button--medium is-canceled ">
+        <a href="<%= cancel_notification_url @user.notification_token %>">Doei Ultimamente</a>
+      </div>
+    </div>
+    <div class="u-text-align-center">
+      <a href="<%= cancel_notification_url @user.notification_token %>">Não quero mais receber notificações</a>
+    </div>
+  </div>
 </div>

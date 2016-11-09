@@ -45,5 +45,4 @@ Rails.application.routes.draw do
   # Routes for components in construction
   get '/components', to: 'components#index'
 
-
 end
