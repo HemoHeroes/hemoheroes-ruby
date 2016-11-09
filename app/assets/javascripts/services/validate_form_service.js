@@ -414,14 +414,7 @@ var validateFormService = (function(){
       var buttonRegisterSimpleDonator = document.querySelector('.js-validateButtonSimpleDonator');
       buttonChange("disabled", buttonRegisterSimpleDonator);
     },
-    //
-    // blockEnter: function(event) {
-    //
-    //   var tecla = event.keyCode;
-    //   if (tecla == 13) {
-    //     return false;
-    //   }
-    // }
+
 
   }
 

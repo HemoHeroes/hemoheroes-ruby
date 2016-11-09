@@ -18,134 +18,134 @@
         </div>
 
         <form class="new_user_blood_donator" id="new_user_blood_donator" action="/cadastroDoador"
-        accept-charset="UTF-8" method="post" onsubmit="return false" >
-          <input name="utf8" type="hidden" value="✓">
-          <input type="hidden" name="authenticity_token" value="hJ33FVGdCf3dntfs8kC6twKZLdEQsygeXLTP5YZ8JZ+AWtPT+/+TT5emuonnBMrXZgLvY76sa4QW61eKJynOsw==">
-          <% if resource.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
+        accept-charset="UTF-8" method="post" onKeyDown="if (event.keyCode == '13'){ return false }" >
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="authenticity_token" value="hJ33FVGdCf3dntfs8kC6twKZLdEQsygeXLTP5YZ8JZ+AWtPT+/+TT5emuonnBMrXZgLvY76sa4QW61eKJynOsw==">
+        <% if resource.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user_blood_donator from being saved:</h2>
 
-            <ul>
-              <% user_blood_donator.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-          <% end %>
-
-
-          <div class="Grid-cell u-tablet-sizeFull u-mobile-sizeFull u-outerWrapper">
-            <div class="Container Container--primary Grid-cell u-tablet-sizeFull">
-              <div class="Modal-body Modal-small">
-                <div id="form-registration-blood-donator" class="Form">
-                  <div class="Grid">
-                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                      <div class="Form-group">
-                        <div class="Form-inputLabel u-sizeFull">
-                          <span>Nome<span class="red-text">*</span></span>
-                        </div>
-                        <div class="u-sizeFull">
-                          <input class="Form-inputValue  js-validateName " placeholder="Ex: Fellipe Callegas" type="text"
-                          name="user_blood_donator[name]" id="user_blood_donator_name">
-                          <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-                      <div class="Form-group">
-                        <div class="Form-inputLabel u-sizeFull">
-                          <span> Email<span class="red-text">*</span></span>
-                        </div>
-                        <div class="u-sizeFull">
-                          <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value=""
-                          name="user_blood_donator[email]" id="user_blood_donator_email">
-                          <span id="errorEmail" style="display:none;" class="red-text"></span>
-                        </div>
-                      </div>
-                    </div>
+          <ul>
+            <% user_blood_donator.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
 
 
-                    <!-- APAGAR SENHA DO MVP 1 -->
-                    <!-- <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+        <div class="Grid-cell u-tablet-sizeFull u-mobile-sizeFull u-outerWrapper">
+          <div class="Container Container--primary Grid-cell u-tablet-sizeFull">
+            <div class="Modal-body Modal-small">
+              <div id="form-registration-blood-donator" class="Form">
+                <div class="Grid">
+                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
                     <div class="Form-group">
-                    <div class="Form-inputLabel u-sizeFull">
-                    <span>Senha<span class="red-text">*</span></span>
+                      <div class="Form-inputLabel u-sizeFull">
+                        <span>Nome<span class="red-text">*</span></span>
+                      </div>
+                      <div class="u-sizeFull">
+                        <input class="Form-inputValue  js-validateName" placeholder="Ex: Fellipe Callegas" type="text"
+                        name="user_blood_donator[name]" id="user_blood_donator_name">
+                        <span id="errorName" style="display:none;" class="red-text">O campo é obrigatório</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="u-sizeFull">
-                  <input class="Form-inputValue js-validatePassword" placeholder="Senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password">
-                  <span id="errorPassword" style="display:none;" class="red-text"></span>
+
+                  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                    <div class="Form-group">
+                      <div class="Form-inputLabel u-sizeFull">
+                        <span> Email<span class="red-text">*</span></span>
+                      </div>
+                      <div class="u-sizeFull">
+                        <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value=""
+                        name="user_blood_donator[email]" id="user_blood_donator_email">
+                        <span id="errorEmail" style="display:none;" class="red-text"></span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- APAGAR SENHA DO MVP 1 -->
+                  <!-- <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+                  <div class="Form-group">
+                  <div class="Form-inputLabel u-sizeFull">
+                  <span>Senha<span class="red-text">*</span></span>
                 </div>
+                <div class="u-sizeFull">
+                <input class="Form-inputValue js-validatePassword" placeholder="Senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password">
+                <span id="errorPassword" style="display:none;" class="red-text"></span>
               </div>
             </div>
-
-            <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-            <div class="Form-group">
-            <div class="Form-inputLabel u-sizeFull">
-            <span>Confirmar senha<span class="red-text">*</span></span>
           </div>
-          <div class="u-sizeFull">
-          <input class="Form-inputValue js-validatePasswordConfirmation" placeholder="Confirme sua senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password_confirmation">
-          <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
-        </div>
-      </div>
-    </div> -->
 
-    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-      <div class="Form-group">
-        <div class="Form-inputLabel u-sizeFull">
-          <span> Tipo sanguíneo: </span>
+          <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+          <div class="Form-group">
+          <div class="Form-inputLabel u-sizeFull">
+          <span>Confirmar senha<span class="red-text">*</span></span>
         </div>
         <div class="u-sizeFull">
-          <select class="Form-inputValue" name="user_blood_donator[blood_type]" id="user_blood_donator_blood_type"><option value="">Não sei</option>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-          </select>
-        </div>
+        <input class="Form-inputValue js-validatePasswordConfirmation" placeholder="Confirme sua senha" type="password" name="user_blood_donator[password]" id="user_blood_donator_password_confirmation">
+        <span id="errorPasswordConfirmation" style="display:none;" class="red-text"></span>
       </div>
     </div>
+  </div> -->
 
-    <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
-      <div class="Form-group">
-        <div class="Form-inputLabel u-sizeFull">
-          <span>Sexo: </span>
-        </div>
-        <div class="u-sizeFull">
-          <div class="Radio u-padding-bottom">
-            <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label">
-            <label for="genre">Masculino</label>
-            <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label" checked="checked">
-            <label for="genre">Feminino</label>
-            <span id="errorGenre" style="display:none;" class="red-text"></span>
-          </div>
-        </div>
+  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+    <div class="Form-group">
+      <div class="Form-inputLabel u-sizeFull">
+        <span> Tipo sanguíneo: </span>
+      </div>
+      <div class="u-sizeFull">
+        <select class="Form-inputValue" name="user_blood_donator[blood_type]" id="user_blood_donator_blood_type"><option value="">Não sei</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
       </div>
     </div>
   </div>
 
-  <div class="Form-groupBlock">
-    <div class="Checkbox">
-      <input type="checkbox" name="notification" id="notification" value="accepted" disable="false">
-      <div class="Checkbox">
-        <label for="notification">Desejo receber notificações</label>
+  <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
+    <div class="Form-group">
+      <div class="Form-inputLabel u-sizeFull">
+        <span>Sexo: </span>
       </div>
-    </div>
-    <div class="Checkbox">
-      <div class="Checkbox-input">
-        <input type="checkbox" name="accept_terms" id="accept_terms" value="false" class="js-validateTerms">
-      </div>
-      <div class="Checkbox-label">
-        <label for="accept_terms">Aceito os termos de uso</label>
-        <span id="errorTerms" style="display:none;" class="red-text"></span>
+      <div class="u-sizeFull">
+        <div class="Radio u-padding-bottom">
+          <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label">
+          <label for="genre">Masculino</label>
+          <input type="radio" name="genre" id="genre_sexo" value="sexo" class="Radio-label" checked="checked">
+          <label for="genre">Feminino</label>
+          <span id="errorGenre" style="display:none;" class="red-text"></span>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="Form-groupBlock">
+  <div class="Checkbox">
+    <input type="checkbox" name="notification" id="notification" value="accepted" disable="false">
+    <div class="Checkbox">
+      <label for="notification">Desejo receber notificações</label>
+    </div>
+  </div>
+  <div class="Checkbox">
+    <div class="Checkbox-input">
+      <input type="checkbox" name="accept_terms" id="accept_terms" value="false" class="js-validateTerms">
+    </div>
+    <div class="Checkbox-label">
+      <label for="accept_terms">Aceito os termos de uso</label>
+      <span id="errorTerms" style="display:none;" class="red-text"></span>
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="Container-footer">
