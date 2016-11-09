@@ -86,7 +86,7 @@
                 </div>
                 <div class="u-sizeFull">
                   <%= f.date_select :date_birth, {order: [:day, :month, :year],
-                    start_year: Date.today.year-16, end_year: Date.today.year-69},
+                    start_year: Date.current.year-16, end_year: Date.current.year-69},
                     with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12"%>
                     <span id="errorDate" style="display:none;" class="red-text"></span>
                   </div>
@@ -141,7 +141,7 @@
                   </div>
                   <div class="u-sizeFull">
                     <%= f.date_select :last_donation, {order: [:day, :month, :year],
-                      start_year: Date.today.year, end_year: Date.today.year-53},
+                      start_year: Date.current.year, end_year: Date.current.year-53},
                       with_css_classes: true, class: "Form-inputValue js-validateDate u-size3of12",
                       include_blank: true, include_blank: "Não sei" %>
 
@@ -204,7 +204,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 
 

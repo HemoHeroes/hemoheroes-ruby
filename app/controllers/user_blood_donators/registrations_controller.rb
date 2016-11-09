@@ -25,7 +25,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     donator = UserBloodDonator.find_by last_donation_token:params['receiveToken']
     id_donator = 0
     if donator != nil
-      donator.last_donation = DateTime.now
+      donator.last_donation = DateTime.current
       donator.last_donation_token = ""
       donator.save!
       id_donator = donator.id

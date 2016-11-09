@@ -39,7 +39,7 @@ class DemandBloodBanksController < ApplicationController
             donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
             response = NotificationMailer.send_email(donator).deliver_now
-            Notification.create! :last_notification => Date.today,
+            Notification.create! :last_notification => Date.current,
             :appear => false,
             :user_blood_donators_id => donator.id,
             :demand_blood_banks_id => @demand_blood_bank.id
@@ -110,7 +110,7 @@ class DemandBloodBanksController < ApplicationController
 
   def check_last_donation_request donator
     last_notification = Notification.where(:user_blood_donators_id => donator.id).last
-    if last_notification.nil? || (Date.today - last_notification.last_notification).to_i > 7
+    if last_notification.nil? || (Date.current - last_notification.last_notification).to_i > 7
       return true
     end
     false
@@ -120,7 +120,7 @@ class DemandBloodBanksController < ApplicationController
     if donator.last_donation == nil
       return true
     end
-    difference_in_days = (Date.today - donator.last_donation).to_i
+    difference_in_days = (Date.current - donator.last_donation).to_i
     if donator.genre.downcase == 'm' && difference_in_days > 60
       return true
     elsif donator.genre.downcase == 'f' && difference_in_days > 90
