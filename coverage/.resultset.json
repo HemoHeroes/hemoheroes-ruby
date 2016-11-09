@@ -66,6 +66,18 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
         null
       ],
       "/myapp/spec/rails_helper.rb": [
@@ -103,7 +115,7 @@
         1,
         null,
         1,
-        103,
+        115,
         null,
         null,
         null,
@@ -966,11 +978,11 @@
         1,
         null,
         1,
-        8,
+        10,
         null,
         null,
         1,
-        8,
+        10,
         null,
         null,
         1,
@@ -1184,9 +1196,9 @@
         null,
         null,
         1,
-        4,
-        4,
-        4,
+        5,
+        5,
+        5,
         null,
         null,
         null,
@@ -1306,6 +1318,6 @@
         null
       ]
     },
-    "timestamp": 1478696829
+    "timestamp": 1478697601
   }
 }

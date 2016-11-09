@@ -62,4 +62,17 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
     end
   end
+
+  context "Quando botao avançar estiver ativado e for clicado" do
+    it "deve abrir modal" do
+          visit "/necessidadeBanco"
+
+          fill_in "demand_blood_bank_a_positive", with: "5"
+          page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+
+          find(".js-nextButton").click
+
+          expect(page).to have_css(".Modal-confirmation")
+    end
+  end
 end
