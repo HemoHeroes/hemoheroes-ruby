@@ -23,6 +23,7 @@ class SessionsController < Devise::SessionsController
           return redirect_to root_path , alert:"Usuário ainda não autorizado!", flash: { manifesto_modal: true }
         end
       end
+      
       if @user.valid_password?(senha)
         sign_in(@user)
         user_dashboard(@user)
