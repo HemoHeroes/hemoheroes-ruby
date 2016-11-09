@@ -45,4 +45,21 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
     end
   end
+
+  context "quando inserir dados inválidos" do
+    it "não deve ativar o botao" do
+      visit "/necessidadeBanco"
+
+      fill_in "demand_blood_bank_a_positive", with: "e"
+      page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+      fill_in "demand_blood_bank_b_positive", with: "!"
+      page.find('#demand_blood_bank_a_positive').trigger(:focusout)
+      fill_in "demand_blood_bank_a_negative", with: "&"
+      page.find('#demand_blood_bank_a_negative').trigger(:focusout)
+      fill_in "demand_blood_bank_b_negative", with: "+"
+      page.find('#demand_blood_bank_b_negative').trigger(:focusout)
+
+      expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
+    end
+  end
 end

@@ -16,6 +16,7 @@ class DemandBloodBanksController < ApplicationController
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
+    @demand_blood_bank.save
     @lastUpdateNecessity = DemandBloodBank.last.updated_at.strftime("%d/%m/%Y - %H:%M:%S")
   end
 
