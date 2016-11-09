@@ -46,7 +46,7 @@ class DemandBloodBanksController < ApplicationController
             :demand_blood_banks_id => @demand_blood_bank.id
           end
         end
-        format.html { }
+        format.html {}
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class DemandBloodBanksController < ApplicationController
   def update
     respond_to do |format|
       if @demand_blood_bank.update(demand_blood_bank_params)
-        format.html { redirect_to @demand_blood_bank, notice: 'Hospital necessity was successfully updated.' }
+        format.html { }
         format.json { render :show, status: :ok, location: @demand_blood_bank }
       else
         format.html { render :edit }
