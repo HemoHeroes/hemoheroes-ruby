@@ -9,6 +9,7 @@
   background-color: $header-background-color;
   position: fixed;
   z-index: 2;
+  top: 0;
 
   &-content{
     display: flex;
@@ -29,7 +30,9 @@
   &-logo {
     font-size: 2rem;
     font-weight: 900;
-    margin-left: 15px;
+    margin: 0 25px;
+
+
     & a {
       text-decoration: none;
       color: $brand-color;
@@ -46,6 +49,8 @@
     & ul {
       margin: 0;
       padding: 0;
+      align-items: center;
+      display: flex;
       list-style: none;
     }
     & li {
