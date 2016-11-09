@@ -6,8 +6,8 @@ var Navbar = ready(function(){
 
   var navbar = document.querySelector('.Navbar');
 
-  var changeModifier = function(show){
-    if (show){
+  var verifyScrolled = function(scrolled){
+    if (scrolled){
       navbar.classList.add('is-scrolling');
     }else{
       navbar.classList.remove('is-scrolling');
@@ -17,10 +17,10 @@ var Navbar = ready(function(){
   var changeOnScroll = function(){
     window.addEventListener('scroll', function(){
       if (window.scrollY > 0) {
-        changeModifier(true);
+        verifyScrolled(true);
       }
       else {
-        changeModifier(false);
+        verifyScrolled(false);
       }
     })
   }
