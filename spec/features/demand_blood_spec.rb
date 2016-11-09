@@ -20,4 +20,12 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       expect(page).to have_css(".Button.Button--medium.Button--fluid.js-nextButton.is-actived")
     end
   end
+
+  context "quando não inserir dados" do
+    it "não deve ativar o botao" do
+      visit "/necessidadeBanco"
+
+      expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
+    end
+  end
 end
