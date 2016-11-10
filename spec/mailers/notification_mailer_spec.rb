@@ -18,7 +18,7 @@ describe NotificationMailer, type: :mailer do
       expect(@mail.to).to eq(["usuario@gmail.com"])
     end
 
-    it 'retorna o email do remetente'
+    it 'retorna o email do remetente' do
       expect(@mail.from).to eq(["aceleradora10@gmail.com"])
     end
   end

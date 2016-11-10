@@ -99,3 +99,5 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
             NotificationMailer.send_email_new_user(@user).deliver_now
           end
         end
+
+        
