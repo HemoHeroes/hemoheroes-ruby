@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  .Email {
+    width: 540px;
+    height: 675px;
+    overflow:hidden;
+    background: #E9E7E8 url("http://imageshack.com/a/img922/8563/rXummf.jpg") top repeat-x;
+  }
+  .Email-content {
+    background: #fff;
+    width: 400px;
+    height: 540px;
+    margin: 55px auto;
+    border-radius: 5px;
+    z-index:2;
+   }
+  .Email-content-head {
+    height: 100px;
+    margin: 10px;
+    font-size: 33pt;
+    text-align: center; }
+  .Email-content-body {
+    width: 370px;
+    height: 310px;
+    margin: auto;
+    text-align: center;
+    font-family: sans-serif; }
+  .Email-content-contentButtons {
+    height: 50px;
+    width: 370px;
+    margin: auto; }
+  .aButton{
+    text-decoration: none;
+    color: #fff;
+    }
+  </style>
+</head>
+<body>
+
 <div class="Email">
   <div class="Email Email-boxTop">
 
@@ -17,10 +58,6 @@
       <div>
         <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@bank.latitude}, #{@bank.longitude}&markers=color:red%7Clabel:H%7C#{@bank.latitude}, #{@bank.longitude}&zoom=15&size=200x150&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
       </div>
-
-      <div>
-
-      </div>
     </div>
     <div class="Email-content-contentButtons">
       <div class="Button Button--medium is-canceled">
@@ -35,3 +72,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>
