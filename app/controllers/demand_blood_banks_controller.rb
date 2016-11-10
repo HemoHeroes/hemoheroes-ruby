@@ -16,7 +16,6 @@ class DemandBloodBanksController < ApplicationController
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
-    @demand_blood_bank.save
     @lastUpdateNecessity = DemandBloodBank.last.updated_at.strftime("%d/%m/%Y - %H:%M:%S")
   end
 
@@ -48,7 +47,7 @@ class DemandBloodBanksController < ApplicationController
             :demand_blood_banks_id => @demand_blood_bank.id
           end
         end
-        format.html {}
+        format.html { }
         format.json { render :show, status: :created, location: @demand_blood_bank }
       else
         format.html { render :new }
