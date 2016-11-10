@@ -1,0 +1,36 @@
+<% if flash[:receive_notification_modal]%>
+<div class="Modal js-modal js-modalReceiveNotification" style="opacity: 1; visibility: visible;">
+  <div class="Modal-content js-modalContent" style="top: 50%;">
+    <% else %>
+    <div class="Modal js-modal js-modalReceiveNotification">
+      <div class="Modal-content js-modalContent">
+        <% end %>
+
+        <div class="Modal-header">
+          <div class="Modal-titleBox">
+            <h3 class="Modal-title">Receber notificação</h3>
+          </div>
+        </div>
+
+        <div class="Modal-body">
+
+          <div class="Form-group">
+            <div class="Form-inputLabel u-sizeFull">
+              <span>Insira seu email</span>
+            </div>
+            <div>
+              <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value="" name="user_blood_bank[email]" id="user_blood_bank_email">
+              <span id="errorEmail" style="display:none;" class="red-text"></span>
+            </div>
+          </div>
+
+
+          <div class="u-align-center u-padding-top u-padding-bottom">
+            <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
