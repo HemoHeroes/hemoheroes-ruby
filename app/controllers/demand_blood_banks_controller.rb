@@ -16,8 +16,8 @@ class DemandBloodBanksController < ApplicationController
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
-    # @lastUpdateNecessity = DemandBloodBank.last.updated_at.strftime("%d/%m/%Y - %H:%M:%S")
-    @lastUpdateNecessity = DemandBloodBank.last
+    @lastUpdateNecessity = DemandBloodBank.last.updated_at.strftime("%d/%m/%Y - %H:%M:%S")
+  
   end
 
   # GET /demand_blood_banks/1/edit
