@@ -5,12 +5,14 @@
 HemoHeroes é uma aplicação para conectar Bancos de Sangue aos doadores em potencial.
 
 ## Ambientes
-Staging: http://hemoheroestw-staging.herokuapp.com
-
-Produção: http://hemoheroestw.herokuapp.com/
+* Staging: http://hemoheroestw-staging.herokuapp.com
+* Produção: http://hemoheroestw.herokuapp.com/
 
 ## Histórias
 https://github.com/aceleradora-TW/HemoHeroes/issues
+
+## Style Guides | Best Practices | Tools
+[github.com/aceleradora-TW/HemoHeroes/wiki/Best-Practices](https://github.com/aceleradora-TW/HemoHeroes/wiki/Style-Guides-%7C-Guides-%7C-Best-Practices)
 
 ## Rodar a aplicação
 
