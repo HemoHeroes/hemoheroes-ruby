@@ -151,19 +151,19 @@
   &-friends {
     width: 50%;
     position: absolute;
-    bottom: 6px;
+    bottom: 15px;
   }
 
   &-partners {
     width: 230px;
     position: absolute;
-    bottom: 6px;
+    bottom: 15px;
     right: 0;
     text-align: center;
 
     & img {
       height: 30px;
-      opacity: 0.4;
+      // opacity: 0.4;
       display: block;
       margin: 0 6px;
       float: right;
@@ -173,7 +173,7 @@
   &-learnMore {
     height: 50px;
     position: absolute;
-    bottom: 6px;
+    bottom: 15px;
     left: 50%;
     margin-left: -77px;
     text-align: center;
