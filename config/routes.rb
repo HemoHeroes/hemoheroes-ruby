@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     post 'notificacoes', to: 'user_blood_donators/registrations#active_notification', :as => :user_blood_donator_notification
 
     get 'madeDonation/:receiveToken', to: 'user_blood_donators/registrations#made_donation', :as => :made_donation
-    
+
     post 'feedbackDonation' , to: 'user_blood_donators/registrations#feedback_donation' , :as => :feedback_donation
     # =newPrototipo
     # Routes for tests new user_blood_donators/registrations/form_v2
