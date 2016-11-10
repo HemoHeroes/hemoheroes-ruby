@@ -4,14 +4,22 @@
 
 HemoHeroes é uma aplicação para conectar Bancos de Sangue aos doadores em potencial.
 
-## Getting Started
+## Ambientes
+Staging: http://hemoheroestw-staging.herokuapp.com
 
-Para rodar a aplicação você precisa executar os seguintes passos:
+Produção: http://hemoheroestw.herokuapp.com/
+
+## Histórias
+https://github.com/aceleradora-TW/HemoHeroes/issues
+
+## Rodar a aplicação
+
+Para rodar a aplicação localmente você precisa executar os seguintes passos:
 
 1. `$ git clone https://github.com/aceleradora-TW/HemoHeroes.git`
 2. `$ cd HemoHeroes`
-3. `$ sudo chmod +rwx bin/docker.sh`
-4. `$ sudo ./bin/docker.sh`
+3. `$ sudo chmod +rwx bin/docker.sh` Se o arquivo docker.sh não for executável.
+4. `$ sudo ./bin/docker.sh` para instalar o docker e docker-compose se ainda não os tiver.
 5. Deslogar e logar
 6. `$ sudo service docker start`
 7. `$ docker-compose build web`
