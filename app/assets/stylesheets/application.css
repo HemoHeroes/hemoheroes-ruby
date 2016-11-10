@@ -13,13 +13,10 @@
 
 
 *= require_directory ./base
+*= require glyphicons
 *= require JonsModularUI/index
 *= require_directory ./components
-*= require confirm_to_have_donate
-*= require demand_blood_banks
 *= require hospitals
-*= require users
-*= require welcome
 *= require_self
 *= require_directory ./utilities
 */

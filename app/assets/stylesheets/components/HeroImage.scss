@@ -35,10 +35,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    // background-image: url("http://viviribeiro.com.br/novo/wp-content/uploads/2014/11/IMG_3912.jpg");
     opacity: 0.8;
-    background-size: cover;
     z-index: -2;
+    // background-image: url("./../bench-people-smartphone-sun.jpg");
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-color: hsla(0,100%,100%,0);
+    background-position: top;
   }
 
   &-overlay {
@@ -94,15 +97,13 @@
   &-benefits {
     margin: 25px 0 0 -20px;
     font-size: 1.3em;
-    line-height: 1.5em;
+    line-height: 1.7em;
+    color: scale-color($dark-font-color, $lightness: 20%);
 
     & ul {
       margin: 0;
       text-align: left;
-    }
-
-    & li {
-
+      list-style: none;
     }
   }
 
@@ -113,22 +114,29 @@
   }
 
   &-partners {
-    width: 50%;
+    width: 230px;
     position: absolute;
     bottom: 30px;
     right: 0;
-    display: flex;
-    justify-content: flex-end;
+    text-align: center;
 
     & img {
-      height: 40px;
+      height: 30px;
+      opacity: 0.4;
       display: block;
       margin: 0 6px;
+      float: right;
     }
   }
 
   &-learnMore {
-
+    height: 50px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -77px;
+    text-align: center;
+    font-size: 1.7em;
   }
 
 }
