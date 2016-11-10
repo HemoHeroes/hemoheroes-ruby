@@ -79,7 +79,7 @@
       padding: 10px 50px 0 0;
     }
     & .Navbar-links a {
-      color: $dark-font-color;
+      color: $light-font-color;
       padding: 0 15px;
       &:hover {
         color: scale-color($light-font-color, $lightness: -10%);

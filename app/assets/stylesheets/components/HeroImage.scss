@@ -1,7 +1,22 @@
 @import '../variables';
 
+@keyframes move {
+  0% {
+    top: 1px;
+  }
+
+  50% {
+    top: 6px;
+  }
+
+  100% {
+    top: 1px;
+  }
+}
+
 .HeroImage {
-  $font-color: $dark-font-color;
+  $font-color: $light-font-color;
+  $text-shadow: 0px 1px 13px hsla(0, 0%, 0%, 0.7);
   color: $font-color;
   width: 100%;
   max-height: 100vh;
@@ -37,7 +52,7 @@
     left: 0;
     opacity: 0.8;
     z-index: -2;
-    // background-image: url("./../bench-people-smartphone-sun.jpg");
+    background-image: url("./../bench-people-smartphone-sun.jpg");
     background-size: cover;
     background-blend-mode: lighten;
     background-color: hsla(0,100%,100%,0);
@@ -49,7 +64,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: hsla(0, 0%, 0%, 0.1);
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 10.2%, transparent 40%), linear-gradient(transparent 73%, rgba(0, 0, 0, 0.6) 86.2%);
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -89,7 +104,8 @@
     overflow: visible;
     max-width: 75%;
     font-weight: 600;
-    line-height: 1.3em
+    line-height: 1.3em;
+    text-shadow: $text-shadow;
   }
 
   &-subtitle {
@@ -97,13 +113,15 @@
     color: $font-color;
     font-size: 1.5em;
     overflow: visible;
+    text-shadow: $text-shadow;
   }
 
   &-benefits {
     margin: 25px 0 0 -20px;
     font-size: 1.3em;
     line-height: 1.7em;
-    color: scale-color($dark-font-color, $lightness: 20%);
+    color: scale-color($font-color, $lightness: 20%);
+    text-shadow: $text-shadow;
 
     & ul {
       margin: 0;
@@ -121,13 +139,13 @@
   &-friends {
     width: 50%;
     position: absolute;
-    bottom: 30px;
+    bottom: 6px;
   }
 
   &-partners {
     width: 230px;
     position: absolute;
-    bottom: 30px;
+    bottom: 6px;
     right: 0;
     text-align: center;
 
@@ -143,11 +161,20 @@
   &-learnMore {
     height: 50px;
     position: absolute;
-    bottom: 30px;
+    bottom: 6px;
     left: 50%;
     margin-left: -77px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    font-weight: 600;
+
+    & span {
+      animation-name: move;
+      animation-duration: 1.5s;
+      animation-iteration-count: 3;
+      animation-delay: 5s;
+    }
   }
+
 
 }
