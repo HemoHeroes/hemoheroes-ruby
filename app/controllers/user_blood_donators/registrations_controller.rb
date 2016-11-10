@@ -48,6 +48,8 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     redirect_to root_path, flash: { notification_modal: true, message:"Obrigado pela sua contribuição.", title:"Equipe HemoHeroes" }
   end
 
+
+
   def cancel_notification
     donator = UserBloodDonator.find_by( notification_token: params['token'])
     if donator != nil
@@ -58,6 +60,19 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
     redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
   end
+
+  def active_notification
+    donator = UserBloodDonator.find_by(email: params['user_blood_donator_email_notification'])
+
+    if donator != nil
+      donator.notification = true
+      donator.save!
+    else
+      redirect_to root_path, flash: { register_modal: true }
+    end
+
+  end
+
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
