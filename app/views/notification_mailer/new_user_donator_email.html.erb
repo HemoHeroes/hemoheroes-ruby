@@ -1,4 +1,33 @@
-<h1>Bem vindo ao HemoHeroes</h1>
-<p>É NÓIS</p>
-<h5>mensagem de teste bolada</h5>
-<h2>Aquele abraço irmão </h2>
+<div class="Email">
+  <div class="Email Email-boxTop">
+
+  </div>
+  <div class="Email Email-boxBody">
+  </div>
+
+  <div class="Email Email-content">
+    <div class="Email-content-head">
+      <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="100" height="100" />
+    </div>
+    <div class="Email-content-body">
+      <h2>Bem vindo ao HemoHeroes <%= @user.name %></h2>
+
+      <span>Que bom que nós encontramos você!</span>
+
+      <p>
+        Você acaba de se cadastrar na nossa plataforma e agora poderá ajudar a salvar vidas e obter
+        toda infomação necessária para facilitar sua doação e o trabalho dos bancos de sangue.
+      </p>
+
+      <p>
+        Se deseja fazer uma doação você pode clicar <a href="#">aqui</a> e encontrar o melhor local para doação
+        ou se deseja informações sobre os requisitos de um doador clique <a href="#">aqui</a>.
+      </p>
+
+    </div>
+    
+    <div class="u-text-align-center">
+      <a href="<%= cancel_notification_url @user.notification_token %>">Não quero mais receber notificações</a>
+    </div>
+  </div>
+</div>
