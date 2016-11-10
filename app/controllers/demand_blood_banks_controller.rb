@@ -5,8 +5,12 @@ class DemandBloodBanksController < ApplicationController
 
   # GET /demand_blood_banks/new
   def new
-    @demand_blood_bank = DemandBloodBank.new
-    @lastUpdateNecessity = DemandBloodBank.last
+    if current_user_blood_bank
+      @demand_blood_bank = DemandBloodBank.new
+      @lastUpdateNecessity = DemandBloodBank.last
+    else
+      return redirect_to root_path
+    end
   end
 
   # GET /demand_blood_banks/1/edit
