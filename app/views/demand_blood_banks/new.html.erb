@@ -12,7 +12,10 @@
 
 
   <div class="u-margin-top-large">
-    <span>Última atualização <%= @lastUpdateNecessity %></span>
+    <% if (@lastUpdateNecessity != nil) %>
+    <span>Última atualização <%= @lastUpdateNecessity.updated_at.strftime("%d/%m/%Y - %H:%M:%S") %>
+    </span>
+    <% end %>
   </div>
 </div>
 
