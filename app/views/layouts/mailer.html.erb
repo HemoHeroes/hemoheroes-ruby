@@ -115,14 +115,14 @@
     </div>
     <div class="Email-content-contentButtons">
       <div class="Button Button--medium is-canceled">
-        <a href="#onde">Quero doar!</a>
+        <a href="#onde" class="aButton">Quero doar!</a>
       </div>
       <div class="Button Button--medium is-canceled ">
-        <a href="<%= made_donation_url @user.last_donation_token %>">Doei Ultimamente</a>
+        <a href="<%= made_donation_url @user.last_donation_token %>" class="aButton">Doei Ultimamente</a>
       </div>
     </div>
     <div class="u-text-align-center">
-      <a href="<%= cancel_notification_url @user.notification_token %>">Não quero mais receber notificações</a>
+      <a href="<%= cancel_notification_url @user.notification_token %>" class="u-text-align-center">Não quero mais receber notificações</a>
     </div>
   </div>
 </div>
