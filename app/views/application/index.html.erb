@@ -1,23 +1,50 @@
+<%= render 'modal_notification' %>
+<%= render 'modal_feedback' %>
+
 <section class="HeroImage">
+  <div class="HeroImage-header">
+    <div class="HeroImage-headerHamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
 
-  <div class="HeroImage-background"></div>
-  <div class="HeroImage-overlay"></div>
+    <div class="HeroImage-headerContent">
 
-  <%= render 'modal_notification' %>
-  <%= render 'modal_feedback' %>
+      <div class="HeroImage-headerLogo" >
+        <%= image_tag "logo" %>
+        <a href="/">HemoHeroes</a>
+      </div>
+
+      <div class="HeroImage-headerLinks js-navbarMobile">
+        <ul>
+          <% if user_blood_donator_signed_in? %>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+            <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+          </li>
+          <% elsif user_blood_bank_signed_in? %>
+          <li>
+            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+            <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+          </li>
+          <% else %>
+          <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+          <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+          <!-- <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li> -->
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="HeroImage-content">
-
-    <div class="HeroImage-boxLeft">
-      <div class="HeroImage-title">
+    <div class="HeroImage-headlineBox">
+      <div class="HeroImage-headline">
         Receba notificações de  quando e onde doar sangue
       </div>
-      <div class="HeroImage-subtitle">
+      <div class="HeroImage-subHeadline">
         Faça parte da comunidade de doadores voluntários do HemoHeroes
       </div>
     </div>
 
-    <div class="HeroImage-boxRight">
+    <div class="HeroImage-benefitsBox">
       <div class="Button Button--large  is-actived-secundary" onclick="Modal.open('.js-modalRegistration')">
         Quero Me Cadastrar <span class="glyphicon glyphicon-menu-right"></span>
       </div>
@@ -29,9 +56,11 @@
         </ul>
       </div>
     </div>
+  </div>
 
+  <div class="HeroImage-footer">
     <div class="HeroImage-friends">
-      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+      <div class="fb-like" data-href="https://www.facebook.com/cipucrs" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
     </div>
 
     <div class="HeroImage-learnMore">
@@ -40,17 +69,16 @@
     </div>
 
     <div class="HeroImage-partners">
-      <div class="HeroImage-partnersTitle">
-        Apoio:
+        Apoio
+      <div class="HeroImage-imagesBox">
+        <!-- <%= image_tag("/images/white-microsoft-innovation-center-logo.png")%>
+        <%= image_tag("/images/white-thoughtworks-logo.png")%> -->
+        <%= image_tag("/images/black-microsoft-innovation-center-logo.png")%>
+        <%= image_tag("/images/black-thoughtworks-logo.png")%>
       </div>
-      <!-- <%= image_tag("/images/white-microsoft-innovation-center-logo.png")%>
-      <%= image_tag("/images/white-thoughtworks-logo.png")%> -->
-      <%= image_tag("/images/black-microsoft-innovation-center-logo.png")%>
-      <%= image_tag("/images/black-thoughtworks-logo.png")%>
     </div>
-
-
   </div>
+
 
 </section>
 

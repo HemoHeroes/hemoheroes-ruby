@@ -1,4 +1,5 @@
-<div class="Navbar <%= "Navbar--home" if current_page? '/' %>">
+<% unless current_page? '/' %>
+<div class="Navbar">
   <div class="Navbar-hamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
 
   <div class="Navbar-content">
@@ -28,3 +29,5 @@
     </div>
   </div>
 </div>
+
+<% end %>
