@@ -13,12 +13,8 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    blood_bank = UserBloodBank.last
-    NotificationMailer.send_notification_to_admin.deliver_now
     super
-    if UserBloodBank.find_for_authentication(cnpj: params[:document])
-    end
-
+    send_new_hospital_email
   end
 
 
@@ -55,20 +51,14 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
       :long, :address])
     end
 
-    # If you have extra params to permit, append them to the sanitizer.
-    # def configure_account_update_params
-    #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-    # end
 
-    # The path used after sign up.
     def after_sign_up_path_for(resource)
       sign_out
-
-
     end
-    #
-    # # The path used after sign up for inactive accounts.
-    # def after_inactive_sign_up_path_for(resource)
-    #   signed_in_root_path(resource)
-    # end
+
+    def send_new_hospital_email
+      @bank = UserBloodBank.last
+      NotificationMailer.send_notification_to_admin(@bank).deliver_now
+    end
+
   end

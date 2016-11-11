@@ -19,7 +19,7 @@ describe NotificationMailer, type: :mailer do
     :address => "Largo Jornalista Glenio Peres - Porto Alegre")
 
     @mail = NotificationMailer.send_email_new_user(@user).deliver_now
-    @mailToAdmin = NotificationMailer.send_notification_to_admin
+    @mailToAdmin = NotificationMailer.send_notification_to_admin @user_bank
     @mailDemand = NotificationMailer.send_email(@user, @user_bank)
   end
 

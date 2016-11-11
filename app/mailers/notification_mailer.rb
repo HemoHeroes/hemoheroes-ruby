@@ -22,7 +22,8 @@ class NotificationMailer < ApplicationMailer
     template_name: 'mailer.html.erb')
   end
 
-  def send_notification_to_admin
+  def send_notification_to_admin bank
+    @bank = bank
     @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
     mail(to: 'aceleradora10@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
