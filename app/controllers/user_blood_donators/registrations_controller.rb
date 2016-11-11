@@ -68,7 +68,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.notification = true
       donator.save!
       # puts donator.notification
-      redirect_to root_path, flash: { notification_modal: true, message:"hue hue" }
+      redirect_to root_path, flash: { confirmation_notification_modal: true }
 
     else
       redirect_to root_path, flash: { register_modal: true }

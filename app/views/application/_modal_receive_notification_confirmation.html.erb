@@ -1,0 +1,30 @@
+<% if flash[:confirmation_notification_modal]%>
+<div class="Modal js-modal js-modalReceiveNotificationConfirmation" style="opacity: 1; visibility: visible;">
+  <div class="Modal-content js-modalContent" style="top: 50%;">
+    <% else %>
+    <div class="Modal js-modal js-modalReceiveNotificationConfirmation">
+      <div class="Modal-content js-modalContent">
+        <% end %>
+
+        <div class="Modal-header">
+          <div class="Modal-titleBox">
+            <h3 class="Modal-title">Solicitação confirmada</h3>
+          </div>
+        </div>
+
+        <div class="Modal-body">
+          <div>
+            <span> Solicitação de recebimento de notificações efetuada com sucesso!</span>
+            <span>Em breve você receberá notificaçãoes do HemoHeroes</span>
+          </div>
+          <div class="u-align-center u-padding-top u-padding-bottom">
+            <div class="Button Button--notification" onclick="Modal.close('.js-modalReceiveNotificationConfirmation')">Fechar</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>

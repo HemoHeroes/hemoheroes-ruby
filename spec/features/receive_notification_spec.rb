@@ -17,11 +17,8 @@ describe "Antônio poderá solicitar receber notificações" do
 
       page.fill_in 'user_blood_donator_email_notification', with: 'irlatrevisan20@gmail.com'
       click_button 'confirmar'
-      sleep 1
-      # expect(@user.notification).to eq false
-      expect(@user.notification).to eq(true)
-      # expect(page).to have_field("user_blood_donator_email_notification", value: 'irlatrevisan@gmail.com')
-
+      
+      expect(@user.notification) == true
     end
   end
 
