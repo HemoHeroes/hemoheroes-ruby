@@ -38,6 +38,9 @@
     .align-center{
       text-align:center;
     }
+    .padding-top{
+      padding: top 20px;
+    }
     .Button {
       font-size: .8rem;
       font-weight: 700;
@@ -98,6 +101,9 @@
         color: #9c9494;
         border: 0;
         box-shadow: none; }
+      span{
+        font-size: 1em;
+      }
   </style>
 </head>
 <body>
@@ -105,11 +111,11 @@
 <div class="Email">
   <div class="Email Email-content">
     <div class="Email-content-head">
-      <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="100" height="100" />
+      <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="120" height="120" />
     </div>
-    <div class="Email-content-body">
+    <div class="Email-content-body padding-top">
       <h2>Olá Herói <%= @user.name %></h2>
-      <span>Nós do HemoHeroes estamos precisando de sua ajuda no <%= @bank.name %>!</span>
+      <span>Nós do HemoHeroes estamos precisando de sua ajuda no <b><%= @bank.name %></b></span>
 
 
       <div>
