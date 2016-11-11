@@ -48,7 +48,7 @@
   top: 0;
   color: $font-color;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -140,7 +140,7 @@
       cursor: pointer;
       padding: 19px 15px;
       &:hover {
-        background: $border-color;
+        background: none;
       }
     }
   }
@@ -284,6 +284,15 @@
     font-weight: 600;
     &:before {
       @include blur;
+    }
+
+    & a {
+      color: $dark-font-color;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover{
+        color: $brand-color;
+      }
     }
 
     & span {

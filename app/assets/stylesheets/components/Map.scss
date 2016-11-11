@@ -3,10 +3,13 @@
 .Map {
   font-size: 14px;
   text-align: center;
+  margin-bottom: 50px;
+  color: scale-color($dark-font-color, $lightness: 20%);
 
   &-name {
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: 600;
+    margin-bottom: 10px;
   }
 
   &-image {
@@ -19,6 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 50px;
   }
 
 }

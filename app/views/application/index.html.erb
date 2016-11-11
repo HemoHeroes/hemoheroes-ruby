@@ -64,12 +64,14 @@
     </div>
 
     <div class="HeroImage-learnMore">
-      <div>Saiba mais</div>
-      <span class="glyphicon glyphicon-menu-down u-block"></span>
+      <a data-scroll href="#sobre">
+        <div>Saiba mais</div>
+        <span class="glyphicon glyphicon-menu-down u-block"></span>
+      </a>
     </div>
 
     <div class="HeroImage-partners">
-        Apoio
+      Apoio
       <div class="HeroImage-imagesBox">
         <!-- <%= image_tag("/images/white-microsoft-innovation-center-logo.png")%>
         <%= image_tag("/images/white-thoughtworks-logo.png")%> -->
@@ -84,9 +86,13 @@
 
 
 
-<section class="Section u-align-center">
+<section id="onde" class="Section u-align-center u-margin-top-large">
 
-  <h2><a id="onde">Onde Posso Doar?</a></h2>
+  <h2 class="u-margin-0">
+    <a>Onde doar</a>
+  </h2>
+
+  <span class="Section-subtitle">Locais onde você poderá fazer a doação</span>
 
   <div class="Map-group">
     <% @banks.each do |bank| %>
@@ -105,35 +111,15 @@
   </div>
 </section>
 
-
-
-<div class="u-divider"></div>
-
-
-
 <section class="Section Section--secondary">
-  <div class="Grid Grid--withGutter">
-    <div class="Grid-cell u-desktop-sizefull u-tablet-sizefull u-mobile-sizefull u-align-center">
-      <h2><a id="sobre">SOBRE</a></h2>
-      <p class="u-font-size14 u-padding-left u-padding-right u-padding-bottom u-text-align-justify">
-        <img src="http://www.clipartkid.com/images/154/will-be-back-this-afternoon-to-post-a-sneak-peek-you-don-t-want-to-gdnUEm-clipart.png" style="width:150px;height:150px; float:left; padding-right: 10px;" />
-
-        O Projeto HemoHeroes foi idealizado e desenvolvido para interagir com o público em potencial para aumentar
-        o número de doadores e a frequência dessas doações. Sabe-se da escassez dos hemocentros e o senso de
-        urgência com que uma doação se faz necessária, logo, vislumbrou-se a necessidade da criação de uma
-        ferramenta dinâmica e inovadora. O sistema HemoHeroes foi criado em uma plataforma web,
-        onde os hemocentros divulgam diariamente os níveis de seus estoques por tipo sanguíneo.
-        O HemoHeroes dispõe de uma plataforma onde circulam informações de forma rápida, direcionada e
-        inteligente, tanto para os doadores regulares, quanto para os doadores em potencial, futuros membros da
-        nossa rede.Essas informações são encaminhadas, via aplicativo, para smartphones e tablets com versões
-        disponíveis para os sistemas iOS, Android e Wind.
-        ows Phone, ou mesmo para quem acessar o nosso site,
-        de forma direcionada e pontual.
-        Além dos indicativos do sistema, por conta das informações dos hemocentros parceiros,
-        nosso aplicativo auxilia o doador a se manter informado sobre sua próxima doação,
-        o estimula a participar de campanhas motivadas pelas redes sociais, entre outras utilidades que
-        promovemos de acordo com a demanda.
-      </p>
-    </div>
+  <div class="Section-content">
+    <h2 class="u-align-center">
+      <a id="sobre">Sobre</a>
+    </h2>
+    O Projeto HemoHeroes foi idealizado e desenvolvido para interagir com o público em potencial para aumentar
+    o número de doadores e a frequência dessas doações. Sabe-se da escassez dos hemocentros e o senso de
+    urgência com que uma doação se faz necessária, logo, vislumbrou-se a necessidade da criação de uma
+    ferramenta dinâmica e inovadora. O sistema HemoHeroes foi criado em uma plataforma web,
+    onde os hemocentros divulgam diariamente os níveis de seus estoques por tipo sanguíneo.
   </div>
 </section>
