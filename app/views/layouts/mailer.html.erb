@@ -118,7 +118,7 @@
       <span>Nós do HemoHeroes estamos precisando de sua ajuda no <b><%= @bank.name %></b></span>
 
 
-      <div>
+      <div class="padding-top">
         <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@bank.latitude}, #{@bank.longitude}&markers=color:red%7Clabel:H%7C#{@bank.latitude}, #{@bank.longitude}&zoom=15&size=200x150&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
       </div>
     </div>
