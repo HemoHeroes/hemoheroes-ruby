@@ -1,1 +1,0 @@
-json.partial! "demand_blood_banks/demand_blood_bank", demand_blood_bank: @demand_blood_bank

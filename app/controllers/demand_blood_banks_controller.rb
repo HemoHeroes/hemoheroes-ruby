@@ -3,16 +3,6 @@ require 'date'
 class DemandBloodBanksController < ApplicationController
   before_action :set_demand_blood_bank, only: [:show, :edit, :update, :destroy]
 
-  # GET /demand_blood_banks
-  # GET /demand_blood_banks.json
-  def index
-    @demand_blood_banks = DemandBloodBank.all
-  end
-
-  # GET /demand_blood_banks/1
-  # GET /demand_blood_banks/1.json
-  # end
-
   # GET /demand_blood_banks/new
   def new
     @demand_blood_bank = DemandBloodBank.new
