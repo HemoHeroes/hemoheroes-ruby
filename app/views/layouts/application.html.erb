@@ -71,8 +71,8 @@
           <%= yield %>
           <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
           <%= render "devise/sessions/new" %>
-          <%= render "user_blood_donators/registrations/form_v2" %>
           <%= render "layouts/footer" %>
+          <%= render "user_blood_donators/registrations/form_v2" %>
           <% end %>
         </body>
         </html>

@@ -1,5 +1,11 @@
 var Modal = (function(){
 
+  var hideModal = function(selector){
+    const modal = document.querySelector(selector);
+    modal.style.opacity = 0;
+    modal.style.visibility = 'hidden';
+  }
+
   return {
     open: function(selector){
 
@@ -18,10 +24,10 @@ var Modal = (function(){
     },
 
     close: function(selector){
-      const modal = document.querySelector(selector);
-      modal.style.opacity = 0;
-      modal.style.visibility = 'hidden';
+      hideModal(selector);
 
+      const modalContent = document.querySelector(selector + ' .js-modalContent');
+      modalContent.style.top = '40%';
     },
 
     confirm_feedback_donation: function(selector){
