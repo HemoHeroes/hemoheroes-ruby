@@ -5,7 +5,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
 
     it "deve ativar botão de cadastro" do
       visit "/"
-      find(".Button").click
+      find("#registration_button").click
       within("#form-registration-blood-donator") do
         fill_in "user_blood_donator_name", with: "Lucimar"
           page.find('#user_blood_donator_name').trigger(:focusout)
@@ -31,7 +31,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
   context "quando cadastrar com email incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
-      find(".Button").click
+      find("#registration_button").click
       within("#form-registration-blood-donator") do
         fill_in "user_blood_donator_name", with: "Lucimar"
           page.find('#user_blood_donator_name').trigger(:focusout)
@@ -57,7 +57,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
   context "quando cadastrar com nome incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
-      find(".Button").click
+      find("#registration_button").click
       within("#form-registration-blood-donator") do
         fill_in "user_blood_donator_name", with: ""
           page.find('#user_blood_donator_name').trigger(:focusout)
@@ -135,7 +135,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
   context "quando cadastrar com senhas menor que 6 caracteres" do
     it "deve manter o botao desabilitado" do
       visit "/"
-      find(".Button").click
+      find("#registration_button").click
       within("#form-registration-blood-donator") do
         fill_in "user_blood_donator_name", with: "Lucimar123"
           page.find('#user_blood_donator_name').trigger(:focusout)
