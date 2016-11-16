@@ -13,9 +13,16 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    build_resource(sign_up_params)
-    if resource.save
-      send_new_hospital_email resource
+
+    u = UserBloodBank.find_by(email:params["user_blood_bank"]["email"])
+
+    if u.nil?
+      build_resource(sign_up_params)
+      if resource.save
+        send_new_hospital_email resource
+      end
+    else
+      redirect_to new_user_blood_bank_registration_path, alert:"Email já cadastrado."
     end
   end
 
