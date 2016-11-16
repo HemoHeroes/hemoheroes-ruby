@@ -33,12 +33,15 @@ class DemandBloodBanksController < ApplicationController
             donator.last_donation_token = SecureRandom.urlsafe_base64.to_s
             donator.notification_token = SecureRandom.urlsafe_base64.to_s
             donator.save!
-
-            response = NotificationMailer.send_email(donator, @bank).deliver_now
-            Notification.create! :last_notification => Date.current,
-            :appear => false,
-            :user_blood_donators_id => donator.id,
-            :demand_blood_banks_id => @demand_blood_bank.id
+            if donator.blood_type == ""
+              NotificationMailer.send_email_no_blood_type_donator(donator).deliver_now
+            else
+              response = NotificationMailer.send_email(donator, @bank).deliver_now
+              Notification.create! :last_notification => Date.current,
+              :appear => false,
+              :user_blood_donators_id => donator.id,
+              :demand_blood_banks_id => @demand_blood_bank.id
+            end
           end
         end
         format.html { }
@@ -101,6 +104,7 @@ class DemandBloodBanksController < ApplicationController
     array.push("AB-") unless demand.ab_negative.nil?
     array.push("O+") unless demand.o_positive.nil?
     array.push("O-") unless demand.o_negative.nil?
+    array.push("")
     array
   end
 
