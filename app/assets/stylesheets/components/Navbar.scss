@@ -16,6 +16,10 @@
     padding: 15px;
     align-items: center;
     justify-content: center;
+    @include mobile{
+      padding-left: 0;
+      background-color: $header-background-color;
+    }
   }
 
   &-hamburger {
@@ -34,6 +38,14 @@
     font-size: 2rem;
     font-weight: 900;
     margin: 0 25px;
+    @include mobile{
+      display: flex;
+      align-items: center;
+    };
+    @include tablet{
+      display: flex;
+      align-items: center;
+    }
 
 
     & a {
