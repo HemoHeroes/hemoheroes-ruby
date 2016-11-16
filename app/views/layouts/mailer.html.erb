@@ -16,6 +16,10 @@
     border-radius: 5px;
     z-index:2;
    }
+   .Email-link{
+     color: #0000EE;
+     text-decoration: underline;
+   }
   .Email-content-head {
     height: 100px;
     margin: 10px;
@@ -134,7 +138,7 @@
       </div>
     </div>
     <div class="align-center">
-      <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.last_donation_token}" %>
+      <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.last_donation_token}" class:"Email-link" %>
     </div>
   </div>
 </div>
