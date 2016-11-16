@@ -1252,7 +1252,6 @@
         1,
         null,
         null,
-        null,
         1,
         1,
         1,
@@ -2060,6 +2059,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1479309541
+=======
+    "timestamp": 1479303097
+>>>>>>> #0 <@mathiasVoelcker> - alterar links em email de solicitar doadores
   }
 }

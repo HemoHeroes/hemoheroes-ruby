@@ -44,6 +44,7 @@
     .Button {
       font-size: .8rem;
       font-weight: 700;
+
       display: inline-block;
       box-sizing: border-box;
       padding: 12px;
@@ -126,6 +127,8 @@
       <div class="Button Button--medium is-canceled">
         <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton">Quero doar!</a>
       </div>
+    </div>
+    <div class="Email-content-contentButtons">
       <div class="Button Button--medium is-canceled ">
         <%= link_to "Doei ultimamente", "http://hemoheroestw-staging.herokuapp.com/madeDonation/#{@user.last_donation_token}", class:"aButton" %>
       </div>
