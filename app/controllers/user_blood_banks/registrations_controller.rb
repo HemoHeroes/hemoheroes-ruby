@@ -13,16 +13,17 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
-    send_new_hospital_email
+    build_resource(sign_up_params)
+    if resource.save
+      send_new_hospital_email resource
+    end
   end
-
-
 
   # GET /resource/edit
   # def edit
   #   super
   # end
+
   # PUT /resource
   # def update
   #   super
@@ -51,13 +52,12 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
       :long, :address])
     end
 
-
     def after_sign_up_path_for(resource)
       sign_out
     end
 
-    def send_new_hospital_email
-      @bank = UserBloodBank.last
+    def send_new_hospital_email bank
+      @bank = bank
       NotificationMailer.send_notification_to_admin(@bank).deliver_now
     end
 
