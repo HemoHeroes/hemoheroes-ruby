@@ -1,14 +1,76 @@
 @import '../variables';
 
+@keyframes move {
+  0% {
+    top: 1px;
+  }
+
+  50% {
+    top: 6px;
+  }
+
+  100% {
+    top: 1px;
+  }
+}
+
+@mixin blur {
+  // content: " ";
+  // width: 100%;
+  // height: 100%;
+  // position: absolute;
+  // z-index: -1;
+  // filter: blur(20px);
+  // border-radius: 120px;
+  // background: hsla(0, 100%, 100%, 0.5);
+  // transform: scale(1.5);
+}
+
 .HeroImage {
-  color: $light-font-color;
-  width: 100%;
-  height: 100%;
-  min-height: 600px;
+  //background escuro fonte clara
+  //**********************************
+  // $background-image: url("./../bench-people-smartphone-sun.jpg");
+  // // $background-image:  url("./../blood-donators.jpg");
+  // $font-color: $light-font-color;
+  // $background-gradient: linear-gradient(rgba(0, 0, 0, 0.3) 10.2%, transparent 40%), linear-gradient(transparent 73%, rgba(0, 0, 0, 0.4) 86.2%);
+  // $text-shadow: 0px 1px 13px hsla(0, 0%, 0%, 0.7);
+  // $header-background-color: #FFFFFF;
+
+  //background claro fonte escura
+  //**********************************
+  $background-image:  url("./../pexels-photo-127873.jpg");
+  $font-color: $dark-font-color;
+  $background-gradient: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9) 60%);
+  $text-shadow: 0px 1px 13px hsla(0, 100%, 100%, 0.7);
+  $header-background-color: #FFFFFF;
+
   left: 0;
   top: 0;
+  color: $font-color;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
+  padding: 15px 75px 30px 75px;
+  box-sizing: border-box;
   background-size:cover;
+  background-image: $background-image;
+  background-blend-mode: lighten;
+  background-color: hsla(0,100%,100%,0);
+  background-position: center;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: $background-gradient;
+    width: 100%;
+    height: 100%;
+  }
   @include mobile {
     padding: 35px 15px;
   }
@@ -16,61 +78,230 @@
     padding: 35px 15px;
   }
 
-  &-content{
-    flex-direction: column;
+  &-header {
+    width: 100%;
+    z-index: 2;
+  }
+
+  &-headerContent{
+    padding: 12px 0 0 0;
     display: flex;
     align-items: center;
-    padding: 200px 0;
+    justify-content: space-between;
   }
 
-  &-background {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("http://viviribeiro.com.br/novo/wp-content/uploads/2014/11/IMG_3912.jpg");
-    opacity: 0.8;
-    background-size: cover;
-    z-index: -2;
-  }
-
-  &-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: hsla(0, 0%, 0%, 0.6);
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  &-title {
-    color: $light-font-color;
-    font-size: 2.9em;
-    font-weight: 500;
-    overflow: visible;
-  }
-
-  &-subtitle {
-    color: $light-font-color;
-    font-weight: bold;
-    font-size: 5em;
-    overflow: visible;
-  }
-
-  & .Button {
-    color: $light-font-color;
-    border: 0px;
-    background: $brand-color;
-    font-weight: 400;
-    &:hover {
-      background-color: scale-color($brand-color, $lightness: -10%);
+  &-headerHamburger {
+    @include mobile{
+      background-image: url("https://goo.gl/HLr9Vl");
+      width: 50px;
+      height: 40px;
+      background-size: 100%;
     }
   }
 
+  &-headerLogo {
+    font-size: 2rem;
+    font-weight: 900;
+    float: left;
+    position: relative;
+    display: flex;
+    & a {
+      text-decoration: none;
+      color: $brand-color;
+    }
+    & img {
+      height: 52px;
+      margin-right: 12px;
+    }
+    @include mobile {
+      font-size: 1.7rem;
+      margin: auto;
+    }
+    &:before {
+      @include blur;
+    }
+  }
 
+  &-headerLinks {
+    float: right;
+    & ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      display: inline;
+    }
+    & a {
+      color: #333333;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 19px 15px;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  &-content {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-headlineBox {
+    flex-grow: 2;
+    flex-basis: 0;
+
+    & > div {
+      max-width: 500px;
+    }
+  }
+
+  &-headline {
+    color: $font-color;
+    font-size: 2.5em;
+    font-weight: 500;
+    overflow: visible;
+    font-weight: 600;
+    line-height: 1.3em;
+    text-shadow: $text-shadow;
+    position: relative;
+
+    &:before {
+      @include blur;
+    }
+  }
+
+  &-subHeadline {
+    // max-width: 70%;
+    color: $font-color;
+    font-size: 1.5em;
+    overflow: visible;
+    text-shadow: $text-shadow;
+    position: relative;
+
+    &:before {
+      @include blur;
+    }
+  }
+
+  &-benefitsBox{
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .Button {
+      color: $light-font-color;
+      background: $brand-color;
+      border: 0px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.7em;
+      box-shadow: 0px 3px 8px 0px hsla(0, 100%, 12%, 0.3);
+      border-bottom: 3px solid scale-color($brand-color, $lightness: -25%);
+      &:hover {
+        background-color: scale-color($brand-color, $lightness: -10%);
+      }
+      & span {
+        vertical-align: -1.5px;
+        color: #c32423;
+      }
+    }
+  }
+
+  &-benefits {
+    margin: 25px 0 0 -20px;
+    font-size: 1.3em;
+    line-height: 1.7em;
+    color: scale-color($font-color, $lightness: 5%);
+    text-shadow: $text-shadow;
+    position: relative;
+
+    & ul {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      list-style: none;
+    }
+    & li:before {
+      @include blur;
+    }
+    & img{
+      height: 22px;
+      position: relative;
+      top: 4px;
+      margin-right: 2px;
+    }
+  }
+
+  &-footer {
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    & > div {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  &-friends {
+    max-width: calc(100%/3);
+    opacity: 0.7;
+    overflow: hidden;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-partners {
+    text-align: center;
+  }
+
+  &-imagesBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    & img {
+      height: 30px;
+      display: block;
+      margin: 0 12px;
+    }
+  }
+
+  &-learnMore {
+    height: 50px;
+    position: relative;
+    bottom: -15px;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    &:before {
+      @include blur;
+    }
+
+    & a {
+      color: $dark-font-color;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover{
+        color: $brand-color;
+      }
+    }
+
+    & span {
+      animation-name: move;
+      animation-duration: 1.5s;
+      animation-iteration-count: 3;
+      animation-delay: 5s;
+    }
+  }
 
 
 }

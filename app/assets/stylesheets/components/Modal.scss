@@ -5,7 +5,6 @@
   $overlay-background-color: rgba(0, 0, 0, 0.66);
 
   opacity: 0;
-  transition: 0.4s all ease;
   visibility: hidden;
 
   &::after {
@@ -16,14 +15,14 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 9;
   }
 
   &-content {
     border-radius: 5px;
     overflow: hidden;
     max-width: 550px;
-    z-index: 2;
+    z-index: 10;
     position: fixed;
     left: 50%;
     top: 40%;
@@ -66,7 +65,14 @@
   &-titleBox {
     display: flex;
     align-items: center;
+    flex-direction: column;
     height: 40px;
+    justify-content: center;
+
+    & small {
+      font-size: 0.8em;
+      color: white;
+    }
   }
 
   &-title{

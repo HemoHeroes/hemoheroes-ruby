@@ -97,6 +97,7 @@ var validateFormService = (function(){
   };
 
   var validateSingleInputForm = function(type, indice, status){
+    console.log(validSimpleFormDonator);
     if(type == "bank"){
       validFormBank[indice] = status;
       buttonValidFormBank();
@@ -188,10 +189,10 @@ var validateFormService = (function(){
         errorName.style.display = "";
         if (inputName.value && nameValidate) {
           errorName.style.display = "none";
-          validateSingleInputForm("donator", 0, true);
+          validateSingleInputForm("simpleDonator", 0, true);
           validateInputForms(0, 0, true);
         } else {
-          validateSingleInputForm("donator", 0, false);
+          validateSingleInputForm("simpleDonator", 0, false);
           validateInputForms(0, 0, false);
           return false;
         }
@@ -239,18 +240,19 @@ var validateFormService = (function(){
       var inputEmail = document.querySelector(selector);
       var errorEmail = document.getElementById('errorEmail');
       inputEmail.addEventListener(action, function(){
+        debugger
         errorEmail.style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
         errorEmail.style.display = "";
         if(!emailValidate && inputEmail.value != ""){
           errorEmail.innerHTML = "E-mail inválido!";
-          validateSingleInputForm("donator", 2, false);
+          validateSingleInputForm("simpleDonator", 1, false);
           validateInputForms(1, 3, false);
         }else if(emailValidate){
           errorEmail.style.display = "none";
           validateInputForms(1, 3, true);
-          validateSingleInputForm("donator", 2, true);
+          validateSingleInputForm("simpleDonator", 1, true);
         }
       });
     },
