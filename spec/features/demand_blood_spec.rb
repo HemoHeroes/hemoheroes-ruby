@@ -1,12 +1,17 @@
 require "rails_helper"
 
 describe "Katia poderá solicitar doador.", type: :feature, js: true do
+
+
+  before(:all) do
+    @user_blood_bank = UserBloodBank.create(cnpj: '12345678912369', name: 'Carlos', email: 'huehue@gmail.com', password: '123456', password_confirmation: '123456', address: 'Vila Mata Gato', actived: true)
+  end
+
   context "quando inserir dados corretamente" do
     it "deve ativar o botao" do
+      visit "/"
+      login @user_blood_bank
 
-      visit "/necessidadeBanco"
-
-      within("#demand_blood_banks_form") do
         fill_in "demand_blood_bank_a_positive", with: "5"
         page.find('#demand_blood_bank_a_positive').trigger(:focusout)
         fill_in "demand_blood_bank_b_positive", with: "5"
@@ -15,7 +20,6 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
         page.find('#demand_blood_bank_a_negative').trigger(:focusout)
         fill_in "demand_blood_bank_b_negative", with: "5"
         page.find('#demand_blood_bank_b_negative').trigger(:focusout)
-      end
 
       expect(page).to have_css(".Button.Button--medium.Button--fluid.js-nextButton.is-actived")
     end
@@ -23,7 +27,8 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "quando não inserir dados" do
     it "não deve ativar o botao" do
-      visit "/necessidadeBanco"
+      visit "/"
+      login @user_blood_bank
 
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
     end
@@ -31,7 +36,9 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "quando inserir e apagar dados" do
     it "não deve ativar o botao" do
-      visit "/necessidadeBanco"
+      visit "/"
+
+      login @user_blood_bank
 
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
@@ -48,7 +55,9 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "Quando inserir dados inválidos" do
     it "não deve ativar o botao" do
-      visit "/necessidadeBanco"
+      visit "/"
+
+      login @user_blood_bank
 
       fill_in "demand_blood_bank_a_positive", with: "e"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
@@ -65,7 +74,9 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "Quando botao avançar estiver ativado e for clicado" do
     it "deve abrir modal de confirmação" do
-      visit "/necessidadeBanco"
+      visit "/"
+
+      login @user_blood_bank
 
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
@@ -78,7 +89,9 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "Quando botao confirmar for clicado" do
     it "deve abrir modal de mensagem de sucesso" do
-      visit "/necessidadeBanco"
+      visit "/"
+
+      login @user_blood_bank
 
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
@@ -92,7 +105,9 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
 
   context "Quando botao OK for clicado" do
     it "deve redirecionar para tela de necessidade do banco" do
-      visit "/necessidadeBanco"
+      visit "/"
+
+      login @user_blood_bank
 
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)

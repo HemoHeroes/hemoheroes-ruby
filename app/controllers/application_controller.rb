@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   def index
-    @banks = UserBloodBank.all
+    @banks = UserBloodBank.where(actived:true)
   end
 end
