@@ -29,9 +29,20 @@
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     transition: 0.5s all ease;
+    &.is-open {
+      top: 50%;
+    }
+
     @include mobile {
+      transform: translate(-50%, 0);
+      top: 0;
+      position: absolute;
       width: calc(100vw - 10px);
+      &.is-open {
+        top: 6px;
+      }
     };
+
   }
 
   &-header {
@@ -99,7 +110,7 @@
   &-typesRequest {
 
   }
-  Modal
+
   &-confirmation {
     border-left: 1px solid $border-color;
     float: right;
@@ -119,11 +130,6 @@
     padding: 0 15px;
   }
 
-  &--textModal {
-    color: black;
-    font-size: 20px;
-  }
-
   &-buttons {
     margin: 12px 0 0 10px;
 
@@ -132,6 +138,11 @@
       margin: 0 10px;
     }
 
+  }
+
+  &--textModal {
+    color: black;
+    font-size: 20px;
   }
 
 }
