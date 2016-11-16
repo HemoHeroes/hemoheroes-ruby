@@ -239,7 +239,6 @@ var validateFormService = (function(){
       var inputEmail = document.querySelector(selector);
       var errorEmail = document.getElementById('errorEmail');
       inputEmail.addEventListener(action, function(){
-        debugger
         errorEmail.style.display = "";
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
