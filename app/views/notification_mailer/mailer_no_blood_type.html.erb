@@ -41,6 +41,9 @@
     .padding-top{
       padding-top: 20px;
     }
+    .margin-top{
+      padding-top: 30px;
+    }
     .Button {
       font-size: .8rem;
       font-weight: 700;
@@ -114,12 +117,11 @@
       <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="120" height="120" />
     </div>
     <div class="Email-content-body padding-top">
-      <span><h2>Olá <%= @user.name %>!</h2></span>
-      <p>
-        Nós do HemoHeroes estamos precisando de sua ajuda!
-      </p>
+      <span class="margin-top"><h2>Olá <%= @user.name %>!</h2></span>
 
-      <p>
+      <p><h4>Nós do HemoHeroes estamos precisando de sua ajuda!</h4></p>
+
+      <p class="margin-top">
         Estamos convidando-o para fazer uma doação de sangue
         em qualquer hemocentro conveniado a nossa rede, você
         pode verificar em nosso -site- qual o hemocentro mais
