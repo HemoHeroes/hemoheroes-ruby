@@ -22,7 +22,6 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
     end
   end
 
-
   context "quando logar com dados incorretos" do
     it "deve aparecer mensagem de login invalido" do
       visit "/"
