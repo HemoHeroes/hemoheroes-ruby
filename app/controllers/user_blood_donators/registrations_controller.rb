@@ -16,8 +16,16 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   # POST /resource
   def create
-    super
-    send_welcome_email
+    u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"])
+
+    if u.nil?
+      super
+      send_welcome_email
+    else
+      redirect_to root_path, alert:"Email já cadastrado.", flash: { register_modal: true }
+    end
+
+
   end
 
   def made_donation
