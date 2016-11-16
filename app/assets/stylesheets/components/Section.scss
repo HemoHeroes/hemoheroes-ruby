@@ -3,6 +3,7 @@
 .Section {
   padding: 50px;
 
+
   @include mobile {
     padding: 35px 15px;
   }
@@ -10,8 +11,19 @@
     padding: 35px 15px;
   }
 
+  & h2{
+    color: $brand-color;
+  }
+
+  &-content {
+    max-width: 990px;
+    margin: auto;
+    font-size: 1em;
+    line-height: 1.6em;
+  }
+
   &--secondary {
-    background: scale-color($body-color, $lightness: -10%);
+    background: scale-color($body-color, $lightness: -5%);
   }
 
 }

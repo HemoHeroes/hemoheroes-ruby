@@ -1,7 +1,7 @@
 var Navbar = ready(function(){
 
   var initialize = function(){
-    changeOnScroll();
+    // changeOnScroll();
   }
 
   var navbar = document.querySelector('.Navbar');

@@ -12,10 +12,10 @@
   top: 0;
 
   &-content{
-    display: flex;
+    // display: flex;
     padding: 15px;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
   }
 
   &-hamburger {
@@ -30,9 +30,7 @@
   &-logo {
     font-size: 2rem;
     font-weight: 900;
-    margin: 0 25px;
-
-
+    float: left;
     & a {
       text-decoration: none;
       color: $brand-color;
@@ -44,8 +42,7 @@
   }
 
   &-links {
-    text-align: right;
-    width: 100%;
+    float: right;
     & ul {
       margin: 0;
       padding: 0;
@@ -82,9 +79,7 @@
     }
 
     & .Navbar-links {
-      text-align: center;
-      width: auto;
-      padding: 10px 0 0 0;
+      padding: 10px 50px 0 0;
     }
     & .Navbar-links a {
       color: $light-font-color;
@@ -103,11 +98,9 @@
         color: $dark-font-color;
       }
 
-
       & .Navbar-links a:hover{
         color: scale-color($dark-font-color, $lightness: 15%);
       }
-
 
     }
   }

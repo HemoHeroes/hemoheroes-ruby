@@ -22,7 +22,7 @@
 	var defaults = {
 		selector: '[data-scroll]',
 		selectorHeader: null,
-		speed: 1100,
+		speed: 900,
 		easing: 'easeInOutCubic',
 		offset: 0,
 		callback: function () {}

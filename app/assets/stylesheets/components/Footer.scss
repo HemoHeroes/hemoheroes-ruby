@@ -1,21 +1,17 @@
 @import "../variables";
 
 .Footer {
-
-  $header-background-color: #FFFAF5;
-  background-color: $header-background-color;
+  background-color: $brand-color;
   width: 100%;
 
-  &-content{
+  &-content {
     padding: 21px;
   }
 
-  &-links{
-
-
+  &-links {
 
     & a {
-      color: #333333;
+      color: $light-font-color;
       text-transform: uppercase;
       font-weight: 600;
       text-decoration: none;
