@@ -20,14 +20,14 @@ var Modal = (function(){
       modal.style.visibility = 'visible';
 
       const modalContent = document.querySelector(selector + ' .js-modalContent');
-      modalContent.style.top = '50%';
+      modalContent.classList.add('is-open');
     },
 
     close: function(selector){
       hideModal(selector);
 
       const modalContent = document.querySelector(selector + ' .js-modalContent');
-      modalContent.style.top = '40%';
+      modalContent.classList.remove('is-open');
     },
 
     confirm_feedback_donation: function(selector){

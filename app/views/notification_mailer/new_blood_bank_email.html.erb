@@ -38,6 +38,9 @@
     .align-center{
       text-align:center;
     }
+    .align-justify{
+      text-align:justify;
+    }
     .padding-top{
       padding-top: 20px;
     }
@@ -104,6 +107,12 @@
       span{
         font-size: 1em;
       }
+      ul{
+        list-style: none;
+      }
+      li{
+        padding: 7px;
+      }
   </style>
 </head>
 <body>
@@ -114,13 +123,22 @@
       <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="120" height="120" />
     </div>
     <div class="Email-content-body padding-top">
-      <h2>O <%= @bank.name %> deseja-se juntar ao HemoHeroes</h2>
-      <span>Informações: -Nome: <b><%= @bank.name %></b></span>
-      <span>-E-mail: <b><%= @bank.email %></b></span>
-      <span>-Telefone: <b><%= @bank.phone %></b></span>
-      <span>-Ramal: <b><%= @bank.extension %></b></span>
-      <span>-CNPJ: <b><%= @bank.cnpj %></b></span>
-      <span>-Endereço: <b><%= @bank.address %></b></span>
+    <p><h4>O Banco de Sangue <%= @bank.name %>
+     deseja se juntar ao HemoHeroes </h4></p>
+
+     <div class="align-justify">
+       <b>Informações:</b>
+       <ul>
+         <li> <b>Nome: </b><%= @bank.name %> </li>
+         <li> <b>CNPJ: </b><%= @bank.cnpj %> </li>
+         <li> <b>Email: </b><%= @bank.email %> </li>
+         <li> <b>Endereço: </b><%= @bank.address %> </li>
+         <li> <b>Telefone: </b> <%= @bank.phone %> </li>
+         <li> <b>Ramal: </b> <%= @bank.extension %> </li>
+       </ul>
+     </div>
+
+
     </div>
     <div class="align-center">
       <span>Faça aprovação no <a href="http://hemoheroestw-staging.herokuapp.com/admin/login" >painel de controle</a></span>
