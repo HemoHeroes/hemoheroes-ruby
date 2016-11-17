@@ -42,13 +42,15 @@
             <div class="Modal-body Modal-small">
               <div id="form-registration-blood-donator" class="Form">
                 <div class="Grid">
-                  <div class="Grid-cell u-desktop-size12of12 u-tablet-sizeFull u-mobile-sizeFull">
-                    <p><%= alert %></p>
+                  <% if alert %>
+                  <div class="Alert Alert--error u-desktop-size12of12 u-tablet-sizeFull u-mobile-sizeFull">
+                    <span class="glyphicon glyphicon-alert"></span> <%= alert %>
                   </div>
+                  <% end %>
                   <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
                     <div class="Form-group">
                       <div class="Form-inputLabel u-sizeFull">
-                        <span>Nome<span class="red-text">*</span></span>
+                        <span>Nome</span>
                       </div>
                       <div class="u-sizeFull">
                         <input class="Form-inputValue  js-validateNameDonator" placeholder="Ex: Fellipe Callegas" type="text" name="user_blood_donator[name]" id="user_blood_donator_name">
@@ -60,7 +62,7 @@
                   <div class="Grid-cell u-desktop-size6of12 u-tablet-sizeFull u-mobile-sizeFull">
                     <div class="Form-group">
                       <div class="Form-inputLabel u-sizeFull">
-                        <span> Email<span class="red-text">*</span></span>
+                        <span>E-mail</span>
                       </div>
                       <div class="u-sizeFull">
                         <input class="Form-inputValue js-validateEmailDonator" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value="" name="user_blood_donator[email]" id="user_blood_donator_email">

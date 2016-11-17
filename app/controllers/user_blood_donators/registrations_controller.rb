@@ -22,7 +22,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       super
       send_welcome_email
     else
-      redirect_to root_path, alert:"Email já cadastrado.", flash: { register_modal: true }
+      redirect_to root_path, alert:"E-mail já cadastrado. Por favor, preencha o campo com outro e-mail.", flash: { register_modal: true }
     end
 
 

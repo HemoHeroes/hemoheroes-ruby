@@ -1,0 +1,15 @@
+@import '../variables';
+
+.Alert {
+  padding: 12px;
+  width: 100%;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  border-radius: $container-radius;
+
+  &--error {
+    color: $brand-color;
+    background: scale-color($body-color, $lightness: -10%);
+  }
+}
