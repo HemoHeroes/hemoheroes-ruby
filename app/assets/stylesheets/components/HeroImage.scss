@@ -29,8 +29,8 @@
 .HeroImage {
   //background escuro fonte clara
   //**********************************
-  // $background-image: image-url("./../bench-people-smartphone-sun.jpg");
-  // // $background-image:  image-url("./../blood-donators.jpg");
+  // $background-image: image-url("/assets/bench-people-smartphone-sun.jpg");
+  // // $background-image:  image-url("/assets/blood-donators.jpg");
   // $font-color: $light-font-color;
   // $background-gradient: linear-gradient(rgba(0, 0, 0, 0.3) 10.2%, transparent 40%), linear-gradient(transparent 73%, rgba(0, 0, 0, 0.4) 86.2%);
   // $text-shadow: 0px 1px 13px hsla(0, 0%, 0%, 0.7);
@@ -43,6 +43,15 @@
   $background-gradient: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9) 60%);
   $text-shadow: 0px 1px 13px hsla(0, 100%, 100%, 0.7);
   $header-background-color: #FFFFFF;
+
+  //fonte fina/grossa
+  //**********************************
+  $button-font-weight: 400;
+  // $button-font-weight: 600;
+
+  //fonte headline fin/grossa
+  $head-line-font-weight: 400;
+  //$head-line-font-weight: 600;
 
   left: 0;
   top: 0;
@@ -171,9 +180,8 @@
   &-headline {
     color: $font-color;
     font-size: 2.5em;
-    font-weight: 500;
     overflow: visible;
-    font-weight: 600;
+    font-weight: $head-line-font-weight;
     line-height: 1.3em;
     text-shadow: $text-shadow;
     position: relative;
@@ -208,8 +216,8 @@
       background: $brand-color;
       border: 0px;
       border-radius: 6px;
-      font-weight: 600;
-      font-size: 1.7em;
+      font-weight: $button-font-weight;
+      font-size: 1.5em;
       box-shadow: 0px 3px 8px 0px hsla(0, 100%, 12%, 0.3);
       border-bottom: 3px solid scale-color($brand-color, $lightness: -25%);
       &:hover {
