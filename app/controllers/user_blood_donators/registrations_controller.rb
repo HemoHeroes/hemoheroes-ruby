@@ -103,8 +103,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def after_sign_up_path_for_modal(resource)
-    #dashboard_path
-
+    sign_out
   end
 
 
