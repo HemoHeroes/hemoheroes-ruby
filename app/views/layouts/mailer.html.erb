@@ -128,14 +128,10 @@
       </div>
     </div>
     <div class="Email-content-contentButtons">
-      <div class="Button Button--medium is-canceled">
-        <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton">Quero doar!</a>
-      </div>
-    </div>
+        <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton Button Button--medium is-canceled">Quero doar!</a>
+        </div>
     <div class="Email-content-contentButtons">
-      <div class="Button Button--medium is-canceled ">
-        <%= link_to "Doei ultimamente", "http://hemoheroestw-staging.herokuapp.com/madeDonation/#{@user.last_donation_token}", class:"aButton" %>
-      </div>
+          <%= link_to "Doei ultimamente", "http://hemoheroestw-staging.herokuapp.com/madeDonation/#{@user.last_donation_token}", class:"aButton Button Button--medium is-canceled " %>
     </div>
     <div class="align-center">
       <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.last_donation_token}", class:"Email-link" %>
