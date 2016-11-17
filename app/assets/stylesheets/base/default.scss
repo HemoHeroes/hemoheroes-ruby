@@ -6,6 +6,17 @@ body {
   font-size: 14px;
   background: (0, 0%, 97%, 1);
   line-height: initial;
+  @include desktop{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+}
+
+main {
+  @include desktop {
+    flex: 1;
+  }
 }
 
 label {

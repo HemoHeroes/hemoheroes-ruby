@@ -68,11 +68,13 @@
 
         <body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>" data-resource="<%=@resourceT unless @resourceT.nil? %>">
           <%= render "layouts/header"%>
-          <%= yield %>
+          <main>
+            <%= yield %>
+          </main>
           <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
-          <%= render "devise/sessions/new" %>
           <%= render "layouts/footer" %>
-          
+          <%= render "devise/sessions/new" %>
+
           <%= render "application/modal_receive_notification" %>
           <%= render "application/modal_receive_notification_confirmation" %>
           <%= render "user_blood_donators/registrations/form_v2" %>
