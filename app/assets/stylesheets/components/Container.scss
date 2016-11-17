@@ -8,8 +8,8 @@
     margin: 40px;
   }
   @include mobile {
-    margin: 40px;
-    align-content: center;
+    margin: 5px;
+    max-width: 96%;
   }
 
   &-header {
@@ -60,7 +60,7 @@
     background-color: $body-color;
     overflow: auto;
     padding: 15px;
-    @include mobile {;
+    @include mobile {
       padding: 10px;
     }
   }

@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   background: (0, 0%, 97%, 1);
   line-height: initial;
+  padding: 0;
   @include desktop{
     display: flex;
     min-height: 100vh;
