@@ -1,9 +1,9 @@
 class UserBloodDonator < ApplicationRecord
 
   has_and_belongs_to_many :notifications
-  validates_presence_of :name, :email, :cpf, :phone
+  validates_presence_of :name, :email
 
-  validates_uniqueness_of :cpf
+  # validates_uniqueness_of :cpf
   validates_uniqueness_of :email
 
   # Include default devise modules. Others available are:
