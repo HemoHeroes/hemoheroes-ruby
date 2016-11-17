@@ -1,5 +1,5 @@
 <% if flash[:confirmation_notification_modal]%>
-<div class="Modal js-modal js-modalReceiveNotificationConfirmation" style="opacity: 1; visibility: visible;">
+<div class="Modal js-modal js-modalReceiveNotificationConfirmation  Modal-overlay" style="opacity: 1; visibility: visible;">
   <div class="Modal-content js-modalContent" style="top: 50%;">
     <% else %>
     <div class="Modal js-modal js-modalReceiveNotificationConfirmation">
@@ -15,7 +15,6 @@
         <div class="Modal-body">
           <div>
             <p> Solicitação de recebimento de notificações efetuada com sucesso!</p>
-
           </div>
           <div class="u-align-center u-padding-top u-padding-bottom">
             <div class="Button Button--notification" onclick="Modal.close('.js-modalReceiveNotificationConfirmation')">Fechar</div>
