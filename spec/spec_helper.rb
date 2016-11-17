@@ -23,12 +23,6 @@ require 'capybara/poltergeist'
 require 'coveralls'
 require 'helpers'
 
-SimpleCov.start do
-   add_filter 'spec/'
-   add_filter 'app/admin/'
-   add_filter 'vendor/'
- end
-
 Coveralls.wear!
 
 RSpec.configure do |config|
