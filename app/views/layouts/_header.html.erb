@@ -10,7 +10,7 @@
       <li><a onclick="Modal.open('.js-modalRegistration')">Historia</a></li>
     </div>
 
-    <div class="Navbar-logo" >
+    <div class="Navbar-logo">
       <a href="/">HemoHeroes</a>
     </div>
 
@@ -27,9 +27,9 @@
           <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
         </li>
         <% else %>
-          <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
-          <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
-          <!-- <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li> -->
+        <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+        <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+        <!-- <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li> -->
         <% end %>
       </ul>
     </div>
