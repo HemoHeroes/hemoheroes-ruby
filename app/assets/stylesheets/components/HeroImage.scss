@@ -50,8 +50,7 @@
   width: 100%;
   min-height: 80vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   padding: 15px 75px 30px 75px;
   box-sizing: border-box;
@@ -76,6 +75,15 @@
   }
   @include tablet {
     padding: 35px 15px;
+  }
+
+  &-wrapper {
+    width: 100%;
+    position: relative;
+    max-width: 1090px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &-header {

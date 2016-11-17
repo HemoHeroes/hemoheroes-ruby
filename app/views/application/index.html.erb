@@ -2,89 +2,93 @@
 <%= render 'modal_feedback' %>
 
 <section class="HeroImage">
-  <div class="HeroImage-header">
-    <div class="HeroImage-headerHamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
 
-    <div class="HeroImage-headerContent">
+  <div class="HeroImage-wrapper">
+    
+    <div class="HeroImage-header">
+      <div class="HeroImage-headerHamburger js-openNavbar" onclick="Navbar.toggle()" ></div>
 
-      <div class="HeroImage-headerLogo" >
-        <%= image_tag "logo" %>
-        <a href="/">HemoHeroes</a>
-      </div>
+      <div class="HeroImage-headerContent">
 
-      <div class="HeroImage-headerLinks js-navbarMobile">
-        <ul>
-          <% if user_blood_donator_signed_in? %>
-          <li>
-            <%= "Bem vindo, #{current_user_blood_donator.name}" %>
-            <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
-          </li>
-          <% elsif user_blood_bank_signed_in? %>
-          <li>
-            <%= "Bem vindo, #{current_user_blood_bank.name}" %>
-            <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
-          </li>
-          <% else %>
-          <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
-          <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
-          <!-- <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li> -->
-          <% end %>
-        </ul>
+        <div class="HeroImage-headerLogo" >
+          <%= image_tag "logo" %>
+          <a href="/">HemoHeroes</a>
+        </div>
+
+        <div class="HeroImage-headerLinks js-navbarMobile">
+          <ul>
+            <% if user_blood_donator_signed_in? %>
+            <li>
+              <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+              <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+            </li>
+            <% elsif user_blood_bank_signed_in? %>
+            <li>
+              <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+              <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+            </li>
+            <% else %>
+            <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+            <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+            <!-- <li><a onclick="Modal.open('.js-modalRegistration')">Cadastro</a></li> -->
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <div class="HeroImage-content">
+      <div class="HeroImage-headlineBox">
+        <div class="HeroImage-headline">
+          Receba notificações de  quando e onde doar sangue
+        </div>
+        <div class="HeroImage-subHeadline">
+          Faça parte da comunidade de doadores voluntários do HemoHeroes
+        </div>
+      </div>
+
+      <div class="HeroImage-benefitsBox">
+        <div class="Button Button--large  is-actived-secundary" id="registration_button" onclick="Modal.open('.js-modalRegistration')">
+          Quero Me Cadastrar <span class="glyphicon glyphicon-menu-right"></span>
+        </div>
+        <div class="HeroImage-benefits">
+          <ul>
+            <li><%= image_tag("/images/black-check.png")%> Localize facilmente onde doar</li>
+            <li><%= image_tag("/images/black-check.png")%> Receba notificações por email</li>
+            <li><%= image_tag("/images/black-check.png")%> Saiba quando doar novamente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="HeroImage-footer">
+      <div class="HeroImage-friends">
+        <div class="fb-like" data-href="https://www.facebook.com/cipucrs" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+      </div>
+
+
+
+      <div class="HeroImage-learnMore">
+        <a data-scroll href="#sobre">
+          <div>Saiba mais</div>
+          <span class="glyphicon glyphicon-menu-down u-block"></span>
+        </a>
+      </div>
+
+      <div class="HeroImage-partners">
+        Apoio
+        <div class="HeroImage-imagesBox">
+          <!-- <%= image_tag("/images/white-microsoft-innovation-center-logo.png")%>
+          <%= image_tag("/images/white-thoughtworks-logo.png")%> -->
+          <%= image_tag("/images/black-microsoft-innovation-center-logo.png")%>
+          <%= image_tag("/images/black-thoughtworks-logo.png")%>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <div class="HeroImage-content">
-    <div class="HeroImage-headlineBox">
-      <div class="HeroImage-headline">
-        Receba notificações de  quando e onde doar sangue
-      </div>
-      <div class="HeroImage-subHeadline">
-        Faça parte da comunidade de doadores voluntários do HemoHeroes
-      </div>
-    </div>
-
-    <div class="HeroImage-benefitsBox">
-      <div class="Button Button--large  is-actived-secundary" id="registration_button" onclick="Modal.open('.js-modalRegistration')">
-        Quero Me Cadastrar <span class="glyphicon glyphicon-menu-right"></span>
-      </div>
-      <div class="HeroImage-benefits">
-        <ul>
-          <li><%= image_tag("/images/black-check.png")%> Localize facilmente onde doar</li>
-          <li><%= image_tag("/images/black-check.png")%> Receba notificações por email</li>
-          <li><%= image_tag("/images/black-check.png")%> Saiba quando doar novamente</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="HeroImage-footer">
-    <div class="HeroImage-friends">
-      <div class="fb-like" data-href="https://www.facebook.com/cipucrs" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
-    </div>
-
-
-
-    <div class="HeroImage-learnMore">
-      <a data-scroll href="#sobre">
-        <div>Saiba mais</div>
-        <span class="glyphicon glyphicon-menu-down u-block"></span>
-      </a>
-    </div>
-
-    <div class="HeroImage-partners">
-      Apoio
-      <div class="HeroImage-imagesBox">
-        <!-- <%= image_tag("/images/white-microsoft-innovation-center-logo.png")%>
-        <%= image_tag("/images/white-thoughtworks-logo.png")%> -->
-        <%= image_tag("/images/black-microsoft-innovation-center-logo.png")%>
-        <%= image_tag("/images/black-thoughtworks-logo.png")%>
-      </div>
-
-    </div>
-  
-  </div>
-
 
 </section>
 
