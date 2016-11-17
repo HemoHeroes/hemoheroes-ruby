@@ -19,8 +19,11 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"])
 
     if u.nil?
-      super
-      send_welcome_email
+      build_resource(sign_up_params)
+      if resource.save
+        send_welcome_email
+        redirect_to root_path, flash: { notification_modal: true, message:"Obrigado por fazer parte da comunidade HemoHeroes", title:"Sua conta foi criada com sucesso" }
+      end
     else
       redirect_to root_path, alert:"E-mail já cadastrado. Por favor, preencha o campo com outro e-mail.", flash: { register_modal: true }
     end
@@ -56,7 +59,16 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     redirect_to root_path, flash: { notification_modal: true, message:"Obrigado pela sua contribuição.", title:"Equipe HemoHeroes" }
   end
 
+  def sign_up_confirmation
+    donator = UserBloodDonator.find_by( notification_token: params['token'])
+    if donator != nil
+      donator.notification = false
+      donator.notification_token = ""
+      donator.save!
+    end
 
+    redirect_to root_path, flash: { notification_modal: true, message:"Obrigado por fazer parte da comunidade HemoHeroes", title:"Sua conta foi criada com sucesso" }
+  end
 
   def cancel_notification
     donator = UserBloodDonator.find_by( notification_token: params['token'])
@@ -90,8 +102,9 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :cpf, :date_birth, :phone, :password, :notification, :genre, :blood_type, :admin, :last_donation, :cep, :long, :lat, :last_donation_token, :notification_token])
   end
 
-  def after_sign_up_path_for(resource)
-    dashboard_path
+  def after_sign_up_path_for_modal(resource)
+    #dashboard_path
+
   end
 
 

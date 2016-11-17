@@ -1803,9 +1803,12 @@
         0,
         0,
         0,
+<<<<<<< HEAD
         0,
         null,
         null,
+=======
+>>>>>>> #0 <@mathiasVoelcker, @lucimarneves> - criar modal de mensagem de sucesso apos cadastro doador
         null,
         null,
         null,
@@ -1842,10 +1845,15 @@
         null,
         null,
         null,
+<<<<<<< HEAD
         null,
         null,
         null,
         null,
+=======
+        1,
+        0,
+>>>>>>> #0 <@mathiasVoelcker, @lucimarneves> - criar modal de mensagem de sucesso apos cadastro doador
         null,
         null,
         1,
@@ -1861,6 +1869,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1478871621
+=======
+    "timestamp": 1479314079
+>>>>>>> #0 <@mathiasVoelcker, @lucimarneves> - criar modal de mensagem de sucesso apos cadastro doador
   }
 }
