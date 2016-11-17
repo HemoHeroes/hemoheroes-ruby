@@ -13,8 +13,8 @@ ready(function(){
 
   var validateSimpleFormDonator = function(){
     validateFormService.validateName('.js-validateNameDonator', 'focusout');
-    validateFormService.validateEmail('.js-validateEmailDonator', 'focusout');
     validateFormService.validateTerms('.js-validateTermsDonator', 'click');
+    validateFormService.validateEmail('.js-validateEmailDonator', 'focusout');
     //validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
   };
 
