@@ -16,8 +16,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   # POST /resource
   def create
-    u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"])
-
+    u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"].downcase)
     if u.nil?
       build_resource(sign_up_params)
       if resource.save
