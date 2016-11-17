@@ -17,6 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 /coverage
+coverage/.resultset.json
+coverage/.last_run.json
 
 # Ignore Byebug command history file.
 .byebug_history
