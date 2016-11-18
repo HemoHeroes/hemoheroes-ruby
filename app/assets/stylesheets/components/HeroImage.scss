@@ -56,6 +56,7 @@
   left: 0;
   top: 0;
   color: $font-color;
+  font-size: 1rem;
   width: 100%;
   min-height: 80vh;
   display: flex;
@@ -83,6 +84,8 @@
   @include mobile {
     padding: 0px 15px;
     margin: 0;
+    font-size: 1.3em;
+    min-height: 100vh;
   }
   @include tablet {
     padding: 35px 15px;
@@ -154,6 +157,9 @@
 
   &-headerLinks {
     float: right;
+    @include mobile {
+      display: none;
+    };
     & ul {
       margin: 0;
       padding: 0;
@@ -179,6 +185,7 @@
     z-index: 2;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 
     @include mobile{
       flex-grow: 1;
@@ -194,6 +201,9 @@
 
     & > div {
       max-width: 500px;
+      @include mobile {
+        max-width: none;
+      };
     }
   }
 
@@ -220,6 +230,9 @@
     overflow: visible;
     text-shadow: $text-shadow;
     position: relative;
+    @include mobile {
+      margin: 12px 0 0 0;
+    };
 
     &:before {
       @include blur;
