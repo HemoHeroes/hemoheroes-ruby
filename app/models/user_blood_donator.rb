@@ -20,13 +20,4 @@ class UserBloodDonator < ApplicationRecord
     false
   end
 
-  def send_no_blood_type
-    @donators = UserBloodDonator.all
-    @donators.each do |donator|
-      if(donator.blood_type == "")
-        NotificationMailer.send_email_no_blood_type_donator(donator).deliver_now
-      end
-    end
-  end
-
 end
