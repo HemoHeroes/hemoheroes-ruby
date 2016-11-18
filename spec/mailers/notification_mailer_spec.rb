@@ -21,6 +21,7 @@ describe NotificationMailer, type: :mailer do
     @mail = NotificationMailer.send_email_new_user(@user).deliver_now
     @mailToAdmin = NotificationMailer.send_notification_to_admin @user_bank
     @mailDemand = NotificationMailer.send_email(@user, @user_bank)
+    @mailNoBloodType = NotificationMailer.send_email_no_blood_type_donator(@user)
   end
 
 
@@ -62,6 +63,20 @@ describe NotificationMailer, type: :mailer do
 
     it 'retorna email do admin' do
       expect(@mailToAdmin.from).to eq(["aceleradora10@gmail.com"])
+    end
+  end
+
+  describe '#send_no_blood_type_donator' do
+    it 'retorna o conteúdo do texto' do
+      expect(@mailNoBloodType.subject).to eq('Convite para doação')
+    end
+
+    it 'retorna o email do destinatário doador' do
+      expect(@mailNoBloodType.to).to eq([@user.email])
+    end
+
+    it 'retorna email do admin' do
+      expect(@mailNoBloodType.from).to eq(["aceleradora10@gmail.com"])
     end
   end
 
