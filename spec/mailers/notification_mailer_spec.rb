@@ -3,6 +3,10 @@ require 'rails_helper'
 describe NotificationMailer, type: :mailer do
 
   before(:all) do
+    @admin = AdminUser.create!(email: 'pedraoativado@admin.com',
+    password: '123456',
+    password_confirmation: '123456')
+
     @user = UserBloodDonator.new(name: 'Usuário De Teste',
     email: 'usuario@gmail.com',
     password: '123456',
@@ -10,6 +14,7 @@ describe NotificationMailer, type: :mailer do
     last_donation_token: "muitobom",
     notification_token: "muitobommesmo"
     )
+
     @user_bank = UserBloodBank.new(:name => 'Pedrao dos Banco',
     :email => 'pedraoativado@admin.com',
     :password => '123456',
@@ -22,6 +27,7 @@ describe NotificationMailer, type: :mailer do
     @mailToAdmin = NotificationMailer.send_notification_to_admin @user_bank
     @mailDemand = NotificationMailer.send_email(@user, @user_bank)
     @mailNoBloodType = NotificationMailer.send_email_no_blood_type_donator(@user)
+    @mailActivation = NotificationMailer.send_activation_email(@user_bank)
   end
 
 
@@ -77,6 +83,21 @@ describe NotificationMailer, type: :mailer do
 
     it 'retorna email do admin' do
       expect(@mailNoBloodType.from).to eq(["aceleradora10@gmail.com"])
+    end
+  end
+
+  describe '#send_activation_email' do
+    it 'retornar o assunto do e-mail' do
+      expect(@mailActivation.subject).to eq 'Conta HemoHeroes ativada!'
+    end
+    it 'retornar o email do destinatário' do
+      expect(@mailActivation.to).to eq @user_bank.email
+    end
+    it 'retornar o email do remetente' do
+      expect(@mailActivation.from).to eq 'aceleradora10@gmail.com'
+    end
+    it 'retornar o conteúdo do e-mail' do
+      expect(@mailActivation.template_name).to eq 'blood_bank_activation_email.html.erb'
     end
   end
 
