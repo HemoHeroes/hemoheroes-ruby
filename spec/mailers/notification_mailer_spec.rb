@@ -3,7 +3,7 @@ require 'rails_helper'
 describe NotificationMailer, type: :mailer do
 
   before(:all) do
-    @admin = AdminUser.create!(email: 'pedraoativado@admin.com',
+    @admin = AdminUser.new(email: 'pedraoativado@admin.com',
     password: '123456',
     password_confirmation: '123456')
 
@@ -27,7 +27,7 @@ describe NotificationMailer, type: :mailer do
     @mailToAdmin = NotificationMailer.send_notification_to_admin @user_bank
     @mailDemand = NotificationMailer.send_email(@user, @user_bank)
     @mailNoBloodType = NotificationMailer.send_email_no_blood_type_donator(@user)
-    @mailActivation = NotificationMailer.send_activation_email(@user_bank)
+    # @mailActivation = NotificationMailer.send_activation_email(@user_bank)
   end
 
 
