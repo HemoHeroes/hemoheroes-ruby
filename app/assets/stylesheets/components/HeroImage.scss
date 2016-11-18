@@ -135,6 +135,13 @@
     float: left;
     position: relative;
     display: flex;
+
+    @include mobile {
+      padding-top: 20px;
+      font-size: 2rem;
+      margin: auto;
+
+    }
     & a {
       text-decoration: none;
       color: $brand-color;
@@ -143,13 +150,7 @@
       height: 52px;
       margin-right: 12px;
     }
-    @include mobile {
-      font-size: 1.7rem;
-      margin: auto;
 
-
-
-    }
     &:before {
       @include blur;
     }
