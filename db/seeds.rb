@@ -32,10 +32,10 @@
                                           # :genre => 'm', :last_donation => DateTime.current - 20.days
 
 user_donator = UserBloodDonator.create! :name => 'Pedrao dos Login',
-                                                                                  :email => 'cristianferreira_gks@hotmail.com',
-                                                                                  :password => '123456', :password_confirmation => '123456',
-                                                                                  :cpf => '12345678912', :blood_type => 'O-', :notification => true,
-                                                                                  :genre => 'm', :last_donation => DateTime.current - 100.days
+                                        :email => 'cristianferreira_gks@hotmail.com',
+                                        :password => '123456', :password_confirmation => '123456',
+                                        :cpf => '12345678912', :blood_type => 'O-', :notification => true,
+                                        :genre => 'm', :last_donation => DateTime.current - 100.days
 
 user_donator = UserBloodDonator.create! :name => 'Doador A-',
                                         :email => 'sheilanara.web@gmail.com',

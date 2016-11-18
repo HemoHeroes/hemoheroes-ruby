@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def send_no_blood_type
     @donators = UserBloodDonator.all
     @donators.each do |donator|
-      if((donator.blood_type == "") && check_donation_interval(donator))
+      if((donator.blood_type == "") && check_donation_interval(donator) && donator.notification)
         NotificationMailer.send_email_no_blood_type_donator(donator).deliver_now
         Notification.create! :last_notification => Date.current,
         :appear => false,

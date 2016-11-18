@@ -188,10 +188,8 @@ var validateFormService = (function(){
         errorName.style.display = "";
         if (inputName.value && nameValidate) {
           errorName.style.display = "none";
-          validateSingleInputForm("simpleDonator", 0, true);
           validateInputForms(0, 0, true);
         } else {
-          validateSingleInputForm("simpleDonator", 0, false);
           validateInputForms(0, 0, false);
           return false;
         }
@@ -245,12 +243,11 @@ var validateFormService = (function(){
         if(!emailValidate && inputEmail.value != ""){
           errorEmail.style.display = "";
           errorEmail.innerHTML = "E-mail inválido!";
-          validateSingleInputForm("simpleDonator", 1, false);
           validateInputForms(1, 3, false);
         }else if(emailValidate){
           errorEmail.style.display = "none";
           validateInputForms(1, 3, true);
-          validateSingleInputForm("simpleDonator", 1, true);
+
         }
       });
     },

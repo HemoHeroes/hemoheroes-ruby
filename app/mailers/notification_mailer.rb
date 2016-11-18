@@ -30,6 +30,7 @@ class NotificationMailer < ApplicationMailer
     template_path: 'notification_mailer',
     template_name: 'new_blood_bank_email')
   end
+
   def send_email_no_blood_type_donator user
       @user = user
       @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
