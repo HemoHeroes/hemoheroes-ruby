@@ -31,7 +31,7 @@ describe NotificationMailer, type: :mailer do
     end
 
     it 'retorna o email do destinatário doador' do
-      expect(@mail.to).to eq(["usuario@gmail.com"])
+      expect(@mail.to).to eq([@user.email])
     end
 
     it 'retorna o email do remetente' do
