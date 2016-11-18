@@ -16,6 +16,11 @@
       text-decoration: none;
       cursor: pointer;
       padding: 19px 15px;
+      @include mobile {
+        display: flex;
+        flex-direction:column;
+        padding: 4px;
+      }
       &:hover {
         background: $border-color;
       }

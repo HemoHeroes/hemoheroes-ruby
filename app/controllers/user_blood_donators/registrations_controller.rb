@@ -16,8 +16,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   # POST /resource
   def create
-    u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"])
-
+    u = UserBloodDonator.find_by(email:params["user_blood_donator"]["email"].downcase)
     if u.nil?
       build_resource(sign_up_params)
       if resource.save
@@ -82,16 +81,16 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def active_notification
-    donator = UserBloodDonator.find_by(email: params['user_blood_donator_email_notification'])
+    donator = UserBloodDonator.find_by(email: params['user_blood_donator_email_notification'].downcase)
 
     if donator != nil
       donator.notification = true
       donator.save!
       # puts donator.notification
       redirect_to root_path, flash: { confirmation_notification_modal: true }
-
     else
-      redirect_to root_path, flash: { register_modal: true }
+      redirect_to root_path, alert:"Você precisa ser cadastrado para receber notificações do HemoHeroes", flash: { register_modal: true , email: params['user_blood_donator_email_notification'].downcase}
+      # redirect_to root_path, flash: { register_modal: true }
     end
 
   end

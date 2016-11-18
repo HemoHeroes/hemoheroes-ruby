@@ -12,7 +12,9 @@
   top: 0;
 
   &-content{
-    // display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 15px;
     @include mobile{
       padding-left: 0;
@@ -28,7 +30,8 @@
     z-index: 2;
     @include desktop{
       display: none;
-    };
+
+    }
 
   }
 
