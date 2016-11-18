@@ -69,6 +69,11 @@
   background-blend-mode: lighten;
   background-color: hsla(0,100%,100%,0);
   background-position: center;
+  @include mobile{
+    left: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
 
 
   &:before {
@@ -107,7 +112,7 @@
 
   &-header {
     width: 100%;
-    z-index: 2;
+    z-index: 10;
   }
 
   &-headerContent{
@@ -115,9 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include mobile{
-      padding: 0;
-    }
+
   }
 
   &-headerHamburger {
@@ -159,8 +162,18 @@
   &-headerLinks {
     float: right;
     @include mobile {
+      text-align: center;
+      width: 100vw;
+      position: absolute;
+      top: 60px;
+      background: white;
+      opacity: 0.95;
+      z-index: 10;
+      left: 0;
       display: none;
-    };
+      min-width: 100%;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
     & ul {
       margin: 0;
       padding: 0;
@@ -168,6 +181,13 @@
     }
     & li {
       display: inline;
+      @include mobile{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid $border-color;
+      }
     }
     & a {
       color: #333333;
@@ -355,7 +375,7 @@
     @include mobile{
       position:static;
       margin-top: 0;
-     align-self: center;
+      align-self: center;
     };
     &:before {
       @include blur;
@@ -377,6 +397,5 @@
       animation-delay: 5s;
     }
   }
-
 
 }
