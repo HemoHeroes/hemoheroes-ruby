@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-
+set :environment, :production
 every 1.minute do
   runner "UserBloodDonator.new.send_no_blood_type"
 end
