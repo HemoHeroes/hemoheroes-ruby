@@ -40,4 +40,13 @@ class NotificationMailer < ApplicationMailer
       template_name: 'mailer_no_blood_type.html.erb')
     end
 
+    def send_activation_email bank
+      @bank = bank
+      @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
+      mail(to: @bank.email,
+      subject: 'Conta HemoHeroes ativada!',
+      template_path: 'notification_mailer',
+      template_name: 'blood_bank_activation_email.html.erb')
+    end
+
 end

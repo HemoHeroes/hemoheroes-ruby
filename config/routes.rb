@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :demand_blood_banks
 
+  match "/admin/update_passwords" => 'admin/update_passwords#edit', via: :get, as: "admin_update_passwords"
 
   devise_for :user_blood_donators, :skip => [:sessions, :registrations]
   as :user_blood_donator do

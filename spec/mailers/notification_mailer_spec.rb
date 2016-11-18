@@ -27,7 +27,7 @@ describe NotificationMailer, type: :mailer do
     @mailToAdmin = NotificationMailer.send_notification_to_admin @user_bank
     @mailDemand = NotificationMailer.send_email(@user, @user_bank)
     @mailNoBloodType = NotificationMailer.send_email_no_blood_type_donator(@user)
-    # @mailActivation = NotificationMailer.send_activation_email(@user_bank)
+    @mailActivation = NotificationMailer.send_activation_email(@user_bank)
   end
 
 
@@ -88,16 +88,13 @@ describe NotificationMailer, type: :mailer do
 
   describe '#send_activation_email' do
     it 'retornar o assunto do e-mail' do
-      expect(@mailActivation.subject).to eq 'Conta HemoHeroes ativada!'
+      expect(@mailActivation.subject).to eq('Conta HemoHeroes ativada!')
     end
     it 'retornar o email do destinatário' do
-      expect(@mailActivation.to).to eq @user_bank.email
+      expect(@mailActivation.to).to eq([@user_bank.email])
     end
     it 'retornar o email do remetente' do
-      expect(@mailActivation.from).to eq 'aceleradora10@gmail.com'
-    end
-    it 'retornar o conteúdo do e-mail' do
-      expect(@mailActivation.template_name).to eq 'blood_bank_activation_email.html.erb'
+      expect(@mailActivation.from).to eq(['aceleradora10@gmail.com'])
     end
   end
 

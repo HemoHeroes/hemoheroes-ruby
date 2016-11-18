@@ -33,6 +33,12 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   # def update
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
   #   super
   # end
 
