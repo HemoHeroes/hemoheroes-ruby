@@ -8,8 +8,11 @@ class ApplicationController < ActionController::Base
   def send_no_blood_type
     @donators = UserBloodDonator.all
     @donators.each do |donator|
-      if(donator.blood_type == "" && check_donation_interval(donator))
+      if((donator.blood_type == "") && check_donation_interval(donator))
         NotificationMailer.send_email_no_blood_type_donator(donator).deliver_now
+        Notification.create! :last_notification => Date.current,
+        :appear => false,
+        :user_blood_donators_id => donator.id
       end
     end
   end
@@ -20,10 +23,13 @@ class ApplicationController < ActionController::Base
       return true
     end
     difference = (Date.current - notification.last_notification).to_i
-    if difference > 1
+    if difference >= 1
       return true
     end
     return false
   end
+
+
+
 
 end
