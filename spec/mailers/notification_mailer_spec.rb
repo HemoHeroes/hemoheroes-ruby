@@ -44,7 +44,7 @@ describe NotificationMailer, type: :mailer do
       expect(@mailDemand.subject).to eq("Teste implementação")
     end
     it 'retorna o conteúdo do texto' do
-      expect(@mailDemand.to).to eq(["usuario@gmail.com"])
+      expect(@mailDemand.to).to eq([@user.email])
     end
     it 'retorna o conteúdo do texto' do
       expect(@mailDemand.from).to eq(["aceleradora10@gmail.com"])
