@@ -89,7 +89,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       # puts donator.notification
       redirect_to root_path, flash: { confirmation_notification_modal: true }
     else
-      redirect_to root_path, alert:"Você precisa ser cadastrado para receber notificações do HemoHeroes", flash: { register_modal: true , email: params['user_blood_donator_email_notification'].downcase}
+      redirect_to root_path, alert:"Você precisa ser cadastrado para receber notificações do HemoHeroes", flash: { set_focus:"autofocus", register_modal: true , email: params['user_blood_donator_email_notification'].downcase}
       # redirect_to root_path, flash: { register_modal: true }
     end
 
