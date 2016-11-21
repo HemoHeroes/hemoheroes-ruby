@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
       return true
     end
     difference = (Date.current - notification.last_notification).to_i
-    if difference >= 1
+    if difference >= 14
       return true
     end
     return false
