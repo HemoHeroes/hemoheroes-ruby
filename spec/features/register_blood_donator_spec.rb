@@ -1,4 +1,4 @@
-require "rails_helper"
+'require "rails_helper"
 
 describe "Antônio poderá criar uma conta de doador", type: :feature, js: true do
   context "quando cadastrar com dados corretos" do
