@@ -69,11 +69,6 @@
   background-blend-mode: lighten;
   background-color: hsla(0,100%,100%,0);
   background-position: center;
-  @include mobile{
-    left: 0;
-    padding-left: 0;
-    margin-left: 0;
-  }
 
 
   &:before {
@@ -213,12 +208,19 @@
       margin-top: 10%;
       flex-wrap: wrap;
       flex-flow: column;
+      text-align: center;
     }
   }
 
   &-headlineBox {
     flex-grow: 2;
     flex-basis: 0;
+    @include mobile {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+    };
 
     & > div {
       max-width: 500px;
@@ -237,8 +239,6 @@
     text-shadow: $text-shadow;
     position: relative;
 
-
-
     &:before {
       @include blur;
     }
@@ -253,6 +253,7 @@
     position: relative;
     @include mobile {
       margin: 12px 0 0 0;
+      font-weight: 600;
     };
 
     &:before {
@@ -266,6 +267,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mobile {
+      justify-content: center;
+    };
 
     & .Button {
       color: $light-font-color;
@@ -368,15 +372,16 @@
   &-learnMore {
     height: 50px;
     position: relative;
-    bottom: -15px;
+    bottom: -10px;
     text-align: center;
     font-size: 1.4em;
     font-weight: 600;
     @include mobile{
-      position:static;
-      margin-top: 0;
+      font-size: 1.6em;
+      bottom: 15px;
       align-self: center;
     };
+
     &:before {
       @include blur;
     }

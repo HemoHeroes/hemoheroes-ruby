@@ -16,6 +16,10 @@
     border: 1px solid $border-color;
     border-radius: $container-radius;
     margin: 6px 0;
+
+    & img {
+      width: 100%;
+    }
   }
 
   &-group {
