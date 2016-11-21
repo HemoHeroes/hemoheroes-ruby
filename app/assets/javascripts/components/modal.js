@@ -4,7 +4,7 @@ var Modal = (function(){
     const modal = document.querySelector(selector);
     modal.style.opacity = 0;
     modal.style.visibility = 'hidden';
-  }
+  };
 
   return {
     open: function(selector){
@@ -36,6 +36,6 @@ var Modal = (function(){
       }
     }
 
-  }
+  };
 
-})()
+})();
