@@ -15,11 +15,22 @@
 
     <% if flash[:link] %>
     <div class="Modal-body">
-      <span class="Modal--textModal"><%= flash[:message] %></span>
-      <div class="u-link-group u-padding-bottom u-padding-top">
-        <%= link_to "Requisitos", dashboard_path, method: :get %>
-        <a data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
-        <a data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
+      <span class="u-font-size16">
+        <%= flash[:message] %>
+      </span>
+      <div class="u-flex u-padding-bottom u-padding-top">
+        <div class="u-flex u-flex-column">
+          <%= image_tag("list.png")%>
+          <%= link_to "Requisitos", dashboard_path, method: :get %>
+        </div>
+        <div class="u-flex u-flex-column">
+          <%= image_tag("locate.png")%>
+          <a data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
+        </div>
+        <div class="u-flex u-flex-column">
+          <%= image_tag("doubt.png")%>
+          <a data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
+        </div>
       </div>
     </div>
     <% else %>
