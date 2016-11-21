@@ -1,4 +1,4 @@
-'require "rails_helper"
+require "rails_helper"
 
 describe "Antônio poderá criar uma conta de doador", type: :feature, js: true do
   context "quando cadastrar com dados corretos" do
@@ -39,6 +39,22 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
 
       end
 
+      expect(page).to have_button(class: "is-disabled")
+    end
+  end
+
+  context "quando não aceitar os termos" do
+    it "deve manter o botao desabilitado" do
+      visit "/"
+      find("#registration_button").trigger('click')
+      within("#form-registration-blood-donator") do
+        fill_in "user_blood_donator_name", with: "Rolandinho"
+        page.find("#user_blood_donator_name").trigger(:focusout)
+
+        fill_in "user_blood_donator_email", with: "rolandinho@gmail.com"
+        page.find("#user_blood_donator_email").trigger(:focusout)
+
+      end
       expect(page).to have_button(class: "is-disabled")
     end
   end
