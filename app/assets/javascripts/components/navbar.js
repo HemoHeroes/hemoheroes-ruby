@@ -11,14 +11,15 @@ var Hamburger = (function(){
         navbar.style.display = "none";
       }
     }
-  }
-})()
+  };
+})();
+
 
 var Navbar = ready(function(){
 
   var initialize = function(){
     // changeOnScroll();
-  }
+  };
 
   var navbar = document.querySelector('.Navbar');
 
@@ -28,7 +29,7 @@ var Navbar = ready(function(){
     }else{
       navbar.classList.remove('is-scrolling');
     }
-  }
+  };
 
   var changeOnScroll = function(){
     window.addEventListener('scroll', function(){
@@ -38,9 +39,9 @@ var Navbar = ready(function(){
       else {
         verifyScrolled(false);
       }
-    })
-  }
+    });
+  };
 
   initialize();
 
-})
+});

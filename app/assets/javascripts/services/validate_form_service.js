@@ -32,18 +32,18 @@ var validateFormService = (function(){
     }
     var invalidButtonBank = false;
     for(var i = 0; i < validFormBank.length; i++){
-      if(validFormBank[i] == false){
+      if(validFormBank[i] === false){
         invalidButtonBank = true;
       }
     }
 
     var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
-    if(buttonRegisterBank != null){
+    if(buttonRegisterBank !== null){
       if(!invalidButtonBank){
         buttonChange("actived", buttonRegisterBank);
         buttonRegisterBank.addEventListener('click', function(){
           Modal.open('.js-modalMessageRegisterBank');
-        })
+        });
       }else{
         buttonChange("disabled", buttonRegisterBank);
       }
@@ -51,16 +51,16 @@ var validateFormService = (function(){
   };
 
   var buttonValidFormDonator = function(selector){
-    if(elementExist(selector)) return false
+    if(elementExist(selector)) return false;
     var invalidButtonDonator = false;
     for(var i = 0; i < validFormDonator.length; i++){
-      if(validFormDonator[i] == false){
+      if(validFormDonator[i] === false){
         invalidButtonDonator = true;
       }
     }
 
     var buttonRegisterDonator = document.querySelector('.js-validateButtonDonator');
-    if(buttonRegisterDonator != null){
+    if(buttonRegisterDonator !== null){
       if(!invalidButtonDonator){
         buttonChange("actived", buttonRegisterDonator);
       }else{
@@ -73,13 +73,13 @@ var validateFormService = (function(){
     //if(elementExist(selector)) return false;
     var invalidButtonSimpleDonator = false;
     for(var i = 0; i < validSimpleFormDonator.length; i++){
-      if(validSimpleFormDonator[i] == false){
+      if(validSimpleFormDonator[i] === false){
         invalidButtonSimpleDonator = true;
       }
     }
 
     var buttonRegisterSimpleDonator = document.querySelector('.js-validateButtonSimpleDonator');
-    if(buttonRegisterSimpleDonator != null){
+    if(buttonRegisterSimpleDonator !== null){
       if(!invalidButtonSimpleDonator){
         buttonChange("actived", buttonRegisterSimpleDonator);
       }else{
@@ -110,10 +110,11 @@ var validateFormService = (function(){
   };
 
   var elementExist = function(selector){
+    var element;
     if(typeof selector == "string"){
-      var element = document.querySelector(selector);
+      element = document.querySelector(selector);
     } else if (typeof selector == "object") {
-      var element = selector;
+      element = selector;
     }
     if (element == null) {
       return false;
@@ -171,7 +172,7 @@ var validateFormService = (function(){
   return {
 
     removeMask: function(button, selector, action){
-      var button = document.querySelector(button);
+      button = document.querySelector(button);
       button.addEventListener(action, function(){
         var valueCNPJ = document.querySelector(selector).value;
         valueCNPJ = valueCNPJ.replace(/\.|\-|\s|\//g, '');
@@ -199,11 +200,11 @@ var validateFormService = (function(){
     validateCNPJ: function(selector, action){
       if(elementExist(selector)){
         var inputCNPJ = document.querySelector(selector);
-        var errorCNPJ = document.getElementById('errorCNPJ')
+        var errorCNPJ = document.getElementById('errorCNPJ');
         inputCNPJ.addEventListener(action, function(){
           VMasker(inputCNPJ).maskPattern("99.999.999/9999-99");
           errorCNPJ.style.display = "";
-          if(inputCNPJ.value == "" || inputCNPJ.value.length<18){
+          if(inputCNPJ.value === "" || inputCNPJ.value.length<18){
             errorCNPJ.innerHTML = "CNPJ inválido!";
             validateSingleInputForm("bank", 1, false);
             return false;
@@ -221,7 +222,7 @@ var validateFormService = (function(){
       inputPhone.addEventListener(action, function(){
         VMasker(inputPhone).maskPattern("(99)9999-9999");
         errorPhone.style.display = "";
-        if(inputPhone.value == "" || inputPhone.value.length<13 ){
+        if(inputPhone.value === "" || inputPhone.value.length<13 ){
           errorPhone.innerHTML = "Telefone inválido!";
           validateSingleInputForm("bank", 2, false);
           validateSingleInputForm("donator", 1, false);
@@ -240,7 +241,7 @@ var validateFormService = (function(){
       inputEmail.addEventListener(action, function(){
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
-        if(!emailValidate && inputEmail.value != ""){
+        if(!emailValidate && inputEmail.value !== ""){
           errorEmail.style.display = "";
           errorEmail.innerHTML = "E-mail inválido!";
           validateInputForms(1, 3, false);
@@ -255,11 +256,11 @@ var validateFormService = (function(){
     validateAddress: function(selector, action){
       var inputAddress = document.querySelector(selector);
       var errorAddress = document.getElementById('errorAddress');
-      if (elementExist(inputAddress) == false){
+      if (elementExist(inputAddress) === false){
         return;
       }
       inputAddress.addEventListener(action, function(){
-        if (inputAddress.value == ""){
+        if (inputAddress.value === ""){
           errorAddress.style.display = "";
           validateSingleInputForm("bank", 4, false);
         }else{
@@ -299,7 +300,7 @@ var validateFormService = (function(){
           validateSingleInputForm("donator", 4, false);
           validateSingleInputForm("bank", 6, false);
           return false;
-        }else if(valuePassword.value.length == 0){
+        }else if(valuePassword.value.length === 0){
           //validateInputForms(3, 6, false);
           validateSingleInputForm("donator", 4, false);
           validateSingleInputForm("bank", 6, false);
@@ -348,7 +349,7 @@ var validateFormService = (function(){
 
       valueTerms.addEventListener(action, function(){
         errorValueTerms.style.display = "";
-        if(valueTerms.checked == true) {
+        if(valueTerms.checked === true) {
           errorValueTerms.style.display = "none";
           validateSingleInputForm("simpleDonator", 2, true);
           validateSingleInputForm("donator", 6, true);
@@ -365,7 +366,7 @@ var validateFormService = (function(){
     validatePositiveNumber: function(){
       var inputNumber = document.getElementsByClassName('js-necessityInput');
       for(var i = 0; i < 8; i++){
-        if(inputNumber[i].value == 0){
+        if(inputNumber[i].value === 0){
           inputNumber[i].value = null;
         }
         if(inputNumber[i].value < 0){
@@ -413,6 +414,6 @@ var validateFormService = (function(){
     },
 
 
-  }
+  };
 
-})()
+})();
