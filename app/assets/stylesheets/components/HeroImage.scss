@@ -149,9 +149,9 @@
       color: $brand-color;
     }
     & img {
-      height: 52px;
       margin-right: 12px;
     }
+
     &:before {
       @include blur;
     }
