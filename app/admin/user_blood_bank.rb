@@ -27,27 +27,22 @@ ActiveAdmin.register UserBloodBank do
         block.call(success, failure) if block
         failure.html { render :edit }
       end
-
       bank = UserBloodBank.find_by(id: params[:id])
+
       if bank.actived
-        # send_activation_email(bank)
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-      else
-        puts "///////////////////////////////"
-        puts "///////////////////////////////"
-        puts "///////////////////////////////"
-        puts "///////////////////////////////"
-        puts "///////////////////////////////"
-        puts "///////////////////////////////"
+        unless bank.has_active_key
+          send_activation_email bank
+          bank.has_active_key = true
+          bank.save!
+        end
       end
     end
-  end
 
+
+
+
+
+  end
   permit_params :name, :email, :cnpj, :password, :phone, :lat, :long, :address, :extension, :actived
 
 end
