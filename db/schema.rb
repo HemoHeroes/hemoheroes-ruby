@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110155928) do
+ActiveRecord::Schema.define(version: 20161121155931) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20161110155928) do
     t.boolean  "actived",                default: false
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "has_active_key",         default: false
     t.index ["cnpj"], name: "index_user_blood_banks_on_cnpj", unique: true
     t.index ["email"], name: "index_user_blood_banks_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_blood_banks_on_reset_password_token", unique: true
