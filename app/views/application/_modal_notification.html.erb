@@ -1,22 +1,20 @@
 <% if flash[:notification_modal]  %>
-  <div class="Modal js-modal js-modalSuccessMessage Modal-overlay" style="opacity: 1; visibility: visible;">
-    <div class="Modal-content js-modalContent" style="top: 50%;">
+<div class="Modal js-modal js-modalSuccessMessage Modal-overlay" style="opacity: 1; visibility: visible;">
+  <div class="Modal-content js-modalContent" style="top: 50%;">
 
-      <div class="Modal-header">
-        <div class="Modal-titleBox">
-          <h3 class="Modal-title"><%= flash[:title] %></h3>
-        </div>
+    <div class="Modal-header">
+      <div class="Modal-closeButton">
+        <a class="glyphicon glyphicon-remove" onclick="Modal.close('.js-modal')"></a>
       </div>
-
-      <div class="Modal-body">
-
-        <span class="Modal--textModal"><%= flash[:message] %></span>
-
-        <div class="u-align-center u-padding-top u-padding-bottom">
-          <div class="Button" onclick="Modal.close('.js-modal')">Fechar</div>
-        </div>
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title"><%= flash[:title] %></h3>
       </div>
-
     </div>
+
+    <div class="Modal-body">
+      <span class="Modal--textModal"><%= flash[:message] %></span>
+    </div>
+
   </div>
+</div>
 <% end %>
