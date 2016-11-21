@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_donation_interval donator
-    notification = Notification.find_by(user_blood_donators_id: donator.id)
-    if notification == nil
+    notification = Notification.where(user_blood_donators_id:donator.id).last
+    if notification.nil?
       return true
     end
     difference = (Date.current - notification.last_notification).to_i
