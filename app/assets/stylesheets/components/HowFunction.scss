@@ -1,0 +1,35 @@
+@import 'variables';
+
+.HowFunction {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: scale-color($dark-font-color, $lightness: 20%);
+  flex-direction: row;
+  display: flex;
+  width: 30%;
+  align-items: center;
+
+  &-name {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    align-items: center;
+  }
+
+  &-image {
+
+
+    & img {
+    }
+  }
+
+  &-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+}
