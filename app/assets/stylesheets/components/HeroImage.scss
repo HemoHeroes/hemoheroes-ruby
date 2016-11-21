@@ -82,7 +82,7 @@
     height: 100%;
   }
   @include mobile {
-    padding: 0px 15px;
+    padding: 0px 0px;
     margin: 0;
     font-size: 1.3em;
     min-height: 100vh;
@@ -102,12 +102,15 @@
       flex-wrap: wrap;
       font-size: 0.5em;
       flex-flow: column;
-    };
+    }
   }
 
   &-header {
     width: 100%;
     z-index: 10;
+    &.is-scrolling {
+      background: $header-background-color;
+    }
   }
 
   &-headerContent{
@@ -115,15 +118,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   }
 
   &-headerHamburger {
     @include mobile {
-      background-image: image-url("https://goo.gl/HLr9Vl");
+      background-image: url("https://goo.gl/HLr9Vl");
       width: 50px;
       height: 40px;
       background-size: 100%;
+      position: absolute;
+      left: 12px;
+      top: 12px;
     }
   }
 
@@ -133,9 +138,8 @@
     float: left;
     position: relative;
     display: flex;
-
     @include mobile {
-      padding-top: 20px;
+      padding: 0 0 12px;
       font-size: 2rem;
       margin: auto;
 
@@ -148,7 +152,6 @@
       height: 52px;
       margin-right: 12px;
     }
-
     &:before {
       @include blur;
     }
@@ -160,7 +163,7 @@
       text-align: center;
       width: 100vw;
       position: absolute;
-      top: 60px;
+      top: 65px;
       background: white;
       opacity: 0.95;
       z-index: 10;
@@ -168,6 +171,7 @@
       display: none;
       min-width: 100%;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      font-size: 1.8em;
     }
     & ul {
       margin: 0;
@@ -202,13 +206,13 @@
     display: flex;
     justify-content: space-between;
     text-align: left;
-
     @include mobile{
       flex-grow: 1;
       margin-top: 10%;
       flex-wrap: wrap;
       flex-flow: column;
       text-align: center;
+      padding: 0 25px;
     }
   }
 
@@ -220,8 +224,7 @@
       display: flex;
       justify-content: space-around;
       flex-direction: column;
-    };
-
+    }
     & > div {
       max-width: 500px;
       @include mobile {
@@ -238,14 +241,12 @@
     line-height: 1.3em;
     text-shadow: $text-shadow;
     position: relative;
-
     &:before {
       @include blur;
     }
   }
 
   &-subHeadline {
-    // max-width: 70%;
     color: $font-color;
     font-size: 1.5em;
     overflow: visible;
@@ -254,8 +255,7 @@
     @include mobile {
       margin: 12px 0 0 0;
       font-weight: 600;
-    };
-
+    }
     &:before {
       @include blur;
     }
@@ -269,7 +269,7 @@
     align-items: center;
     @include mobile {
       justify-content: center;
-    };
+    }
 
     & .Button {
       color: $light-font-color;
@@ -280,7 +280,6 @@
       font-size: 1.5em;
       box-shadow: 0px 3px 8px 0px hsla(0, 100%, 12%, 0.3);
       border-bottom: 3px solid scale-color($brand-color, $lightness: -25%);
-
       &:hover {
         background-color: scale-color($brand-color, $lightness: -10%);
       }
@@ -302,10 +301,8 @@
     @include mobile{
       position: fixed;
       display: none;
-
       margin: 0;
     };
-
     & ul {
       margin: 0;
       padding: 0;
@@ -331,9 +328,7 @@
     @include mobile{
       position:static;
       flex-direction: column;
-
-    };
-
+    }
     & > div {
       flex-grow: 1;
       flex-basis: 0;
@@ -344,7 +339,6 @@
     max-width: calc(100%/3);
     opacity: 0.7;
     overflow: hidden;
-
     &:hover {
       opacity: 1;
     }
@@ -368,7 +362,6 @@
     }
   }
 
-
   &-learnMore {
     height: 50px;
     position: relative;
@@ -381,11 +374,9 @@
       bottom: 15px;
       align-self: center;
     };
-
     &:before {
       @include blur;
     }
-
     & a {
       color: $dark-font-color;
       cursor: pointer;
@@ -394,7 +385,6 @@
         color: $brand-color;
       }
     }
-
     & span {
       animation-name: move;
       animation-duration: 1.5s;
