@@ -11,9 +11,22 @@
       </div>
     </div>
 
+
+
+    <% if flash[:link] %>
+    <div class="Modal-body">
+      <span class="Modal--textModal"><%= flash[:message] %></span>
+      <div class="u-link-group u-padding-bottom u-padding-top">
+        <%= link_to "Requisitos", dashboard_path, method: :get %>
+        <a data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
+        <a data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
+      </div>
+    </div>
+    <% else %>
     <div class="Modal-body">
       <span class="Modal--textModal"><%= flash[:message] %></span>
     </div>
+    <% end %>
 
   </div>
 </div>

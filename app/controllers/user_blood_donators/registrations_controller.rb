@@ -21,7 +21,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       build_resource(sign_up_params)
       if resource.save
         send_welcome_email
-        redirect_to root_path, flash: { notification_modal: true, message:"Agora você poderá ser notificado por e-mail pelos hemocentros e poderá também verificar os locais para fazer sua doação.", title:"Cadastro realizado com sucesso!" }
+        redirect_to root_path, flash: { notification_modal: true, message:"Agora você poderá ser notificado por e-mail pelos hemocentros e poderá também verificar os locais para fazer sua doação.", title:"Cadastro realizado com sucesso!", link: true}
       end
     else
       redirect_to root_path, alert:"E-mail já cadastrado. Por favor, preencha o campo com outro e-mail.", flash: { register_modal: true }
