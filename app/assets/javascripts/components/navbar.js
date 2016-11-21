@@ -1,21 +1,4 @@
-var Hamburger = (function(){
-
-  return {
-    toggle: function(){
-      var navbar = document.querySelector(".js-navbarMobile");
-      var hamburgerIcon = document.querySelector(".js-openNavbar");
-      if (navbar.style.display == "none"){
-        navbar.style.display = "inline-block";
-      }
-      else {
-        navbar.style.display = "none";
-      }
-    }
-  };
-})();
-
-
-var Navbar = ready(function(){
+var Navbar = (function(){
 
   var initialize = function(){
     // changeOnScroll();
@@ -31,6 +14,7 @@ var Navbar = ready(function(){
     }
   };
 
+
   var changeOnScroll = function(){
     window.addEventListener('scroll', function(){
       if (window.scrollY > 0) {
@@ -42,6 +26,28 @@ var Navbar = ready(function(){
     });
   };
 
-  initialize();
+  var showNavbar = function(selector){
+    var navbarLinks = document.querySelector(selector);
+    var navbar = document.querySelector(".HeroImage-header");
 
-});
+    if (navbarLinks.style.display == "none" || navbarLinks.style.display === "") {
+      navbar.classList.add('is-scrolling');
+      navbarLinks.style.display = "inline-block";
+    } else {
+      navbar.classList.remove('is-scrolling');
+      navbarLinks.style.display = "none";
+    }
+  };
+
+
+  return {
+
+    toggle : function(selector){
+      showNavbar(selector);
+    },
+
+    initialize: initialize()
+    
+  };
+
+})();

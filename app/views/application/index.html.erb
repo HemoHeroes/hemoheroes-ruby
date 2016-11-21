@@ -7,14 +7,16 @@
 
     <div class="HeroImage-header">
 
+      <div class="HeroImage-headerHamburger js-openNavbar" onclick="Navbar.toggle('.js-navbarLinks')" >
+      </div>
+
       <div class="HeroImage-headerContent">
 
         <div class="HeroImage-headerLogo" >
-          <div class=" Navbar-hamburger js-openNavbar" onclick="Hamburger.toggle()" ></div>
           <a href="/">HemoHeroes</a>
         </div>
 
-        <div class="HeroImage-headerLinks js-navbarMobile">
+        <div class="HeroImage-headerLinks js-navbarLinks">
           <ul>
             <% if user_blood_donator_signed_in? %>
             <li>
