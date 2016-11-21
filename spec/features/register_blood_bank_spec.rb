@@ -5,7 +5,6 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
 
     it "deve ativar o botao" do
       visit "/cadastroBanco"
-
       within("#new_user_blood_bank") do
         fill_in "user_blood_bank_name", with: "Hospital São Lucas"
         page.find('#user_blood_bank_name').trigger(:focusout)
@@ -25,14 +24,12 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
 
       expect(page).to have_button(class: "is-actived")
     end
-
   end
 
 
   context "quando cadastrar com dados incorretos" do
     it "deve manter o botao desabilitado" do
       visit "/cadastroBanco"
-
       within("#new_user_blood_bank") do
         fill_in "user_blood_bank_name", with: "Hospital São Lucas"
         page.find('#user_blood_bank_name').trigger(:focusout)
@@ -57,7 +54,6 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
   context "quando clicar em cadastrar" do
     it "avisar sobre cadastro em analise" do
       visit "/cadastroBanco"
-
       within("#new_user_blood_bank") do
         fill_in "user_blood_bank_name", with: "Hospital Don Vicente"
         page.find('#user_blood_bank_name').trigger(:focusout)
@@ -77,6 +73,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
         find(".is-actived").trigger('click')
       end
 
+      sleep 1
       expect(page).to have_css(".js-modalMessageRegisterBank")
     end
   end
