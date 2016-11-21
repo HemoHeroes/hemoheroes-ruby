@@ -32,21 +32,21 @@ class NotificationMailer < ApplicationMailer
   end
 
   def send_email_no_blood_type_donator user
-      @user = user
-      @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
-      mail(to: @user.email,
-      subject: 'Convite para doação',
-      template_path: 'notification_mailer',
-      template_name: 'mailer_no_blood_type.html.erb')
-    end
+    @user = user
+    @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
+    mail(to: @user.email,
+    subject: 'Convite para doação',
+    template_path: 'notification_mailer',
+    template_name: 'mailer_no_blood_type.html.erb')
+  end
 
-    def send_activation_email bank
-      @bank = bank
-      @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
-      mail(to: @bank.email,
-      subject: 'Conta HemoHeroes ativada!',
-      template_path: 'notification_mailer',
-      template_name: 'blood_bank_activation_email.html.erb')
-    end
+  def send_activation_email bank
+    @bank = bank
+    @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
+    mail(to: @bank.email,
+    subject: 'Conta HemoHeroes ativada!',
+    template_path: 'notification_mailer',
+    template_name: 'blood_bank_activation_email')
+  end
 
 end
