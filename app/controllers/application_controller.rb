@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     @donators = UserBloodDonator.where(blood_type:"", notification:true)
     @donators.each do |donator|
       if(check_donation_interval(donator))
+        donator.notification_token = SecureRandom.urlsafe_base64.to_s
+        donator.save!
         NotificationMailer.send_email_no_blood_type_donator(donator).deliver_now
         Notification.create! :last_notification => Date.current,
         :appear => false,

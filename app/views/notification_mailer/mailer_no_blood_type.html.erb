@@ -60,7 +60,8 @@
       .Button:hover {
         cursor: pointer;
         background-color: #b9b4b4; }
-      .Button-group {
+      .Button-group {donator.notification_token = SecureRandom.urlsafe_base64.to_s
+            donator.save!
         display: flex;
         margin: 12px -6px; }
         .Button-group .Button {
@@ -136,7 +137,7 @@
 
 
     <div class="align-center">
-      <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.last_donation_token}" %>
+      <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.notification_token}" %>
     </div>
   </div>
 </div>
