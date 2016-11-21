@@ -5,7 +5,7 @@
   text-align: center;
   margin-bottom: 50px;
   color: scale-color($dark-font-color, $lightness: 20%);
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
   width: 30%;
   align-items: center;
@@ -13,15 +13,16 @@
   &-name {
     font-size: 1.4em;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin: 12px 0 0 0;
     font-family: sans-serif;
     align-items: center;
+    max-width: 80%;
   }
 
   &-image {
 
-
     & img {
+      height: 120px;
     }
   }
 
@@ -29,7 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 50px;
+    margin-top: 100px;
   }
 
 }
