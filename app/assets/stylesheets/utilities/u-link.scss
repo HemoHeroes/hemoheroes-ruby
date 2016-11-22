@@ -1,3 +1,10 @@
-.u-link-remove-underline{
+@import '../variables';
+
+.u-link-remove-underline {
   text-decoration: none;
+}
+
+.u-link-success {
+  color: $brand-color;
+  font-weight: bold;
 }

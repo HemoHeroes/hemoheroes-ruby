@@ -21,15 +21,15 @@
       <div class="u-flex u-padding-bottom u-padding-top">
         <div class="u-flex u-flex-column">
           <%= image_tag("list.png")%>
-          <%= link_to "Requisitos", dashboard_path, method: :get %>
+          <%= link_to "Requisitos", dashboard_path, method: :get, class: "u-link-success" %>
         </div>
         <div class="u-flex u-flex-column">
           <%= image_tag("locate.png")%>
-          <a data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
+          <a class="u-link-success" data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
         </div>
         <div class="u-flex u-flex-column">
           <%= image_tag("doubt.png")%>
-          <a data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
+          <a class="u-link-success" data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
         </div>
       </div>
     </div>
