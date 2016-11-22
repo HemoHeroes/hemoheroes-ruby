@@ -4,7 +4,7 @@ var Navbar = (function(){
     // changeOnScroll();
   };
 
-  var navbar = document.querySelector('.Navbar');
+  var navbar = document.querySelector('.HeroImage-header');
 
   var verifyScrolled = function(scrolled){
     if (scrolled){
@@ -47,7 +47,7 @@ var Navbar = (function(){
     },
 
     initialize: initialize()
-    
+
   };
 
 })();
