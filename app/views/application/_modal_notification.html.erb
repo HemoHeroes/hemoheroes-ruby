@@ -18,18 +18,27 @@
       <span class="u-font-size16">
         <%= flash[:message] %>
       </span>
-      <div class="u-flex u-padding-bottom u-padding-top">
-        <div class="u-flex u-flex-column">
+      <div class="u-flex u-padding-top">
+        <div class="u-flex u-flex-column u-desktop-size4of12">
+          <%= link_to(dashboard_path, {method: :get, class: "u-link-success"}) do %>
           <%= image_tag("list.png")%>
-          <%= link_to "Requisitos", dashboard_path, method: :get, class: "u-link-success" %>
+          <div>Requisitos</div>
+          <% end %>
+          <small>Veja os requisitos para ser um doador</small>
         </div>
-        <div class="u-flex u-flex-column">
-          <%= image_tag("locate.png")%>
+
+
+        <div class="u-flex u-flex-column u-desktop-size4of12">
+          <a class="u-link-success" data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')"><%= image_tag("locate.png")%></a>
           <a class="u-link-success" data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')">Onde doar</a>
+          <small>Localize no mapa os Hemocentros</small>
         </div>
-        <div class="u-flex u-flex-column">
-          <%= image_tag("doubt.png")%>
-          <a class="u-link-success" data-turbolinks="false" data-scroll href="#sobre" onclick="Modal.close('.js-modal')">Saiba mais</a>
+
+
+        <div class="u-flex u-flex-column u-desktop-size4of12">
+          <a class="u-link-success" data-turbolinks="false" data-scroll href="#comoFunciona" onclick="Modal.close('.js-modal')"><%= image_tag("doubt.png")%></a>
+          <a class="u-link-success" data-turbolinks="false" data-scroll href="#comoFunciona" onclick="Modal.close('.js-modal')">Saiba mais</a>
+          <small>Saiba como funciona o processo de doação</small>
         </div>
       </div>
     </div>
