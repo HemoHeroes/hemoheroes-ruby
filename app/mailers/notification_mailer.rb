@@ -36,7 +36,7 @@ class NotificationMailer < ApplicationMailer
     @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
     mail(to: @user.email,
     subject: 'Convite para doação',
-    template_path: 'notification_mailer.html.erb',
+    template_path: 'notification_mailer',
     template_name: 'mailer_no_blood_type.html.erb')
   end
 
