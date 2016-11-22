@@ -124,7 +124,7 @@
     </div>
     <div class="Email-content-body padding-top">
 
-      <p><h4>Nós do HemoHeroes estamos precisando de sua ajuda!</h4></p>
+        <span><h2>Olá <%= @user.name %>!</h2></span>
 
         <p class="margin-top">
           Estamos convidando-o para fazer uma doação de sangue
@@ -133,19 +133,14 @@
           próximo de você e todos os dados necessários para doar,
           além é claro de descobrir seu tipo sanguíneo!
         </p>
+
+        <div class="Email-content-contentButtons align-center margin-top">
+          <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton Button Button--medium is-canceled">Quero doar!</a>
       </div>
-     <div class="align-justify">
-       <b>Informações:</b>
-       <ul>
 
-       </ul>
-     </div>
+      </div>
+  </div>
 
-
-    </div>
-    <div class="align-center">
-      <span>Faça aprovação no <a href="http://hemoheroestw-staging.herokuapp.com/admin/login" >painel de controle</a></span>
-    </div>
   </div>
 </div>
 </body>
