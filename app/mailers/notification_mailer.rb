@@ -37,7 +37,7 @@ class NotificationMailer < ApplicationMailer
     mail(to: @user.email,
     subject: 'Convite para doação',
     template_path: 'notification_mailer',
-    template_name: 'mailer_no_blood_type.html.erb')
+    template_name: 'mailer_no_blood_type')
   end
 
   def send_activation_email bank
