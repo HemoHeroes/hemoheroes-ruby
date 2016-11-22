@@ -58,7 +58,7 @@
   color: $font-color;
   font-size: 1rem;
   width: 100%;
-  min-height: 80vh;
+  min-height: 96vh;
   display: flex;
   justify-content: center;
   padding: 15px 75px 30px 75px;
@@ -120,6 +120,7 @@
 
 
     &.is-scrolling {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
       opacity: 0.94;
       position: fixed;
       background: $header-background-color;
@@ -230,7 +231,7 @@
       padding: 0 25px;
     }
   }
-
+  
   &-headlineBox {
     flex-grow: 2;
     flex-basis: 0;
