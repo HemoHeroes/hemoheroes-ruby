@@ -74,7 +74,6 @@
 
   &:before {
     content: " ";
-    position: absolute;
     top: 0;
     left: 0;
     position: absolute;
@@ -107,18 +106,23 @@
   }
 
   &-header {
+    position: fixed;
+    height: 100px;
     width: 100%;
     z-index: 8;
+
+
     &.is-scrolling {
       background: $header-background-color;
     }
   }
 
   &-headerContent{
+    width: 100%;
     padding: 12px 0 0 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-around;
   }
 
   &-headerHamburger {
@@ -203,13 +207,14 @@
   }
 
   &-content {
+    padding-top: 200px;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     text-align: left;
     @include mobile{
       flex-grow: 1;
-      margin-top: 10%;
+      margin-top: 80px;
       flex-wrap: wrap;
       flex-flow: column;
       text-align: center;
@@ -241,7 +246,6 @@
     font-weight: $head-line-font-weight;
     line-height: 1.3em;
     text-shadow: $text-shadow;
-    position: relative;
     &:before {
       @include blur;
     }
