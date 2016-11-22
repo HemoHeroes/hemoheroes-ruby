@@ -68,6 +68,8 @@
   background-blend-mode: lighten;
   background-color: hsla(0,100%,100%,0);
   background-position: center;
+  position: relative;
+  overflow: hidden;
 
 
   &:before {
