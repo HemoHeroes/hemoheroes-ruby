@@ -22,6 +22,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
         page.find('#user_blood_bank_password_confirmation').trigger(:focusout)
       end
 
+      sleep 1
       expect(page).to have_button(class: "is-actived")
     end
   end
@@ -47,6 +48,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
         page.find('#user_blood_bank_password_confirmation').trigger(:focusout)
       end
 
+      sleep 1
       expect(page).to have_button(class: "is-disabled")
     end
   end

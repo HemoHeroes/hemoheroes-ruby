@@ -28,6 +28,7 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
       page.fill_in 'user_blood_donator_password', with: '123456'
       click_button 'Login'
 
+      sleep 1
       expect(page).to have_content 'Login inválido'
     end
   end
@@ -41,6 +42,7 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
       page.fill_in 'user_blood_donator_password', with: '123123'
       click_button 'Login'
 
+      sleep 1
       expect(page).to have_content 'Senha inválida'
     end
   end
