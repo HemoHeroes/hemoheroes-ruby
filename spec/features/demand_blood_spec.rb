@@ -11,7 +11,6 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
     it "deve ativar o botao" do
       visit "/"
       login @user_blood_bank
-
         fill_in "demand_blood_bank_a_positive", with: "5"
         page.find('#demand_blood_bank_a_positive').trigger(:focusout)
         fill_in "demand_blood_bank_b_positive", with: "5"
@@ -21,6 +20,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
         fill_in "demand_blood_bank_b_negative", with: "5"
         page.find('#demand_blood_bank_b_negative').trigger(:focusout)
 
+      sleep 1
       expect(page).to have_css(".Button.Button--medium.Button--fluid.js-nextButton.is-actived")
     end
   end
@@ -37,9 +37,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
   context "quando inserir e apagar dados" do
     it "não deve ativar o botao" do
       visit "/"
-
       login @user_blood_bank
-
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
       fill_in "demand_blood_bank_b_positive", with: "5"
@@ -49,6 +47,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       fill_in "demand_blood_bank_b_positive", with: ""
       page.find('#demand_blood_bank_b_positive').trigger(:focusout)
 
+      sleep 1
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
     end
   end
@@ -56,9 +55,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
   context "Quando inserir dados inválidos" do
     it "não deve ativar o botao" do
       visit "/"
-
       login @user_blood_bank
-
       fill_in "demand_blood_bank_a_positive", with: "e"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
       fill_in "demand_blood_bank_b_positive", with: "!"
@@ -68,6 +65,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       fill_in "demand_blood_bank_b_negative", with: "+"
       page.find('#demand_blood_bank_b_negative').trigger(:focusout)
 
+      sleep 1
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-disabled.js-nextButton")
     end
   end
@@ -82,7 +80,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
 
       find(".js-nextButton").click
-
+      sleep 1
       expect(page).to have_css(".Modal-confirmation")
     end
   end
@@ -90,15 +88,13 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
   context "Quando botao confirmar for clicado" do
     it "deve abrir modal de mensagem de sucesso" do
       visit "/"
-
       login @user_blood_bank
-
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
-
       find(".js-nextButton").click
       find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
 
+      sleep 1
       expect(page).to have_css(".js-modalSuccessMessage")
     end
   end
@@ -106,16 +102,14 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
   context "Quando botao OK for clicado" do
     it "deve redirecionar para tela de necessidade do banco" do
       visit "/"
-
       login @user_blood_bank
-
       fill_in "demand_blood_bank_a_positive", with: "5"
       page.find('#demand_blood_bank_a_positive').trigger(:focusout)
-
       find(".js-nextButton").click
       find(".Button.Button--fluid.u-size6of12.is-actived.js-modalButton").click
       find("#button-OK").click
 
+      sleep 1
       expect("").to eq(find("#demand_blood_bank_a_positive").value)
       expect("").to eq(find("#demand_blood_bank_b_positive").value)
       expect("").to eq(find("#demand_blood_bank_ab_positive").value)

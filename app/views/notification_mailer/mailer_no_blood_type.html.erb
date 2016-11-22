@@ -38,11 +38,11 @@
     .align-center{
       text-align:center;
     }
+    .align-justify{
+      text-align:justify;
+    }
     .padding-top{
       padding-top: 20px;
-    }
-    .margin-top{
-      margin-top: 30px;
     }
     .Button {
       font-size: .8rem;
@@ -60,8 +60,7 @@
       .Button:hover {
         cursor: pointer;
         background-color: #b9b4b4; }
-      .Button-group {donator.notification_token = SecureRandom.urlsafe_base64.to_s
-            donator.save!
+      .Button-group {
         display: flex;
         margin: 12px -6px; }
         .Button-group .Button {
@@ -108,6 +107,12 @@
       span{
         font-size: 1em;
       }
+      ul{
+        list-style: none;
+      }
+      li{
+        padding: 7px;
+      }
   </style>
 </head>
 <body>
@@ -118,27 +123,24 @@
       <img src="http://cdn.1001freedownloads.com/icon/thumb/369748/Comics-Hero-Striped-icon.png" width="120" height="120" />
     </div>
     <div class="Email-content-body padding-top">
-      <span><h2>Olá <%= @user.name %>!</h2></span>
 
-      <p><h4>Nós do HemoHeroes estamos precisando de sua ajuda!</h4></p>
+        <span><h2>Olá <%= @user.name %>!</h2></span>
 
-      <p class="margin-top">
-        Estamos convidando-o para fazer uma doação de sangue
-        em qualquer hemocentro conveniado a nossa rede, você
-        pode verificar em nosso -site- qual o hemocentro mais
-        próximo de você e todos os dados necessários para doar,
-        além é claro de descobrir seu tipo sanguíneo!
-      </p>
-    </div>
+        <p class="margin-top">
+          Estamos convidando-o para fazer uma doação de sangue
+          em qualquer hemocentro conveniado a nossa rede, você
+          pode verificar em nosso -site- qual o hemocentro mais
+          próximo de você e todos os dados necessários para doar,
+          além é claro de descobrir seu tipo sanguíneo!
+        </p>
 
-      <div class="Email-content-contentButtons align-center">
-      <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton Button Button--medium is-canceled">Quero doar!</a>
-    </div>
+        <div class="Email-content-contentButtons align-center margin-top">
+          <a href="http://hemoheroestw-staging.herokuapp.com" class="aButton Button Button--medium is-canceled">Quero doar!</a>
+      </div>
 
+      </div>
+  </div>
 
-    <div class="align-center">
-      <%= link_to "Não quero mais receber notificações", "http://hemoheroestw-staging.herokuapp.com/cancelNotification/#{@user.notification_token}" %>
-    </div>
   </div>
 </div>
 </body>

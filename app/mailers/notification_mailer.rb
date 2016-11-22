@@ -18,8 +18,8 @@ class NotificationMailer < ApplicationMailer
     @url  = 'https://snap-ci.com/aceleradora-TW/HemoHeroes/branch/master'
     mail(to: @user.email,
     subject: 'Teste implementação',
-    template_path: 'layouts',
-    template_name: 'mailer.html.erb')
+    template_path: 'notification_mailer',
+    template_name: 'request_donator.html.erb')
   end
 
   def send_notification_to_admin bank
@@ -28,7 +28,7 @@ class NotificationMailer < ApplicationMailer
     mail(to: 'aceleradora10@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
     template_path: 'notification_mailer',
-    template_name: 'new_blood_bank_email')
+    template_name: 'new_blood_bank_email.html.erb')
   end
 
   def send_email_no_blood_type_donator user

@@ -34,6 +34,9 @@ ActiveAdmin.register UserBloodBank do
           bank.has_active_key = true
           bank.save!
         end
+      else
+        bank.has_active_key = false
+        bank.save!
       end
 
     end
