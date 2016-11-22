@@ -19,7 +19,7 @@ class NotificationMailer < ApplicationMailer
     mail(to: @user.email,
     subject: 'Teste implementação',
     template_path: 'layouts',
-    template_name: 'mailer.html.erb')
+    template_name: 'mailer')
   end
 
   def send_notification_to_admin bank
