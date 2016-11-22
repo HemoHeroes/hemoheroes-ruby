@@ -10,6 +10,15 @@
   width: 20%;
   align-items: center;
 
+  @include mobile{
+    margin-bottom: 25px;
+    width: 100%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-flow: column;
+    padding: 0;
+    font-size: 0.9em;
+  };
   &-name {
     font-size: 1.4em;
     font-weight: 500;
@@ -23,6 +32,10 @@
 
     & img {
       height: 120px;
+      @include mobile{
+        height: 80px;
+
+      };
     }
   }
 
@@ -31,6 +44,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 100px;
+    @include mobile{
+      margin-top: 40px;
+    };
   }
 
 }
