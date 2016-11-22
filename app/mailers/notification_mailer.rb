@@ -19,7 +19,7 @@ class NotificationMailer < ApplicationMailer
     mail(to: @user.email,
     subject: 'Teste implementação',
     template_path: 'notification_mailer',
-    template_name: 'request_donator')
+    template_name: 'request_donator.html.erb')
   end
 
   def send_notification_to_admin bank
@@ -28,7 +28,7 @@ class NotificationMailer < ApplicationMailer
     mail(to: 'aceleradora10@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
     template_path: 'notification_mailer',
-    template_name: 'new_blood_bank_email')
+    template_name: 'new_blood_bank_email.html.erb')
   end
 
   def send_email_no_blood_type_donator user
@@ -36,8 +36,8 @@ class NotificationMailer < ApplicationMailer
     @url = 'http://hemoheroestw-staging.herokuapp.com/admin'
     mail(to: @user.email,
     subject: 'Convite para doação',
-    template_path: 'notification_mailer',
-    template_name: 'mailer_no_blood_type')
+    template_path: 'notification_mailer.html.erb',
+    template_name: 'mailer_no_blood_type.html.erb')
   end
 
   def send_activation_email bank
