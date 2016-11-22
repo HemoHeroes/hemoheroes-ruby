@@ -19,29 +19,7 @@ var Navbar = (function(){
         });
       }
     });
-  }
-
-
-  var verifyScrolled = function(scrolled){
-    if (scrolled){
-      navbar.classList.add('is-scrolling');
-    }else{
-      navbar.classList.remove('is-scrolling');
-    }
   };
-
-
-  var changeOnScroll = function(){
-    window.addEventListener('scroll', function(){
-      if (window.scrollY > 0) {
-        verifyScrolled(true);
-      }
-      else {
-        verifyScrolled(false);
-      }
-    });
-  };
-
 
   var showNavbarLinks = function(params){
     var iconToOpen = document.querySelector(params.icon);

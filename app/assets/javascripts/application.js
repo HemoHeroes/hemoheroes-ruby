@@ -16,4 +16,5 @@
 //= require utilities/ready
 //= require vanilla-masker
 //= require smooth-scroll
+//= require utilities/change_on_scroll
 //= require_tree .
