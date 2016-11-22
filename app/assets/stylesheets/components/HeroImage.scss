@@ -106,17 +106,21 @@
   }
 
   &-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 8;
     @include mobile{
       position: fixed;
-      height: 100px;
+      height: 90px;
     };
 
 
     &.is-scrolling {
+      opacity: 0.94;
       position: fixed;
       background: $header-background-color;
     }
@@ -127,7 +131,7 @@
     padding: 12px 0 0 0;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content:space-around;;
   }
 
   &-headerHamburger {
