@@ -106,13 +106,18 @@
   }
 
   &-header {
-    position: fixed;
-    height: 100px;
+    left: 0;
+    top: 0;
     width: 100%;
     z-index: 8;
+    @include mobile{
+      position: fixed;
+      height: 100px;
+    };
 
 
     &.is-scrolling {
+      position: fixed;
       background: $header-background-color;
     }
   }
@@ -122,7 +127,7 @@
     padding: 12px 0 0 0;
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content:space-between;
   }
 
   &-headerHamburger {
@@ -207,11 +212,11 @@
   }
 
   &-content {
-    padding-top: 200px;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     text-align: left;
+    position: relative;
     @include mobile{
       flex-grow: 1;
       margin-top: 80px;
