@@ -119,8 +119,13 @@
   }
 
   &--invisible {
+    line-height: 21px;
+    display: flex;
+    flex-direction: column;
     border: 2px solid $brand-color;
     box-shadow: 0px 1px 3px hsla(3, 50%, 50%, 1);
-
+    @include desktop{
+      width: 50%;
+    };
   }
 }
