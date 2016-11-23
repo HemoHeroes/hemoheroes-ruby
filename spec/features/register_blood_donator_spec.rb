@@ -111,10 +111,8 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
         page.find("#user_blood_donator_email").trigger(:focusout)
         find_by_id("accept_terms").trigger('click')
         find(".is-actived").trigger('click')
-        # find(".Button.js-validateButtonSimpleDonator.is-actived").click
-        expect(page).to have_css(".giAlert.Alert--error.u-desktop-size12of12.u-tablet-sizeFull.u-mobile-sizeFull")
       end
-
+      expect(page).to have_css(".Alert.Alert--error.u-desktop-size12of12.u-tablet-sizeFull.u-mobile-sizeFull")
     end
   end
 
