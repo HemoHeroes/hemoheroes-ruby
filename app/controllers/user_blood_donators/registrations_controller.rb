@@ -64,6 +64,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
     if donator
       donator.notification = false
+      donator.save!
       donator.notification_token = ""
       donator.save!
     end
