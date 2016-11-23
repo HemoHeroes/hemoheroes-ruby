@@ -120,10 +120,12 @@
 
 
     &.is-scrolling {
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-      opacity: 0.94;
-      position: fixed;
-      background: $header-background-color;
+      @include mobile{
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        opacity: 0.94;
+        position: fixed;
+        background: $header-background-color;
+      }
     }
   }
 
@@ -132,7 +134,7 @@
     padding: 12px 0 0 0;
     display: flex;
     align-items: center;
-    justify-content:space-around;;
+    justify-content: space-between;
   }
 
   &-headerHamburger {
@@ -231,7 +233,7 @@
       padding: 0 25px;
     }
   }
-  
+
   &-headlineBox {
     flex-grow: 2;
     flex-basis: 0;
