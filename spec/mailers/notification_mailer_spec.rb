@@ -47,7 +47,7 @@ describe NotificationMailer, type: :mailer do
 
   describe '#send_email' do
     it 'retorna o conteúdo do texto' do
-      expect(@mailDemand.subject).to eq("Teste implementação")
+      expect(@mailDemand.subject).to eq("Pedido de Doação de Sangue")
     end
     it 'retorna o conteúdo do texto' do
       expect(@mailDemand.to).to eq([@user.email])
