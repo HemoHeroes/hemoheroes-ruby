@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: true do
-  context "quando cadastrar com dados corretos" do
+  context "Quando cadastrar com dados corretos" do
 
     it "deve ativar o botao" do
       visit "/cadastroBanco"
@@ -28,7 +28,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
   end
 
 
-  context "quando cadastrar com dados incorretos" do
+  context "Quando cadastrar com dados incorretos" do
     it "deve manter o botao desabilitado" do
       visit "/cadastroBanco"
       within("#new_user_blood_bank") do
@@ -53,7 +53,7 @@ describe "Kátia poderá criar conta de banco de sangue", type: :feature, js: tr
     end
   end
 
-  context "quando clicar em cadastrar" do
+  context "Quando clicar em cadastrar" do
     it "avisar sobre cadastro em analise" do
       visit "/cadastroBanco"
       within("#new_user_blood_bank") do

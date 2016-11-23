@@ -6,7 +6,7 @@ describe "Antônio poderá solicitar receber notificações" do
     @user = UserBloodDonator.new(:name => 'Bruna', :email => 'irlatrevisan20@gmail.com', :notification => false)
   end
 
-  context "quando inserir um email cadastrado" do
+  context "Quando inserir um email cadastrado" do
     it "deve passar a receber notificações de solicitação de sangue" do
       visit "/"
       find("#receive_notification_button").click
@@ -20,7 +20,7 @@ describe "Antônio poderá solicitar receber notificações" do
   end
 
 
-  context "quando inserir um email não cadastrado" do
+  context "Quando inserir um email não cadastrado" do
     it "deve abrir a modal de cadastro" do
       visit "/"
       find("#receive_notification_button").click

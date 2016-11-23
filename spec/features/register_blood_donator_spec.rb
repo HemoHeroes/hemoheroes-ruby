@@ -1,8 +1,16 @@
 require "rails_helper"
 
 describe "Antônio poderá criar uma conta de doador", type: :feature, js: true do
-  context "quando cadastrar com dados corretos" do
 
+  context "Quando clicar no botao QUERO ME CADASTRAR" do
+    it "deve abrir modal de cadastro de doador" do
+      visit "/"
+      find("#registration_button").trigger('click')
+      expect(page).to have_css(".js-modalRegistration")
+    end
+  end
+
+  context "Quando cadastrar com dados corretos" do
     it "deve ativar botão de cadastro" do
       visit "/"
       find("#registration_button").trigger('click')
@@ -13,15 +21,13 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
         page.find('#user_blood_donator_email').trigger(:focusout)
         select("A+", from: "user_blood_donator_blood_type")
         find_by_id("accept_terms").trigger('click')
-
       end
-
       sleep 1
       expect(page).to have_button(class: "is-actived")
     end
   end
 
-  context "quando cadastrar com email incorreto" do
+  context "Quando cadastrar com email incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find("#registration_button").trigger('click')
@@ -40,7 +46,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "quando não aceitar os termos" do
+  context "Quando não aceitar os termos" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find("#registration_button").trigger('click')
@@ -57,7 +63,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "quando cadastrar com nome incorreto" do
+  context "Quando cadastrar com nome incorreto" do
     it "deve manter o botao desabilitado" do
       visit "/"
       find("#registration_button").trigger('click')
@@ -75,7 +81,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "quando clicar em cadastrar" do
+  context "Quando clicar em cadastrar" do
     it "deve abrir a modal de confirmação" do
       visit "/"
       find("#registration_button").trigger('click')
@@ -94,7 +100,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
-  context "quando email escrito já foi cadastrado" do
+  context "Quando email escrito já foi cadastrado" do
     UserBloodDonator.create! :name => 'Mathias Voelcker', :email => 'mathiasvoelcker@gmail.com',
                                        :password => '123456', :password_confirmation => '123456',
                                        :cpf => '12345678912',

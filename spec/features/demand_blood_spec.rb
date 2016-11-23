@@ -7,7 +7,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
     @user_blood_bank = UserBloodBank.create(cnpj: '12345678912369', name: 'Carlos', email: 'huehue@gmail.com', password: '123456', password_confirmation: '123456', address: 'Vila Mata Gato', actived: true)
   end
 
-  context "quando inserir dados corretamente" do
+  context "Quando inserir dados corretamente" do
     it "deve ativar o botao" do
       visit "/"
       login @user_blood_bank
@@ -25,7 +25,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
     end
   end
 
-  context "quando não inserir dados" do
+  context "Quando não inserir dados" do
     it "não deve ativar o botao" do
       visit "/"
       login @user_blood_bank
@@ -34,7 +34,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
     end
   end
 
-  context "quando inserir e apagar dados" do
+  context "Quando inserir e apagar dados" do
     it "não deve ativar o botao" do
       visit "/"
       login @user_blood_bank

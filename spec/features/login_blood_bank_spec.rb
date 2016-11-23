@@ -6,7 +6,7 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
     UserBloodBank.create(cnpj: '12345678912369', name: 'Carlos', email: 'huehue@gmail.com', password: '123456', password_confirmation: '123456', address: 'Vila Mata Gato', actived: true, has_active_key: false)
   end
 
-  context "quando logar com dados corretos" do
+  context "Quando logar com dados corretos" do
     it "deve ser direcionado para página de necessidade de hospital" do
       visit "/"
       find("#login_hemocentro_button").trigger('click')
@@ -19,7 +19,7 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
     end
   end
 
-  context "quando logar com dados incorretos" do
+  context "Quando logar com dados incorretos" do
     it "deve aparecer mensagem de login invalido" do
       visit "/"
       find("#login_hemocentro_button").trigger('click')
@@ -33,7 +33,7 @@ describe "Kátia poderá fazer login como banco de sangue", type: :feature, js: 
     end
   end
 
-  context "quando logar com senha incorreta" do
+  context "Quando logar com senha incorreta" do
     it "deve aparecer mensagem de login invalido" do
       visit "/"
       find("#login_hemocentro_button").trigger('click')
