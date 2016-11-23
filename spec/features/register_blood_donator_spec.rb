@@ -94,4 +94,28 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
     end
   end
 
+  context "quando email escrito já foi cadastrado" do
+    UserBloodDonator.create! :name => 'Mathias Voelcker', :email => 'mathiasvoelcker@gmail.com',
+                                       :password => '123456', :password_confirmation => '123456',
+                                       :cpf => '12345678912',
+                                       :blood_type => 'O-',
+                                       :notification => true,
+                                       :genre => 'm'
+    it "deve mostrar mensagem de erro na modal" do
+      visit "/"
+      find("#registration_button").trigger('click')
+      within("#modal-registration-blood-donator") do
+        fill_in "user_blood_donator_name", with: "Fellipe Callegas"
+        page.find("#user_blood_donator_name").trigger(:focusout)
+        fill_in "user_blood_donator_email", with: "callegas.puts@gmail.com"
+        page.find("#user_blood_donator_email").trigger(:focusout)
+        find_by_id("accept_terms").trigger('click')
+        find(".is-actived").trigger('click')
+        # find(".Button.js-validateButtonSimpleDonator.is-actived").click
+        expect(page).to have_css(".giAlert.Alert--error.u-desktop-size12of12.u-tablet-sizeFull.u-mobile-sizeFull")
+      end
+
+    end
+  end
+
 end
