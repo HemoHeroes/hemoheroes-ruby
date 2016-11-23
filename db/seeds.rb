@@ -98,4 +98,4 @@ UserBloodBank.create! :name => 'Hospital Conceição',
 
 DemandBloodBank.create! a_positive: 12, ab_positive:5
 
-AdminUser.create!(email: 'pedraoativado@admin.com', password: '123456', password_confirmation: '123456')
+AdminUser.create!(email: 'aceleradora10@gmail.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
