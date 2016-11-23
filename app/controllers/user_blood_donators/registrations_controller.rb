@@ -2,17 +2,6 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-  def new
-    @resourceT = "blood-donator"
-    super
-  end
-
-  def newPrototipo
-    @resourceT = "blood_prototype"
-    @user_blood_donator = UserBloodDonator.new
-    render 'user_blood_donators/registrations/newPrototipo'
-  end
 
   # POST /resource
   def create
