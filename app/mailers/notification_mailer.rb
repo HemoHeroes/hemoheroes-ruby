@@ -17,7 +17,7 @@ class NotificationMailer < ApplicationMailer
     @bank = bank
     @url  = 'https://snap-ci.com/aceleradora-TW/HemoHeroes/branch/master'
     mail(to: @user.email,
-    subject: 'Teste implementação',
+    subject: 'Pedido de Doação de Sangue',
     template_path: 'notification_mailer',
     template_name: 'request_donator.html.erb')
   end
