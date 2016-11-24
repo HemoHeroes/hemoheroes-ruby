@@ -1,40 +1,39 @@
 require "rails_helper"
 
-describe "Antônio poderá informar que já dppi sangue" do
-
-  before(:all) do
-    UserBloodDonator.create! :name => 'Pedrao dos Login',
-      :email => 'cristianferreira_gks@hotmail.com',
-      :password => '123456', :password_confirmation => '123456',
-      :cpf => '12345678912', :blood_type => 'O-', :notification => true,
-      :genre => 'm'
-  end
+describe "Antônio poderá informar que já dppi sangue", type: :feature, js: true do
 
   context "Quando clicar em link Doei Ultimamente" do
     it "deve aparecer modal de Ja Doei" do
-      user = UserBloodDonator.last
-      user.last_donation_token = 1
-      token = user.last_donation_token
-      url = "/madeDonation/" + token
+      token = 1
+      url = "/madeDonation/" + token.to_s
       visit url
       expect(page).to have_css(".Modal.js-modal.js-modalSuccessMessage.Modal-overlay")
       expect(page).to have_css(".Button.Button--feedback.u-margin-top-medium.is-actived")
     end
   end
 
-  # context "Quando clicar em SIM dentro da modal" do
-  #   it "deve aparecer a modal de feedback" do
-  #     user = UserBloodDonator.last
-  #     user.last_donation_token = 1
-  #     token = user.last_donation_token
-  #     url = "/madeDonation/" + token
-  #     visit url
-  #     within("#modal_feedback") do
-  #       find(".Button.Button--feedback.u-margin-top-medium.is-actived").trigger('click')
-  #     end
-  #     within("#modal_feedback")do
-  #       expect(page).to have_content("Obrigado pela sua contribuição.")
-  #     end
-  #   end
-  # end
+  context "Quando clicar em SIM dentro da modal" do
+    it "deve aparecer a modal de feedback" do
+      token = 1
+      url = "/madeDonation/" + token.to_s
+      visit url
+      within("#modal_feedback") do
+        find("#feedback_yes_button").trigger('click')
+      end
+        expect(page).to have_content("Obrigado pela sua contribuição.")
+    end
+  end
+
+  context "Quando clicar em SIM dentro da modal" do
+    it "deve aparecer a modal de feedback" do
+      token = 1
+      url = "/madeDonation/" + token.to_s
+      visit url
+      within("#modal_feedback") do
+        find("#feedback_no_button").trigger('click')
+      end
+        expect(page).to have_no_content("Obrigado pela sua contribuição.")
+    end
+  end
+
 end

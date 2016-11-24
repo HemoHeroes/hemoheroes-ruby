@@ -7,7 +7,7 @@ describe "Antônio poderá criar uma conta de doador", type: :feature, js: true 
       visit "/"
       find("#registration_button").trigger('click')
       expect(page).to have_css(".js-modalRegistration")
-    end
+    end  
   end
 
   context "Quando cadastrar com dados corretos" do
