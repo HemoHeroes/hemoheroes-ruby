@@ -20,4 +20,14 @@ class UserBloodDonator < ApplicationRecord
     false
   end
 
+  def user_made_donation
+    if self != nil
+      self.last_donation = DateTime.current
+      self.last_donation_token = ""
+      self.save!
+      return self.id
+    end
+    return 0
+  end
+
 end

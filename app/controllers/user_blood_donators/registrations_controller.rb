@@ -1,3 +1,4 @@
+
 class UserBloodDonators::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
@@ -21,14 +22,9 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   def made_donation
     donator = UserBloodDonator.find_by last_donation_token:params['receiveToken']
-    id_donator = 0
     if donator != nil
-      donator.last_donation = DateTime.current
-      donator.last_donation_token = ""
-      donator.save!
-      id_donator = donator.id
+      id_donator = donator.user_made_donation
     end
-
     redirect_to root_path, flash: { made_modal: true, message:"O motivo de sua doação foi um email de solicitação que você recebeu após se cadastrar no HemoHeroes?", title:"Por favor, responda", id_donator: id_donator }
   end
 
@@ -37,7 +33,6 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
     if donator != nil
       if donator.use_hemoheroes == nil
         donator.use_hemoheroes = 1
-
       else
         donator.use_hemoheroes += 1
       end
