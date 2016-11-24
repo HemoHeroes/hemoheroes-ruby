@@ -20,7 +20,7 @@ describe "Katia poderá solicitar doador.", type: :feature, js: true do
         fill_in "demand_blood_bank_b_negative", with: "5"
         page.find('#demand_blood_bank_b_negative').trigger(:focusout)
 
-      sleep 1
+      sleep 2
       expect(page).to have_css(".Button.Button--medium.Button--fluid.is-actived.js-nextButton")
     end
   end

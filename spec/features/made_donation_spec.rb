@@ -1,13 +1,13 @@
 require "rails_helper"
 
-describe "Antônio poderá informar que já dppi sangue", type: :feature, js: true do
+describe "Antônio poderá informar que já doou sangue", type: :feature, js: true do
 
   context "Quando clicar em link Doei Ultimamente" do
     it "deve aparecer modal de Ja Doei" do
       token = 1
       url = "/madeDonation/" + token.to_s
       visit url
-      expect(page).to have_css(".Modal.js-modal.js-modalSuccessMessage.Modal-overlay")
+      expect(page).to have_css(".Modal.js-modalSuccessMessage")
       expect(page).to have_css(".Button.Button--feedback.u-margin-top-medium.is-actived")
     end
   end
