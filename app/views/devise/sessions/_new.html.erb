@@ -1,50 +1,46 @@
-<% if flash[:manifesto_modal] %>
-  <div class="Modal js-modal js-modalLogin Modal-overlay" style="opacity: 1; visibility: visible;">
-  <div class="Modal-content js-modalContent" style="top: 50%;">
-<% else %>
-  <div class="Modal js-modal js-modalLogin Modal-overlay">
+<div class="Modal js-modalLogin">
+<div class="Modal-overlay" onclick="Modal.close('.js-modalLogin')"></div>
   <div class="Modal-content js-modalContent">
-<% end %>
 
-        <div class="Modal-header">
-          <div class="Modal-closeButton">
-            <a class="glyphicon glyphicon-remove" onclick="Modal.close('.js-modalLogin')"></a>
-          </div>
-          <div class="Grid">
-            <div class="Grid-cell u-sizeFull">
-              <div class="Modal-titleBox">
-                <h3 class="Modal-title">Login Unificado</h3>
-              </div>
-            </div>
+    <div class="Modal-header">
+      <div class="Modal-closeButton">
+        <a class="glyphicon glyphicon-remove" onclick="Modal.close('.js-modalLogin')"></a>
+      </div>
+      <div class="Grid">
+        <div class="Grid-cell u-sizeFull">
+          <div class="Modal-titleBox">
+            <h3 class="Modal-title">Login</h3>
           </div>
         </div>
-
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="Modal-body Modal-small">
-          <div class="Form">
-            <div class="Grid">
-              <div class="Grid-cell u-sizeFull">
-
-                <p><%= alert %></p>
-                <div class="Form-group">
-                  <span class="Form-inputLabel u-sizeFull">Login:</span>
-                  <input type="text" class="Form-inputValue u-sizeFull" name="document" id="user_blood_donator_document"/>
-                </div>
-                <div class="Form-group">
-                  <span class="Form-inputLabel u-sizeFull">Senha:</span>
-                  <%= f.password_field :password, class:"Form-inputValue u-sizeFull", autocomplete: "off" %>
-                </div>
-              </div>
-              <div class="Button-group u-float-right ">
-                <div class="Button" onclick="Modal.close('.js-modalLogin')">
-                  Voltar
-                </div>
-                <%= f.submit "Login", class:"Button is-actived" %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-
       </div>
     </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="Modal-body Modal-small">
+      <div class="Form">
+        <div class="Grid">
+          <div class="Grid-cell u-sizeFull">
+
+            <p><%= alert %></p>
+            <div class="Form-group">
+              <span class="Form-inputLabel u-sizeFull">Login:</span>
+              <input type="text" class="Form-inputValue u-sizeFull" name="document" id="user_blood_donator_document"/>
+            </div>
+            <div class="Form-group">
+              <span class="Form-inputLabel u-sizeFull">Senha:</span>
+              <%= f.password_field :password, class:"Form-inputValue u-sizeFull", autocomplete: "off" %>
+            </div>
+          </div>
+          <div class="Button-group u-float-right ">
+            <div class="Button" onclick="Modal.close('.js-modalLogin')">
+              Voltar
+            </div>
+            <%= f.submit "Login", class:"Button is-actived" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

@@ -22,7 +22,7 @@
         padding: 4px;
       }
       &:hover {
-        background: $border-color;
+        color: scale-color($light-font-color, $lightness: -7%);
       }
     }
   }

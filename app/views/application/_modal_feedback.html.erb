@@ -1,5 +1,6 @@
 <% if flash[:made_modal]  %>
-<div id="modal_feedback" class="Modal js-modal js-modalSuccessMessage Modal-overlay" style="opacity: 1; visibility: visible;">
+<div id="modal_feedback" class="Modal js-modal js-modalSuccessMessage" style="opacity: 1; visibility: visible;">
+  <div class="Modal-overlay" onclick="Modal.close('.js-modalSuccessMessage')"></div>
   <div class="Modal-content js-modalContent" style="top: 50%;">
 
     <div class="Modal-header">
