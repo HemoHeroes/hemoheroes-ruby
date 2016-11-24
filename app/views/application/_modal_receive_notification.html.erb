@@ -1,8 +1,9 @@
 <% if flash[:receive_notification_modal]%>
-<div class="Modal js-modalReceiveNotification  Modal-overlay" style="opacity: 1; visibility: visible;">
+<div class="Modal js-modalReceiveNotification" style="opacity: 1; visibility: visible;">
+  <div class="Modal-overlay" onclick="Modal.close('.js-modalReceiveNotification')"></div>
   <div class="Modal-content js-modalContent" style="top: 50%;">
     <% else %>
-    <div class="Modal js-modalReceiveNotification Modal-overlay">
+    <div class="Modal js-modalReceiveNotification Modal-overlay" onclick="Modal.close('.js-modalReceiveNotification')" >
       <div class="Modal-content js-modalContent">
         <% end %>
 
