@@ -8,7 +8,7 @@ describe "Antônio poderá informar que já doou sangue", type: :feature, js: tr
       url = "/madeDonation/" + token.to_s
       visit url
       expect(page).to have_css(".Modal.js-modalSuccessMessage")
-      expect(page).to have_css(".Button.Button--feedback.u-margin-top-medium.is-actived")
+      expect(page).to have_css(".Button.Button--feedback.u-margin-top-medium")
     end
   end
 
