@@ -19,6 +19,15 @@
     padding: 0;
     font-size: 0.9em;
   };
+  @include tablet{
+    margin-bottom: 25px;
+    width: 50%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-flow: column;
+    padding: 0;
+    font-size: 0.9em;
+  };
   &-name {
     font-size: 1.4em;
     font-weight: 500;
