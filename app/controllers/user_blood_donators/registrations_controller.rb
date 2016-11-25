@@ -23,22 +23,17 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   def made_donation
     donator = UserBloodDonator.find_by last_donation_token:params['receiveToken']
     if donator != nil
-      id_donator = donator.user_made_donation
+      id_donator = donator.update_last_donation
     end
     redirect_to root_path, flash: { made_modal: true, message:"O motivo de sua doação foi um email de solicitação que você recebeu após se cadastrar no HemoHeroes?", title:"Por favor, responda", id_donator: id_donator }
   end
 
   def feedback_donation
-    donator = UserBloodDonator.find_by id:params['token_feedback']
+    donator = UserBloodDonator.find_by id:"15"
+    puts(donator.id)
     if donator != nil
-      if donator.use_hemoheroes == nil
-        donator.use_hemoheroes = 1
-      else
-        donator.use_hemoheroes += 1
-      end
-      donator.save!
+      donator.add_use_hemoheroes
     end
-
     redirect_to root_path, flash: { notification_modal: true, message:"Obrigado pela sua contribuição.", title:"Equipe HemoHeroes" }
   end
 
