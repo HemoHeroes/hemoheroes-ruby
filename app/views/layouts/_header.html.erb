@@ -5,8 +5,6 @@
   <div class="Navbar-content">
     <div class="Navbar-hamburger js-openNavbar"></div>
     <div class="Navbar-links js-navbarMobile">
-      <li><a data-turbolinks="false" href="#link1">Sobre</a></li>
-      <!-- <li><a data-turbolinks="false" href="#link2">Necessidade</a></li> -->
       <li><a href="/dashboard">Requisitos para doar</a></li>
     </div>
 
@@ -27,8 +25,8 @@
           <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
         </li>
         <% else %>
-        <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
-        <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+        <li><a data-turbolinks="false" data-scroll href="/#onde">Onde doar</a></li>
+        <li><a data-turbolinks="false" data-scroll href="/#sobre">Sobre</a></li>
         <% end %>
       </ul>
     </div>
