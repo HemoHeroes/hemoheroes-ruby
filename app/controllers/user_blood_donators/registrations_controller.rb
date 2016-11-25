@@ -29,8 +29,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
   end
 
   def feedback_donation
-    donator = UserBloodDonator.find_by id:"15"
-    puts(donator.id)
+    donator = UserBloodDonator.find_by id:params['token_feedback']
     if donator != nil
       donator.add_use_hemoheroes
     end
