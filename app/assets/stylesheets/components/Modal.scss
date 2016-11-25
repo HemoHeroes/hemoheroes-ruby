@@ -6,6 +6,7 @@
 
   opacity: 0;
   visibility: hidden;
+  position: absolute;
 
   &-overlay {
     background: $overlay-background-color;
@@ -32,17 +33,9 @@
     &.is-open {
       top: 50%;
     }
-
     @include mobile {
-      transform: translate(-50%, 0);
-      top: 0;
-      position: absolute;
       width: calc(100vw - 10px);
-      &.is-open {
-        top: 6px;
-      }
-    };
-
+    }
   }
 
   &-header {
