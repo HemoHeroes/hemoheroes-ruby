@@ -1,41 +1,38 @@
 <% if flash[:receive_notification_modal]%>
-<div class="Modal js-modalReceiveNotification" style="opacity: 1; visibility: visible;">
-  <div class="Modal-overlay" onclick="Modal.close('.js-modalReceiveNotification')"></div>
-  <div class="Modal-content js-modalContent" style="top: 50%;">
-    <% else %>
-    <div class="Modal js-modalReceiveNotification Modal-overlay" onclick="Modal.close('.js-modalReceiveNotification')" >
-      <div class="Modal-content js-modalContent">
-        <% end %>
+  <div class="Modal js-modalReceiveNotification" style="opacity: 1; visibility: visible;">
+<% else %>
+  <div class="Modal js-modalReceiveNotification" >
+<% end %>
 
-        <div class="Modal-header">
-          <div class="Modal-closeButton">
-            <a class="glyphicon glyphicon-remove" onclick="Modal.close('.js-modalReceiveNotification')"></a>
-          </div>
-          <div class="Modal-titleBox">
-            <h3 class="Modal-title">Receber notificação</h3>
-          </div>
+  <div class="Modal-overlay" onclick="Modal.close('.js-modalReceiveNotification')"></div>
+  <div class="Modal-content js-modalContent">
+    <div class="Modal-header">
+      <div class="Modal-closeButton">
+        <a class="glyphicon glyphicon-remove" onclick="Modal.close('.js-modalReceiveNotification')"></a>
+      </div>
+      <div class="Modal-titleBox">
+        <h3 class="Modal-title">Receber notificação</h3>
+      </div>
+    </div>
+
+    <div class="Modal-body">
+      <form class="new_notification" action="/notificacoes" accept-charset="UTF-8" method="post">
+      <div class="Form-group">
+        <div class="Form-inputLabel u-sizeFull">
+          <span>Insira seu email</span>
         </div>
 
-        <div class="Modal-body">
+        <div>
+          <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value="" name="user_blood_donator_email_notification">
+          <span style="display:none;" class="red-text"></span>
+        </div>
 
-
-          <form class="new_notification" action="/notificacoes" accept-charset="UTF-8" method="post">
-          <div class="Form-group">
-            <div class="Form-inputLabel u-sizeFull">
-              <span>Insira seu email</span>
-            </div>
-
-            <div>
-              <input class="Form-inputValue js-validateEmail" placeholder="Ex: carlosirla@seuemail.com.br" type="text" value="" name="user_blood_donator_email_notification">
-              <span style="display:none;" class="red-text"></span>
-            </div>
-
-            <div class="u-align-center u-padding-top u-padding-bottom">
-              <div class="Button Button--notification" onclick="Modal.close('.js-modalReceiveNotification')">Fechar</div>
-              <input id="user_blood_donator_email_notification_button" type="submit" class="Button Button--notification is-actived" value="confirmar">
-            </div>
-          </div>
-        </form>
+        <div class="u-align-center u-padding-top u-padding-bottom">
+          <div class="Button Button--notification" onclick="Modal.close('.js-modalReceiveNotification')">Fechar</div>
+          <input id="user_blood_donator_email_notification_button" type="submit" class="Button Button--notification is-actived" value="confirmar">
+        </div>
+      </div>
+    </form>
       </div>
     </div>
   </div>
