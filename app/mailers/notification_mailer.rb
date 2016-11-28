@@ -24,7 +24,7 @@ class NotificationMailer < ApplicationMailer
 
   def send_notification_to_admin bank
     @bank = bank
-    @url = 'http://hemoheroestw.herokuapp.com/admin'
+    @url = 'http://hemoheroes.herokuapp.com/admin'
     mail(to: 'aceleradora10@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
     template_path: 'notification_mailer',
@@ -33,7 +33,7 @@ class NotificationMailer < ApplicationMailer
 
   def send_email_no_blood_type_donator user
     @user = user
-    @url = 'http://hemoheroestw.herokuapp.com/admin'
+    @url = 'http://hemoheroes.herokuapp.com/admin'
     mail(to: @user.email,
     subject: 'Convite para doação',
     template_path: 'notification_mailer',
@@ -42,7 +42,7 @@ class NotificationMailer < ApplicationMailer
 
   def send_activation_email bank
     @bank = bank
-    @url = 'http://hemoheroestw.herokuapp.com/admin'
+    @url = 'http://hemoheroes.herokuapp.com/admin'
     mail(to: @bank.email,
     subject: 'Conta HemoHeroes ativada!',
     template_path: 'notification_mailer',
