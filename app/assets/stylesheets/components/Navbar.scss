@@ -12,8 +12,8 @@
 
   &-content{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:center;;
+    justify-content: space-between;
     padding: 15px;
     @include mobile{
       padding-left: 0;
