@@ -1,88 +1,180 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.Email {
-  width: 540px;
-  height: 675px;
-  overflow:hidden;
-  background: #E9E7E8 url("http://imageshack.com/a/img922/8563/rXummf.jpg") top repeat-x;
-}
-.Email-content {
-  background: #fff;
-  width: 400px;
-  height: 540px;
-  margin: 55px auto;
-  border-radius: 5px;
-  z-index:2;
-}
-</style>
+<%= render 'modal_notification' %>
+<%= render 'modal_feedback' %>
+<%= render 'modal_terms' %>
 
-</head>
-<body>
+<section class="HeroImage">
 
-  <div class="Email">
-    <div class="Email Email-content">
-      <div class="Email-content-head" style="height: 100px;
-      margin: 10px;
-      font-size: 33pt;
-      text-align: center;">
-      <img src="http://hemoheroes.herokuapp.com/assets/hemoheroes-logo-fb55d5704bd6d3b172edcd6d59d5512562cc19e2492e666008d51ba53f68d6ba.png" />
+  <div class="HeroImage-wrapper">
+
+    <div class="navbar HeroImage-header">
+
+      <div class="HeroImage-headerHamburger js-openNavbar">
+      </div>
+
+      <div class="HeroImage-headerContent">
+
+
+        <div class="HeroImage-headerLogo" >
+          <a href="/"><%= image_tag "hemoheroes-logo" %></a>
+        </div>
+
+        <div class="HeroImage-headerLinks js-navbarLinks">
+          <ul>
+            <% if user_blood_donator_signed_in? %>
+            <li>
+              <%= "Bem vindo, #{current_user_blood_donator.name}" %>
+              <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+            </li>
+            <% elsif user_blood_bank_signed_in? %>
+            <li>
+              <%= "Bem vindo, #{current_user_blood_bank.name}" %>
+              <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+            </li>
+            <% else %>
+
+            <li><a data-turbolinks="false" data-scroll href="#comoFunciona">Como funciona</a></li>
+            <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+            <li><a data-turbolinks="false" data-scroll href="/dashboard">Requisítos para doar</a></li>
+            <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="Email-content-body padding-top" style="width: 370px;
-    height: 310px;
-    margin: auto;
-    text-align: center;
-    font-family: sans-serif;">
-    <h2>Olá Herói <%= @user.name %></h2>
-    <span style="font-size:1em;">Nós do HemoHeroes estamos precisando de sua ajuda no <b><%= @bank.name %></b></span>
-    <div class="padding-top" style="padding-top:20px;">
+    <div class="HeroImage-content">
+      <div class="HeroImage-headlineBox">
+        <div class="HeroImage-headline">
+          Receba notificações de  quando e onde doar sangue
+        </div>
+        <div class="HeroImage-subHeadline">
+          Faça parte dos doadores voluntários do HemoHeroes
+        </div>
+      </div>
 
-
-      <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@bank.latitude}, #{@bank.longitude}&markers=color:red%7Clabel:H%7C#{@bank.latitude}, #{@bank.longitude}&zoom=15&size=200x150&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
-      <div class="address" style="text-align:center;"><%= @bank.address %></div>
+      <div class="HeroImage-benefitsBox">
+        <div class="Button Button--large  is-actived-secundary" id="registration_button" onclick="Modal.open('.js-modalRegistration')">
+          Quero Me Cadastrar <span class="glyphicon glyphicon-menu-right"></span>
+        </div>
+        <div class="HeroImage-benefits">
+          <ul>
+            <li><%= image_tag("/images/black-check.png")%> Localize facilmente onde doar</li>
+            <li><%= image_tag("/images/black-check.png")%> Receba notificações por email</li>
+            <li><%= image_tag("/images/black-check.png")%> Saiba quando doar novamente</li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <div class="HeroImage-footer">
+      <div class="HeroImage-friends">
+        <div class="fb-like" data-href="https://www.facebook.com/HemoHeroes-1202144513238389/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+      </div>
+
+
+
+      <div class="HeroImage-learnMore">
+        <a data-scroll href="#comoFunciona">
+          <div>Saiba mais</div>
+          <span class="glyphicon glyphicon-menu-down u-block"></span>
+        </a>
+      </div>
+
+      <div class="HeroImage-partners">
+        Apoio
+        <div class="HeroImage-imagesBox">
+          <%= image_tag("/images/black-microsoft-innovation-center-logo.png")%>
+          <%= image_tag("/images/black-thoughtworks-logo.png")%>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="Email-content-contentButtons" style="height: 50px;
-  width: 450px;
-  margin: auto; ">
-  <a href="http://hemoheroes.herokuapp.com/#onde" class="aButton Button Button--medium is-canceled" style="text-decoration: none;
-  color: #fff;
-  width: 180px;
-  font-size: .8rem;
-  font-weight: 700;
-  float:left;
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  border: 1px solid #af9d9d;
-  border-radius: 3px;
-  background: #e74c3c;
-  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25);">Outros locais</a>
-  <%= link_to "Doei ultimamente", "http://hemoheroes.herokuapp.com/madeDonation/#{@user.last_donation_token}", style:"text-decoration: none;
-  color: #fff;
-  width: 180px;
-  font-size: .8rem;
-  font-weight: 700;
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  border: 1px solid #af9d9d;
-  border-radius: 3px;
-  background: #e74c3c;
-  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25);" %>
-</div>
+</section>
 
-<br>
-<div class="align-center" style="text-align:center;">
-  <%= link_to "Não quero mais receber notificações", "http://hemoheroes.herokuapp.com/cancelNotification/#{@user.notification_token}", class:"Email-link" %>
-</div>
-</div>
-</div>
-</body>
-</html>
+
+<section id="comoFunciona" class="Section Section u-align-center">
+  <h2 class="u-margin-0">
+    <a>Como funciona</a>
+  </h2>
+  <div class="HowFunction-group">
+    <div class="HowFunction">
+      <div class="HowFunction-image">
+        <%= image_tag "user.png" %>
+      </div>
+      <div class="HowFunction-name">
+        1. Você se cadastra no HemoHeroes
+      </div>
+    </div>
+    <div class="HowFunction">
+      <div class="HowFunction-image">
+        <%= image_tag "hospital.png" %>
+      </div>
+      <div class="HowFunction-name">
+        2. O Banco de Sangue solicita a doação do seu tipo sanguíneo
+      </div>
+    </div>
+    <div class="HowFunction">
+      <div class="HowFunction-image">
+        <%= image_tag "email.png" %>
+      </div>
+      <div class="HowFunction-name">
+        3. Você recebe por email a solicitação
+      </div>
+    </div>
+    <div class="HowFunction">
+      <div class="HowFunction-image">
+        <%= image_tag "blood-donator.png" %>
+      </div>
+      <div class="HowFunction-name">
+        4. Atenda a solicitação comparecendo ao Banco de Sangue
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="onde" class="Section Section--secondary u-align-center u-margin-top-large">
+
+  <h2 class="u-margin-0">
+    <a>Onde doar</a>
+  </h2>
+
+  <span class="Section-subtitle">Locais onde você poderá fazer a doação</span>
+
+  <div class="Map-group">
+    <% @banks.each do |bank| %>
+    <div class="Map">
+      <div class="Map-name">
+        <%= bank.name %>
+      </div>
+      <div class="Map-image">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      </div>
+      <div class="Map-address">
+        <%= bank.address %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="Section" id="sobre">
+  <div class="Section-content">
+    <h2 class="u-align-center ">
+      <a >Sobre</a>
+    </h2>
+
+    <p class="u-align-center">  O Projeto HemoHeroes foi idealizado e desenvolvido para interagir com o público em potencial para aumentar
+      o número de doadores e a frequência dessas doações.</p>
+
+      <p class="u-align-center">  Sabe-se da escassez dos hemocentros e o senso de urgência com que uma doação se faz necessária, logo, vislumbrou-se a necessidade da criação de uma
+        ferramenta dinâmica e inovadora.</p>
+
+        <p class="u-align-center">O sistema HemoHeroes foi criado em uma plataforma web, na qual os bancos de sangue cadastrados divulgam diariamente os níveis de seus estoques por tipo sanguíneo.</p>
+
+
+      </div>
+    </section>
