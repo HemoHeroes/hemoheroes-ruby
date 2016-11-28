@@ -1,138 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  .Email {
-    width: 540px;
-    height: 675px;
-    overflow:hidden;
-    background: #E9E7E8 url("http://imageshack.com/a/img922/8563/rXummf.jpg") top repeat-x;
-  }
-  .Email-content {
-    background: #fff;
-    width: 400px;
-    height: 540px;
-    margin: 55px auto;
-    border-radius: 5px;
-    z-index:2;
-   }
-  .Email-content-head {
-    height: 100px;
-    margin: 10px;
-    font-size: 33pt;
-    text-align: center; }
-  .Email-content-body {
-    width: 370px;
-    height: 310px;
-    margin: auto;
-    text-align: center;
-    font-family: sans-serif; }
-  .Email-content-contentButtons {
-    height: 50px;
-    width: 370px;
-    margin: auto; }
-  .aButton{
-    text-decoration: none;
-    color: #fff;
-    }
-    .align-center{
-      text-align:center;
-    }
-    .align-justify{
-      text-align:justify;
-    }
-    .padding-top{
-      padding-top: 20px;
-    }
-    .margin-top{
-      margin-top: 30px;
-    }
-    .margin-top-large{
-      margin-top: 100px;
-    }
-    .Button {
-      font-size: .8rem;
-      font-weight: 700;
-      display: inline-block;
-      box-sizing: border-box;
-      padding: 12px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #000;
-      border: 1px solid #af9d9d;
-      border-radius: 3px;
-      background: #cdc9c9;
-      box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25); }
-      .Button:hover {
-        cursor: pointer;
-        background-color: #b9b4b4; }
-      .Button-group {
-        display: flex;
-        margin: 12px -6px; }
-        .Button-group .Button {
-          margin: 0 6px; }
-      .Button--large {
-        padding: 20px;
-        font-size: 16px; }
-      .Button--small {
-        padding: 10px;
-        font-size: 10px; }
-      .Button--feedback {
-        width: 90%;
-        height: 45px;
-        margin: 15px; }
-      .Button--fluid {
-        width: 100%; }
-      .Button--medium {
-        width: 180px; }
-      .Button--invisible {
-        color: #999999;
-        border: 0;
-        background: none;
-        box-shadow: none; }
-        .Button--invisible:hover {
-          color: #4d4d4d;
-          background: none; }
-      .Button.is-canceled {
-        color: #fff;
-        background: #e74c3c; }
-        .Button.is-canceled:hover {
-          background-color: #e43422; }
-      .Button.is-actived {
-        color: #fff;
-        border-color: #239955;
-        background: #2ecc71; }
-        .Button.is-actived:hover {
-          background-color: #29b866; }
-      .Button.is-disabled {
-        cursor: not-allowed;
-        pointer-events: none;
-        color: #9c9494;
-        border: 0;
-        box-shadow: none; }
-      span{
-        font-size: 1em;
-      }
-      ul{
-        list-style: none;
-      }
-      li{
-        padding: 7px;
-      }
-  </style>
 </head>
 <body>
 
-<div class="Email">
-  <div class="Email Email-content">
-    <div class="Email-content-head">
+  <div class="Email" style="width: 540px;
+                            height: 675px;
+                            overflow:hidden;
+                            background: #E9E7E8 url("http://imageshack.com/a/img922/8563/rXummf.jpg") top repeat-x;">
+
+    <div class="Email Email-content" style="background: #fff;
+                                            width: 400px;
+                                            height: 540px;
+                                            margin: 55px auto;
+                                            border-radius: 5px;
+                                            z-index:2;">
+      <div class="Email-content-head" style="height: 100px;
+                                             margin: 10px;
+                                             font-size: 33pt;
+                                             text-align: center;">
       <img src="http://hemoheroes.herokuapp.com/assets/hemoheroes-logo-fb55d5704bd6d3b172edcd6d59d5512562cc19e2492e666008d51ba53f68d6ba.png" />
     </div>
-    <div class="Email-content-body padding-top">
+    <div class="Email-content-body padding-top" style="width: 370px;
+                                                      height: 310px;
+                                                      margin: auto;
+                                                      text-align: center;
+                                                      font-family: sans-serif;
+                                                      padding-top: 20px">
 
-        <span><h2>Olá <%= @user.name %>!</h2></span>
+        <span style="font-size: 1em;"><h2>Olá <%= @user.name %>!</h2></span>
 
-        <p class="margin-top">
+        <p class="margin-top" style="margin-top: 30px">
           Estamos lhe convidando para fazer uma doação de sangue
           em qualquer hemocentro conveniado a nossa rede, você
           pode verificar em nosso site qual o hemocentro mais
@@ -140,13 +38,29 @@
           além é claro de descobrir seu tipo sanguíneo!
         </p>
 
-        <div class="Email-content-contentButtons align-center margin-top-large">
-          <a href="http://hemoheroes.herokuapp.com" class="aButton Button Button--medium is-canceled">Quero doar!</a>
+        <div class="Email-content-contentButtons align-center margin-top-large" style="height: 50px;
+                                                                                       width: 370px;
+                                                                                       margin: 100px auto;
+                                                                                       text-align:center;">
+          <a href="http://hemoheroes.herokuapp.com" class="aButton Button Button--medium is-canceled" style="text-decoration: none;
+                                                                                                             color: #fff;
+                                                                                                             width: 180px;
+                                                                                                             font-size: .8rem;
+                                                                                                             font-weight: 700;
+                                                                                                             display: inline-block;
+                                                                                                             box-sizing: border-box;
+                                                                                                             padding: 12px;
+                                                                                                             text-align: center;
+                                                                                                             text-transform: uppercase;
+                                                                                                             color: #000;
+                                                                                                             border: 1px solid #af9d9d;
+                                                                                                             border-radius: 3px;
+                                                                                                             background: #e74c3c;
+                                                                                                             box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.25);
+                                                                                                             ">Quero doar!</a>
       </div>
-
       </div>
   </div>
-
   </div>
 </div>
 </body>
