@@ -10,7 +10,7 @@ ready(function(){
     var buttonValidForm = function(){
       var buttonRegisterDonator = document.querySelector('.js-validateButtonDonator');
       buttonRegisterDonator.classList.add('is-disabled');
-    }
+    };
 
     var validateFormDonator = function(){
       validateFormService.validateName('.js-validateName', 'focusout');

@@ -70,7 +70,6 @@ var validateFormService = (function(){
   };
 
   var buttonValidSimpleFormDonator = function(selector){
-    //if(elementExist(selector)) return false;
     var invalidButtonSimpleDonator = false;
     for(var i = 0; i < validSimpleFormDonator.length; i++){
       if(validSimpleFormDonator[i] === false){
@@ -278,13 +277,11 @@ var validateFormService = (function(){
       var testPasswordEquals = function(password, confirmPassword) {
         if(password != confirmPassword){
           errorPasswordConfirmation.innerHTML = "Senhas não correspondem!";
-          //validateInputForms(2, 5, false);
           validateSingleInputForm("donator", 3, false);
           validateSingleInputForm("bank", 5, false);
 
         }else{
           errorPasswordConfirmation.style.display = "none";
-          //validateInputForms(2, 5, true);
           validateSingleInputForm("donator", 3, true);
           validateSingleInputForm("bank", 5, true);
 
@@ -296,18 +293,15 @@ var validateFormService = (function(){
         errorPassword.style.display = "";
         if(valuePassword.value.length > 0 && valuePassword.value.length < 6){
           errorPassword.innerHTML = "Senha deve ter no minimo 6 digitos!";
-          //validateInputForms(3, 6, false);
           validateSingleInputForm("donator", 4, false);
           validateSingleInputForm("bank", 6, false);
           return false;
         }else if(valuePassword.value.length === 0){
-          //validateInputForms(3, 6, false);
           validateSingleInputForm("donator", 4, false);
           validateSingleInputForm("bank", 6, false);
           return false;
         }else{
           errorPassword.style.display = "none";
-          //validateInputForms(3, 6, true);
           validateSingleInputForm("donator", 4, true);
           validateSingleInputForm("bank", 6, true);
           testPasswordEquals(valuePasswordConfirmation.value, valuePassword.value);
