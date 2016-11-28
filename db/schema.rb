@@ -56,34 +56,6 @@ ActiveRecord::Schema.define(version: 20161123133252) do
     t.datetime "updated_at"
   end
 
-  create_table "hospital_necessities", force: :cascade do |t|
-    t.integer  "a_positive"
-    t.integer  "a_negative"
-    t.integer  "b_positive"
-    t.integer  "b_negative"
-    t.integer  "ab_positive"
-    t.integer  "ab_negative"
-    t.integer  "o_positive"
-    t.integer  "o_negative"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "hospitals", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "cnpj"
-    t.string   "password"
-    t.string   "cep"
-    t.string   "street"
-    t.string   "district"
-    t.string   "number"
-    t.string   "city"
-    t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "notifications", force: :cascade do |t|
     t.date     "last_notification"
     t.boolean  "appear"
@@ -153,23 +125,6 @@ ActiveRecord::Schema.define(version: 20161123133252) do
     t.index ["cpf"], name: "index_user_blood_donators_on_cpf", unique: true
     t.index ["email"], name: "index_user_blood_donators_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_blood_donators_on_reset_password_token", unique: true
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

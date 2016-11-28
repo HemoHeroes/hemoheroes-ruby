@@ -36,7 +36,7 @@ ready(function(){
 
         var confirmRequestList = document.querySelector('.js-confirmRequestList');
         Object.keys(valuesOfConfirmInput).forEach(function(key){
-          if(valuesOfConfirmInput[key] != "" && valuesOfConfirmInput[key]!=0) {
+          if(valuesOfConfirmInput[key] !== "" && valuesOfConfirmInput[key]!==0) {
             var liTag = document.createElement("li");
             var requestText = document.createTextNode(valuesOfConfirmInput[key] + " do tipo " + key);
             confirmRequestList.appendChild(liTag);
@@ -53,8 +53,8 @@ ready(function(){
         var clearRequestList = document.querySelector('.js-confirmRequestList');
         clearRequestList.innerHTML = "";
         Modal.close(".js-modalConfirmRequest");
-      })
-    }
+      });
+    };
 
     initialize();
 
