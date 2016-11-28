@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   def index
     @banks = UserBloodBank.where(actived:true)
     send_no_blood_type
+    @user = UserBloodDonator.last
+    @bank = UserBloodBank.last
+    
   end
 
 
