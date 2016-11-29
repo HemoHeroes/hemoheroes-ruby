@@ -23,12 +23,7 @@
   }
 
   &-text {
-    @include desktop {
-      text-align: left;
-    }
-    @include mobile {
-        text-align: justify;
-    }
+    text-align: justify; 
   }
 
   &--secondary {
