@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     post 'login' => 'sessions#create', :as => :user_blood_bank_session
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_blood_bank_session
 
-    get 'cadastroBanco' => 'user_blood_banks/registrations#new' , :as => :new_user_blood_bank_registration
+    get 'cadastroBanco' => 'user_blood_banks/registrations#new', :as => :new_user_blood_bank_registration
     post 'cadastroBanco' => 'user_blood_banks/registrations#create' , :as => :user_blood_bank_registration
   end
 

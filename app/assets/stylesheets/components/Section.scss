@@ -22,8 +22,25 @@
     line-height: 1.6em;
   }
 
+  &-text {
+    @include desktop {
+      text-align: left;
+    }
+    @include mobile {
+        text-align: justify;
+    }
+  }
+
   &--secondary {
     background: scale-color($body-color, $lightness: -3%);
+  }
+
+  &--small {
+
+    & .Section-content {
+      max-width: 600px;
+    }
+
   }
 
 }

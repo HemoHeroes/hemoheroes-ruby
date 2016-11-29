@@ -7,8 +7,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   def new
     @resourceT = "blood-bank"
     super
-
-
   end
 
   # POST /resource
