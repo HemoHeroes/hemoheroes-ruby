@@ -1,0 +1,24 @@
+<section id="onde" class="Section Section--secondary u-align-center u-margin-top-large">
+
+  <h2 class="u-margin-0">
+    <a>Onde doar</a>
+  </h2>
+
+  <span class="Section-subtitle">Locais onde você poderá fazer a doação</span>
+
+  <div class="Map-group">
+    <% @banks.each do |bank| %>
+    <div class="Map">
+      <div class="Map-name">
+        <%= bank.name %>
+      </div>
+      <div class="Map-image">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+      </div>
+      <div class="Map-address">
+        <%= bank.address %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>
