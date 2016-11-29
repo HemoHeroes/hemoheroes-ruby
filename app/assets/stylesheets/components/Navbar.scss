@@ -94,7 +94,7 @@
       cursor: pointer;
       padding: 19px 15px;
       &:hover {
-        background: $border-color;
+        color: scale-color($dark-font-color, $lightness: 15%);
       }
     }
   }
