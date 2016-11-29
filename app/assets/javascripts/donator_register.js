@@ -13,9 +13,9 @@ ready(function(){
     };
 
     var validateFormDonator = function(){
-      validateFormService.validateName('.js-validateName', 'focusout');
+      validateFormService.validateName('.js-validateName', 'blur');
       validateFormService.validateCPF('.js-validateCPF', 'keyup');
-      validateFormService.validateEmail('.js-validateEmail', 'focusout');
+      validateFormService.validateEmail('.js-validateEmail', 'blur');
       validateFormService.validatePhone('.js-validatePhone', 'keyup');
       validateFormService.validateTerms('.js-validateTerms','click');
       validateFormService.removeMask('.js-validateButtonDonator','.js-validateCPF','click');

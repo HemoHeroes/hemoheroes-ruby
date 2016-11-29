@@ -11,9 +11,9 @@ ready(function(){
   };
 
   var validateSimpleFormDonator = function(){
-    validateFormService.validateName('.js-validateNameDonator', 'focusout');
+    validateFormService.validateName('.js-validateNameDonator', 'blur');
     validateFormService.validateTerms('.js-validateTermsDonator', 'click');
-    validateFormService.validateEmail('.js-validateEmailDonator', 'focusout');
+    validateFormService.validateEmail('.js-validateEmailDonator', 'blur');
   };
 
   initialize();

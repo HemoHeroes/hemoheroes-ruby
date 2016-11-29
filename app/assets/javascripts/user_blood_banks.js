@@ -13,11 +13,11 @@ ready(function(){
     }
 
     var validateFormBank = function(){
-      validateFormService.validateName('.js-validateName','focusout');
-      validateFormService.validateEmail('.js-validateEmail','focusout');
-      validateFormService.validateCNPJ('.js-validateCNPJ','focusout');
-      validateFormService.validateAddress('.js-validateAddress','focusout');
-      validateFormService.validatePhone('.js-validatePhone','focusout');
+      validateFormService.validateName('.js-validateName','blur');
+      validateFormService.validateEmail('.js-validateEmail','blur');
+      validateFormService.validateCNPJ('.js-validateCNPJ','blur');
+      validateFormService.validateAddress('.js-validateAddress','blur');
+      validateFormService.validatePhone('.js-validatePhone','blur');
       validateFormService.removeMask('.js-validateButtonBank','.js-validateCNPJ','click');
       validateFormService.validatePassword('.js-validatePassword','.js-validatePasswordConfirmation','keyup');
     };
