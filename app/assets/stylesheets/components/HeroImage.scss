@@ -314,7 +314,7 @@
 
   &-benefits {
     margin: 25px 0 0 -20px;
-    font-size: 1.3em;
+    font-size: 1em;
     line-height: 1.7em;
     color: scale-color($font-color, $lightness: 5%);
     text-shadow: $text-shadow;
@@ -333,10 +333,10 @@
     }
 
     & img{
-      height: 22px;
+      height: 19px;
       position: relative;
       top: 4px;
-      margin-right: 2px;
+      margin-right: 4px;
     }
   }
 
