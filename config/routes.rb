@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     post 'cadastroBanco' => 'user_blood_banks/registrations#create' , :as => :user_blood_bank_registration
   end
 
-  get '/dashboard', to: 'application#requisitos', :as => :dashboard
+  get '/requisitos', to: 'application#requisitos', :as => :dashboard
   get '/necessidadeBanco', to: 'demand_blood_banks#new', :as => :necessidadeBanco
 
   get 'sign_up_confirmation/:receiveToken', to: 'user_blood_donators/registrations#sign_up_confirmation', :as => :sign_up_confirmation
