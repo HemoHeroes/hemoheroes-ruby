@@ -100,7 +100,7 @@
 
 AdminUser.create!(email: 'aceleradora10@gmail.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
 
-AdminUser.create!(email: 'joaovitoramachado@gmail.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
-AdminUser.create!(email: 'guilherme.webber@outlook.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
-AdminUser.create!(email: 'adrianlemess@gmail.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
-AdminUser.create!(email: 'renanbastos.tec@gmail.com', password: 'rubyheroes', password_confirmation: 'rubyheroes')
+AdminUser.create!(email: 'joaovitoramachado@gmail.com', password: 'hemoadmin', password_confirmation: 'rubyheroes')
+AdminUser.create!(email: 'guilherme.webber@outlook.com', password: 'hemoadmin', password_confirmation: 'rubyheroes')
+AdminUser.create!(email: 'adrianlemess@gmail.com', password: 'hemoadmin', password_confirmation: 'rubyheroes')
+AdminUser.create!(email: 'renanbastos.tec@gmail.com', password: 'hemoadmin', password_confirmation: 'rubyheroes')
