@@ -37,7 +37,7 @@
     <h2>Olá Herói <%= @user.name %></h2>
     <span style="font-size:1em;">Nós do HemoHeroes estamos precisando de sua ajuda no <b><%= @bank.name %></b></span>
     <div class="padding-top" style="padding-top:20px;">
-      <%= link_to image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa"), "https://www.google.com.br/maps/place/#{bank.latitude}, #{bank.longitude}" %>
+      <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@bank.latitude}, #{@bank.longitude}&markers=color:red%7Clabel:H%7C#{@bank.latitude}, #{@bank.longitude}&zoom=15&size=200x150&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
       <div class="address" style="text-align:center;"><%= @bank.address %></div>
     </div>
   </div>
