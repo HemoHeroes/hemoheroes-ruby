@@ -16,7 +16,10 @@
         <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
       </div>
       <div class="Map-address">
-        <%= bank.address %>
+        Endereço: <%= bank.address %>
+      </div>
+      <div class="Map-phone">
+        Contato: <%= bank.phone %>
       </div>
     </div>
     <% end %>
