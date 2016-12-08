@@ -9,13 +9,13 @@
   background: #E9E7E8 url("http://imageshack.com/a/img922/8563/rXummf.jpg") top repeat-x;
 }
 .Email-content {
-     background: #fff;
-    width: 400px;
-     height: 540px;
-     margin: 55px auto;
-     border-radius: 5px;
-     z-index:2;
-    }
+  background: #fff;
+  width: 400px;
+  height: 540px;
+  margin: 55px auto;
+  border-radius: 5px;
+  z-index:2;
+}
 </style>
 </head>
 
@@ -25,37 +25,40 @@
 
     <div class="Email">
 
-    <div class="Email-content">
-    <div class="Email-content-head" style="height: 100px;
-    margin: 10px;
-    font-size: 33pt;
-    text-align: center;">
-    <img src="http://i.imgur.com/5bKCn34.png" width="100" height="100" />
+      <div class="Email-content">
+        <div class="Email-content-head" style="height: 100px;
+        margin: 10px;
+        font-size: 33pt;
+        text-align: center;">
+        <img src="http://i.imgur.com/5bKCn34.png" width="100" height="100" />
+      </div>
+
+      <div class="Email-content-body" style="width: 370px;
+      height: 310px;
+      margin: auto;
+      text-align: center;
+      font-family: sans-serif;">
+      <h2 style="color: #fe4b4a; font-size:2.3rem;">Bem vindo ao HemoHeroes </h2>
+      <span>Que bom que nós encontramos você!<%= @user.name %></span>
+      <p>
+        Você acaba de se cadastrar na nossa plataforma, agora poderá ajudar a salvar vidas e obter
+        toda infomação necessária para facilitar sua doação.
+      </p>
+      <p>
+        Observação: Você pode comparecer no banco de sangue em qualquer horário.
+      </p>
+      
+      <p>
+        Para localizar o melhor local de doação clique <a href="http://hemoheroes.herokuapp.com/#onde">aqui</a>.
+      </p>
+      <p>
+        Para obter os requisitos de doação clique <a href="http://hemoheroes.herokuapp.com/requisitos">aqui</a>.
+      </p>
+    </div>
+
+    <div class="u-text-align-center">
+    </div>
   </div>
-
-  <div class="Email-content-body" style="width: 370px;
-  height: 310px;
-  margin: auto;
-  text-align: center;
-  font-family: sans-serif;">
-  <h2 style="color: #fe4b4a; font-size:2.3rem;">Bem vindo ao HemoHeroes </h2>
-  <span>Que bom que nós encontramos você!<%= @user.name %></span>
-  <p>
-    Você acaba de se cadastrar na nossa plataforma, agora poderá ajudar a salvar vidas e obter
-    toda infomação necessária para facilitar sua doação.
-    Observação: Você pode comparecer no banco de sangue em qualquer horário.
-  </p>
-  <p>
-    Para localizar o melhor local de doação clique <a href="http://hemoheroes.herokuapp.com/#onde">aqui</a>.
-  </p>
-  <p>
-    Para obter os requisitos de doação clique <a href="http://hemoheroes.herokuapp.com/requisitos">aqui</a>.
-  </p>
-</div>
-
-<div class="u-text-align-center">
-</div>
-</div>
 </div>
 </div>
 
