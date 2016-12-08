@@ -57,7 +57,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
       donator.save!
     end
 
-    redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.", title:"Notificação Cancelada" }
+    redirect_to root_path, flash: { notification_modal: true, message:"A partir de agora você não receberá mais nenhum email de solicitação do HemoHeroes.  Você poderá voltar a receber notificações, clicando na opção 'receber notificações' e inserindo seu email no rodapé do site", title:"Notificação Cancelada" }
   end
 
   def active_notification
