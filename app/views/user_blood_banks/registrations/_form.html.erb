@@ -1,4 +1,4 @@
-s<%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
 <% if resource.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
@@ -14,8 +14,9 @@ s<%= form_for(resource, as: resource_name, url: registration_path(resource_name)
   <div class="Grid-cell u-desktop-size7of12 u-tablet-sizeFull u-mobile-sizeFull u-outerWrapper u-margin-auto">
       <div class="Nav-ajust"></div>
     <div class="Container Container--primary Grid-cell u-tablet-sizeFull u-margin-bottom-large u-margin-top-xlarge" >
-      <div class="Container-header">
-        <h3 class="Container-title u-margin-small"> Cadastro de Hospital </h3>
+      <div class="Container-header Container-title ">
+        <h3 class="u-margin-small"> Cadastro de Hospital </h3>
+          <small>Cadastre seu hospital e aguarde a ativação da sua conta.</small>
       </div>
 
 
