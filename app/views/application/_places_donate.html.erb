@@ -13,7 +13,10 @@
         <%= bank.name %>
       </div>
       <div class="Map-image">
-        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude}, #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g", alt:"mapa") %>
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=
+                        #{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude},
+                        #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g",
+                        data:{ nome:bank.name}, alt:"mapa", onclick:"mostrarNomeHospitalMapa('#{bank.name}', '.js-modalMap')") %>
       </div>
       <div class="Map-address">
         <b>Endereço:</b> <%= bank.address %>

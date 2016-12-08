@@ -1,3 +1,11 @@
+var mostrarNomeHospitalMapa = function(nome, selector) {
+
+  var meu_mapa = document.getElementById("corpo-modal-map")
+  meu_mapa.innerHTML = "Quando o " + nome + " precisar de doação, entraremos em contato com você!";
+  Modal.open(selector);
+}
+
+
 var validateFormService = (function(){
 
   var validFormBank = [];
