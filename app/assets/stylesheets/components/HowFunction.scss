@@ -10,6 +10,11 @@
   width: 20%;
   align-items: center;
 
+  a:hover {
+    cursor: pointer;
+    color: $brand-color;
+  }
+
   @include mobile{
     margin-bottom: 25px;
     width: 100%;
@@ -35,6 +40,7 @@
     font-family: sans-serif;
     align-items: center;
     max-width: 80%;
+    padding-bottom: 10px;
   }
 
   &-image {

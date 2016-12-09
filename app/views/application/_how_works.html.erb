@@ -8,7 +8,10 @@
         <%= image_tag "user.png" %>
       </div>
       <div class="HowFunction-name">
-        1. Você se cadastra no HemoHeroes
+        1. Você se <a onclick="Modal.open('.js-modalRegistration')">cadastra</a> no HemoHeroes
+      </div>
+      <div class="Button Button--smallSecundary is-actived-secundary" onclick="Modal.open('.js-modalRegistration')">
+        Cadastre-se aqui <span class="glyphicon glyphicon-menu-right"></span>
       </div>
     </div>
     <div class="HowFunction">
@@ -36,7 +39,9 @@
       </div>
     </div>
   </div>
-  <div class="Button Button--large  is-actived-secundary" onclick="Modal.open('.js-modalRegistration')">
+
+  <!-- <div class="Button Button--large  is-actived-secundary" onclick="Modal.open('.js-modalRegistration')">
     Quero Me Cadastrar <span class="glyphicon glyphicon-menu-right"></span>
-  </div>
+  </div> -->
+
 </section>
