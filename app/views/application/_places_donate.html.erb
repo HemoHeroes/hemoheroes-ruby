@@ -12,18 +12,31 @@
       <div class="Map-name">
         <%= bank.name %>
       </div>
-      <div class="Map-image">
-        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=
-                        #{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude},
-                        #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g",
-                        data:{ nome:bank.name}, alt:"mapa", onclick:"mostrarNomeHospitalMapa('#{bank.name}', '.js-modalMap')") %>
+
+      <!-- =Testes com mapa -->
+      <div id="hide" class="js-clickMap<%=bank.id%>" style="display:none;">
+        <span class="u-padding-bottom">Quando o <%= bank.name %> precisar, solicitará sua doação por email.</span><br />
+        <div class="Button Button--smallSecundary is-actived-secundary u-margin-top-medium u-margin-bottom-small" onclick="Modal.open('.js-modalRegistration')">
+          Cadastre-se aqui <span class="glyphicon glyphicon-menu-right"></span>
+        </div>
       </div>
+
+      <div class="Map-image" onclick="clickMap.show('.js-clickMap<%=bank.id%>')">
+        <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=
+        #{bank.latitude}, #{bank.longitude}&markers=color:red%7Clabel:H%7C#{bank.latitude},
+        #{bank.longitude}&zoom=15&size=400x250&key=AIzaSyBJc6_zyREWQW3SaIg19--mmQFiUUzL94g",
+        data:{ nome:bank.name}, alt:"mapa") %>
+      </div>
+
       <div class="Map-address">
         <b>Endereço:</b> <%= bank.address %>
       </div>
+
       <div class="Map-phone">
         <b>Contato:</b> <%= bank.phone %>
       </div>
+
+
     </div>
     <% end %>
   </div>
