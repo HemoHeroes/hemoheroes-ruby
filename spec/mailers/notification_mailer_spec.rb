@@ -33,7 +33,7 @@ describe NotificationMailer, type: :mailer do
 
   describe '#send_email_new_user' do
     it 'retorna o conteúdo do texto' do
-      expect(@mail.subject).to eq("Bem-vindo ao HemoHeroes ")
+      expect(@mail.subject).to eq("Bem-vindo ao HemoHeroes")
     end
 
     it 'retorna o email do destinatário doador' do
