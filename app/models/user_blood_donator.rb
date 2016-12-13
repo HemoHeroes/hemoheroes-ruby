@@ -3,6 +3,9 @@ class UserBloodDonator < ApplicationRecord
   has_and_belongs_to_many :notifications
   validates_presence_of :name, :email
 
+  validates :email, format: {with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "Formato inválido de email"}
+  validates :name, format: {with: /\A[a-zA-Z\s]+\z/, message: "Somente Letras"}
+
   # validates_uniqueness_of :cpf
   validates_uniqueness_of :email
 
