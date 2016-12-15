@@ -83,7 +83,6 @@ ga('send', 'pageview');
     <main>
       <%= yield %>
     </main>
-    <% unless (user_blood_donator_signed_in? || user_blood_bank_signed_in? ) %>
     <%= render "layouts/footer" %>
     <%= render "devise/sessions/new" %>
 
@@ -91,6 +90,5 @@ ga('send', 'pageview');
     <%= render "application/modals/modal_receive_notification_confirmation" %>
     <%= render "user_blood_donators/registrations/form_v2" %>
 
-    <% end %>
   </body>
   </html>
