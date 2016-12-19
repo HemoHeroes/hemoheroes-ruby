@@ -156,6 +156,7 @@
     float: left;
     position: relative;
     display: flex;
+  
     @include mobile {
       padding: 0 0 12px;
       font-size: 2rem;

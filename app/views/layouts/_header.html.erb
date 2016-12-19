@@ -1,28 +1,45 @@
 
 <% unless current_page? '/' %>
 <div class="Navbar">
+  <div class="HeroImage-wrapper">
 
-  <div class="Navbar-content">
+<div class="navbar HeroImage-header">
 
-    <div class="Navbar-hamburger js-openNavbar"></div>
-    <div class="Navbar-logo">
-      <a href="/">HemoHeroes</a>
+  <div class="HeroImage-headerHamburger js-openNavbar">
+  </div>
+
+  <div class="HeroImage-headerContent">
+
+
+    <div class="HeroImage-headerLogo" >
+      <a href="/"><%= image_tag "hemoheroes-logo" %></a>
     </div>
-    <div class="Navbar-links js-navbarMobile">
 
-      <li><a href="/requisitos">Requisitos para doar</a></li>
-      <li><a href="/#comoFunciona">Como funciona</a></li>
-      <% if user_blood_bank_signed_in? %>
-      <li>
-        <%= "Bem-vindo, #{current_user_blood_bank.name}" %>
-        <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
-      </li>
-      <% else %>
-      <li><a data-turbolinks="false" data-scroll href="/#onde">Onde doar</a></li>
-      <li><a data-turbolinks="false" data-scroll href="/#sobre">Sobre</a></li>
-      <% end %>
+    <div class="HeroImage-headerLinks js-navbarLinks">
+      <ul>
+        <% if user_blood_donator_signed_in? %>
+        <li>
+          <%= "Bem-vindo, #{current_user_blood_donator.name}" %>
+          <%= link_to('Logout', destroy_user_blood_donator_session_path, :method => :delete) %>
+        </li>
+        <% elsif user_blood_bank_signed_in? %>
+        <li>
+          <%= "Bem-vindo, #{current_user_blood_bank.name}" %>
+          <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
+        </li>
+        <% else %>
+
+        <li><a data-turbolinks="false" data-scroll href="#comoFunciona">Como funciona</a></li>
+        <li><a data-turbolinks="false" data-scroll href="#onde">Onde doar</a></li>
+        <li><a data-turbolinks="false" data-scroll onclick= "Modal.open('.js-modalRequirements')">Quem pode doar</a></li>
+        <li><a data-turbolinks="false" data-scroll href="#sobre">Sobre</a></li>
+
+        <% end %>
+      </ul>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 <% end %>
