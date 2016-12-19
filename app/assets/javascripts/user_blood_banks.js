@@ -1,7 +1,7 @@
 //= require services/validate_form_service
 
 ready(function(){
-  onlyInView("registrations", ["new"],"blood-bank", function(){
+  // onlyInView("registrations", ["new"],"blood-bank", function(){
     var initialize = function(){
       buttonValidForm();
       validateFormBank();
@@ -10,11 +10,11 @@ ready(function(){
     var buttonValidForm = function(){
       var buttonRegisterBank = document.querySelector('.js-validateButtonBank');
       buttonRegisterBank.classList.add('is-disabled');
-    }
+    };
 
     var validateFormBank = function(){
-      validateFormService.validateName('.js-validateName','blur');
-      validateFormService.validateEmail('.js-validateEmail','blur');
+      validateFormService.validateName('.js-validateNameHospital','blur');
+      validateFormService.validateEmail('.js-validateEmailHospital','blur');
       validateFormService.validateCNPJ('.js-validateCNPJ','blur');
       validateFormService.validateAddress('.js-validateAddress','blur');
       validateFormService.validatePhone('.js-validatePhone','blur');
@@ -24,5 +24,5 @@ ready(function(){
 
     initialize();
 
-  })
+  // })
 });

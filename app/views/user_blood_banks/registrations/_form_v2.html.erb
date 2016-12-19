@@ -47,8 +47,8 @@
                   <span>Nome</span>
                 </div>
                 <div class="u-sizeFull">
-                  <input class="js-validateName Form-inputValue u-sizeFull" placeholder="Ex: Hospital Carlos Schallenberger" type="text" name="user_blood_bank[name]" id="user_blood_bank_name">
-                  <span id="errorName" style="display:none;" class="red-text">Nome inválido!</span>
+                  <input class="js-validateNameHospital Form-inputValue u-sizeFull" placeholder="Ex: Hospital Carlos Schallenberger" type="text" name="user_blood_bank[name]" id="user_blood_bank_name">
+                  <span id="errorNameHospital" style="display:none;" class="red-text">Nome inválido!</span>
                 </div>
               </div>
             </div>
@@ -72,8 +72,8 @@
                   <span>E-mail</span>
                 </div>
                 <div class="u-sizeFull">
-                  <input class="Form-inputValue js-validateEmail" placeholder="Ex: hospital@email.com.br" type="text" value="" name="user_blood_bank[email]" id="user_blood_bank_email">
-                  <span style="display:none;" class="red-text errorEmail"></span>
+                  <input class="Form-inputValue js-validateEmailHospital" placeholder="Ex: hospital@email.com.br" type="text" value="" name="user_blood_bank[email]" id="user_blood_bank_email">
+                  <span id="errorEmailHospital" style="display:none;" class="red-text">Email inválido!</span>
                 </div>
               </div>
             </div>
@@ -141,7 +141,6 @@
               </div>
             </div>
 
-
             <% if resource.id %>
             <div class="field">
               <%= f.label :current_password %><br />
@@ -162,6 +161,34 @@
       <!-- Fim Form -->
 
     </form>
+
+    <div class="Modal js-modalMessageRegisterBank">
+
+      <div class="Modal-overlay">
+      </div>
+
+      <div class="Modal-content js-modalContent">
+        <div class="Modal-header">
+          <div class="Modal-titleBox">
+            <h3 class="Modal-title">
+              Cadastro em analise
+            </h3>
+          </div>
+        </div>
+
+        <div class="Modal-body">
+          <div class="u-align-center u-padding-left u-padding-right">
+            <span class="u-font-size20 ">Seu cadastro foi realizado com sucesso, aguarde a confirmação do administrador do sistema. </span>
+          </div>
+          <div class="u-align-center u-padding-top u-padding-bottom">
+            <div onclick="Modal.close('.js-modalMessageRegisterBank')">
+              <%= button_to "OK", root_path, method: :get, class:"Button Button--medium u-size3of12 is-actived" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
   </div>
