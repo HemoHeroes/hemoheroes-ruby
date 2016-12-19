@@ -3,12 +3,22 @@
 .Footer {
   background-color: $brand-color;
   width: 100%;
+
+  @include mobile{
+    display: flex;
+    justify-content: center;
+  };
   &-content {
-    padding: 21px;
+    // padding: 21px;
   }
 
   &-links {
-
+    @include desktop{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+  }
     & a {
       color: $light-font-color;
       text-transform: uppercase;
@@ -17,6 +27,7 @@
       cursor: pointer;
       padding: 19px 15px;
       @include mobile {
+        text-align: center;
         display: flex;
         flex-direction:column;
         padding: 4px;
@@ -28,9 +39,12 @@
   }
 
 &-facebook-icon {
-  margin-left: 1px;
+
   width: 30px;
   height: 30px;
-  position: absolute;
+  @include mobile{
+    display: flex;
+    align-self: center;
+};
 }
 }
