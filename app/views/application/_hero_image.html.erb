@@ -23,6 +23,7 @@
             </li>
             <% elsif user_blood_bank_signed_in? %>
             <li>
+              <%= link_to('Solicitar doadores', new_demand_blood_bank_path) %>
               <%= link_to('Logout', destroy_user_blood_bank_session_path, :method => :delete) %>
             </li>
             <% else %>
