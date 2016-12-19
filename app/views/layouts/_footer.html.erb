@@ -1,7 +1,9 @@
 <div class="Footer">
   <div class="Footer-content">
     <div class="Footer-links " >
+      <% unless user_blood_bank_signed_in? %>
       <a data-turbolinks="false" onclick="Modal.open('.js-modalLogin')" id="login_hemocentro_button">Login Hospital</a>
+      <% end %>
       <a data-turbolinks="false" onclick="Modal.open('.js-modalRegistrationHospital')">Cadastrar Hospital</a>
       <a id="receive_notification_button" onclick="Modal.open('.js-modalReceiveNotification')">Receber notificações</a>
       <a href="https://www.facebook.com/HemoHeroes-1202144513238389/">Contato</a>
