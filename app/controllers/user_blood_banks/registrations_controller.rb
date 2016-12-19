@@ -2,7 +2,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
-
   # GET /resource/sign_up
   def new
     @resourceT = "blood-bank"
@@ -11,7 +10,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-
     u = UserBloodBank.find_by(email:params["user_blood_bank"]["email"])
 
     if u.nil?
@@ -31,12 +29,6 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   # def update
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  #   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
   #   super
   # end
 
@@ -58,18 +50,16 @@ class UserBloodBanks::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :phone,
-      :extension, :cnpj, :lat,
-      :long, :address])
-    end
-
-    def after_sign_up_path_for(resource)
-      sign_out
-    end
-
-    def send_new_hospital_email bank
-      @bank = bank
-      NotificationMailer.send_notification_to_admin(@bank).deliver_now
-    end
-
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :phone, :extension, :cnpj, :address])
   end
+
+  def after_sign_up_path_for(resource)
+    sign_out
+  end
+
+  def send_new_hospital_email bank
+    @bank = bank
+    NotificationMailer.send_notification_to_admin(@bank).deliver_now
+  end
+
+end

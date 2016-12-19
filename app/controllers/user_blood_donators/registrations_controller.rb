@@ -78,7 +78,7 @@ class UserBloodDonators::RegistrationsController < Devise::RegistrationsControll
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :cpf, :date_birth, :phone, :password, :notification, :genre, :blood_type, :admin, :last_donation, :cep, :long, :lat, :last_donation_token, :notification_token])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :genre, :blood_type])
   end
 
   def after_sign_up_path_for_modal(resource)
