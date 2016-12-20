@@ -190,15 +190,12 @@ var validateFormService = (function(){
     validateName: function(selector, action){
       var inputName = document.querySelector(selector);
       var errorName = document.getElementById('errorName');
-      var errorNameHospital = document.getElementById('errorNameHospital');
       inputName.addEventListener(action, function(){
         var regexNameValidate = /^[A-zÀ-ú\s]*$/;
         var nameValidate = regexNameValidate.test(inputName.value.trim());
         errorName.style.display = "";
-        errorNameHospital.style.display = "";
         if (inputName.value && nameValidate) {
           errorName.style.display = "none";
-          errorNameHospital.style.display = "none";
           validateInputForms(0, 0, true);
         } else {
           validateInputForms(0, 0, false);
@@ -247,19 +244,16 @@ var validateFormService = (function(){
     validateEmail: function(selector, action){
       var inputEmail = document.querySelector(selector);
       var errorEmail = document.querySelector('#errorEmail');
-      var errorEmailHospital = document.querySelector('#errorEmailHospital');
 
       inputEmail.addEventListener(action, function(){
         var regexEmailValidate = /^([a-zA-Z0-9_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         var emailValidate = regexEmailValidate.test(inputEmail.value.trim());
         errorEmail.style.display = "";
-        errorEmailHospital.style.display = "";
         if(!emailValidate && inputEmail.value !== ""){
           validateInputForms(1, 3, false);
           return false;
         }else if(emailValidate){
           errorEmail.style.display = "none";
-          errorEmailHospital.style.display = "none";
           validateInputForms(1, 3, true);
         }
       });
