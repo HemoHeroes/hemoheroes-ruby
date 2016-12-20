@@ -10,3 +10,9 @@
   color:red;
   font-size:8pt;
 }
+.link_whitout_decoration{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
