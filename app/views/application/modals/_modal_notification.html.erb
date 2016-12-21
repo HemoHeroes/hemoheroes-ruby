@@ -20,14 +20,6 @@
         <%= flash[:message] %>
       </span>
       <div class="u-flex u-padding-top">
-        <div class="u-flex u-flex-column u-desktop-size4of12">
-          <%= link_to(dashboard_path, {method: :get, class: "u-link-success"}) do %>
-          <%= image_tag("list.png")%>
-          <div>Requisitos</div>
-          <% end %>
-          <small>Veja os requisitos para ser um doador</small>
-        </div>
-
 
         <div class="u-flex u-flex-column u-desktop-size4of12">
           <a class="u-link-success" data-turbolinks="false" data-scroll href="#onde" onclick="Modal.close('.js-modal')"><%= image_tag("locate.png")%></a>
