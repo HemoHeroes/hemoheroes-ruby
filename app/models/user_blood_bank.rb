@@ -1,9 +1,9 @@
 class UserBloodBank < ApplicationRecord
   validates_presence_of :name, :email, :cnpj, :address
 
-  validates :email, format: {with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "Formato inválido de email"}
-  validates :name, format: {with: /\A[a-zA-Z]+\z/, message: "Somente Letras"}
-  validates :cnpj, format: {with: /\A+\d{14}+\z/, message: "Apenas 14 dígitos"}
+  # validates :email, format: {with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, message: "Formato inválido de email"}
+  # validates :name, format: {with: /\A[a-zA-Z]+\z/, message: "Somente Letras"}
+  # validates :cnpj, format: {with: /\A+\d{14}+\z/, message: "Apenas 14 dígitos"}
   
   validates_uniqueness_of :cnpj
   validates_uniqueness_of :email
