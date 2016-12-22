@@ -1,7 +1,7 @@
 class NotificationMailer < ApplicationMailer
 
 
-  default from: 'aceleradora10@gmail.com'
+  default from: 'hemoheroes@gmail.com'
 
   def send_email_new_user user
     @user = user
@@ -25,7 +25,7 @@ class NotificationMailer < ApplicationMailer
   def send_notification_to_admin bank
     @bank = bank
     @url = 'http://hemoheroes.herokuapp.com/admin'
-    mail(to: 'aceleradora10@gmail.com',
+    mail(to: 'hemoheroes@gmail.com',
     subject: 'Validar cadastro de novo banco de sangue',
     template_path: 'notification_mailer',
     template_name: 'new_blood_bank_email.html.erb')

@@ -41,7 +41,7 @@ describe NotificationMailer, type: :mailer do
     end
 
     it 'retorna o email do remetente' do
-      expect(@mail.from).to eq(["aceleradora10@gmail.com"])
+      expect(@mail.from).to eq(["hemoheroes@gmail.com"])
     end
   end
 
@@ -54,7 +54,7 @@ describe NotificationMailer, type: :mailer do
       expect(@mailDemand.to).to eq([@user.email])
     end
     it 'retorna o email do remetente' do
-      expect(@mailDemand.from).to eq(["aceleradora10@gmail.com"])
+      expect(@mailDemand.from).to eq(["hemoheroes@gmail.com"])
     end
 
   end
@@ -65,11 +65,11 @@ describe NotificationMailer, type: :mailer do
     end
 
     it 'retorna o email para admin' do
-      expect(@mailToAdmin.to).to eq(["aceleradora10@gmail.com"])
+      expect(@mailToAdmin.to).to eq(["hemoheroes@gmail.com"])
     end
 
     it 'retorna email do admin' do
-      expect(@mailToAdmin.from).to eq(["aceleradora10@gmail.com"])
+      expect(@mailToAdmin.from).to eq(["hemoheroes@gmail.com"])
     end
   end
 
@@ -83,7 +83,7 @@ describe NotificationMailer, type: :mailer do
     end
 
     it 'retorna email do admin' do
-      expect(@mailNoBloodType.from).to eq(["aceleradora10@gmail.com"])
+      expect(@mailNoBloodType.from).to eq(["hemoheroes@gmail.com"])
     end
   end
 
@@ -95,7 +95,7 @@ describe NotificationMailer, type: :mailer do
       expect(@mailActivation.to).to eq([@user_bank.email])
     end
     it 'retornar o email do remetente' do
-      expect(@mailActivation.from).to eq(['aceleradora10@gmail.com'])
+      expect(@mailActivation.from).to eq(['hemoheroes@gmail.com'])
     end
   end
 
